@@ -327,7 +327,7 @@ export const projects: Project[] = [
     sections: [
       {
         title: 'Problem: Dashboard lacks direct filtering, limiting decisions.',
-        content: 'Users clicked into individual charts to apply filters since filters couldn\'t be applied directly from the dashboard, limiting its effectiveness as a decision-making tool.',
+        content: 'The dashboard is one of the most visited pages in the tool. It includes various contextual charts designed to tell data stories. However, users frequently click into individual charts to apply filters and manipulate data because filters cannot be applied directly from the dashboard. This workflow limits the dashboard\'s potential as a decision-making tool.',
         images: [
           '/images/67cfb9efbc291cfeca61ecb1_problem1.1.jpg',
           '/images/67cfb9ef26fc2a0ae9f50b1e_problem2.2.jpg'
@@ -335,20 +335,19 @@ export const projects: Project[] = [
       },
       {
         title: 'Business Goal',
-        content: 'Address usability challenges and enable decision-makers to remain on the dashboard for cohesive data understanding.'
+        content: 'This project aimed to address these usability challenges and enable decision-makers to stay on the dashboard for a cohesive understanding of their data.'
       },
       {
         title: 'Initial Engineering Solution: Add tab-level filters to dashboards.',
-        content: 'Engineering managers proposed tab-level filters; however, this risked addressing surface-level issues rather than root causes.'
+        content: 'The dashboard contains multiple tabs. Some users expressed the need for tab-level filters to refine data within a specific tab. Engineering managers suggested to build tab-level filters to address those specific user requests. While this solution could satisfy immediate needs, it risked only addressing surface-level issues rather than tackling the broader usability challenges of the dashboard.'
       },
       {
         title: 'Propose to research',
-        content: 'I recruited six users (data scientists, product managers, leadership) and conducted one-on-one interviews to analyze findings for usability gaps.',
-        image: '/images/67d4fd2cf6d060ea4a8ff4f6_dashboard-UX Persona2.png'
+        content: 'I recognized that the proposed engineering solution might not fully resolve the dashboard\'s usability issues. I engaged product managers and convinced engineering managers to support conducting user research to understand the true needs and pain points of both data creators and consumers to uncover the root causes. To achieve this, I:\n\nRecruited: Recruited six current users, including both data creators (data scientists) and data consumers (product managers and leaderships).\n\n1-1 research: Conducted interviews to uncover their goals, current challenges, and ideal experiences\n\nAnalyzed: Analyzed findings to identify gaps in the dashboard\'s usability.'
       },
       {
         title: 'Key Findings: User Pain points',
-        content: 'Data consumers faced three challenges:\n• Overly technical filters\n• Inconsistent filter application\n• Reliance on creators\n\nData creators faced three challenges:\n• Complex dashboard creation\n• Inability to unify similar filters\n• Acting as "human filters"'
+        content: 'Data consumers pain points:\n\n1. Filters were too technical, requiring users to select datasets before applying filters.\n\n2. Filters applied inconsistently, often impacting only one or a few charts without clarity on their scope.\n\n3. Consumers often relied on data creators to answer questions, as the tool was not intuitive enough for self-service.\n\nData creators pain points:\n\n1. Creating dashboards was complex due to inconsistent filters across charts.\n\n2. There was no way to unify filters with similar dimensions, leading to confusion and inefficiencies.\n\n3. Creators often acted as "human filters" because consumers could not self-serve effectively.'
       },
       {
         title: 'How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?',
@@ -356,56 +355,48 @@ export const projects: Project[] = [
       },
       {
         title: 'The Solution',
-        content: 'Separated creator and consumer experiences.\n\nFor creators: Powerful tools to set up filters at multiple levels (chart, group, tab, dashboard)\n\nFor consumers: Simplified, intuitive filters that "just work"'
+        content: 'Right now there is no difference between the consumer with the creator view. To address these challenges, I proposed a solution that distinctly separates the experiences for data creators and consumers.'
       },
       {
         title: 'For Data Creators:',
         content: ''
       },
       {
-        title: 'Meet Danny, a data scientist',
-        content: 'Danny is a data scientist who needs to create a dashboard for his team to track product metrics.\n\nWith the new tool, Danny can set up filters at various levels and unify dimensions across different datasets.',
-        image: '/images/67d4fd2c045042941d70a271_dashboard-UX Persona.png'
+        title: 'Meet Danny, a data Scientist need to create a dashboard for his team to track product metrics.',
+        content: 'With the new launched tool, Danny can setup filters at various levels (chart, group, section, tab, and dashboard).\n\nStep1: Danny created a dashboard.\n\nStep2: Danny created a group section, then he added the first and second chart into the group.',
+        image: '/images/67d4fd2c045042941d70a271_dashboard-UX Persona.png',
+        gifs: ['/images/67cfbc10e25b1be3c51e25ef_dashboard-create chart.gif']
       },
       {
-        title: 'Step 1-2: Create dashboard and group charts',
-        content: 'Danny creates a dashboard and groups related charts together. He can now organize data in a way that makes sense for consumers.',
-        gifs: [
-          '/images/67cfbc10e25b1be3c51e25ef_dashboard-create chart.gif'
-        ]
+        title: 'Unify filters',
+        content: 'With the new tool, it allow creators to identify and unify filters with similar dimensions, even when named differently. The system recognizes common filters across these two charts. Danny want to add more filters, he saw there is a button to associate dimensions. so\n\nStep3: He clicked the button to select dimension under two different datasets. Danny linked these two dimensions to be the same and give a name country.',
+        gifs: ['/images/67cfbc7eda8ac5637ea98171_equal.gif']
       },
       {
-        title: 'Step 3-5: Unify filters across datasets',
-        content: 'The new tool allows creators to identify and unify filters with similar dimensions, even when named differently. Danny links "country_code" and "region" to create a unified "Country" filter that works across all charts.',
-        gifs: [
-          '/images/67cfbc7eda8ac5637ea98171_equal.gif'
-        ]
-      },
-      {
-        title: 'Apply filters',
-        content: 'Danny sets up intuitive filters for consumers: date, device, domain, language, and country. He pre-selects relevant values so consumers see exactly what they need.',
-        gifs: [
-          '/images/67d4a2e7a10bd11b3afe1433_landing-2.gif'
-        ]
+        title: '',
+        content: 'The new tool ensure filters are intuitive and relevant for consumers.\n\nStep4: Danny sets up useful filters to this group, including date, device, domain, member_language and country.\n\nStep5: Danny selected country equal to Canada and Mexico to narrow down the data for consumers to view.\n\nThen Danny finished dashboard creation flow.',
+        gifs: ['/images/67d4a2e7a10bd11b3afe1433_landing-2.gif']
       },
       {
         title: 'For Data Consumers:',
         content: ''
       },
       {
-        title: 'Meet Alex, a product manager',
-        content: 'Before: Alex spent 30 minutes navigating between charts to answer a simple question.\n\nAfter: Alex opens the dashboard Danny created. She sees clear filters at different levels. She selects "Canada" and "Last Month" — and instantly sees the data she needs.\n\nNo more asking Danny. No more 30-minute scavenger hunts.',
+        title: 'Meet Alex, a product Manager',
+        content: 'Alex, accesses the dashboard created by Danny. She sees clear filters at different levels (e.g., Chat, group, tab levels).',
         image: '/images/67d4fd2cf6d060ea4a8ff4f6_dashboard-UX Persona2.png',
-        gifs: [
-          '/images/67cfbcb79c2e266ae34dff05_view1-v2.gif',
-          '/images/67cfbcb74cc2f2be89673d7c_view 2.gif'
-        ]
+        gifs: ['/images/67cfbcb79c2e266ae34dff05_view1-v2.gif']
+      },
+      {
+        title: '',
+        content: 'The updated tool can simplify technical terms to make filters intuitive for non-technical users. Alex apply intuitive filters to narrow down data results. Without leaving the dashboard. Alex gains insights into product performance and identifies actionable opportunities.',
+        gifs: ['/images/67cfbcb74cc2f2be89673d7c_view 2.gif']
       }
     ],
     impact: [
-      'Engagement: increased by 45%',
-      'Self-serve rate: 71% of consumers reporting independent data analysis capability',
-      'Product direction: Shaped future product direction'
+      'Engagement increased by 45%: Engagement with dashboard filters increased by 45%, leading to more efficient decision-making.',
+      'Self-serve rate increased: 71% of consumers reporting they could now analyze data independently.',
+      'Shape direction: Separating creator and consumer experiences shaped the future direction of the product.'
     ],
     stakeholderFeedback: [
       {
