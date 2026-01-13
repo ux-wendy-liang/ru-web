@@ -153,7 +153,7 @@ const ProjectDetail = () => {
 
                 {/* Multiple Images */}
                 {section.images && section.images.length > 0 && (
-                  <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className={`mt-8 grid gap-6 ${section.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-2'}`}>
                     {section.images.map((image, imgIndex) => (
                       <div key={imgIndex} className="rounded-xl overflow-hidden">
                         <img

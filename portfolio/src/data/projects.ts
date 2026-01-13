@@ -184,7 +184,7 @@ export const projects: Project[] = [
       {
         title: 'Problem: Users avoid existing tools, relying on ineffective Google Sheets.',
         content: 'Linguistic/ taxonomists don\'t use the existing tool (Left image) to manage skills, titles, Geo…. since it\'s hard to manage. Users are still using Google sheets to manage these, but Google sheet is also not effective to use.',
-        image: '/images/67ce839d8e96a1537f2b9142_polymath-before&after.jpg'
+        image: '/images/67ce839d8e96a1537f2b9142_polymath-before%26after.jpg'
       },
       {
         title: 'Business goal',
@@ -202,14 +202,6 @@ export const projects: Project[] = [
         title: 'Ramp up & Lead research',
         content: 'I connected with engineering leads who had experience in this domain to quickly grasp the big picture. I requested internal documents to understand the roadmap and align expectations.\n\nSince there were no pre-existing requirements, I initiated user research by engaging with three taxonomy teams (Skills, Interests, and Product&Services). I recruited 3-4 representatives from each team to understand the pain points and goals to make sure we found top common issues across three teams.',
         image: '/images/67d4be3bc753c52a734d8621_polymath-research.png'
-      },
-      {
-        title: 'I leveraged existing knowledge & Align with Engineering',
-        content: 'I collaborated with PM to define research goal. I listed key research questions:\n\n• What is your goal?\n• What is your current workflow to achieve their goal?\n• What are your biggest pain points with the current process?'
-      },
-      {
-        title: 'Top problems across three teams is aligned',
-        content: 'Taxonomists/ linguistics across three teams shared the same Goal: As a linguist/taxonomist, I want to manage and expand taxonomy to build a knowledge graph to benefit LinkedIn members.'
       },
       {
         title: 'Top user problems across three teams',
@@ -254,23 +246,31 @@ export const projects: Project[] = [
       },
       {
         title: 'Meet Alex, a linguistic at LinkedIn',
-        content: 'Alex, used to use Google sheets to view and manage all skills which is hard to view the hierarchies. After the new tool launched. Alex used the new tool to view the hierarchies which is much clear to see the parent and child relationship.',
+        content: 'Alex, used to use Google sheets to view and manage all skills which is hard to view the hierarchies. After the new tool launched.\nAlex used the new tool to view the hierarchies which is much clear to see the parent and child relationship.',
         image: '/images/67d4d20eb7691ea36bec87cd_polymath-persona.png'
       },
       {
-        title: 'View Hierarchies',
-        content: 'Alex used the new tool to view the hierarchies which is much clear to see the parent and child relationship.',
-        images: [
-          '/images/67ce7e90b67e4995faef95db_no job-yes.png',
-          '/images/67ce7e91d86cc8570c9ec05a_no job.png'
-        ],
+        title: '',
+        content: '',
         gifs: [
           '/images/67ce7e5b990e9dc66d529248_polymath-expand2.gif'
         ]
       },
       {
-        title: 'Fix Job Matching',
-        content: 'One day, Alex found many people reported they couldn\'t get the UX design job recommendations. Since people\'s skill on their LinkedIn profile is "UX design". the jobs are hiring for skills "User experience design". They are not marked to be the same in our system.\n\nAfter research, Alex knew "UX design" is the same with the skill "User experience design". Alex used the new tool to easily search the skill: "User experience design". Alex added the "UX design" as a alias for the "User experience design", which indicate "UX design" equal to the skill "User experience design"\n\nThen, People like Mike can get the right job recommendations.',
+        title: '',
+        content: '',
+        images: [
+          '/images/67ce7e90b67e4995faef95db_no job-yes.png',
+          '/images/67ce7e91d86cc8570c9ec05a_no job.png'
+        ]
+      },
+      {
+        title: '',
+        content: 'One day, Alex found many people reported they couldn\'t get the UX design job recommendations. Since people\'s skill on their LinkedIn profile is "UX design". the jobs are hiring for skills "User experience design". They are not marked to be the same in our system.\n\nAfter research, Alex knew "UX design" is the same with the skill "User experience design". Alex used the new tool to easily search the skill: "User experience design". Alex added the "UX design" as a alias for the "User experience design", which indicate "UX design" equal to the skill "User experience design"\n\nThen, People like Mike can get the right job recommendations.'
+      },
+      {
+        title: '',
+        content: '',
         gifs: [
           '/images/67ce7ecd3bd02d41e498c1fb_polymath-edit2.gif'
         ]
