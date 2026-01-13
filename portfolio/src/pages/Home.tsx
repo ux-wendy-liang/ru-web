@@ -27,12 +27,10 @@ const Home = () => {
       {/* Projects Section - Alternating Layout */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto space-y-32">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
               key={project.id}
-              className={`flex flex-col ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              } gap-12 items-center`}
+              className="flex flex-col md:flex-row gap-12 items-center"
             >
               {/* Project Image */}
               <div className="w-full md:w-1/2">
@@ -47,7 +45,7 @@ const Home = () => {
 
               {/* Project Info */}
               <div className="w-full md:w-1/2">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 leading-tight">
                   {project.title}
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
