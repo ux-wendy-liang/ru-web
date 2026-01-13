@@ -50,7 +50,7 @@ const ProjectDetail = () => {
           </Link>
 
           {/* Cover Image */}
-          <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl bg-white p-4">
+          <div className="mb-12 rounded-2xl overflow-hidden bg-white p-4">
             <img
               src={project.cover}
               alt={project.title}
@@ -136,7 +136,7 @@ const ProjectDetail = () => {
           {project.images && project.images.length > 0 && (
             <div className="space-y-12">
               {project.images.map((image, index) => (
-                <div key={index} className="rounded-xl overflow-hidden shadow-lg">
+                <div key={index} className="rounded-xl overflow-hidden">
                   <img
                     src={image}
                     alt={`Design process ${index + 1}`}
@@ -151,7 +151,7 @@ const ProjectDetail = () => {
           {project.gifs && project.gifs.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {project.gifs.map((gif, index) => (
-                <div key={index} className="rounded-xl overflow-hidden shadow-lg">
+                <div key={index} className="rounded-xl overflow-hidden">
                   <img
                     src={gif}
                     alt={`Demo ${index + 1}`}
@@ -170,7 +170,7 @@ const ProjectDetail = () => {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {project.impact.map((item, index) => (
-                  <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
+                  <div key={index} className="bg-white p-8 rounded-xl">
                     <h4 className="text-2xl font-bold text-gray-900 mb-3">
                       {item.split(':')[0] || `Impact ${index + 1}`}
                     </h4>

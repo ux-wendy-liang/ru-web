@@ -36,7 +36,7 @@ const Home = () => {
             >
               {/* Project Image */}
               <div className="w-full md:w-1/2">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-4">
+                <div className="relative overflow-hidden rounded-2xl bg-white p-4">
                   <img
                     src={project.cover}
                     alt={project.title}

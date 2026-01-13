@@ -29,7 +29,7 @@ const About = () => {
 
             {/* Right Column - Photo */}
             <div className="w-full md:w-1/2">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <div className="rounded-2xl overflow-hidden">
                 <img
                   src="/images/67cfc77c9730c3b0c998b6f9_WechatIMG27.jpg"
                   alt="Wendy Liang"
@@ -47,7 +47,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             {/* Reading Club */}
             <div>
-              <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
+              <div className="rounded-2xl overflow-hidden mb-6">
                 <img
                   src="/images/67d283ae65d39aa60f528085_hoby1.jpg"
                   alt="Reading club"
@@ -62,7 +62,7 @@ const About = () => {
 
             {/* Coaching */}
             <div>
-              <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
+              <div className="rounded-2xl overflow-hidden mb-6">
                 <img
                   src="/images/67d283adadafa1c246e5924a_hoby2.jpg"
                   alt="Coaching"
@@ -81,7 +81,7 @@ const About = () => {
       {/* Painting Section - Full width */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
+          <div className="rounded-2xl overflow-hidden mb-6">
             <img
               src="/images/67d283ae1425ea1144a1b1c6_hoby3.jpg"
               alt="Painting"
