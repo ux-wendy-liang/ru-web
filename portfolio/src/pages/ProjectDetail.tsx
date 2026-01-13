@@ -116,22 +116,26 @@ const ProjectDetail = () => {
           {/* New Sections Structure */}
           {hasSections && project.sections!.map((section, index) => {
             // Check if this is a "header only" section (empty content, just a title divider)
-            const isHeaderOnly = !section.content && !section.image && !section.images && !section.gif && !section.gifs;
+            const isHeaderOnly = section.title && !section.content && !section.image && !section.images && !section.gif && !section.gifs;
+            // Check if this section has no title (continuation of previous section)
+            const hasNoTitle = !section.title;
 
             return (
-              <div key={index} className={isHeaderOnly ? 'pt-8' : 'space-y-6'}>
-                {/* Section Title */}
-                <h2 className={`font-bold text-gray-900 leading-tight ${
-                  isHeaderOnly
-                    ? 'text-4xl md:text-5xl border-b-2 border-gray-200 pb-4'
-                    : 'text-3xl md:text-4xl'
-                }`}>
-                  {section.title}
-                </h2>
+              <div key={index} className={isHeaderOnly ? 'pt-8' : hasNoTitle ? 'space-y-4 -mt-12' : 'space-y-4'}>
+                {/* Section Title - only show if title exists */}
+                {section.title && (
+                  <h2 className={`font-bold text-gray-900 leading-tight ${
+                    isHeaderOnly
+                      ? 'text-3xl md:text-4xl border-b-2 border-gray-200 pb-4'
+                      : 'text-2xl md:text-3xl'
+                  }`}>
+                    {section.title}
+                  </h2>
+                )}
 
                 {/* Section Content */}
                 {section.content && (
-                  <div className="text-xl text-gray-700 leading-relaxed whitespace-pre-line">
+                  <div className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
                     {section.content}
                   </div>
                 )}
@@ -149,7 +153,7 @@ const ProjectDetail = () => {
 
                 {/* Multiple Images */}
                 {section.images && section.images.length > 0 && (
-                  <div className={`mt-8 ${section.images.length === 2 ? 'grid grid-cols-1 md:grid-cols-2 gap-6' : 'space-y-6'}`}>
+                  <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                     {section.images.map((image, imgIndex) => (
                       <div key={imgIndex} className="rounded-xl overflow-hidden">
                         <img
