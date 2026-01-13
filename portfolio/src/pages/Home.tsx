@@ -4,8 +4,8 @@ import { projects } from '../data/projects';
 const Home = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Auto deploy test */}
-      <section className="pt-40 pb-20 px-6 animated-gradient">
+      {/* Hero Section - starts from top to include nav area */}
+      <section className="pb-20 px-6 animated-gradient" style={{ paddingTop: '160px', marginTop: '-88px' }}>
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             Hi, I'm Wendy
