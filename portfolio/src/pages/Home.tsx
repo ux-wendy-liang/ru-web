@@ -6,18 +6,18 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section - starts from top to include nav area */}
       <section className="pb-20 px-6 animated-gradient" style={{ paddingTop: '160px', marginTop: '-88px' }}>
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Hi, I'm Wendy
             <br />
             Product Design in Bay Area
           </h1>
-          <p className="text-2xl text-gray-700 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl">
             8+ years of UX design experience working on Enterprise & Big Data SaaS products.
           </p>
           <a
             href="mailto:uiwendyliang@outlook.com?subject=👋"
-            className="inline-block px-10 py-4 bg-black hover:bg-gray-800 transition-colors duration-200 rounded-full text-white text-lg font-medium"
+            className="inline-block px-8 py-3 bg-black hover:bg-gray-800 transition-colors duration-200 rounded-full text-white text-base font-medium"
           >
             EMAIL ME →
           </a>
