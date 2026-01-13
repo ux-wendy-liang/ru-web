@@ -1,0 +1,23 @@
+# Mac 系统文件
+.DS_Store
+
+# 依赖包文件夹（不需要版本管理，可以重新安装）
+node_modules/
+**/node_modules/
+
+# 构建输出文件夹
+dist/
+**/dist/
+dist-ssr/
+
+# 日志文件
+*.log
+logs/
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# 临时文件
+*.local
+.cache/
