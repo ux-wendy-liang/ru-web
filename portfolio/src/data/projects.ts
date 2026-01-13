@@ -327,11 +327,7 @@ export const projects: Project[] = [
     sections: [
       {
         title: 'Problem: Dashboard lacks direct filtering, limiting decisions.',
-        content: 'The dashboard is one of the most visited pages in the tool. It includes various contextual charts designed to tell data stories. However, users frequently click into individual charts to apply filters and manipulate data because filters cannot be applied directly from the dashboard. This workflow limits the dashboard\'s potential as a decision-making tool.',
-        images: [
-          '/images/67cfb9efbc291cfeca61ecb1_problem1.1.jpg',
-          '/images/67cfb9ef26fc2a0ae9f50b1e_problem2.2.jpg'
-        ]
+        content: 'The dashboard is one of the most visited pages in the tool. It includes various contextual charts designed to tell data stories. However, users frequently click into individual charts to apply filters and manipulate data because filters cannot be applied directly from the dashboard. This workflow limits the dashboard\'s potential as a decision-making tool.'
       },
       {
         title: 'Business Goal',
@@ -347,7 +343,17 @@ export const projects: Project[] = [
       },
       {
         title: 'Key Findings: User Pain points',
-        content: 'Data consumers pain points:\n\n1. Filters were too technical, requiring users to select datasets before applying filters.\n\n2. Filters applied inconsistently, often impacting only one or a few charts without clarity on their scope.\n\n3. Consumers often relied on data creators to answer questions, as the tool was not intuitive enough for self-service.\n\nData creators pain points:\n\n1. Creating dashboards was complex due to inconsistent filters across charts.\n\n2. There was no way to unify filters with similar dimensions, leading to confusion and inefficiencies.\n\n3. Creators often acted as "human filters" because consumers could not self-serve effectively.'
+        content: 'Data consumers (e.g., product managers, leadership):',
+        image: '/images/67cfb9efbc291cfeca61ecb1_problem1.1.jpg'
+      },
+      {
+        title: '',
+        content: '1. Filters were too technical, requiring users to select datasets before applying filters.',
+        image: '/images/67cfb9ef26fc2a0ae9f50b1e_problem2.2.jpg'
+      },
+      {
+        title: '',
+        content: '2. Filters applied inconsistently, often impacting only one or a few charts without clarity on their scope.\n\n3. Consumers often relied on data creators to answer questions, as the tool was not intuitive enough for self-service.\n\nData creators (e.g., data scientists):\n\n1. Creating dashboards was complex due to inconsistent filters across charts.\n\n2. There was no way to unify filters with similar dimensions, leading to confusion and inefficiencies.\n\n3. Creators often acted as "human filters" because consumers could not self-serve effectively.'
       },
       {
         title: 'How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?',
@@ -363,8 +369,12 @@ export const projects: Project[] = [
       },
       {
         title: 'Meet Danny, a data Scientist need to create a dashboard for his team to track product metrics.',
+        content: '',
+        image: '/images/67d4fd2c045042941d70a271_dashboard-UX Persona.png'
+      },
+      {
+        title: '',
         content: 'With the new launched tool, Danny can setup filters at various levels (chart, group, section, tab, and dashboard).\n\nStep1: Danny created a dashboard.\n\nStep2: Danny created a group section, then he added the first and second chart into the group.',
-        image: '/images/67d4fd2c045042941d70a271_dashboard-UX Persona.png',
         gifs: ['/images/67cfbc10e25b1be3c51e25ef_dashboard-create chart.gif']
       },
       {
@@ -375,7 +385,7 @@ export const projects: Project[] = [
       {
         title: '',
         content: 'The new tool ensure filters are intuitive and relevant for consumers.\n\nStep4: Danny sets up useful filters to this group, including date, device, domain, member_language and country.\n\nStep5: Danny selected country equal to Canada and Mexico to narrow down the data for consumers to view.\n\nThen Danny finished dashboard creation flow.',
-        gifs: ['/images/67d4a2e7a10bd11b3afe1433_landing-2.gif']
+        gifs: ['/images/67d4fe8aa0173122a967c81e_applyfilter.gif']
       },
       {
         title: 'For Data Consumers:',
@@ -383,8 +393,12 @@ export const projects: Project[] = [
       },
       {
         title: 'Meet Alex, a product Manager',
+        content: '',
+        image: '/images/67d4fd2cf6d060ea4a8ff4f6_dashboard-UX Persona2.png'
+      },
+      {
+        title: '',
         content: 'Alex, accesses the dashboard created by Danny. She sees clear filters at different levels (e.g., Chat, group, tab levels).',
-        image: '/images/67d4fd2cf6d060ea4a8ff4f6_dashboard-UX Persona2.png',
         gifs: ['/images/67cfbcb79c2e266ae34dff05_view1-v2.gif']
       },
       {
