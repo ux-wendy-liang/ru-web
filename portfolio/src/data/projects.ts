@@ -5,6 +5,7 @@ export interface ProjectSection {
   images?: string[];
   gif?: string;
   gifs?: string[];
+  embed?: string; // URL for interactive prototype iframe
 }
 
 export interface Project {
@@ -121,8 +122,13 @@ export const projects: Project[] = [
         content: 'Why Coaches Will Pay:\n"$79/month subscription < $200-500 client acquisition cost"\nIf the platform brings stable clients, the subscription pays for itself.\n\nPricing Strategy:\n• Free ($0) - Basic profile, 3 bookings/month, 3 AI practices\n• Pro ($29/month) - Full profile, unlimited bookings, 15% commission\n• Premium ($79/month) - Pro + full AI Supervision, 10% commission\n\nReference: Noomii charges $447/year for directory listing alone — no booking, no AI.'
       },
       {
-        title: 'Prototype',
-        content: 'Tech stack: React, TypeScript, Tailwind CSS, Recharts\n\nKey screens: Landing page, Coach directory, Coach dashboard, AI supervision',
+        title: 'Interactive Prototype',
+        content: 'Try the interactive prototype below. Navigate through the coach directory, dashboard, and AI supervision features.\n\nTech stack: React, TypeScript, Tailwind CSS, Recharts',
+        embed: 'https://ux-wendy-liang.github.io/ai-supervision/'
+      },
+      {
+        title: '',
+        content: '',
         images: [
           '/images/ai-coach-landing-new.png',
           '/images/ai-coach-directory.png',
