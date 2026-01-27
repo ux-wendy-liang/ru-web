@@ -41,27 +41,97 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'ai-coach-mentor',
-    title: 'AI Coach Mentor - AI-Powered Coaching Practice Platform',
-    year: 2025,
+    title: 'AI Coach Mentor: Building a Platform for the $7.3B Coaching Industry',
+    year: 2026,
     cover: '/images/ai-coach-landing.png',
-    shortDescription: 'Designed an AI platform that helps professional coaches practice and improve their skills through simulated conversations and real-time feedback.',
-    role: 'Product Designer, UX Researcher',
+    shortDescription: 'Through market research, I discovered coaches\' #1 pain isn\'t supervision cost—it\'s client acquisition ($200-500/client). This insight led me to pivot from a single AI tool to a full ecosystem platform combining coach directory, booking, and AI supervision.',
+    role: 'Product Designer\n(End-to-End)',
     duration: '4 weeks',
-    team: '1 Designer (me)',
-    challenge: 'Professional coaches need 100-2,500+ hours of supervised practice to get ICF certification, but human supervision costs $150-300/hour. This creates a significant barrier for coaches who want to improve their skills.',
-    solution: 'Created an AI-powered practice platform where coaches can simulate conversations with AI clients, receive real-time feedback based on ICF standards, and track their skill growth over time.',
-    impact: [
-      'Designed complete user flow from practice selection to detailed reports',
-      'Created real-time feedback system aligned with ICF core competencies',
-      'Built progress tracking with radar charts and trend visualization',
-      'Reduced practice cost from $150-300/hour to $29-79/month subscription model'
+    team: 'Solo project',
+    sections: [
+      {
+        title: 'Impact Summary',
+        content: '• Market size validated: $7.3B global, $16B US\n• Target users identified: 167,000+ coaches worldwide\n• Pain point discovered: Acquisition cost $200-500/client\n• Business model validated: Similar product (SimCare) at $4M ARR'
+      },
+      {
+        title: 'The Spark: A Paradox in Coaching',
+        content: 'I started researching the coaching industry and found a surprising paradox:\n\n"Coaches help others grow. But who helps the coaches grow?"\n\nThe answer: supervision sessions at $150-300/hour. Most coaches can only afford one session per month. I thought this was the opportunity.\n\nThen I found SimCare AI — a YC-backed startup ($4.5M raised, $4M revenue) letting therapy students practice with AI patients.\n\nMy initial hypothesis: Build "SimCare for Coaches" — an AI practice tool.'
+      },
+      {
+        title: 'The Pivot: Discovering the Real Pain Point',
+        content: 'Through deeper research, I discovered something unexpected:\n\n"The #1 challenge for coaches isn\'t expensive supervision. It\'s getting clients."\n\n• Customer acquisition cost: $200-500 per client\n• Clients needed to go full-time: 25-35 people\n• Sales cycle: 6-12 touchpoints before purchase\n\nThe "Feast or Famine" Cycle:\nGreat month (5 clients) → Next month: crickets → Relying on referrals → Unpredictable income → Anxiety\n\nWhy is acquisition so hard?\n• Coach training teaches coaching skills, not marketing\n• 232,000+ coaches in the US alone = oversaturated market\n• Self-promotion feels awkward ("I AM the product")\n• Long sales cycles due to high prices + trust dependency',
+        image: '/images/ai-coach-research.png'
+      },
+      {
+        title: 'The Strategy: From Tool to Ecosystem',
+        content: 'This insight changed my entire approach:\n\n| Original Idea | New Strategy |\n| AI Supervision tool | Coach Ecosystem Platform |\n| Single pain point | Two-sided marketplace |\n| B2C only | B2C + B2B |\n\nThe new vision: A platform that helps clients find good coaches, and helps coaches become better.\n\nWhy combine directory + AI supervision?\n• Directory only → Competing with Noomii, no differentiation\n• AI Supervision only → Hard to acquire coach users\n• Combined → AI Supervision is unique value + Directory brings organic traffic'
+      },
+      {
+        title: 'Market Validation',
+        content: 'The Market is Huge:\n• Global coaching market: $7.3B (ICF 2025)\n• US market: $16B\n• Global coaches: 167,000+\n• US coaches: 232,000+\n• Growth rate: 17% CAGR\n\nDemand is Real (SEO Research):\n• "Life Coach" - 22,000 monthly searches\n• "Career Coach" - 14,000 monthly searches\n• "Find a Life Coach" - 500 searches (high purchase intent)\n• "Hire a Coach" - 100 searches (ready to buy)\n\nKey insight: Search traffic converts at 14.6% vs paid ads at 1.7% — 8.5x better!'
+      },
+      {
+        title: 'Competitive Landscape',
+        content: 'Analyzing existing solutions:\n\n• Noomii - Has directory, no booking, no AI\n• BetterUp - Has directory + booking, no AI\n• ADPList - Has directory + booking, no AI\n• Our Platform - Directory + Booking + AI Supervision ← Differentiator\n\nThe gap in AI tools:\n• Therapy field has Eleos Health, Lyssn, Mentalyc for AI supervision\n• Coaching field has nothing equivalent\n• Existing AI coaching tools (Rocky.ai, CoachHub) serve coachees, not coaches'
+      },
+      {
+        title: 'User Research',
+        content: 'Primary Personas:\n\n1. New ACC Coach - Just certified, building practice. Needs: Clients + skill improvement\n2. Coach Trainee - In certification program. Needs: Practice opportunities\n3. Training Institution (B2B) - Coach schools. Needs: Better student outcomes'
+      },
+      {
+        title: 'User Journey (Current Pain Points)',
+        content: 'Coach completes training\n→ 🔴 Struggles to find clients (spends hours on marketing)\n→ Finally gets a few clients\n→ 🔴 Uncertain about their own performance\n→ Books supervision ($200/session)\n→ 🔴 4 weeks later, the case is already stale\n→ Gets feedback, tries to apply\n→ 🔴 No way to practice immediately\n→ 🔴 Income unstable (feast or famine cycle)'
+      },
+      {
+        title: 'Key Design Decisions',
+        content: ''
+      },
+      {
+        title: 'Decision 1: Real-time Feedback Without Disruption',
+        content: 'Challenge: How to give feedback during practice without breaking conversation flow?\n\nExplorations:\n• Pop-up notifications → Too distracting\n• Post-session only → Too late, coach forgets\n• Voice interruption → Unnatural\n\nSolution: Collapsible sidebar with live stats (talk ratio, question quality, empathy moments). Coach can glance without losing focus.\n\nWhy it works: Like a car dashboard — peripheral visibility without requiring focus.',
+        image: '/images/ai-coach-session.png'
+      },
+      {
+        title: 'Decision 2: Building Trust Through ICF Framework',
+        content: 'Challenge: Coaches are skeptical of AI evaluating their "soft skills."\n\nExplorations:\n• Generic AI feedback → Felt arbitrary\n• Star ratings → Too gamified\n• Percentage scores alone → Meaningless without context\n\nSolution: Ground everything in ICF\'s official 8 Core Competencies with:\n1. Evidence — Exact timestamps and quotes\n2. ICF Definition — What the competency means officially\n3. Specific praise — What they did well\n4. Actionable improvement — Concrete next step\n\nWhy it works: ICF is the industry authority. Coaches already know and trust this framework.',
+        image: '/images/ai-coach-report.png'
+      },
+      {
+        title: 'Decision 3: Inline Transcript Feedback',
+        content: 'Challenge: Traditional feedback summarizes at the end, but coaches learn best seeing exactly where they did well.\n\nSolution: Annotated transcript with inline comments (like Google Docs).\n\n• 00:50 | Coach: "It sounds like you\'re carrying a lot..." → ✅ Great empathy + open question\n• 02:20 | Coach: "Have you tried talking to your boss?" → ⚠️ This is advice, not a question\n• 03:28 | (8 seconds of silence) → ✅ Great use of silence\n\nWhy it works: Connects abstract feedback to specific moments. Creates "aha" moments.'
+      },
+      {
+        title: 'Decision 4: Platform Flywheel',
+        content: 'Challenge: How to solve the chicken-and-egg problem of a two-sided marketplace?\n\nSolution: Design for flywheel effect:\n\nMore coaches join (supply)\n→ More content → Better SEO\n→ More clients find the platform (demand)\n→ Coaches get clients → They\'re happy\n→ AI Supervision makes coaches better\n→ Better sessions → Better reviews\n→ More clients trust the platform\n→ More coaches want to join... (repeat)\n\nKey insight: AI Supervision isn\'t just a feature — it makes coaches better, which drives the flywheel.'
+      },
+      {
+        title: 'Product Architecture',
+        content: 'Four Core Modules:\n\n1. Coach Directory (For Clients) - Search, filter, view profiles\n2. Booking System (For Both) - Calendar, scheduling, reminders\n3. AI Supervision (For Coaches) - Practice, review, feedback, progress\n4. Coach Dashboard (For Coaches) - Bookings, clients, revenue\n\nAI Supervision Features:\n• Real-time Coaching Tips - Live feedback during practice\n• Post-Session Review - Transcript + inline comments\n• Auto Session Notes - AI-generated summaries (saves 30+ min)\n• Progress Tracking - ICF skill radar chart over time\n• Client Growth Profiles - Track each client\'s progress'
+      },
+      {
+        title: 'Business Model',
+        content: 'Why Coaches Will Pay:\n"$79/month subscription < $200-500 client acquisition cost"\nIf the platform brings stable clients, the subscription pays for itself.\n\nPricing Strategy:\n• Free ($0) - Basic profile, 3 bookings/month, 3 AI practices\n• Pro ($29/month) - Full profile, unlimited bookings, 15% commission\n• Premium ($79/month) - Pro + full AI Supervision, 10% commission\n\nReference: Noomii charges $447/year for directory listing alone — no booking, no AI.'
+      },
+      {
+        title: 'Prototype',
+        content: 'Tech stack: React, TypeScript, Tailwind CSS, Recharts\n\nKey screens:\n• Landing page\n• Coach directory with search/filter\n• Coach profile with booking\n• Practice session with real-time tips\n• Report with inline transcript feedback\n• Progress tracking with ICF radar chart',
+        images: [
+          '/images/ai-coach-dashboard.png',
+          '/images/ai-coach-practice.png',
+          '/images/ai-coach-progress.png'
+        ]
+      }
     ],
-    images: [
-      '/images/ai-coach-dashboard.png',
-      '/images/ai-coach-practice.png',
-      '/images/ai-coach-session.png',
-      '/images/ai-coach-progress.png',
-      '/images/ai-coach-report.png'
+    impact: [
+      'Strategic Pivot: Research-driven shift from single tool to ecosystem platform',
+      'Pain Point Discovery: Identified acquisition ($200-500/client) as bigger problem than supervision cost',
+      'Market Validation: Validated $7.3B market with 167,000+ target users'
+    ],
+    takeaways: [
+      'Research can change direction: The original "AI supervision" idea became one piece of a larger platform after discovering the real pain point.',
+      'Pain points have layers: Supervision cost was a symptom; acquisition was the root cause. Deep research reveals what users truly need.',
+      'Flywheel thinking: AI Supervision isn\'t just a feature — it makes coaches better, which drives the entire platform\'s value.',
+      'Authority builds trust: Grounding AI feedback in ICF standards overcomes skepticism about AI evaluating "soft skills."'
     ]
   },
   {
