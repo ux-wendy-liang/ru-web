@@ -89,8 +89,21 @@ export const projects: Project[] = [
       },
       {
         title: 'Decision 1: Real-time Feedback Without Disruption',
-        content: 'Challenge: How to give feedback during a live coaching session without breaking conversation flow?\n\nIteration 1 - Stats Dashboard:\n• Sidebar showing talk ratio, open questions count, empathy moments\n• Problem: Stats too abstract — coaches knew "4 open questions" but not WHICH questions were good\n\nIteration 2 - Live Transcript with Inline Feedback:\n• Real-time transcript appears as conversation happens\n• AI feedback appears directly under each coach statement\n• Green = positive ("Great acknowledgment of emotion")\n• Yellow = suggestion ("This shifts into advice-giving. Consider...")\n\nWhy the iteration worked:\n• Coaches see exactly WHAT they said + immediate feedback\n• No context switching — feedback is in the flow of conversation\n• Can review specific moments later',
-        image: '/images/ai-coach-session-new.png'
+        content: 'Challenge: How to give feedback during a live coaching session without breaking conversation flow?'
+      },
+      {
+        title: 'Iteration 1 - Stats Dashboard',
+        content: '• Sidebar showing talk ratio, open questions count, empathy moments\n• Problem: Stats too abstract — coaches knew "4 open questions" but not WHICH questions were good',
+        image: '/images/ai-coach-session-iteration1.png'
+      },
+      {
+        title: 'Iteration 2 - Live Transcript with Inline Feedback',
+        content: '• Real-time transcript appears as conversation happens\n• AI feedback appears directly under each coach statement\n• Green = positive ("Great acknowledgment of emotion")\n• Yellow = suggestion ("This shifts into advice-giving. Consider...")',
+        image: '/images/ai-coach-session-iteration2.png'
+      },
+      {
+        title: '',
+        content: 'Why the iteration worked:\n• Coaches see exactly WHAT they said + immediate feedback\n• No context switching — feedback is in the flow of conversation\n• Can review specific moments later'
       },
       {
         title: 'Decision 2: Building Trust Through ICF Framework',
