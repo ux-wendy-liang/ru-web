@@ -122,12 +122,12 @@ export const projects: Project[] = [
       },
       {
         title: 'Prototype',
-        content: 'Tech stack: React, TypeScript, Tailwind CSS, Recharts\n\nKey screens: Landing page, Coach directory, Practice session, Progress tracking',
+        content: 'Tech stack: React, TypeScript, Tailwind CSS, Recharts\n\nKey screens: Landing page, Coach directory, Coach dashboard, AI supervision',
         images: [
           '/images/ai-coach-landing-new.png',
-          '/images/ai-coach-practice-new.png',
-          '/images/ai-coach-progress-new.png',
-          '/images/ai-coach-review-new.png'
+          '/images/ai-coach-directory.png',
+          '/images/ai-coach-coach-dashboard.png',
+          '/images/ai-coach-supervision.png'
         ]
       }
     ],
