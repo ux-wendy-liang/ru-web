@@ -43,7 +43,7 @@ export const projects: Project[] = [
     id: 'ai-coach-mentor',
     title: 'AI Coach Mentor: Building a Platform for the $7.3B Coaching Industry',
     year: 2026,
-    cover: '/images/ai-coach-landing.png',
+    cover: '/images/ai-coach-landing-new.png',
     shortDescription: 'Through market research, I discovered coaches\' #1 pain isn\'t supervision cost—it\'s client acquisition ($200-500/client). This insight led me to pivot from a single AI tool to a full ecosystem platform combining coach directory, booking, and AI supervision.',
     role: 'Product Designer\n(End-to-End)',
     duration: '4 weeks',
@@ -59,12 +59,12 @@ export const projects: Project[] = [
       },
       {
         title: 'The Pivot: Discovering the Real Pain Point',
-        content: 'Through deeper research, I discovered something unexpected:\n\n"The #1 challenge for coaches isn\'t expensive supervision. It\'s getting clients."\n\n• Customer acquisition cost: $200-500 per client\n• Clients needed to go full-time: 25-35 people\n• Sales cycle: 6-12 touchpoints before purchase\n\nThe "Feast or Famine" Cycle:\nGreat month (5 clients) → Next month: crickets → Relying on referrals → Unpredictable income → Anxiety\n\nWhy is acquisition so hard?\n• Coach training teaches coaching skills, not marketing\n• 232,000+ coaches in the US alone = oversaturated market\n• Self-promotion feels awkward ("I AM the product")\n• Long sales cycles due to high prices + trust dependency',
-        image: '/images/ai-coach-research.png'
+        content: 'Through deeper research, I discovered something unexpected:\n\n"The #1 challenge for coaches isn\'t expensive supervision. It\'s getting clients."\n\n• Customer acquisition cost: $200-500 per client\n• Clients needed to go full-time: 25-35 people\n• Sales cycle: 6-12 touchpoints before purchase\n\nThe "Feast or Famine" Cycle:\nGreat month (5 clients) → Next month: crickets → Relying on referrals → Unpredictable income → Anxiety\n\nWhy is acquisition so hard?\n• Coach training teaches coaching skills, not marketing\n• 232,000+ coaches in the US alone = oversaturated market\n• Self-promotion feels awkward ("I AM the product")\n• Long sales cycles due to high prices + trust dependency'
       },
       {
         title: 'The Strategy: From Tool to Ecosystem',
-        content: 'This insight changed my entire approach:\n\n| Original Idea | New Strategy |\n| AI Supervision tool | Coach Ecosystem Platform |\n| Single pain point | Two-sided marketplace |\n| B2C only | B2C + B2B |\n\nThe new vision: A platform that helps clients find good coaches, and helps coaches become better.\n\nWhy combine directory + AI supervision?\n• Directory only → Competing with Noomii, no differentiation\n• AI Supervision only → Hard to acquire coach users\n• Combined → AI Supervision is unique value + Directory brings organic traffic'
+        content: 'This insight changed my entire approach:\n\nOriginal Idea → New Strategy\n• AI Supervision tool → Coach Ecosystem Platform\n• Single pain point → Two-sided marketplace\n• B2C only → B2C + B2B\n\nThe new vision: A platform that helps clients find good coaches, and helps coaches become better.\n\nWhy combine directory + AI supervision?\n• Directory only → Competing with Noomii, no differentiation\n• AI Supervision only → Hard to acquire coach users\n• Combined → AI Supervision is unique value + Directory brings organic traffic',
+        image: '/images/ai-coach-directory.png'
       },
       {
         title: 'Market Validation',
@@ -89,12 +89,12 @@ export const projects: Project[] = [
       {
         title: 'Decision 1: Real-time Feedback Without Disruption',
         content: 'Challenge: How to give feedback during practice without breaking conversation flow?\n\nExplorations:\n• Pop-up notifications → Too distracting\n• Post-session only → Too late, coach forgets\n• Voice interruption → Unnatural\n\nSolution: Collapsible sidebar with live stats (talk ratio, question quality, empathy moments). Coach can glance without losing focus.\n\nWhy it works: Like a car dashboard — peripheral visibility without requiring focus.',
-        image: '/images/ai-coach-session.png'
+        image: '/images/ai-coach-session-new.png'
       },
       {
         title: 'Decision 2: Building Trust Through ICF Framework',
         content: 'Challenge: Coaches are skeptical of AI evaluating their "soft skills."\n\nExplorations:\n• Generic AI feedback → Felt arbitrary\n• Star ratings → Too gamified\n• Percentage scores alone → Meaningless without context\n\nSolution: Ground everything in ICF\'s official 8 Core Competencies with:\n1. Evidence — Exact timestamps and quotes\n2. ICF Definition — What the competency means officially\n3. Specific praise — What they did well\n4. Actionable improvement — Concrete next step\n\nWhy it works: ICF is the industry authority. Coaches already know and trust this framework.',
-        image: '/images/ai-coach-report.png'
+        image: '/images/ai-coach-report-new.png'
       },
       {
         title: 'Decision 3: Inline Transcript Feedback',
@@ -106,7 +106,15 @@ export const projects: Project[] = [
       },
       {
         title: 'Product Architecture',
-        content: 'Four Core Modules:\n\n1. Coach Directory (For Clients) - Search, filter, view profiles\n2. Booking System (For Both) - Calendar, scheduling, reminders\n3. AI Supervision (For Coaches) - Practice, review, feedback, progress\n4. Coach Dashboard (For Coaches) - Bookings, clients, revenue\n\nAI Supervision Features:\n• Real-time Coaching Tips - Live feedback during practice\n• Post-Session Review - Transcript + inline comments\n• Auto Session Notes - AI-generated summaries (saves 30+ min)\n• Progress Tracking - ICF skill radar chart over time\n• Client Growth Profiles - Track each client\'s progress'
+        content: 'Four Core Modules:\n\n1. Coach Directory (For Clients) - Search, filter, view profiles\n2. Booking System (For Both) - Calendar, scheduling, reminders\n3. AI Supervision (For Coaches) - Practice, review, feedback, progress\n4. Coach Dashboard (For Coaches) - Bookings, clients, revenue',
+        images: [
+          '/images/ai-coach-coach-dashboard.png',
+          '/images/ai-coach-supervision.png'
+        ]
+      },
+      {
+        title: '',
+        content: 'AI Supervision Features:\n• Real-time Coaching Tips - Live feedback during practice\n• Post-Session Review - Transcript + inline comments\n• Auto Session Notes - AI-generated summaries (saves 30+ min)\n• Progress Tracking - ICF skill radar chart over time\n• Client Growth Profiles - Track each client\'s progress'
       },
       {
         title: 'Business Model',
@@ -114,11 +122,12 @@ export const projects: Project[] = [
       },
       {
         title: 'Prototype',
-        content: 'Tech stack: React, TypeScript, Tailwind CSS, Recharts\n\nKey screens:\n• Landing page\n• Coach directory with search/filter\n• Coach profile with booking\n• Practice session with real-time tips\n• Report with inline transcript feedback\n• Progress tracking with ICF radar chart',
+        content: 'Tech stack: React, TypeScript, Tailwind CSS, Recharts\n\nKey screens: Landing page, Coach directory, Practice session, Progress tracking',
         images: [
-          '/images/ai-coach-dashboard.png',
-          '/images/ai-coach-practice.png',
-          '/images/ai-coach-progress.png'
+          '/images/ai-coach-landing-new.png',
+          '/images/ai-coach-practice-new.png',
+          '/images/ai-coach-progress-new.png',
+          '/images/ai-coach-review-new.png'
         ]
       }
     ],
