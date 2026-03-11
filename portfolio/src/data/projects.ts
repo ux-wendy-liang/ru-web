@@ -138,10 +138,6 @@ export const projects: Project[] = [
         image: '/images/jingxin-practice-en.png'
       },
       {
-        title: 'Decision 3: Visual Learning with Mind Maps',
-        content: 'Some Buddhist concepts have complex hierarchical relationships — like the Four Noble Truths branching into the Eightfold Path, or the three types of suffering each with sub-categories.\n\nI designed interactive mind map views for each lesson. Unlike keyword-only mind maps, each node contains a complete short sentence explaining the concept. Students can see how ideas connect before diving into the full text.\n\nThis directly addresses the "can\'t see the big picture" confusion that caused many students to feel lost.'
-      },
-      {
         title: 'How I Built It: Vibe Coding with AI',
         content: ''
       },
