@@ -135,7 +135,6 @@ export const projects: Project[] = [
       {
         title: '',
         content: 'This progressive disclosure keeps the interface clean and action-focused, while giving curious learners a path to deeper understanding. Users who just want to practice can skip it; users who want context can explore. This builds intrinsic motivation rather than blind compliance.\n\nThe journaling system lets students write reflections on their practice. But here\'s the key design decision: I added privacy controls (private / classmates / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. This small decision — defaulting to "private" with the option to share — significantly increased participation.\n\nI also designed a culturally appropriate appreciation interaction: "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. Instead of generic "likes," this interaction carries cultural meaning and encourages the community.',
-        image: '/images/jingxin-practice-en.png'
       },
       {
         title: 'How I Built It: Vibe Coding with AI',
