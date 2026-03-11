@@ -145,7 +145,7 @@ export const projects: Project[] = [
       {
         title: '',
         content: 'The product is fully responsive — Buddhist study often happens on phones (commuting, before bed). I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
-        images: ['/images/jingxin-mobile-landing-en.png', '/images/jingxin-mobile-lesson-en.png']
+        images: ['/images/jingxin-mobile-lesson-en.png', '/images/mobile-list.png']
       },
       {
         title: 'The Product',
