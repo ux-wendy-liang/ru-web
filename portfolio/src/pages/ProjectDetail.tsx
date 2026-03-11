@@ -255,10 +255,10 @@ const ProjectDetail = () => {
                           <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Before</h4>
                           <div className="flex gap-4">
                             {section.phoneBefore.map((image, imgIndex) => (
-                              <div key={imgIndex} className="relative bg-gray-900 rounded-[1.75rem] p-1.5 shadow-xl" style={{ width: '170px' }}>
+                              <div key={imgIndex} className="relative bg-gray-900 rounded-[1.75rem] p-1.5 shadow-xl" style={{ width: '220px' }}>
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
                                 <div className="rounded-[1.25rem] overflow-hidden bg-white">
-                                  <img src={image} alt={`Before ${imgIndex + 1}`} className="w-full object-cover object-top" style={{ height: '340px' }} />
+                                  <img src={image} alt={`Before ${imgIndex + 1}`} className="w-full object-cover object-top" style={{ height: '440px' }} />
                                 </div>
                                 <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-600 rounded-full" />
                               </div>
@@ -278,10 +278,10 @@ const ProjectDetail = () => {
                           <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">After</h4>
                           <div className="flex gap-4">
                             {section.phoneAfter.map((image, imgIndex) => (
-                              <div key={imgIndex} className="relative bg-gray-900 rounded-[1.75rem] p-1.5 shadow-xl" style={{ width: '170px' }}>
+                              <div key={imgIndex} className="relative bg-gray-900 rounded-[1.75rem] p-1.5 shadow-xl" style={{ width: '220px' }}>
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
                                 <div className="rounded-[1.25rem] overflow-hidden bg-white">
-                                  <img src={image} alt={`After ${imgIndex + 1}`} className="w-full object-cover object-top" style={{ height: '340px' }} />
+                                  <img src={image} alt={`After ${imgIndex + 1}`} className="w-full object-cover object-top" style={{ height: '440px' }} />
                                 </div>
                                 <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-600 rounded-full" />
                               </div>
