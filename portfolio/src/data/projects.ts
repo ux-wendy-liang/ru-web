@@ -4,6 +4,10 @@ export interface ProjectSection {
   image?: string;
   imageSize?: 'small' | 'medium' | 'large'; // Controls max-width: small=400px, medium=600px, large=full
   images?: string[];
+  imageStyle?: 'phone'; // Wrap images in phone frame mockup
+  phoneBefore?: string[]; // Before phone screenshots
+  phoneAfter?: string[]; // After phone screenshots
+  phoneAfterCaption?: string; // Design rationale for After
   gif?: string;
   gifs?: string[];
   embed?: string; // URL for interactive prototype iframe
@@ -145,7 +149,9 @@ export const projects: Project[] = [
       {
         title: '',
         content: 'The product is fully responsive — Buddhist study often happens on phones (commuting, before bed). I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
-        images: ['/images/jingxin-mobile-lesson-en.png', '/images/mobile-list.png']
+        phoneBefore: ['/images/jingxin-mobile-lesson-en.png'],
+        phoneAfter: ['/images/mobile-home.png', '/images/mobile-list.png', '/images/mobile-list-org.png'],
+        phoneAfterCaption: 'Redesigned navigation with bottom tabs for one-handed use. Replaced dense sidebar with card-based course list for faster scanning. Added original source overlay so users can verify simplified content — building trust without cluttering the reading flow.'
       },
       {
         title: 'The Product',

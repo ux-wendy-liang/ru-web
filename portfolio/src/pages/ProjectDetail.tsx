@@ -247,6 +247,50 @@ const ProjectDetail = () => {
 
                 {/* Multiple Images */}
                 {section.images && section.images.length > 0 && (
+                  section.phoneBefore || section.phoneAfter ? (
+                    <div className="mt-8 space-y-12">
+                      {/* Before */}
+                      {section.phoneBefore && section.phoneBefore.length > 0 && (
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4 text-center">Before</h4>
+                          <div className="flex justify-center gap-4 md:gap-6">
+                            {section.phoneBefore.map((image, imgIndex) => (
+                              <div key={imgIndex} className="relative bg-gray-900 rounded-[1.75rem] p-1.5 shadow-xl" style={{ width: '200px' }}>
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
+                                <div className="rounded-[1.25rem] overflow-hidden bg-white">
+                                  <img src={image} alt={`Before ${imgIndex + 1}`} className="w-full object-cover object-top" style={{ height: '400px' }} />
+                                </div>
+                                <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-600 rounded-full" />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      {/* After */}
+                      {section.phoneAfter && section.phoneAfter.length > 0 && (
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4 text-center">After</h4>
+                          <div className="flex justify-center gap-4 md:gap-6">
+                            {section.phoneAfter.map((image, imgIndex) => (
+                              <div key={imgIndex} className="relative bg-gray-900 rounded-[1.75rem] p-1.5 shadow-xl" style={{ width: '200px' }}>
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
+                                <div className="rounded-[1.25rem] overflow-hidden bg-white">
+                                  <img src={image} alt={`After ${imgIndex + 1}`} className="w-full object-cover object-top" style={{ height: '400px' }} />
+                                </div>
+                                <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-600 rounded-full" />
+                              </div>
+                            ))}
+                          </div>
+                          {/* Design rationale */}
+                          {section.phoneAfterCaption && (
+                            <p className="text-sm text-gray-500 text-center mt-4 max-w-2xl mx-auto leading-relaxed">
+                              {section.phoneAfterCaption}
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
                   <div className={`mt-8 grid gap-6 ${section.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-2'}`}>
                     {section.images.map((image, imgIndex) => (
                       <div key={imgIndex} className="rounded-xl overflow-hidden flex justify-center bg-gray-50">
@@ -258,6 +302,7 @@ const ProjectDetail = () => {
                       </div>
                     ))}
                   </div>
+                  )
                 )}
 
                 {/* Single GIF */}
