@@ -52,7 +52,7 @@ export const projects: Project[] = [
     sections: [
       {
         title: 'Impact Summary',
-        content: '• Live product serving real users at jingxin-xuetang.vercel.app\n• 70 commits shipped in 4 days (March 6-10, 2026)\n• 38+ lessons with simplified content, practice exercises, and community features\n• Full-stack: React + TypeScript + PostgreSQL + Auth + Serverless API\n• Complete design system: typography, spacing, color, and accessibility guidelines'
+        content: '• Live product serving real users at jingxin-xuetang.vercel.app?lang=en\n• 70 commits shipped in 4 days (March 6-10, 2026)\n• 38+ lessons with simplified content, practice exercises, and community features\n• Full-stack: React + TypeScript + PostgreSQL + Auth + Serverless API\n• Complete design system: typography, spacing, color, and accessibility guidelines'
       },
       {
         title: 'The Problem: 50%+ of Buddhist Study Group Students Drop Out',
@@ -106,7 +106,7 @@ export const projects: Project[] = [
       {
         title: 'Try the Live Product',
         content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a PostgreSQL database, serverless API, and bilingual support. Real users are learning Buddhist teachings on this platform right now.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
-        embed: 'https://jingxin-xuetang.vercel.app'
+        embed: 'https://jingxin-xuetang.vercel.app?lang=en?lang=en'
       },
       {
         title: '',
@@ -115,7 +115,7 @@ export const projects: Project[] = [
       }
     ],
     impact: [
-      'Shipped product: Live full-stack platform serving real Buddhist study group members at jingxin-xuetang.vercel.app',
+      'Shipped product: Live full-stack platform serving real Buddhist study group members at jingxin-xuetang.vercel.app?lang=en',
       'Speed to value: From PRD to production in 4 days — 70 commits, 38+ lessons, full authentication system, bilingual support',
       'Design-led development: Every feature driven by community observation and product thinking, not technology-first decisions'
     ],
