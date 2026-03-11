@@ -14,6 +14,15 @@ export default {
       fontFamily: {
         'lato': ['Lato', 'sans-serif'],
       },
+      animation: {
+        'tooltip-bounce': 'tooltip-bounce 2s ease-in-out infinite',
+      },
+      keyframes: {
+        'tooltip-bounce': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
+      },
     },
   },
   plugins: [],
