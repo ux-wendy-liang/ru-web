@@ -123,7 +123,7 @@ export const projects: Project[] = [
       {
         title: 'Decision 2: From Reading to Doing',
         content: 'Insight: Buddhist learning is not like academic learning. The goal is not to memorize facts — it\'s to change how you live daily life.\n\nI designed a practice system where each lesson ends with concrete exercises tied to real life. For example, after a lesson on compassion, the exercise might be: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
-        image: '/images/jingxin-exercise-en.png',
+        image: '/images/jingxin-exercise-expanded-en.png',
         imageSize: 'medium' as const
       },
       {
