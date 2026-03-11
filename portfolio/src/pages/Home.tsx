@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section - starts from top to include nav area */}
-      <section className="pb-20 px-6 animated-gradient" style={{ paddingTop: '160px', marginTop: '-88px' }}>
+      <section className="pb-20 px-8 md:px-16 lg:px-24 animated-gradient" style={{ paddingTop: '160px', marginTop: '-88px' }}>
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Hi, I'm Wendy
@@ -13,7 +13,7 @@ const Home = () => {
             Product Design in Bay Area
           </h1>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl">
-            8+ years of UX design experience working on Enterprise & Big Data SaaS products.
+            8+ years shaping Enterprise & Big Data SaaS at LinkedIn. These days, I don't stop at the mockup — I vibe code my designs into reality.
           </p>
           <a
             href="mailto:uiwendyliang@outlook.com?subject=👋"
@@ -25,7 +25,7 @@ const Home = () => {
       </section>
 
       {/* Projects Section - Alternating Layout */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-8 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto space-y-32">
           {projects.map((project) => (
             <div
@@ -64,7 +64,7 @@ const Home = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-8 md:px-16 lg:px-24 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <div className="w-20 h-1 bg-black mb-6"></div>

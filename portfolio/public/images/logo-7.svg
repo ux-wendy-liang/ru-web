@@ -1,0 +1,7 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Style 7: Monoline continuous - one stroke draws both WL -->
+  <circle cx="20" cy="20" r="19" fill="#1a1a1a"/>
+  <path d="M5,13 L9,27 L14,17 L19,27 L23,13 L23,27 L32,27" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Decorative ring inside circle -->
+  <circle cx="20" cy="20" r="16.5" stroke="#ffffff" stroke-width="0.5" fill="none" opacity="0.3"/>
+</svg>

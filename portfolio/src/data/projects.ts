@@ -41,125 +41,106 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'ai-coach-mentor',
-    title: 'AI Coach Mentor: Building a Platform for the $7.3B Coaching Industry',
+    id: 'jingxin-xuetang',
+    title: 'From Designer to Builder: Shipping a Buddhist Learning Platform in 4 Days with AI',
     year: 2026,
-    cover: '/images/ai-coach-landing-new.png',
-    shortDescription: 'Through market research, I discovered coaches\' #1 pain isn\'t supervision cost—it\'s client acquisition ($200-500/client). This insight led me to pivot from a single AI tool to a full ecosystem platform combining coach directory, booking, and AI supervision.',
-    role: 'Product Designer\n(End-to-End)',
-    duration: '4 weeks',
-    team: 'Solo project',
+    cover: '/images/jingxin-hero-en.png',
+    shortDescription: 'I noticed 50%+ dropout in Buddhist study groups because materials were too academic. I wrote a comprehensive PRD, then used AI vibe coding to build and ship a full-stack learning platform — with auth, database, and bilingual support — in just 4 days. Now serving real users.',
+    role: 'Product Designer\n+ Builder (Vibe Coding)',
+    duration: '4 days',
+    team: 'Solo — built with Claude Code (AI)',
     sections: [
       {
         title: 'Impact Summary',
-        content: '• Market size validated: $7.3B global, $16B US\n• Target users identified: 167,000+ coaches worldwide\n• Pain point discovered: Acquisition cost $200-500/client\n• Business model validated: Similar product (SimCare) at $4M ARR'
+        content: '• Live product serving real users at jingxin-xuetang.vercel.app\n• 70 commits shipped in 4 days (March 6-10, 2026)\n• 38+ lessons with simplified content, practice exercises, and community features\n• Full-stack: React + TypeScript + PostgreSQL + Auth + Serverless API\n• Complete design system: typography, spacing, color, and accessibility guidelines'
       },
       {
-        title: 'The Spark: A Paradox in Coaching',
-        content: 'I started researching the coaching industry and found a surprising paradox:\n\n"Coaches help others grow. But who helps the coaches grow?"\n\nThe answer: supervision sessions at $150-300/hour. Most coaches can only afford one session per month. I thought this was the opportunity.\n\nThen I found SimCare AI — a YC-backed startup ($4.5M raised, $4M revenue) letting therapy students practice with AI patients.\n\nMy initial hypothesis: Build "SimCare for Coaches" — an AI practice tool.'
+        title: 'The Problem: 50%+ of Buddhist Study Group Students Drop Out',
+        content: 'Master Jiqun\'s Buddhist courses are studied in community groups across China. But more than half of students leave within the first few sessions.\n\nI observed this firsthand in my own study community — out of 5 study groups, 4 had lost roughly half their members. Through conversations with students and group leaders, I identified three root causes:\n\n1. Content too academic — Original texts use classical Buddhist language with dense terminology. Even educated adults said "I need to read it 3 times to understand."\n\n2. No clear takeaways — After reading a 3,000-word lesson, students couldn\'t articulate what they learned in one sentence.\n\n3. No practice guidance — Buddhism emphasizes applying teachings to daily life, but courses only provided theory. Students read, nodded, and then... did nothing different.\n\nThis created a vicious cycle: Can\'t understand → Can\'t remember → Can\'t apply → No benefit → Quit.',
+        image: '/images/jingxin-courses-en.png'
       },
       {
-        title: 'The Pivot: Discovering the Real Pain Point',
-        content: 'Through deeper research, I discovered something unexpected:\n\n"The #1 challenge for coaches isn\'t expensive supervision. It\'s getting clients."\n\n• Customer acquisition cost: $200-500 per client\n• Clients needed to go full-time: 25-35 people\n• Sales cycle: 6-12 touchpoints before purchase\n\nThe "Feast or Famine" Cycle:\nGreat month (5 clients) → Next month: crickets → Relying on referrals → Unpredictable income → Anxiety\n\nWhy is acquisition so hard?\n• Coach training teaches coaching skills, not marketing\n• 232,000+ coaches in the US alone = oversaturated market\n• Self-promotion feels awkward ("I AM the product")\n• Long sales cycles due to high prices + trust dependency'
-      },
-      {
-        title: 'The Strategy: From Tool to Ecosystem',
-        content: 'This insight changed my entire approach:\n\nOriginal Idea → New Strategy\n• AI Supervision tool → Coach Ecosystem Platform\n• Single pain point → Two-sided marketplace\n• B2C only → B2C + B2B\n\nThe new vision: A platform that helps clients find good coaches, and helps coaches become better.\n\nWhy combine directory + AI supervision?\n• Directory only → Competing with Noomii, no differentiation\n• AI Supervision only → Hard to acquire coach users\n• Combined → AI Supervision is unique value + Directory brings organic traffic',
-        image: '/images/ai-coach-directory.png'
-      },
-      {
-        title: 'Market Validation',
-        content: 'The Market is Huge:\n• Global coaching market: $7.3B (ICF 2025)\n• US market: $16B\n• Global coaches: 167,000+\n• US coaches: 232,000+\n• Growth rate: 17% CAGR\n\nDemand is Real (SEO Research):\n• "Life Coach" - 22,000 monthly searches\n• "Career Coach" - 14,000 monthly searches\n• "Find a Life Coach" - 500 searches (high purchase intent)\n• "Hire a Coach" - 100 searches (ready to buy)\n\nKey insight: Search traffic converts at 14.6% vs paid ads at 1.7% — 8.5x better!'
-      },
-      {
-        title: 'Competitive Landscape',
-        content: 'Analyzing existing solutions:\n\n• Noomii - Has directory, no booking, no AI\n• BetterUp - Has directory + booking, no AI\n• ADPList - Has directory + booking, no AI\n• Our Platform - Directory + Booking + AI Supervision ← Differentiator\n\nThe gap in AI tools:\n• Therapy field has Eleos Health, Lyssn, Mentalyc for AI supervision\n• Coaching field has nothing equivalent\n• Existing AI coaching tools (Rocky.ai, CoachHub) serve coachees, not coaches'
-      },
-      {
-        title: 'User Research',
-        content: 'Primary Personas:\n\n1. New ACC Coach - Just certified, building practice. Needs: Clients + skill improvement\n2. Coach Trainee - In certification program. Needs: Practice opportunities\n3. Training Institution (B2B) - Coach schools. Needs: Better student outcomes'
-      },
-      {
-        title: 'User Journey (Current Pain Points)',
-        content: 'Coach completes training\n→ 🔴 Struggles to find clients (spends hours on marketing)\n→ Finally gets a few clients\n→ 🔴 Uncertain about their own performance\n→ Books supervision ($200/session)\n→ 🔴 4 weeks later, the case is already stale\n→ Gets feedback, tries to apply\n→ 🔴 No way to practice immediately\n→ 🔴 Income unstable (feast or famine cycle)'
+        title: 'My Approach: A 746-Line PRD Before a Single Line of Code',
+        content: 'Before touching any AI tool, I spent time deeply defining the problem space. I wrote a comprehensive Product Requirements Document covering:\n\n• 3 user personas (new student, casual learner, experienced practitioner)\n• Complete feature specifications with interaction details\n• Typography and design guidelines (7 font sizes, 8px spacing grid, color system)\n• Content transformation principles (how to simplify without distorting meaning)\n• Accessibility standards (WCAG AA compliance for all text colors)\n• Rollout plan with seed user feedback strategy\n\nKey insight: The problem wasn\'t vocabulary (adding glossary tooltips wouldn\'t help). It was comprehension — the entire content needed to be rewritten in plain language.\n\nWhy this matters: The PRD became the "brief" for AI vibe coding. Clear, specific requirements led to dramatically better AI output. This is where design thinking directly enabled technical execution.'
       },
       {
         title: 'Key Design Decisions',
         content: ''
       },
       {
-        title: 'Decision 1: Real-time Feedback Without Disruption',
-        content: 'Challenge: How to give feedback during a live coaching session without breaking conversation flow?'
+        title: 'Decision 1: Making Ancient Wisdom Accessible',
+        content: 'Challenge: Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.\n\nMy solution: A three-layer content architecture.\n\n1. Simplified explanation — Plain language that anyone could understand, with life analogies (e.g., explaining "attachment" through the metaphor of phone addiction)\n\n2. Core takeaways — Each lesson distilled into one memorable sentence + 3-5 key points. Not a summary, but the core insight you should walk away with.\n\n3. Source text tracing — Click any simplified passage to see the original text it came from, displayed in a resizable side panel.\n\nWhy three layers? Different learning modes. Quick scanners read takeaways. Deep learners read the full simplified text. Skeptics verify against the original source. Everyone is served without compromise.',
+        image: '/images/jingxin-lesson-en.png'
       },
       {
-        title: 'Iteration 1 - Stats Dashboard',
-        content: '• Sidebar showing talk ratio, open questions count, empathy moments\n• Problem: Stats too abstract — coaches knew "4 open questions" but not WHICH questions were good',
-        image: '/images/ai-coach-session-iteration1.png'
+        title: 'Decision 2: From Reading to Doing',
+        content: 'Insight: Buddhist learning is not like academic learning. The goal is not to memorize facts — it\'s to change how you live daily life.\n\nI designed a practice system where each lesson ends with concrete exercises tied to real life. For example, after a lesson on compassion, the exercise might be: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."\n\nThe journaling system lets students write reflections on their practice. But here\'s the key design decision: I added privacy controls (private / classmates / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. This small decision — defaulting to "private" with the option to share — significantly increased participation.\n\nI also designed a culturally appropriate appreciation interaction: "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. Instead of generic "likes," this interaction carries cultural meaning and encourages the community.',
+        image: '/images/jingxin-practice-en.png'
       },
       {
-        title: 'Iteration 2 - Live Transcript with Inline Feedback',
-        content: '• Real-time transcript appears as conversation happens\n• AI feedback appears directly under each coach statement\n• Green = positive ("Great acknowledgment of emotion")\n• Yellow = suggestion ("This shifts into advice-giving. Consider...")',
-        image: '/images/ai-coach-session-iteration2.png'
+        title: 'Decision 3: Visual Learning with Mind Maps',
+        content: 'Some Buddhist concepts have complex hierarchical relationships — like the Four Noble Truths branching into the Eightfold Path, or the three types of suffering each with sub-categories.\n\nI designed interactive mind map views for each lesson. Unlike keyword-only mind maps, each node contains a complete short sentence explaining the concept. Students can see how ideas connect before diving into the full text.\n\nThis directly addresses the "can\'t see the big picture" confusion that caused many students to feel lost.'
       },
       {
-        title: '',
-        content: 'Why the iteration worked:\n• Coaches see exactly WHAT they said + immediate feedback\n• No context switching — feedback is in the flow of conversation\n• Can review specific moments later'
+        title: 'How I Built It: Vibe Coding with AI',
+        content: ''
       },
       {
-        title: 'Decision 2: Building Trust Through ICF Framework',
-        content: 'Challenge: Coaches are skeptical of AI evaluating their "soft skills."\n\nExplorations:\n• Generic AI feedback → Felt arbitrary\n• Star ratings → Too gamified\n• Percentage scores alone → Meaningless without context\n\nSolution: Ground everything in ICF\'s official 8 Core Competencies with:\n1. Evidence — Exact timestamps and quotes\n2. ICF Definition — What the competency means officially\n3. Specific praise — What they did well\n4. Actionable improvement — Concrete next step\n\nWhy it works: ICF is the industry authority. Coaches already know and trust this framework.',
-        image: '/images/ai-coach-report-new.png'
+        title: 'What is Vibe Coding?',
+        content: '"Vibe coding" means using AI coding assistants (like Claude Code) to build software through natural language conversation. Instead of writing code myself, I described what I wanted in plain language and the AI wrote the code.\n\nBut here\'s the key: the AI cannot think about product strategy, user needs, or design systems. That\'s still my job.\n\nMy role in vibe coding:\n• Product thinker — What should we build and why?\n• Decision maker — Which approach serves users better?\n• Quality controller — Does this match the design guidelines?\n• Iteration driver — This doesn\'t feel right, let\'s try another way.\n\nThink of it like being a film director who doesn\'t operate the camera. The film\'s quality depends entirely on the director\'s vision, taste, and judgment — not their camera skills.'
       },
       {
-        title: 'Decision 3: Inline Transcript Feedback',
-        content: 'Challenge: Traditional feedback summarizes at the end, but coaches learn best seeing exactly where they did well.\n\nSolution: Annotated transcript with inline comments (like Google Docs).\n\n• 00:50 | Coach: "It sounds like you\'re carrying a lot..." → ✅ Great empathy + open question\n• 02:20 | Coach: "Have you tried talking to your boss?" → ⚠️ This is advice, not a question\n• 03:28 | (8 seconds of silence) → ✅ Great use of silence\n\nWhy it works: Connects abstract feedback to specific moments. Creates "aha" moments.'
-      },
-      {
-        title: 'Decision 4: Platform Flywheel',
-        content: 'Challenge: How to solve the chicken-and-egg problem of a two-sided marketplace?\n\nSolution: Design for flywheel effect:\n\nMore coaches join (supply)\n→ More content → Better SEO\n→ More clients find the platform (demand)\n→ Coaches get clients → They\'re happy\n→ AI Supervision makes coaches better\n→ Better sessions → Better reviews\n→ More clients trust the platform\n→ More coaches want to join... (repeat)\n\nKey insight: AI Supervision isn\'t just a feature — it makes coaches better, which drives the flywheel.'
-      },
-      {
-        title: 'Product Architecture',
-        content: 'Four Core Modules:\n\n1. Coach Directory (For Clients) - Search, filter, view profiles\n2. Booking System (For Both) - Calendar, scheduling, reminders\n3. AI Supervision (For Coaches) - Practice, review, feedback, progress\n4. Coach Dashboard (For Coaches) - Bookings, clients, revenue',
-        images: [
-          '/images/ai-coach-coach-dashboard.png',
-          '/images/ai-coach-supervision.png'
-        ]
+        title: '70 Commits in 4 Days: The Build Sprint',
+        content: 'Day 1-2: Core platform — landing page with scroll animations, course content system with 38+ lessons, navigation, responsive design across desktop/tablet/mobile.\n\nDay 3: User system — email authentication with verification, Google OAuth, practice journaling with auto-save, sharing with 4-tier visibility controls.\n\nDay 4: Community features, bilingual support (Chinese + English), "随喜赞叹" appreciation system, analytics integration, polish, and launch.\n\nWhat made this speed possible:\n\n1. Clear PRD — AI works best when requirements are specific. My 746-line PRD meant almost zero ambiguity.\n2. Design systems thinking — I defined typography, spacing, and color upfront, so every page was consistent without back-and-forth.\n3. Iteration mindset — I tested in the browser constantly, giving AI feedback like a design review. "The spacing feels too tight here." "This card needs more breathing room."\n\n70 commits = 70 rounds of "describe what I want → review the result → refine." This IS the design process, just running at 10x speed.',
+        image: '/images/jingxin-hero-en.png'
       },
       {
         title: '',
-        content: 'AI Supervision Features:\n• Real-time Coaching Tips - Live feedback during practice\n• Post-Session Review - Transcript + inline comments\n• Auto Session Notes - AI-generated summaries (saves 30+ min)\n• Progress Tracking - ICF skill radar chart over time\n• Client Growth Profiles - Track each client\'s progress'
+        content: 'The product is fully responsive — Buddhist study often happens on phones (commuting, before bed). I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
+        images: ['/images/jingxin-mobile-landing-en.png', '/images/jingxin-mobile-lesson-en.png']
       },
       {
-        title: 'Business Model',
-        content: 'Why Coaches Will Pay:\n"$79/month subscription < $200-500 client acquisition cost"\nIf the platform brings stable clients, the subscription pays for itself.\n\nPricing Strategy:\n• Free ($0) - Basic profile, 3 bookings/month, 3 AI practices\n• Pro ($29/month) - Full profile, unlimited bookings, 15% commission\n• Premium ($79/month) - Pro + full AI Supervision, 10% commission\n\nReference: Noomii charges $447/year for directory listing alone — no booking, no AI.'
+        title: 'The Product',
+        content: ''
       },
       {
-        title: 'Interactive Prototype',
-        content: 'Try the interactive prototype below. Navigate through the coach directory, dashboard, and AI supervision features.\n\nTech stack: React, TypeScript, Tailwind CSS, Recharts',
-        embed: 'https://ux-wendy-liang.github.io/ai-supervision/'
+        title: 'Try the Live Product',
+        content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a PostgreSQL database, serverless API, and bilingual support. Real users are learning Buddhist teachings on this platform right now.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
+        embed: 'https://jingxin-xuetang.vercel.app'
       },
       {
         title: '',
         content: '',
-        images: [
-          '/images/ai-coach-landing-new.png',
-          '/images/ai-coach-directory.png',
-          '/images/ai-coach-coach-dashboard.png',
-          '/images/ai-coach-supervision.png'
-        ]
+        images: ['/images/jingxin-hero-en.png', '/images/jingxin-courses-en.png', '/images/jingxin-lesson-en.png', '/images/jingxin-practice-en.png']
       }
     ],
     impact: [
-      'Strategic Pivot: Research-driven shift from single tool to ecosystem platform',
-      'Pain Point Discovery: Identified acquisition ($200-500/client) as bigger problem than supervision cost',
-      'Market Validation: Validated $7.3B market with 167,000+ target users'
+      'Shipped product: Live full-stack platform serving real Buddhist study group members at jingxin-xuetang.vercel.app',
+      'Speed to value: From PRD to production in 4 days — 70 commits, 38+ lessons, full authentication system, bilingual support',
+      'Design-led development: Every feature driven by community observation and product thinking, not technology-first decisions'
     ],
     takeaways: [
-      'Research can change direction: The original "AI supervision" idea became one piece of a larger platform after discovering the real pain point.',
-      'Pain points have layers: Supervision cost was a symptom; acquisition was the root cause. Deep research reveals what users truly need.',
-      'Flywheel thinking: AI Supervision isn\'t just a feature — it makes coaches better, which drives the entire platform\'s value.',
-      'Authority builds trust: Grounding AI feedback in ICF standards overcomes skepticism about AI evaluating "soft skills."'
+      'Designers who can ship have a superpower: Writing a clear PRD is not just documentation — it becomes the instruction set for AI-assisted development. Product thinking is the bottleneck, not coding ability.',
+      'Start with the community, not the technology: I spent time observing study groups before writing a single requirement. The best features (like practice privacy controls) came from understanding social dynamics, not technical possibilities.',
+      'Vibe coding amplifies design skills, it doesn\'t replace them: AI can write code, but it cannot decide what to build, how content should be structured, or why one interaction pattern works better than another. The designer is still the director.',
+      'Ship early, learn from real users: A live product with 10 real users teaches more than a polished prototype with zero users. The practice sharing feature was redesigned based on early user behavior.'
+    ],
+    stakeholderFeedback: [
+      {
+        quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community. Not everyone has time to read those long texts carefully. With your approach, people can quickly grasp the key ideas and build confidence — then they\'ll actually want to go back and read the originals. Don\'t give up on this idea!',
+        author: 'Yianguo',
+        role: 'Study Group Leader'
+      },
+      {
+        quote: 'Yes! After the rewrite it\'s so much easier to understand. Appreciating your effort!',
+        author: 'Zhaoming',
+        role: 'Study Group Member'
+      },
+      {
+        quote: 'This is truly a great approach! I just opened it and it really is much more accessible and easy to understand. You put so much heart into this!',
+        author: 'Lisa Zhong',
+        role: 'Study Group Member'
+      }
     ]
   },
   {
@@ -267,6 +248,111 @@ export const projects: Project[] = [
       'Don\'t just execute: Challenge the problem statement. A small feature request led to a strategic product shift that future-proofed LinkedIn\'s advertising business.',
       'Design isn\'t just visuals: It\'s problem-solving. Understanding users, business impact, and technical feasibility allowed me to shape the product direction.',
       'Storytelling matters: Pitching the idea with research, and a clear user journey helped me gain executive and cross-functional alignment.'
+    ]
+  },
+  {
+    id: 'dashboard',
+    title: 'Reimagining LinkedIn\'s Data Virtualization Tool Dashboard',
+    year: 2022,
+    cover: '/images/67ce84a463ba9f169c18cd3c_dashboard cover.png',
+    shortDescription: 'LinkedIn\'s data virtualization tool empowers internal users—product managers, engineers, and managers—to visualize data and make informed product decisions.',
+    role: 'User researcher, UX, UI',
+    duration: '8 Weeks',
+    team: '1 Product Manager, 1 Designer, 7 Developers',
+    sections: [
+      {
+        title: 'Problem: Dashboard lacks direct filtering, limiting decisions.',
+        content: 'The dashboard is one of the most visited pages in the tool. It includes various contextual charts designed to tell data stories. However, users frequently click into individual charts to apply filters and manipulate data because filters cannot be applied directly from the dashboard. This workflow limits the dashboard\'s potential as a decision-making tool.'
+      },
+      {
+        title: 'Business Goal',
+        content: 'This project aimed to address these usability challenges and enable decision-makers to stay on the dashboard for a cohesive understanding of their data.'
+      },
+      {
+        title: 'Initial Engineering Solution: Add tab-level filters to dashboards.',
+        content: 'The dashboard contains multiple tabs. Some users expressed the need for tab-level filters to refine data within a specific tab. Engineering managers suggested to build tab-level filters to address those specific user requests. While this solution could satisfy immediate needs, it risked only addressing surface-level issues rather than tackling the broader usability challenges of the dashboard.'
+      },
+      {
+        title: 'Propose to research',
+        content: 'I recognized that the proposed engineering solution might not fully resolve the dashboard\'s usability issues. I engaged product managers and convinced engineering managers to support conducting user research to understand the true needs and pain points of both data creators and consumers to uncover the root causes. To achieve this, I:\n\nRecruited: Recruited six current users, including both data creators (data scientists) and data consumers (product managers and leaderships).\n\n1-1 research: Conducted interviews to uncover their goals, current challenges, and ideal experiences\n\nAnalyzed: Analyzed findings to identify gaps in the dashboard\'s usability.'
+      },
+      {
+        title: 'Key Findings: User Pain points',
+        content: 'Data consumers (e.g., product managers, leadership):',
+        image: '/images/67cfb9efbc291cfeca61ecb1_problem1.1.jpg'
+      },
+      {
+        title: '',
+        content: '1. Filters were too technical, requiring users to select datasets before applying filters.',
+        image: '/images/67cfb9ef26fc2a0ae9f50b1e_problem2.2.jpg'
+      },
+      {
+        title: '',
+        content: '2. Filters applied inconsistently, often impacting only one or a few charts without clarity on their scope.\n\n3. Consumers often relied on data creators to answer questions, as the tool was not intuitive enough for self-service.\n\nData creators (e.g., data scientists):\n\n1. Creating dashboards was complex due to inconsistent filters across charts.\n\n2. There was no way to unify filters with similar dimensions, leading to confusion and inefficiencies.\n\n3. Creators often acted as "human filters" because consumers could not self-serve effectively.'
+      },
+      {
+        title: 'How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?',
+        content: ''
+      },
+      {
+        title: 'The Solution',
+        content: 'Right now there is no difference between the consumer with the creator view. To address these challenges, I proposed a solution that distinctly separates the experiences for data creators and consumers.'
+      },
+      {
+        title: 'For Data Creators:',
+        content: ''
+      },
+      {
+        title: 'Meet Danny, a data Scientist need to create a dashboard for his team to track product metrics.',
+        content: '',
+        image: '/images/67d4fd2c045042941d70a271_dashboard-UX Persona.png'
+      },
+      {
+        title: '',
+        content: 'With the new launched tool, Danny can setup filters at various levels (chart, group, section, tab, and dashboard).\n\nStep1: Danny created a dashboard.\n\nStep2: Danny created a group section, then he added the first and second chart into the group.',
+        gifs: ['/images/67cfbc10e25b1be3c51e25ef_dashboard-create chart.gif']
+      },
+      {
+        title: 'Unify filters',
+        content: 'With the new tool, it allow creators to identify and unify filters with similar dimensions, even when named differently. The system recognizes common filters across these two charts. Danny want to add more filters, he saw there is a button to associate dimensions. so\n\nStep3: He clicked the button to select dimension under two different datasets. Danny linked these two dimensions to be the same and give a name country.',
+        gifs: ['/images/67cfbc7eda8ac5637ea98171_equal.gif']
+      },
+      {
+        title: '',
+        content: 'The new tool ensure filters are intuitive and relevant for consumers.\n\nStep4: Danny sets up useful filters to this group, including date, device, domain, member_language and country.\n\nStep5: Danny selected country equal to Canada and Mexico to narrow down the data for consumers to view.\n\nThen Danny finished dashboard creation flow.',
+        gifs: ['/images/67d4fe8aa0173122a967c81e_applyfilter.gif']
+      },
+      {
+        title: 'For Data Consumers:',
+        content: ''
+      },
+      {
+        title: 'Meet Alex, a product Manager',
+        content: '',
+        image: '/images/67d4fd2cf6d060ea4a8ff4f6_dashboard-UX Persona2.png'
+      },
+      {
+        title: '',
+        content: 'Alex, accesses the dashboard created by Danny. She sees clear filters at different levels (e.g., Chat, group, tab levels).',
+        gifs: ['/images/67cfbcb79c2e266ae34dff05_view1-v2.gif']
+      },
+      {
+        title: '',
+        content: 'The updated tool can simplify technical terms to make filters intuitive for non-technical users. Alex apply intuitive filters to narrow down data results. Without leaving the dashboard. Alex gains insights into product performance and identifies actionable opportunities.',
+        gifs: ['/images/67cfbcb74cc2f2be89673d7c_view 2.gif']
+      }
+    ],
+    impact: [
+      'Engagement increased by 45%: Engagement with dashboard filters increased by 45%, leading to more efficient decision-making.',
+      'Self-serve rate increased: 71% of consumers reporting they could now analyze data independently.',
+      'Shape direction: Separating creator and consumer experiences shaped the future direction of the product.'
+    ],
+    stakeholderFeedback: [
+      {
+        quote: 'Wendy always strives to understand the real reasons behind user requests. By conducting thorough research, she ensured the solution delivered an exceptional user experience, not just a quick fix to the immediate problem.',
+        author: 'Sophie',
+        role: 'Engineering Manager'
+      }
     ]
   },
   {
@@ -414,160 +500,125 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 'dashboard',
-    title: 'Reimagining LinkedIn\'s Data Virtualization Tool Dashboard',
-    year: 2022,
-    cover: '/images/67ce84a463ba9f169c18cd3c_dashboard cover.png',
-    shortDescription: 'LinkedIn\'s data virtualization tool empowers internal users—product managers, engineers, and managers—to visualize data and make informed product decisions.',
-    role: 'User researcher, UX, UI',
-    duration: '8 Weeks',
-    team: '1 Product Manager, 1 Designer, 7 Developers',
+    id: 'ai-coach-mentor',
+    title: 'AI Coach Mentor: Building a Platform for the $7.3B Coaching Industry',
+    year: 2026,
+    cover: '/images/ai-coach-landing-new.png',
+    shortDescription: 'Through market research, I discovered coaches\' #1 pain isn\'t supervision cost—it\'s client acquisition ($200-500/client). This insight led me to pivot from a single AI tool to a full ecosystem platform combining coach directory, booking, and AI supervision.',
+    role: 'Product Designer\n(End-to-End)',
+    duration: '4 weeks',
+    team: 'Solo project',
     sections: [
       {
-        title: 'Problem: Dashboard lacks direct filtering, limiting decisions.',
-        content: 'The dashboard is one of the most visited pages in the tool. It includes various contextual charts designed to tell data stories. However, users frequently click into individual charts to apply filters and manipulate data because filters cannot be applied directly from the dashboard. This workflow limits the dashboard\'s potential as a decision-making tool.'
+        title: 'Impact Summary',
+        content: '• Market size validated: $7.3B global, $16B US\n• Target users identified: 167,000+ coaches worldwide\n• Pain point discovered: Acquisition cost $200-500/client\n• Business model validated: Similar product (SimCare) at $4M ARR'
       },
       {
-        title: 'Business Goal',
-        content: 'This project aimed to address these usability challenges and enable decision-makers to stay on the dashboard for a cohesive understanding of their data.'
+        title: 'The Spark: A Paradox in Coaching',
+        content: 'I started researching the coaching industry and found a surprising paradox:\n\n"Coaches help others grow. But who helps the coaches grow?"\n\nThe answer: supervision sessions at $150-300/hour. Most coaches can only afford one session per month. I thought this was the opportunity.\n\nThen I found SimCare AI — a YC-backed startup ($4.5M raised, $4M revenue) letting therapy students practice with AI patients.\n\nMy initial hypothesis: Build "SimCare for Coaches" — an AI practice tool.'
       },
       {
-        title: 'Initial Engineering Solution: Add tab-level filters to dashboards.',
-        content: 'The dashboard contains multiple tabs. Some users expressed the need for tab-level filters to refine data within a specific tab. Engineering managers suggested to build tab-level filters to address those specific user requests. While this solution could satisfy immediate needs, it risked only addressing surface-level issues rather than tackling the broader usability challenges of the dashboard.'
+        title: 'The Pivot: Discovering the Real Pain Point',
+        content: 'Through deeper research, I discovered something unexpected:\n\n"The #1 challenge for coaches isn\'t expensive supervision. It\'s getting clients."\n\n• Customer acquisition cost: $200-500 per client\n• Clients needed to go full-time: 25-35 people\n• Sales cycle: 6-12 touchpoints before purchase\n\nThe "Feast or Famine" Cycle:\nGreat month (5 clients) → Next month: crickets → Relying on referrals → Unpredictable income → Anxiety\n\nWhy is acquisition so hard?\n• Coach training teaches coaching skills, not marketing\n• 232,000+ coaches in the US alone = oversaturated market\n• Self-promotion feels awkward ("I AM the product")\n• Long sales cycles due to high prices + trust dependency'
       },
       {
-        title: 'Propose to research',
-        content: 'I recognized that the proposed engineering solution might not fully resolve the dashboard\'s usability issues. I engaged product managers and convinced engineering managers to support conducting user research to understand the true needs and pain points of both data creators and consumers to uncover the root causes. To achieve this, I:\n\nRecruited: Recruited six current users, including both data creators (data scientists) and data consumers (product managers and leaderships).\n\n1-1 research: Conducted interviews to uncover their goals, current challenges, and ideal experiences\n\nAnalyzed: Analyzed findings to identify gaps in the dashboard\'s usability.'
+        title: 'The Strategy: From Tool to Ecosystem',
+        content: 'This insight changed my entire approach:\n\nOriginal Idea → New Strategy\n• AI Supervision tool → Coach Ecosystem Platform\n• Single pain point → Two-sided marketplace\n• B2C only → B2C + B2B\n\nThe new vision: A platform that helps clients find good coaches, and helps coaches become better.\n\nWhy combine directory + AI supervision?\n• Directory only → Competing with Noomii, no differentiation\n• AI Supervision only → Hard to acquire coach users\n• Combined → AI Supervision is unique value + Directory brings organic traffic',
+        image: '/images/ai-coach-directory.png'
       },
       {
-        title: 'Key Findings: User Pain points',
-        content: 'Data consumers (e.g., product managers, leadership):',
-        image: '/images/67cfb9efbc291cfeca61ecb1_problem1.1.jpg'
+        title: 'Market Validation',
+        content: 'The Market is Huge:\n• Global coaching market: $7.3B (ICF 2025)\n• US market: $16B\n• Global coaches: 167,000+\n• US coaches: 232,000+\n• Growth rate: 17% CAGR\n\nDemand is Real (SEO Research):\n• "Life Coach" - 22,000 monthly searches\n• "Career Coach" - 14,000 monthly searches\n• "Find a Life Coach" - 500 searches (high purchase intent)\n• "Hire a Coach" - 100 searches (ready to buy)\n\nKey insight: Search traffic converts at 14.6% vs paid ads at 1.7% — 8.5x better!'
       },
       {
-        title: '',
-        content: '1. Filters were too technical, requiring users to select datasets before applying filters.',
-        image: '/images/67cfb9ef26fc2a0ae9f50b1e_problem2.2.jpg'
+        title: 'Competitive Landscape',
+        content: 'Analyzing existing solutions:\n\n• Noomii - Has directory, no booking, no AI\n• BetterUp - Has directory + booking, no AI\n• ADPList - Has directory + booking, no AI\n• Our Platform - Directory + Booking + AI Supervision ← Differentiator\n\nThe gap in AI tools:\n• Therapy field has Eleos Health, Lyssn, Mentalyc for AI supervision\n• Coaching field has nothing equivalent\n• Existing AI coaching tools (Rocky.ai, CoachHub) serve coachees, not coaches'
       },
       {
-        title: '',
-        content: '2. Filters applied inconsistently, often impacting only one or a few charts without clarity on their scope.\n\n3. Consumers often relied on data creators to answer questions, as the tool was not intuitive enough for self-service.\n\nData creators (e.g., data scientists):\n\n1. Creating dashboards was complex due to inconsistent filters across charts.\n\n2. There was no way to unify filters with similar dimensions, leading to confusion and inefficiencies.\n\n3. Creators often acted as "human filters" because consumers could not self-serve effectively.'
+        title: 'User Research',
+        content: 'Primary Personas:\n\n1. New ACC Coach - Just certified, building practice. Needs: Clients + skill improvement\n2. Coach Trainee - In certification program. Needs: Practice opportunities\n3. Training Institution (B2B) - Coach schools. Needs: Better student outcomes'
       },
       {
-        title: 'How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?',
+        title: 'User Journey (Current Pain Points)',
+        content: 'Coach completes training\n→ 🔴 Struggles to find clients (spends hours on marketing)\n→ Finally gets a few clients\n→ 🔴 Uncertain about their own performance\n→ Books supervision ($200/session)\n→ 🔴 4 weeks later, the case is already stale\n→ Gets feedback, tries to apply\n→ 🔴 No way to practice immediately\n→ 🔴 Income unstable (feast or famine cycle)'
+      },
+      {
+        title: 'Key Design Decisions',
         content: ''
       },
       {
-        title: 'The Solution',
-        content: 'Right now there is no difference between the consumer with the creator view. To address these challenges, I proposed a solution that distinctly separates the experiences for data creators and consumers.'
+        title: 'Decision 1: Real-time Feedback Without Disruption',
+        content: 'Challenge: How to give feedback during a live coaching session without breaking conversation flow?'
       },
       {
-        title: 'For Data Creators:',
-        content: ''
+        title: 'Iteration 1 - Stats Dashboard',
+        content: '• Sidebar showing talk ratio, open questions count, empathy moments\n• Problem: Stats too abstract — coaches knew "4 open questions" but not WHICH questions were good',
+        image: '/images/ai-coach-session-iteration1.png'
       },
       {
-        title: 'Meet Danny, a data Scientist need to create a dashboard for his team to track product metrics.',
-        content: '',
-        image: '/images/67d4fd2c045042941d70a271_dashboard-UX Persona.png'
-      },
-      {
-        title: '',
-        content: 'With the new launched tool, Danny can setup filters at various levels (chart, group, section, tab, and dashboard).\n\nStep1: Danny created a dashboard.\n\nStep2: Danny created a group section, then he added the first and second chart into the group.',
-        gifs: ['/images/67cfbc10e25b1be3c51e25ef_dashboard-create chart.gif']
-      },
-      {
-        title: 'Unify filters',
-        content: 'With the new tool, it allow creators to identify and unify filters with similar dimensions, even when named differently. The system recognizes common filters across these two charts. Danny want to add more filters, he saw there is a button to associate dimensions. so\n\nStep3: He clicked the button to select dimension under two different datasets. Danny linked these two dimensions to be the same and give a name country.',
-        gifs: ['/images/67cfbc7eda8ac5637ea98171_equal.gif']
+        title: 'Iteration 2 - Live Transcript with Inline Feedback',
+        content: '• Real-time transcript appears as conversation happens\n• AI feedback appears directly under each coach statement\n• Green = positive ("Great acknowledgment of emotion")\n• Yellow = suggestion ("This shifts into advice-giving. Consider...")',
+        image: '/images/ai-coach-session-iteration2.png'
       },
       {
         title: '',
-        content: 'The new tool ensure filters are intuitive and relevant for consumers.\n\nStep4: Danny sets up useful filters to this group, including date, device, domain, member_language and country.\n\nStep5: Danny selected country equal to Canada and Mexico to narrow down the data for consumers to view.\n\nThen Danny finished dashboard creation flow.',
-        gifs: ['/images/67d4fe8aa0173122a967c81e_applyfilter.gif']
+        content: 'Why the iteration worked:\n• Coaches see exactly WHAT they said + immediate feedback\n• No context switching — feedback is in the flow of conversation\n• Can review specific moments later'
       },
       {
-        title: 'For Data Consumers:',
-        content: ''
+        title: 'Decision 2: Building Trust Through ICF Framework',
+        content: 'Challenge: Coaches are skeptical of AI evaluating their "soft skills."\n\nExplorations:\n• Generic AI feedback → Felt arbitrary\n• Star ratings → Too gamified\n• Percentage scores alone → Meaningless without context\n\nSolution: Ground everything in ICF\'s official 8 Core Competencies with:\n1. Evidence — Exact timestamps and quotes\n2. ICF Definition — What the competency means officially\n3. Specific praise — What they did well\n4. Actionable improvement — Concrete next step\n\nWhy it works: ICF is the industry authority. Coaches already know and trust this framework.',
+        image: '/images/ai-coach-report-new.png'
       },
       {
-        title: 'Meet Alex, a product Manager',
-        content: '',
-        image: '/images/67d4fd2cf6d060ea4a8ff4f6_dashboard-UX Persona2.png'
+        title: 'Decision 3: Inline Transcript Feedback',
+        content: 'Challenge: Traditional feedback summarizes at the end, but coaches learn best seeing exactly where they did well.\n\nSolution: Annotated transcript with inline comments (like Google Docs).\n\n• 00:50 | Coach: "It sounds like you\'re carrying a lot..." → ✅ Great empathy + open question\n• 02:20 | Coach: "Have you tried talking to your boss?" → ⚠️ This is advice, not a question\n• 03:28 | (8 seconds of silence) → ✅ Great use of silence\n\nWhy it works: Connects abstract feedback to specific moments. Creates "aha" moments.'
       },
       {
-        title: '',
-        content: 'Alex, accesses the dashboard created by Danny. She sees clear filters at different levels (e.g., Chat, group, tab levels).',
-        gifs: ['/images/67cfbcb79c2e266ae34dff05_view1-v2.gif']
+        title: 'Decision 4: Platform Flywheel',
+        content: 'Challenge: How to solve the chicken-and-egg problem of a two-sided marketplace?\n\nSolution: Design for flywheel effect:\n\nMore coaches join (supply)\n→ More content → Better SEO\n→ More clients find the platform (demand)\n→ Coaches get clients → They\'re happy\n→ AI Supervision makes coaches better\n→ Better sessions → Better reviews\n→ More clients trust the platform\n→ More coaches want to join... (repeat)\n\nKey insight: AI Supervision isn\'t just a feature — it makes coaches better, which drives the flywheel.'
       },
       {
-        title: '',
-        content: 'The updated tool can simplify technical terms to make filters intuitive for non-technical users. Alex apply intuitive filters to narrow down data results. Without leaving the dashboard. Alex gains insights into product performance and identifies actionable opportunities.',
-        gifs: ['/images/67cfbcb74cc2f2be89673d7c_view 2.gif']
-      }
-    ],
-    impact: [
-      'Engagement increased by 45%: Engagement with dashboard filters increased by 45%, leading to more efficient decision-making.',
-      'Self-serve rate increased: 71% of consumers reporting they could now analyze data independently.',
-      'Shape direction: Separating creator and consumer experiences shaped the future direction of the product.'
-    ],
-    stakeholderFeedback: [
-      {
-        quote: 'Wendy always strives to understand the real reasons behind user requests. By conducting thorough research, she ensured the solution delivered an exceptional user experience, not just a quick fix to the immediate problem.',
-        author: 'Sophie',
-        role: 'Engineering Manager'
-      }
-    ]
-  },
-  {
-    id: 'camera-app',
-    title: 'V Camera: Bringing Fun Back to Qzone',
-    year: 2014,
-    cover: '/images/67ce84f5a2c070823d627a16_banner_carema_800.png',
-    shortDescription: 'In 2014, Qzone\'s engagement declined, so we built V Camera, a fun photo plugin with effects and stickers to encourage sharing. This helped make Qzone lively again.',
-    role: 'User researcher, UX, UI',
-    duration: '2 Weeks',
-    team: '3 Designer',
-    sections: [
-      {
-        title: 'The Challenge',
-        content: 'Back in 2014, Qzone had over 648 million monthly active users (MAU)—it was one of the biggest social platforms in China, often compared to Facebook. But with WeChat rapidly taking over, fewer people were using Qzone to share their lives. The platform felt stagnant, and user engagement was dropping. As a designer at Tencent, I wanted to tackle this challenge: How could we make sharing on Qzone fun again?'
-      },
-      {
-        title: 'The Idea: Camera app',
-        content: 'During a Tencent hackathon, I teamed up with two other designers, and we started brainstorming ways to bring life back to Qzone. We noticed that users were still taking photos—but they weren\'t sharing them on Qzone as much. What if we gave them a reason to? That\'s how V Camera was born. We built it as a fun, interactive photo plugin that let users add creative effects, filters, and stickers before sharing. The goal was simple:\n\n• Make taking and sharing photos fun again.\n• Give users a reason to post more frequently.\n• Differentiate Qzone from WeChat and other competitors.',
-        image: '/images/67cfc02f0e617aef5fd6f86e_3-Persona.png'
-      },
-      {
-        title: 'Design Process',
-        content: '',
+        title: 'Product Architecture',
+        content: 'Four Core Modules:\n\n1. Coach Directory (For Clients) - Search, filter, view profiles\n2. Booking System (For Both) - Calendar, scheduling, reminders\n3. AI Supervision (For Coaches) - Practice, review, feedback, progress\n4. Coach Dashboard (For Coaches) - Bookings, clients, revenue',
         images: [
-          '/images/67cfc02ffceccce3435cd9bd_4-ideas online.png',
-          '/images/67cfc02ff2ded24fe45a40ac_5-ideas.png',
-          '/images/67cfc02f5001bb7a89b20d17_6-wireframe.png',
-          '/images/67cfc02fbc291cfeca667f07_7-ui.png',
-          '/images/67cfc02fa3a834944bf1e71e_8-ui.png',
-          '/images/67cfc02fa1639429379115ea_9-ui.png',
-          '/images/67cfc02f175de6166a39c22c_10-ui.png',
-          '/images/67cfc02fea7df78777de9436_11-ui.png',
-          '/images/67cfc02f60d82f0fbc487db9_12-interface.png'
+          '/images/ai-coach-coach-dashboard.png',
+          '/images/ai-coach-supervision.png'
         ]
       },
       {
-        title: 'Final Design',
+        title: '',
+        content: 'AI Supervision Features:\n• Real-time Coaching Tips - Live feedback during practice\n• Post-Session Review - Transcript + inline comments\n• Auto Session Notes - AI-generated summaries (saves 30+ min)\n• Progress Tracking - ICF skill radar chart over time\n• Client Growth Profiles - Track each client\'s progress'
+      },
+      {
+        title: 'Business Model',
+        content: 'Why Coaches Will Pay:\n"$79/month subscription < $200-500 client acquisition cost"\nIf the platform brings stable clients, the subscription pays for itself.\n\nPricing Strategy:\n• Free ($0) - Basic profile, 3 bookings/month, 3 AI practices\n• Pro ($29/month) - Full profile, unlimited bookings, 15% commission\n• Premium ($79/month) - Pro + full AI Supervision, 10% commission\n\nReference: Noomii charges $447/year for directory listing alone — no booking, no AI.'
+      },
+      {
+        title: 'Interactive Prototype',
+        content: 'Try the interactive prototype below. Navigate through the coach directory, dashboard, and AI supervision features.\n\nTech stack: React, TypeScript, Tailwind CSS, Recharts',
+        embed: 'https://ux-wendy-liang.github.io/ai-supervision/'
+      },
+      {
+        title: '',
         content: '',
         images: [
-          '/images/67cfc02f9abfa240a092c62f_Frame 5.png',
-          '/images/67cfc02f175de6166a39c293_Main-projects--10-V-Camera_03_1000.png'
+          '/images/ai-coach-landing-new.png',
+          '/images/ai-coach-directory.png',
+          '/images/ai-coach-coach-dashboard.png',
+          '/images/ai-coach-supervision.png'
         ]
       }
     ],
     impact: [
-      'Engagement increased: Users started sharing more photos, and Qzone felt more lively again.',
-      'Creative Award: Our project won the Creative Award at Tencent, validating our approach.',
-      'Design\'s power: It reinforced how design can drive engagement, making Qzone a more interactive space.'
+      'Strategic Pivot: Research-driven shift from single tool to ecosystem platform',
+      'Pain Point Discovery: Identified acquisition ($200-500/client) as bigger problem than supervision cost',
+      'Market Validation: Validated $7.3B market with 167,000+ target users'
     ],
     takeaways: [
-      'Creative design can drive engagement: This project showed me the power of understanding user behavior—instead of forcing people to engage, we gave them a fun tool that naturally encouraged it. V Camera was a small addition, but it had a big impact on user engagement and retention. It was a great reminder that sometimes, a little creativity can go a long way.'
+      'Research can change direction: The original "AI supervision" idea became one piece of a larger platform after discovering the real pain point.',
+      'Pain points have layers: Supervision cost was a symptom; acquisition was the root cause. Deep research reveals what users truly need.',
+      'Flywheel thinking: AI Supervision isn\'t just a feature — it makes coaches better, which drives the entire platform\'s value.',
+      'Authority builds trust: Grounding AI feedback in ICF standards overcomes skepticism about AI evaluating "soft skills."'
     ]
   }
 ];

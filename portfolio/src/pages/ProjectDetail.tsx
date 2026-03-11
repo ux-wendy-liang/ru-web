@@ -142,11 +142,11 @@ const ProjectDetail = () => {
 
                 {/* Single Image */}
                 {section.image && (
-                  <div className="rounded-xl overflow-hidden mt-8">
+                  <div className="rounded-xl overflow-hidden mt-8 flex justify-center bg-gray-50">
                     <img
                       src={section.image}
                       alt={section.title}
-                      className="w-full h-auto"
+                      className="w-full max-h-[600px] object-contain"
                     />
                   </div>
                 )}
@@ -155,11 +155,11 @@ const ProjectDetail = () => {
                 {section.images && section.images.length > 0 && (
                   <div className={`mt-8 grid gap-6 ${section.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-2'}`}>
                     {section.images.map((image, imgIndex) => (
-                      <div key={imgIndex} className="rounded-xl overflow-hidden">
+                      <div key={imgIndex} className="rounded-xl overflow-hidden flex justify-center bg-gray-50">
                         <img
                           src={image}
                           alt={`${section.title} ${imgIndex + 1}`}
-                          className="w-full h-auto"
+                          className="w-full max-h-[500px] object-contain"
                         />
                       </div>
                     ))}
