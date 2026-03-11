@@ -245,9 +245,10 @@ const ProjectDetail = () => {
                   </div>
                 )}
 
-                {/* Multiple Images */}
-                {section.images && section.images.length > 0 && (
-                  section.phoneBefore || section.phoneAfter ? (
+                {/* Phone Before/After */}
+                {(section.phoneBefore || section.phoneAfter) && (
+                  <div>
+                  {(
                     <div className="mt-8 space-y-12">
                       {/* Before */}
                       {section.phoneBefore && section.phoneBefore.length > 0 && (
@@ -290,7 +291,11 @@ const ProjectDetail = () => {
                         </div>
                       )}
                     </div>
-                  ) : (
+                  )}
+                  </div>
+                )}
+                {/* Multiple Images */}
+                {section.images && section.images.length > 0 && (
                   <div className={`mt-8 grid gap-6 ${section.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-2'}`}>
                     {section.images.map((image, imgIndex) => (
                       <div key={imgIndex} className="rounded-xl overflow-hidden flex justify-center bg-gray-50">
@@ -302,7 +307,6 @@ const ProjectDetail = () => {
                       </div>
                     ))}
                   </div>
-                  )
                 )}
 
                 {/* Single GIF */}
