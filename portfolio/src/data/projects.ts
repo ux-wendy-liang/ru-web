@@ -182,9 +182,9 @@ export const projects: Project[] = [
       role: 'Study Group Leader'
     },
     takeaways: [
-      'Designers who can ship have a superpower: Writing a clear PRD is not just documentation — it becomes the instruction set for AI-assisted development. Product thinking is the bottleneck, not coding ability.',
+      'End-to-end ownership changes how you design: Owning the full journey — from user research, to PRD, to design system, to shipped product — forced me to make tighter decisions. When you\'re accountable for the final experience, not just the mockup, every detail matters more.',
       'Start with the community, not the technology: I spent time observing study groups before writing a single requirement. The best features (like practice privacy controls) came from understanding social dynamics, not technical possibilities.',
-      'Vibe coding amplifies design skills, it doesn\'t replace them: AI can write code, but it cannot decide what to build, how content should be structured, or why one interaction pattern works better than another. The designer is still the director.',
+      'Vibe coding is a design tool, not a replacement for designers: AI writes code, but it can\'t decide what to build or why one layout works better than another. A clear PRD and strong design instincts are what make vibe coding productive — without them, you just ship faster in the wrong direction.',
       'Ship early, learn from real users: A live product with 10 real users teaches more than a polished prototype with zero users. The practice sharing feature was redesigned based on early user behavior.'
     ],
     stakeholderFeedback: [
