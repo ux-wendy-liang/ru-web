@@ -151,9 +151,9 @@ export const projects: Project[] = [
         content: 'The product is fully responsive — Buddhist study often happens on phones (commuting, before bed). I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
         phoneBefore: ['/images/jingxin-mobile-lesson-en.png'],
         phoneAfter: [
-          { image: '/images/mobile-home.png', caption: 'Bottom tab navigation for one-handed use. Course cards replace the old text-heavy sidebar — users scan and tap instead of scrolling through menus.' },
-          { image: '/images/mobile-list.png', caption: 'Card-based lesson list with clear section grouping. Progress dots and chevrons give a sense of structure without overwhelming new learners.' },
-          { image: '/images/mobile-list-org.png', caption: 'Original source overlay lets users verify simplified content against the original text — building trust without cluttering the reading flow.' }
+          { image: '/images/mobile-home.png', caption: 'Bottom tabs for one-handed use. Cards replace dense sidebar.' },
+          { image: '/images/mobile-list.png', caption: 'Grouped lesson cards for quick scanning.' },
+          { image: '/images/mobile-list-org.png', caption: 'Source overlay to verify content — trust without clutter.' }
         ]
       },
       {

@@ -287,7 +287,7 @@ const ProjectDetail = () => {
                                   <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-600 rounded-full" />
                                 </div>
                                 {typeof phone !== 'string' && phone.caption && (
-                                  <p className="text-xs text-gray-400 text-center mt-3 leading-relaxed px-1">
+                                  <p className="text-sm text-gray-600 text-center mt-3 leading-relaxed px-1">
                                     {phone.caption}
                                   </p>
                                 )}
