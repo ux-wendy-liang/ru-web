@@ -141,8 +141,8 @@ export const projects: Project[] = [
         content: ''
       },
       {
-        title: 'What is Vibe Coding?',
-        content: '"Vibe coding" means using AI coding assistants (like Claude Code) to build software through natural language conversation. Instead of writing code myself, I described what I wanted in plain language and the AI wrote the code.\n\nBut here\'s the key: the AI cannot think about product strategy, user needs, or design systems. That\'s still my job.\n\nMy role in vibe coding:\n• Product thinker — What should we build and why?\n• Decision maker — Which approach serves users better?\n• Quality controller — Does this match the design guidelines?\n• Iteration driver — This doesn\'t feel right, let\'s try another way.\n\nThink of it like being a film director who doesn\'t operate the camera. The film\'s quality depends entirely on the director\'s vision, taste, and judgment — not their camera skills.'
+        title: 'My Role as a Designer Who Vibe Codes',
+        content: 'AI writes the code, but it can\'t think about product strategy, user needs, or design systems. That\'s still my job.\n\nI wrote a 746-line PRD before touching any code — defining user flows, content structure, interaction patterns, and a full design system (typography, spacing, colors). The clearer my requirements, the fewer iterations needed.\n\nDuring the build, I worked like a creative director: reviewing every output in the browser, giving feedback the way I would in a design review — "the spacing feels too tight here," "this card needs more breathing room," "the hierarchy isn\'t clear enough." 70 commits in 4 days, each one a cycle of describe → review → refine.\n\nVibe coding didn\'t replace my design skills. It amplified them.'
       },
       {
         title: '70 Commits in 4 Days: The Build Sprint',
