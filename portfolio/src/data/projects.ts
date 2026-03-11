@@ -59,10 +59,6 @@ export const projects: Project[] = [
     team: 'Solo — built with Claude Code (AI)',
     sections: [
       {
-        title: 'The Process',
-        content: ''
-      },
-      {
         title: 'The Problem: 50%+ of Buddhist Study Group Students Drop Out',
         content: 'Master Jiqun\'s Buddhist courses are studied in community groups across China. But more than half of students leave within the first few sessions.\n\nI observed this firsthand in my own study community — out of 5 study groups, 4 had lost roughly half their members. Through conversations with students and group leaders, I identified three root causes:',
         cards: [
@@ -78,77 +74,49 @@ export const projects: Project[] = [
         image: '/images/jingxin-courses-en.png'
       },
       {
-        title: 'My Approach: A 746-Line PRD Before a Single Line of Code',
-        content: 'Before touching any AI tool, I spent time deeply defining the problem space. I wrote a comprehensive Product Requirements Document covering 3 user personas, complete feature specs, a design system, content transformation principles, and accessibility standards.\n\nI started by understanding who I was designing for:',
+        title: 'My Approach: Research First, Then a Comprehensive PRD',
+        content: 'Before touching any tool, I spent time observing study groups and talking to students. I then wrote a 746-line Product Requirements Document — covering user personas, feature specs, a design system, and accessibility standards. Everything that followed was built on this foundation.\n\nI identified three distinct user personas:',
         cards: [
-          { title: 'New Student', content: 'Just joined a study group out of curiosity. Has no Buddhist background. Overwhelmed by terminology and long texts. Needs simplified language and clear takeaways to stay motivated. Most likely to drop out in the first 2 weeks.' },
-          { title: 'Casual Learner', content: 'Has been in a study group for a few months. Attends sessions but rarely reviews materials between meetings. Wants quick recaps and practical exercises they can fit into a busy schedule. Reads on mobile during commutes.' },
-          { title: 'Experienced Practitioner', content: 'Deeply committed, has studied for 1+ years. Values accuracy and wants to cross-reference simplified content with original source texts. Mentors newer students. Needs tools to verify that simplification preserves meaning.' }
+          { title: 'New Student', content: 'Just joined out of curiosity. No Buddhist background. Overwhelmed by terminology. Needs simplified language and clear takeaways. Most likely to drop out in the first 2 weeks.' },
+          { title: 'Casual Learner', content: 'Been in a group for a few months. Attends sessions but rarely reviews between meetings. Wants quick recaps and practical exercises. Reads on mobile during commutes.' },
+          { title: 'Experienced Practitioner', content: 'Deeply committed, studied for 1+ years. Values accuracy and wants to cross-reference simplified content with originals. Mentors newer students.' }
         ]
-      },
-      {
-        title: '',
-        content: 'Top 3 features I designed, each with the rationale behind it:',
-        cards: [
-          { title: '3-Layer Content Architecture', content: 'Simplified explanation → Core takeaways → Source text tracing.\n\nRationale: Users have 3 distinct reading modes — quick scanners, deep learners, and skeptics who verify accuracy. Instead of forcing one reading path, I designed layers so each persona is served without compromise.' },
-          { title: 'Practice Journaling with Privacy Controls', content: 'Auto-save journaling with 4-tier privacy (private / classmates / teacher / everyone).\n\nRationale: User observation revealed students were embarrassed to share personal spiritual reflections publicly. Defaulting to "private" with opt-in sharing removed the barrier and increased participation.' },
-          { title: 'Community Appreciation (随喜赞叹)', content: 'A culturally meaningful interaction replacing generic "likes."\n\nRationale: Buddhist communities value "rejoicing in others\' good deeds" — using this concept instead of social-media-style likes created authentic engagement that aligned with users\' values and beliefs.' }
-        ]
-      },
-      {
-        title: 'Key Design Decisions',
-        content: ''
       },
       {
         title: 'Decision 1: Making Ancient Wisdom Accessible',
-        content: 'Challenge: Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.\n\nMy solution: A three-layer content architecture.',
+        content: 'Challenge: Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.\n\nMy solution: A three-layer content architecture — each layer designed to serve a specific persona.',
         cards: [
-          { title: 'Simplified Explanation', content: 'Plain language that anyone could understand, with life analogies (e.g., explaining "attachment" through the metaphor of phone addiction).' },
-          { title: 'Core Takeaways', content: 'Each lesson distilled into one memorable sentence + 3–5 key points. Not a summary, but the core insight you should walk away with.' },
-          { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text it came from, displayed in a resizable side panel.' }
+          { title: 'Simplified Explanation', content: 'Plain language with life analogies (e.g., explaining "attachment" through phone addiction). → Serves the New Student who needs accessible entry points.' },
+          { title: 'Core Takeaways', content: 'Each lesson distilled into one memorable sentence + 3–5 key points. The core insight you should walk away with. → Serves the Casual Learner who wants quick recaps.' },
+          { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text, displayed in a resizable side panel. → Serves the Experienced Practitioner who verifies accuracy.' }
         ],
-        afterCards: 'Why three layers? Different learning modes. Quick scanners read takeaways. Deep learners read the full simplified text. Skeptics verify against the original source. Everyone is served without compromise.',
+        afterCards: 'Three personas, three reading modes, one unified interface. Everyone is served without compromise.',
         image: '/images/jingxin-lesson-en.png'
       },
       {
         title: 'Decision 2: From Reading to Doing',
-        content: 'Insight: Buddhist learning is not like academic learning. The goal is not to memorize facts — it\'s to change how you live daily life.\n\nI designed a practice system where each lesson ends with concrete exercises tied to real life. For example, after a lesson on compassion, the exercise might be: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
+        content: 'Insight: Buddhist learning is not academic — the goal is to change how you live daily life. This matters most for the Casual Learner, who needs practical reasons to keep showing up.\n\nI designed a practice system where each lesson ends with concrete exercises tied to real life. For example, after a lesson on compassion: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
         image: '/images/jingxin-exercise-en.png',
         imageSize: 'medium' as const
       },
       {
         title: '',
-        content: 'But giving users exercises isn\'t enough — they also need to understand why each practice matters. I designed a "?" icon next to each exercise title. When tapped, it reveals the reasoning behind the practice — for example, explaining that smiling at strangers helps you discover kindness is contagious and is the simplest way to practice loving-kindness.',
+        content: 'Giving users exercises isn\'t enough — they need to understand why each practice matters. I added a "?" icon next to each exercise that reveals the reasoning behind it. This progressive disclosure keeps the interface action-focused while giving curious learners a path to deeper understanding.',
         image: '/images/jingxin-exercise-expanded-en.png',
         imageSize: 'medium' as const
       },
       {
         title: '',
-        content: 'This progressive disclosure keeps the interface clean and action-focused, while giving curious learners a path to deeper understanding. Users who just want to practice can skip it; users who want context can explore. This builds intrinsic motivation rather than blind compliance.\n\nThe journaling system lets students write reflections on their practice. But here\'s the key design decision: I added privacy controls (private / classmates / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. This small decision — defaulting to "private" with the option to share — significantly increased participation.\n\nI also designed a culturally appropriate appreciation interaction: "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. Instead of generic "likes," this interaction carries cultural meaning and encourages the community.',
+        content: 'The journaling system lets students write reflections on their practice. Key design decision: I added 4-tier privacy controls (private / classmates / teacher / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. Defaulting to "private" with opt-in sharing removed the barrier and increased participation.\n\nI also replaced generic "likes" with "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. This culturally meaningful interaction created authentic engagement aligned with users\' values.',
       },
       {
-        title: 'How I Built It: Vibe Coding with AI',
-        content: ''
-      },
-      {
-        title: 'My Role as a Designer Who Vibe Codes',
-        content: 'AI writes the code, but it can\'t think about product strategy, user needs, or design systems. That\'s still my job.\n\nI wrote a 746-line PRD before touching any code — defining user flows, content structure, interaction patterns, and a full design system:',
-        cards: [
-          { title: 'Typography & Spacing', content: '• 7 font sizes (14–48px) with clear hierarchy\n• Headings, body, and caption styles defined\n• 8px base grid for all margins and padding\n• Consistent spacing rhythm across every page' },
-          { title: 'Color & Layout', content: '• Warm neutral palette with #5B4A3F as primary\n• Semantic colors for success, warning, and interactive states\n• Max 680px content width for reading comfort\n• Light/dark contrast ratios meeting WCAG AA' },
-          { title: 'Components', content: '• Cards, buttons, navigation, modals, form elements\n• Each with 4 states: default, hover, active, disabled\n• Consistent border radius and shadow tokens\n• Ready for direct implementation' },
-          { title: 'Accessibility', content: '• WCAG AA contrast ratios for all text-background pairs\n• Minimum 16px body text for readability\n• Touch targets ≥44px for mobile\n• Color tested against common vision deficiencies\n• Keyboard navigation for all interactive elements' }
-        ],
-        afterCards: 'The clearer my requirements, the fewer iterations needed.\n\nDuring the build, I worked like a creative director: reviewing every output in the browser, giving feedback the way I would in a design review — "the spacing feels too tight here," "this card needs more breathing room," "the hierarchy isn\'t clear enough." 70 commits in 4 days, each one a cycle of describe → review → refine.\n\nVibe coding didn\'t replace my design skills. It amplified them.'
-      },
-      {
-        title: '70 Commits in 4 Days: The Build Sprint',
-        content: 'Day 1-2: Core platform — landing page with scroll animations, course content system with 38+ lessons, navigation, responsive design across desktop/tablet/mobile.\n\nDay 3: User system — email authentication with verification, Google OAuth, practice journaling with auto-save, sharing with 4-tier visibility controls.\n\nDay 4: Community features, bilingual support (Chinese + English), "随喜赞叹" appreciation system, analytics integration, polish, and launch.\n\nWhat made this speed possible:\n\n1. Clear PRD — AI works best when requirements are specific. My 746-line PRD meant almost zero ambiguity.\n2. Design systems thinking — I defined typography, spacing, and color upfront, so every page was consistent without back-and-forth.\n3. Iteration mindset — I tested in the browser constantly, giving AI feedback like a design review. "The spacing feels too tight here." "This card needs more breathing room."\n\n70 commits = 70 rounds of "describe what I want → review the result → refine." This IS the design process, just running at 10x speed.',
+        title: 'From Design to Shipped Product in 4 Days',
+        content: 'With a detailed PRD as the blueprint, I used AI vibe coding to build the full platform. My role throughout was creative director: reviewing every output in the browser, giving feedback like a design review — "the spacing feels too tight," "this hierarchy isn\'t clear." 70 commits, each one a cycle of describe → review → refine.\n\nThe result: a full-stack platform with authentication, database, 38+ lessons, bilingual support, and responsive design across all devices.',
         image: '/images/jingxin-hero-en.png'
       },
       {
         title: '',
-        content: 'The product is fully responsive — Buddhist study often happens on phones (commuting, before bed). I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
+        content: 'Buddhist study often happens on phones — commuting, before bed. I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
         phoneBefore: ['/images/jingxin-mobile-lesson-en.png'],
         phoneAfter: [
           { image: '/images/mobile-home.png', caption: 'Bottom tabs for one-handed use.' },
@@ -157,12 +125,8 @@ export const projects: Project[] = [
         ]
       },
       {
-        title: 'The Product',
-        content: ''
-      },
-      {
         title: 'Try the Live Product',
-        content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a PostgreSQL database, serverless API, and bilingual support. Real users are learning Buddhist teachings on this platform right now.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
+        content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a database, and bilingual support. Real users are learning on this platform right now.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
         embed: 'https://jingxin-xuetang.vercel.app'
       },
       {
@@ -172,9 +136,9 @@ export const projects: Project[] = [
       }
     ],
     impact: [
-      'Identified root cause: Discovered through user research that 50%+ dropout was driven by content comprehension, not motivation — reframing the entire solution direction',
-      'Designed for real behavior: Privacy-first journaling and culturally meaningful interactions (replacing generic "likes") increased community participation',
-      'From PRD to live product: Wrote a 746-line PRD that enabled AI-assisted development — shipped a full platform serving real users in 4 days'
+      'Identified root cause: User research revealed 50%+ dropout was driven by content comprehension, not motivation — reframing the entire solution direction',
+      'Designed for real behavior: Privacy-first journaling and culturally meaningful interactions increased community participation',
+      'Shipped end-to-end: From user research to live product serving real users — designed, built, and launched in 4 days'
     ],
     testimonial: {
       quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community. Not everyone has time to read those long texts carefully. With your approach, people can quickly grasp the key ideas and build confidence.',
