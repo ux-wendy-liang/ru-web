@@ -151,7 +151,7 @@ export const projects: Project[] = [
         content: 'The product is fully responsive — Buddhist study often happens on phones (commuting, before bed). I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
         phoneBefore: ['/images/jingxin-mobile-lesson-en.png'],
         phoneAfter: [
-          { image: '/images/mobile-home.png', caption: 'Bottom tabs for one-handed use. Cards replace dense sidebar.' },
+          { image: '/images/mobile-home.png', caption: 'Bottom tabs for one-handed use.' },
           { image: '/images/mobile-list.png', caption: 'Replaced dense sidebar with card-based course list for faster scanning.' },
           { image: '/images/mobile-list-org.png', caption: 'Source overlay to verify content — trust without clutter.' }
         ]
