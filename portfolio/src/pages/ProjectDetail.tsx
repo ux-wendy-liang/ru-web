@@ -36,7 +36,7 @@ const ProjectDetail = () => {
     <div className="min-h-screen bg-cream">
       {/* Hero Section */}
       <section className="pt-32 pb-12 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Back Button */}
           <Link
             to="/"
@@ -79,7 +79,7 @@ const ProjectDetail = () => {
               <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-4">
                 PROJECT OVERVIEW
               </h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 leading-[1.8]">
                 {project.shortDescription}
               </p>
             </div>
@@ -113,6 +113,42 @@ const ProjectDetail = () => {
       <section className="pb-20 px-6">
         <div className="max-w-5xl mx-auto space-y-16">
 
+          {/* Impact Section - shown first for recruiters */}
+          {project.impact && project.impact.length > 0 && (
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
+                Impact
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {project.impact.map((item, index) => (
+                  <div key={index} className="bg-white p-8 rounded-xl">
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                      {item.includes(':') ? item.split(':')[0] : `Impact ${index + 1}`}
+                    </h4>
+                    <p className="text-gray-700 leading-[1.7]">
+                      {item.includes(':') ? item.split(':')[1].trim() : item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Testimonial - right after impact */}
+          {project.testimonial && (
+            <div className="bg-white p-10 rounded-2xl">
+              <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
+                "{project.testimonial.quote}"
+              </blockquote>
+              <div className="text-gray-600">
+                <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
+                {project.testimonial.role && (
+                  <span className="ml-2">({project.testimonial.role})</span>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* New Sections Structure */}
           {hasSections && project.sections!.map((section, index) => {
             // Check if this is a "header only" section (empty content, just a title divider)
@@ -135,19 +171,74 @@ const ProjectDetail = () => {
 
                 {/* Section Content */}
                 {section.content && (
-                  <div className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                  <div className="max-w-prose text-lg text-gray-700 leading-[1.8] whitespace-pre-line">
                     {section.content}
+                  </div>
+                )}
+
+                {/* Flow */}
+                {section.flow && section.flow.length > 0 && (
+                  <div className="mt-4 flex flex-wrap items-center gap-3">
+                    {section.flow.map((step, stepIndex) => (
+                      <div key={stepIndex} className="flex items-center gap-3">
+                        <span className={`px-5 py-2.5 rounded-full text-sm font-medium ${
+                          stepIndex === section.flow!.length - 1
+                            ? 'bg-gray-900 text-white'
+                            : 'bg-white text-gray-700 border border-gray-200'
+                        }`}>
+                          {step}
+                        </span>
+                        {stepIndex < section.flow!.length - 1 && (
+                          <span className="text-gray-400 text-lg">→</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Cards */}
+                {section.cards && section.cards.length > 0 && (
+                  <div className={`mt-4 grid gap-6 grid-cols-1 ${section.cards.length <= 3 ? `md:grid-cols-${section.cards.length}` : 'md:grid-cols-3'}`}>
+                    {section.cards.map((card, cardIndex) => (
+                      <div key={cardIndex} className="bg-white p-6 rounded-xl">
+                        <h4 className="text-lg font-bold text-gray-900 mb-2">{card.title}</h4>
+                        <div className="text-gray-700 leading-[1.7]">
+                          {card.content.split('\n\n').map((para, pIdx) => (
+                            <p key={pIdx} className={pIdx > 0 ? 'mt-3' : ''}>
+                              {para.split('\n').map((line, lIdx) => (
+                                <span key={lIdx}>
+                                  {lIdx > 0 && <br />}
+                                  {line}
+                                </span>
+                              ))}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 )}
 
                 {/* Single Image */}
                 {section.image && (
-                  <div className="rounded-xl overflow-hidden mt-8 flex justify-center bg-gray-50">
+                  <div className={`rounded-xl overflow-hidden mt-8 flex justify-center bg-gray-50 ${
+                    section.imageSize === 'small' ? 'max-w-[400px]' :
+                    section.imageSize === 'medium' ? 'max-w-[600px]' : ''
+                  }`}>
                     <img
                       src={section.image}
                       alt={section.title}
                       className="w-full max-h-[600px] object-contain"
                     />
+                  </div>
+                )}
+
+                {/* After Cards Text */}
+                {section.afterCards && (
+                  <div className="mt-6 max-w-prose text-lg leading-[1.8] text-gray-800">
+                    {section.afterCards.split('\n\n').map((para, pIdx) => (
+                      <p key={pIdx} className={pIdx > 0 ? 'mt-4' : ''}>{para}</p>
+                    ))}
                   </div>
                 )}
 
@@ -228,7 +319,7 @@ const ProjectDetail = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                 The Challenge
               </h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="max-w-prose text-lg text-gray-700 leading-[1.8]">
                 {project.challenge}
               </p>
             </div>
@@ -240,7 +331,7 @@ const ProjectDetail = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                 The Solution
               </h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="max-w-prose text-lg text-gray-700 leading-[1.8]">
                 {project.solution}
               </p>
             </div>
@@ -276,46 +367,9 @@ const ProjectDetail = () => {
             </div>
           )}
 
-          {/* Impact Section */}
-          {project.impact && project.impact.length > 0 && (
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                Impact
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {project.impact.map((item, index) => (
-                  <div key={index} className="bg-white p-8 rounded-xl">
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">
-                      {item.includes(':') ? item.split(':')[0] : `Impact ${index + 1}`}
-                    </h4>
-                    <p className="text-gray-700 leading-relaxed">
-                      {item.includes(':') ? item.split(':')[1].trim() : item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Impact Section - moved to after sections */}
 
-          {/* User Feedback / Testimonial Section */}
-          {project.testimonial && (
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                User feedback
-              </h2>
-              <div className="bg-white p-10 rounded-2xl">
-                <blockquote className="text-2xl text-gray-800 italic leading-relaxed mb-6">
-                  "{project.testimonial.quote}"
-                </blockquote>
-                <div className="text-gray-600">
-                  <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
-                  {project.testimonial.role && (
-                    <span className="ml-2">({project.testimonial.role})</span>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
+          {/* User Feedback / Testimonial Section - moved up near impact */}
 
           {/* Stakeholder Feedback Section */}
           {project.stakeholderFeedback && project.stakeholderFeedback.length > 0 && (
@@ -326,7 +380,7 @@ const ProjectDetail = () => {
               <div className="space-y-6">
                 {project.stakeholderFeedback.map((feedback, index) => (
                   <div key={index} className="bg-white p-8 rounded-2xl">
-                    <blockquote className="text-xl text-gray-800 italic leading-relaxed mb-4">
+                    <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
                       "{feedback.quote}"
                     </blockquote>
                     <div className="text-gray-600">

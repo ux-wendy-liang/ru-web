@@ -2,10 +2,14 @@ export interface ProjectSection {
   title: string;
   content: string;
   image?: string;
+  imageSize?: 'small' | 'medium' | 'large'; // Controls max-width: small=400px, medium=600px, large=full
   images?: string[];
   gif?: string;
   gifs?: string[];
   embed?: string; // URL for interactive prototype iframe
+  cards?: { title: string; content: string }[];
+  afterCards?: string;
+  flow?: string[];
 }
 
 export interface Project {
@@ -51,17 +55,55 @@ export const projects: Project[] = [
     team: 'Solo — built with Claude Code (AI)',
     sections: [
       {
-        title: 'Impact Summary',
-        content: '• Live product serving real users at jingxin-xuetang.vercel.app?lang=en\n• 70 commits shipped in 4 days (March 6-10, 2026)\n• 38+ lessons with simplified content, practice exercises, and community features\n• Full-stack: React + TypeScript + PostgreSQL + Auth + Serverless API\n• Complete design system: typography, spacing, color, and accessibility guidelines'
+        title: 'The Process',
+        content: ''
       },
       {
         title: 'The Problem: 50%+ of Buddhist Study Group Students Drop Out',
-        content: 'Master Jiqun\'s Buddhist courses are studied in community groups across China. But more than half of students leave within the first few sessions.\n\nI observed this firsthand in my own study community — out of 5 study groups, 4 had lost roughly half their members. Through conversations with students and group leaders, I identified three root causes:\n\n1. Content too academic — Original texts use classical Buddhist language with dense terminology. Even educated adults said "I need to read it 3 times to understand."\n\n2. No clear takeaways — After reading a 3,000-word lesson, students couldn\'t articulate what they learned in one sentence.\n\n3. No practice guidance — Buddhism emphasizes applying teachings to daily life, but courses only provided theory. Students read, nodded, and then... did nothing different.\n\nThis created a vicious cycle: Can\'t understand → Can\'t remember → Can\'t apply → No benefit → Quit.',
+        content: 'Master Jiqun\'s Buddhist courses are studied in community groups across China. But more than half of students leave within the first few sessions.\n\nI observed this firsthand in my own study community — out of 5 study groups, 4 had lost roughly half their members. Through conversations with students and group leaders, I identified three root causes:',
+        cards: [
+          { title: 'Content too academic', content: 'Original texts use classical Buddhist language with dense terminology. Even educated adults said "I need to read it 3 times to understand."' },
+          { title: 'No clear takeaways', content: 'After reading a 3,000-word lesson, students couldn\'t articulate what they learned in one sentence.' },
+          { title: 'No practice guidance', content: 'Buddhism emphasizes applying teachings to daily life, but courses only provided theory. Students read, nodded, and then... did nothing different.' }
+        ]
+      },
+      {
+        title: '',
+        content: 'This created a vicious cycle:',
+        flow: ['Can\'t understand', 'Can\'t remember', 'Can\'t apply', 'No benefit', 'Quit'],
         image: '/images/jingxin-courses-en.png'
       },
       {
         title: 'My Approach: A 746-Line PRD Before a Single Line of Code',
-        content: 'Before touching any AI tool, I spent time deeply defining the problem space. I wrote a comprehensive Product Requirements Document covering:\n\n• 3 user personas (new student, casual learner, experienced practitioner)\n• Complete feature specifications with interaction details\n• Typography and design guidelines (7 font sizes, 8px spacing grid, color system)\n• Content transformation principles (how to simplify without distorting meaning)\n• Accessibility standards (WCAG AA compliance for all text colors)\n• Rollout plan with seed user feedback strategy\n\nKey insight: The problem wasn\'t vocabulary (adding glossary tooltips wouldn\'t help). It was comprehension — the entire content needed to be rewritten in plain language.\n\nWhy this matters: The PRD became the "brief" for AI vibe coding. Clear, specific requirements led to dramatically better AI output. This is where design thinking directly enabled technical execution.'
+        content: 'Before touching any AI tool, I spent time deeply defining the problem space. I wrote a comprehensive Product Requirements Document covering 3 user personas, complete feature specs, a design system, content transformation principles, and accessibility standards.\n\nI started by understanding who I was designing for:',
+        cards: [
+          { title: 'New Student', content: 'Just joined a study group out of curiosity. Has no Buddhist background. Overwhelmed by terminology and long texts. Needs simplified language and clear takeaways to stay motivated. Most likely to drop out in the first 2 weeks.' },
+          { title: 'Casual Learner', content: 'Has been in a study group for a few months. Attends sessions but rarely reviews materials between meetings. Wants quick recaps and practical exercises they can fit into a busy schedule. Reads on mobile during commutes.' },
+          { title: 'Experienced Practitioner', content: 'Deeply committed, has studied for 1+ years. Values accuracy and wants to cross-reference simplified content with original source texts. Mentors newer students. Needs tools to verify that simplification preserves meaning.' }
+        ]
+      },
+      {
+        title: '',
+        content: 'Top 3 features I designed, each with the rationale behind it:',
+        cards: [
+          { title: '3-Layer Content Architecture', content: 'Simplified explanation → Core takeaways → Source text tracing.\n\nRationale: Users have 3 distinct reading modes — quick scanners, deep learners, and skeptics who verify accuracy. Instead of forcing one reading path, I designed layers so each persona is served without compromise.' },
+          { title: 'Practice Journaling with Privacy Controls', content: 'Auto-save journaling with 4-tier privacy (private / classmates / teacher / everyone).\n\nRationale: User observation revealed students were embarrassed to share personal spiritual reflections publicly. Defaulting to "private" with opt-in sharing removed the barrier and increased participation.' },
+          { title: 'Community Appreciation (随喜赞叹)', content: 'A culturally meaningful interaction replacing generic "likes."\n\nRationale: Buddhist communities value "rejoicing in others\' good deeds" — using this concept instead of social-media-style likes created authentic engagement that aligned with users\' values and beliefs.' }
+        ]
+      },
+      {
+        title: 'Design System',
+        content: 'I built a complete design system before any code was written — ensuring visual consistency and enabling faster development.',
+        cards: [
+          { title: 'Typography & Spacing', content: '• 7 font sizes (14–48px) with clear hierarchy\n• Headings, body, and caption styles defined\n• 8px base grid for all margins and padding\n• Consistent spacing rhythm across every page' },
+          { title: 'Color & Layout', content: '• Warm neutral palette with #5B4A3F as primary\n• Semantic colors for success, warning, and interactive states\n• Max 680px content width for reading comfort\n• Light/dark contrast ratios meeting WCAG AA' },
+          { title: 'Components', content: '• Cards, buttons, navigation, modals, form elements\n• Each with 4 states: default, hover, active, disabled\n• Consistent border radius and shadow tokens\n• Ready for direct implementation' },
+          { title: 'Accessibility', content: '• WCAG AA contrast ratios for all text-background pairs\n• Minimum 16px body text for readability\n• Touch targets ≥44px for mobile\n• Color tested against common vision deficiencies\n• Keyboard navigation for all interactive elements' }
+        ]
+      },
+      {
+        title: '',
+        content: 'Key insight: The problem wasn\'t vocabulary (adding glossary tooltips wouldn\'t help). It was comprehension — the entire content needed to be rewritten in plain language.\n\nWhy this matters: The PRD became the "brief" for AI vibe coding. Clear, specific requirements led to dramatically better AI output. This is where design thinking directly enabled technical execution.'
       },
       {
         title: 'Key Design Decisions',
@@ -69,12 +111,24 @@ export const projects: Project[] = [
       },
       {
         title: 'Decision 1: Making Ancient Wisdom Accessible',
-        content: 'Challenge: Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.\n\nMy solution: A three-layer content architecture.\n\n1. Simplified explanation — Plain language that anyone could understand, with life analogies (e.g., explaining "attachment" through the metaphor of phone addiction)\n\n2. Core takeaways — Each lesson distilled into one memorable sentence + 3-5 key points. Not a summary, but the core insight you should walk away with.\n\n3. Source text tracing — Click any simplified passage to see the original text it came from, displayed in a resizable side panel.\n\nWhy three layers? Different learning modes. Quick scanners read takeaways. Deep learners read the full simplified text. Skeptics verify against the original source. Everyone is served without compromise.',
+        content: 'Challenge: Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.\n\nMy solution: A three-layer content architecture.',
+        cards: [
+          { title: 'Simplified Explanation', content: 'Plain language that anyone could understand, with life analogies (e.g., explaining "attachment" through the metaphor of phone addiction).' },
+          { title: 'Core Takeaways', content: 'Each lesson distilled into one memorable sentence + 3–5 key points. Not a summary, but the core insight you should walk away with.' },
+          { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text it came from, displayed in a resizable side panel.' }
+        ],
+        afterCards: 'Why three layers? Different learning modes. Quick scanners read takeaways. Deep learners read the full simplified text. Skeptics verify against the original source. Everyone is served without compromise.',
         image: '/images/jingxin-lesson-en.png'
       },
       {
         title: 'Decision 2: From Reading to Doing',
-        content: 'Insight: Buddhist learning is not like academic learning. The goal is not to memorize facts — it\'s to change how you live daily life.\n\nI designed a practice system where each lesson ends with concrete exercises tied to real life. For example, after a lesson on compassion, the exercise might be: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."\n\nThe journaling system lets students write reflections on their practice. But here\'s the key design decision: I added privacy controls (private / classmates / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. This small decision — defaulting to "private" with the option to share — significantly increased participation.\n\nI also designed a culturally appropriate appreciation interaction: "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. Instead of generic "likes," this interaction carries cultural meaning and encourages the community.',
+        content: 'Insight: Buddhist learning is not like academic learning. The goal is not to memorize facts — it\'s to change how you live daily life.\n\nI designed a practice system where each lesson ends with concrete exercises tied to real life. For example, after a lesson on compassion, the exercise might be: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
+        image: '/images/jingxin-exercise-en.png',
+        imageSize: 'medium' as const
+      },
+      {
+        title: '',
+        content: 'But giving users exercises isn\'t enough — they also need to understand why each practice matters. I designed a "?" icon next to each exercise title. When tapped, it reveals the reasoning behind the practice — for example, explaining that smiling at strangers helps you discover kindness is contagious and is the simplest way to practice loving-kindness.\n\nThis progressive disclosure keeps the interface clean and action-focused, while giving curious learners a path to deeper understanding. Users who just want to practice can skip it; users who want context can explore. This builds intrinsic motivation rather than blind compliance.\n\nThe journaling system lets students write reflections on their practice. But here\'s the key design decision: I added privacy controls (private / classmates / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. This small decision — defaulting to "private" with the option to share — significantly increased participation.\n\nI also designed a culturally appropriate appreciation interaction: "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. Instead of generic "likes," this interaction carries cultural meaning and encourages the community.',
         image: '/images/jingxin-practice-en.png'
       },
       {
@@ -115,10 +169,15 @@ export const projects: Project[] = [
       }
     ],
     impact: [
-      'Shipped product: Live full-stack platform serving real Buddhist study group members at jingxin-xuetang.vercel.app?lang=en',
-      'Speed to value: From PRD to production in 4 days — 70 commits, 38+ lessons, full authentication system, bilingual support',
-      'Design-led development: Every feature driven by community observation and product thinking, not technology-first decisions'
+      'Identified root cause: Discovered through user research that 50%+ dropout was driven by content comprehension, not motivation — reframing the entire solution direction',
+      'Designed for real behavior: Privacy-first journaling and culturally meaningful interactions (replacing generic "likes") increased community participation',
+      'From PRD to live product: Wrote a 746-line PRD that enabled AI-assisted development — shipped a full platform serving real users in 4 days'
     ],
+    testimonial: {
+      quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community. Not everyone has time to read those long texts carefully. With your approach, people can quickly grasp the key ideas and build confidence.',
+      author: 'Yianguo',
+      role: 'Study Group Leader'
+    },
     takeaways: [
       'Designers who can ship have a superpower: Writing a clear PRD is not just documentation — it becomes the instruction set for AI-assisted development. Product thinking is the bottleneck, not coding ability.',
       'Start with the community, not the technology: I spent time observing study groups before writing a single requirement. The best features (like practice privacy controls) came from understanding social dynamics, not technical possibilities.',
@@ -126,11 +185,6 @@ export const projects: Project[] = [
       'Ship early, learn from real users: A live product with 10 real users teaches more than a polished prototype with zero users. The practice sharing feature was redesigned based on early user behavior.'
     ],
     stakeholderFeedback: [
-      {
-        quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community. Not everyone has time to read those long texts carefully. With your approach, people can quickly grasp the key ideas and build confidence — then they\'ll actually want to go back and read the originals. Don\'t give up on this idea!',
-        author: 'Yianguo',
-        role: 'Study Group Leader'
-      },
       {
         quote: 'Yes! After the rewrite it\'s so much easier to understand. Appreciating your effort!',
         author: 'Zhaoming',
