@@ -1,14 +1,17 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { projects } from '../data/projects';
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const project = projects.find((p) => p.id === id);
 
+  const [enTooltipDismissed, setEnTooltipDismissed] = useState(false);
+
   // Scroll to top when page loads or project changes
   useEffect(() => {
     window.scrollTo(0, 0);
+    setEnTooltipDismissed(false);
   }, [id]);
 
   if (!project) {
@@ -285,7 +288,25 @@ const ProjectDetail = () => {
 
                 {/* Interactive Prototype Embed */}
                 {section.embed && (
-                  <div className="mt-8 rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
+                  <div className="mt-8 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 relative">
+                    {/* EN tooltip for Jingxin project */}
+                    {section.embed.includes('jingxin') && !enTooltipDismissed && (
+                      <div className="hidden md:block absolute top-[52px] right-[180px] z-10 animate-tooltip-bounce">
+                        <div className="relative bg-gray-900 text-white text-sm px-4 py-2.5 rounded-lg shadow-lg whitespace-nowrap flex items-center gap-2">
+                          <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                          Click "EN" to view English version
+                          <button
+                            onClick={() => setEnTooltipDismissed(true)}
+                            className="ml-1 text-gray-400 hover:text-white transition-colors"
+                            aria-label="Dismiss tooltip"
+                          >
+                            ✕
+                          </button>
+                          {/* Arrow pointing up-right toward EN button */}
+                          <div className="absolute -bottom-[6px] right-8 w-3 h-3 bg-gray-900 rotate-45" />
+                        </div>
+                      </div>
+                    )}
                     <iframe
                       src={section.embed}
                       title={section.title || 'Interactive Prototype'}
