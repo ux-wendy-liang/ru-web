@@ -1,7 +1,16 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 const Home = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('uiwendyliang@outlook.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section - starts from top to include nav area */}
@@ -15,12 +24,31 @@ const Home = () => {
           <p className="text-lg text-gray-700 mb-8 max-w-2xl">
             8+ years shaping Enterprise & Big Data SaaS at LinkedIn. These days, I don't stop at the mockup — I vibe code my designs into reality.
           </p>
-          <a
-            href="mailto:uiwendyliang@outlook.com?subject=👋"
-            className="inline-block px-8 py-3 bg-black hover:bg-gray-800 transition-colors duration-200 rounded-full text-white text-base font-medium"
-          >
-            EMAIL ME →
-          </a>
+          <div className="flex flex-wrap gap-3 items-center">
+            <div className="relative">
+              <button
+                onClick={handleCopyEmail}
+                className="inline-block px-6 py-2 border border-gray-600 rounded-full text-gray-600 text-sm cursor-pointer hover:text-gray-900 hover:border-gray-900 transition-colors duration-200"
+              >
+                <span className={copied ? 'bg-gray-900/10 rounded px-1 -mx-1' : ''}>
+                  uiwendyliang@outlook.com
+                </span>
+              </button>
+              {copied && (
+                <span className="absolute -top-9 left-1/2 -translate-x-1/2 px-3 py-1 bg-gray-900 text-white text-xs rounded-md whitespace-nowrap after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-gray-900">
+                  Copied!
+                </span>
+              )}
+            </div>
+            <a
+              href="https://docs.google.com/document/d/15staG_wP1O0-HSl8O4V44kzVNShqZBRnl9PKEHaAwcM/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-2 border border-gray-600 rounded-full text-gray-600 text-sm hover:text-gray-900 hover:border-gray-900 transition-colors duration-200"
+            >
+              Résumé
+            </a>
+          </div>
         </div>
       </section>
 
