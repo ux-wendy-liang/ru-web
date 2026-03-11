@@ -92,20 +92,6 @@ export const projects: Project[] = [
         ]
       },
       {
-        title: 'Design System',
-        content: 'I built a complete design system before any code was written — ensuring visual consistency and enabling faster development.',
-        cards: [
-          { title: 'Typography & Spacing', content: '• 7 font sizes (14–48px) with clear hierarchy\n• Headings, body, and caption styles defined\n• 8px base grid for all margins and padding\n• Consistent spacing rhythm across every page' },
-          { title: 'Color & Layout', content: '• Warm neutral palette with #5B4A3F as primary\n• Semantic colors for success, warning, and interactive states\n• Max 680px content width for reading comfort\n• Light/dark contrast ratios meeting WCAG AA' },
-          { title: 'Components', content: '• Cards, buttons, navigation, modals, form elements\n• Each with 4 states: default, hover, active, disabled\n• Consistent border radius and shadow tokens\n• Ready for direct implementation' },
-          { title: 'Accessibility', content: '• WCAG AA contrast ratios for all text-background pairs\n• Minimum 16px body text for readability\n• Touch targets ≥44px for mobile\n• Color tested against common vision deficiencies\n• Keyboard navigation for all interactive elements' }
-        ]
-      },
-      {
-        title: '',
-        content: 'Key insight: The problem wasn\'t vocabulary (adding glossary tooltips wouldn\'t help). It was comprehension — the entire content needed to be rewritten in plain language.\n\nWhy this matters: The PRD became the "brief" for AI vibe coding. Clear, specific requirements led to dramatically better AI output. This is where design thinking directly enabled technical execution.'
-      },
-      {
         title: 'Key Design Decisions',
         content: ''
       },
@@ -142,7 +128,14 @@ export const projects: Project[] = [
       },
       {
         title: 'My Role as a Designer Who Vibe Codes',
-        content: 'AI writes the code, but it can\'t think about product strategy, user needs, or design systems. That\'s still my job.\n\nI wrote a 746-line PRD before touching any code — defining user flows, content structure, interaction patterns, and a full design system (typography, spacing, colors). The clearer my requirements, the fewer iterations needed.\n\nDuring the build, I worked like a creative director: reviewing every output in the browser, giving feedback the way I would in a design review — "the spacing feels too tight here," "this card needs more breathing room," "the hierarchy isn\'t clear enough." 70 commits in 4 days, each one a cycle of describe → review → refine.\n\nVibe coding didn\'t replace my design skills. It amplified them.'
+        content: 'AI writes the code, but it can\'t think about product strategy, user needs, or design systems. That\'s still my job.\n\nI wrote a 746-line PRD before touching any code — defining user flows, content structure, interaction patterns, and a full design system:',
+        cards: [
+          { title: 'Typography & Spacing', content: '• 7 font sizes (14–48px) with clear hierarchy\n• Headings, body, and caption styles defined\n• 8px base grid for all margins and padding\n• Consistent spacing rhythm across every page' },
+          { title: 'Color & Layout', content: '• Warm neutral palette with #5B4A3F as primary\n• Semantic colors for success, warning, and interactive states\n• Max 680px content width for reading comfort\n• Light/dark contrast ratios meeting WCAG AA' },
+          { title: 'Components', content: '• Cards, buttons, navigation, modals, form elements\n• Each with 4 states: default, hover, active, disabled\n• Consistent border radius and shadow tokens\n• Ready for direct implementation' },
+          { title: 'Accessibility', content: '• WCAG AA contrast ratios for all text-background pairs\n• Minimum 16px body text for readability\n• Touch targets ≥44px for mobile\n• Color tested against common vision deficiencies\n• Keyboard navigation for all interactive elements' }
+        ],
+        afterCards: 'The clearer my requirements, the fewer iterations needed.\n\nDuring the build, I worked like a creative director: reviewing every output in the browser, giving feedback the way I would in a design review — "the spacing feels too tight here," "this card needs more breathing room," "the hierarchy isn\'t clear enough." 70 commits in 4 days, each one a cycle of describe → review → refine.\n\nVibe coding didn\'t replace my design skills. It amplified them.'
       },
       {
         title: '70 Commits in 4 Days: The Build Sprint',
