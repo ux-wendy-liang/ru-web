@@ -123,12 +123,18 @@ export const projects: Project[] = [
       {
         title: 'Decision 2: From Reading to Doing',
         content: 'Insight: Buddhist learning is not like academic learning. The goal is not to memorize facts — it\'s to change how you live daily life.\n\nI designed a practice system where each lesson ends with concrete exercises tied to real life. For example, after a lesson on compassion, the exercise might be: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
+        image: '/images/jingxin-exercise-en.png',
+        imageSize: 'medium' as const
+      },
+      {
+        title: '',
+        content: 'But giving users exercises isn\'t enough — they also need to understand why each practice matters. I designed a "?" icon next to each exercise title. When tapped, it reveals the reasoning behind the practice — for example, explaining that smiling at strangers helps you discover kindness is contagious and is the simplest way to practice loving-kindness.',
         image: '/images/jingxin-exercise-expanded-en.png',
         imageSize: 'medium' as const
       },
       {
         title: '',
-        content: 'But giving users exercises isn\'t enough — they also need to understand why each practice matters. I designed a "?" icon next to each exercise title. When tapped, it reveals the reasoning behind the practice — for example, explaining that smiling at strangers helps you discover kindness is contagious and is the simplest way to practice loving-kindness.\n\nThis progressive disclosure keeps the interface clean and action-focused, while giving curious learners a path to deeper understanding. Users who just want to practice can skip it; users who want context can explore. This builds intrinsic motivation rather than blind compliance.\n\nThe journaling system lets students write reflections on their practice. But here\'s the key design decision: I added privacy controls (private / classmates / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. This small decision — defaulting to "private" with the option to share — significantly increased participation.\n\nI also designed a culturally appropriate appreciation interaction: "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. Instead of generic "likes," this interaction carries cultural meaning and encourages the community.',
+        content: 'This progressive disclosure keeps the interface clean and action-focused, while giving curious learners a path to deeper understanding. Users who just want to practice can skip it; users who want context can explore. This builds intrinsic motivation rather than blind compliance.\n\nThe journaling system lets students write reflections on their practice. But here\'s the key design decision: I added privacy controls (private / classmates / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. This small decision — defaulting to "private" with the option to share — significantly increased participation.\n\nI also designed a culturally appropriate appreciation interaction: "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. Instead of generic "likes," this interaction carries cultural meaning and encourages the community.',
         image: '/images/jingxin-practice-en.png'
       },
       {
