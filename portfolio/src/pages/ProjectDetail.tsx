@@ -474,7 +474,7 @@ const ProjectDetail = () => {
           {project.takeaways && project.takeaways.length > 0 && (
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                Key Takeaways
+                What I Learned
               </h2>
               <div className="space-y-6">
                 {project.takeaways.map((takeaway, index) => (
