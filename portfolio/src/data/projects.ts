@@ -6,8 +6,8 @@ export interface ProjectSection {
   images?: string[];
   imageStyle?: 'phone'; // Wrap images in phone frame mockup
   phoneBefore?: string[]; // Before phone screenshots
-  phoneAfter?: string[]; // After phone screenshots
-  phoneAfterCaption?: string; // Design rationale for After
+  phoneAfter?: { image: string; caption: string }[]; // After phone screenshots with captions
+  phoneAfterCaption?: string; // Overall design rationale (deprecated, use per-phone captions)
   gif?: string;
   gifs?: string[];
   embed?: string; // URL for interactive prototype iframe
@@ -150,8 +150,11 @@ export const projects: Project[] = [
         title: '',
         content: 'The product is fully responsive — Buddhist study often happens on phones (commuting, before bed). I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
         phoneBefore: ['/images/jingxin-mobile-lesson-en.png'],
-        phoneAfter: ['/images/mobile-home.png', '/images/mobile-list.png', '/images/mobile-list-org.png'],
-        phoneAfterCaption: 'Redesigned navigation with bottom tabs for one-handed use. Replaced dense sidebar with card-based course list for faster scanning. Added original source overlay so users can verify simplified content — building trust without cluttering the reading flow.'
+        phoneAfter: [
+          { image: '/images/mobile-home.png', caption: 'Bottom tab navigation for one-handed use. Course cards replace the old text-heavy sidebar — users scan and tap instead of scrolling through menus.' },
+          { image: '/images/mobile-list.png', caption: 'Card-based lesson list with clear section grouping. Progress dots and chevrons give a sense of structure without overwhelming new learners.' },
+          { image: '/images/mobile-list-org.png', caption: 'Original source overlay lets users verify simplified content against the original text — building trust without cluttering the reading flow.' }
+        ]
       },
       {
         title: 'The Product',

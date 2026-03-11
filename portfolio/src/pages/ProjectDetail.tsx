@@ -277,25 +277,26 @@ const ProjectDetail = () => {
                         <div className="flex flex-col items-center px-6">
                           <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">After</h4>
                           <div className="flex gap-4">
-                            {section.phoneAfter.map((image, imgIndex) => (
-                              <div key={imgIndex} className="relative bg-gray-900 rounded-[1.75rem] p-1.5 shadow-xl" style={{ width: '220px' }}>
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
-                                <div className="rounded-[1.25rem] overflow-hidden bg-white">
-                                  <img src={image} alt={`After ${imgIndex + 1}`} className="w-full object-cover object-top" style={{ height: '440px' }} />
+                            {section.phoneAfter.map((phone, imgIndex) => (
+                              <div key={imgIndex} className="flex flex-col items-center" style={{ width: '220px' }}>
+                                <div className="relative bg-gray-900 rounded-[1.75rem] p-1.5 shadow-xl w-full">
+                                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-lg z-10" />
+                                  <div className="rounded-[1.25rem] overflow-hidden bg-white">
+                                    <img src={typeof phone === 'string' ? phone : phone.image} alt={`After ${imgIndex + 1}`} className="w-full object-cover object-top" style={{ height: '440px' }} />
+                                  </div>
+                                  <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-600 rounded-full" />
                                 </div>
-                                <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-600 rounded-full" />
+                                {typeof phone !== 'string' && phone.caption && (
+                                  <p className="text-xs text-gray-400 text-center mt-3 leading-relaxed px-1">
+                                    {phone.caption}
+                                  </p>
+                                )}
                               </div>
                             ))}
                           </div>
                         </div>
                       )}
                     </div>
-                    {/* Design rationale below */}
-                    {section.phoneAfterCaption && (
-                      <p className="text-sm text-gray-500 text-center mt-6 max-w-2xl mx-auto leading-relaxed">
-                        {section.phoneAfterCaption}
-                      </p>
-                    )}
                   </div>
                 )}
                 {/* Multiple Images */}
