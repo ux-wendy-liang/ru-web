@@ -200,6 +200,7 @@ const ProjectDetail = () => {
                       title={section.title || 'Interactive Prototype'}
                       className="w-full h-[600px] border-0"
                       allow="fullscreen"
+                      sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                     />
                     <div className="bg-gray-50 px-4 py-3 border-t border-gray-200 flex items-center justify-between">
                       <span className="text-sm text-gray-600">Interactive Prototype - Click to explore</span>

@@ -106,7 +106,7 @@ export const projects: Project[] = [
       {
         title: 'Try the Live Product',
         content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a PostgreSQL database, serverless API, and bilingual support. Real users are learning Buddhist teachings on this platform right now.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
-        embed: 'https://jingxin-xuetang.vercel.app?lang=en?lang=en'
+        embed: 'https://jingxin-xuetang.vercel.app'
       },
       {
         title: '',
