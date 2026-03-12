@@ -172,8 +172,14 @@ const ProjectDetail = () => {
             // Check if this section has no title (continuation of previous section)
             const hasNoTitle = !section.title;
 
+            // If isDecisionBlock + no title, it's a continuation of the previous decision block
+            const isDecisionContinuation = section.isDecisionBlock && hasNoTitle;
+            // For the previous decision block, check if next section is a continuation
+            const nextSection = project.sections![index + 1];
+            const hasDecisionContinuation = section.isDecisionBlock && section.title && nextSection && nextSection.isDecisionBlock && !nextSection.title;
+
             const sectionContent = (
-              <div key={index} className={`${section.isDecisionBlock ? 'bg-white rounded-2xl p-8 md:p-10' : ''} ${isHeaderOnly && !section.sectionLabel ? 'pt-8' : hasNoTitle ? 'space-y-4 -mt-12' : 'space-y-4'}`}>
+              <div key={index} className={`${section.isDecisionBlock && !isDecisionContinuation ? `bg-white p-8 md:p-10 ${hasDecisionContinuation ? 'rounded-t-2xl pb-2' : 'rounded-2xl'}` : ''} ${isDecisionContinuation ? 'bg-white rounded-b-2xl px-8 md:px-10 pb-8 md:pb-10 pt-2 -mt-16' : isHeaderOnly && !section.sectionLabel ? 'pt-8' : hasNoTitle && !isDecisionContinuation ? 'space-y-4 -mt-12' : 'space-y-4'}`}>
                 {/* Section Label - small teal uppercase marker */}
                 {section.sectionLabel && (
                   <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
