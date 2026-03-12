@@ -1,6 +1,12 @@
 export interface ProjectSection {
   title: string;
   content: string;
+  sectionLabel?: string; // Small teal uppercase label (e.g., "The Problem", "Key Design Decisions")
+  challenge?: string; // Red colored block for challenge text
+  insight?: string; // Blue colored block for insight text
+  solution?: string; // Green colored block for solution text
+  isDecisionBlock?: boolean; // Wrap section in white card (for decision blocks)
+  dividerAfter?: boolean; // Add horizontal divider after this section
   image?: string;
   imageSize?: 'small' | 'medium' | 'large'; // Controls max-width: small=400px, medium=600px, large=full
   images?: string[];
@@ -58,60 +64,87 @@ export const projects: Project[] = [
     duration: '4 days',
     team: 'Solo — built with Claude Code (AI)',
     sections: [
+      // ===== THE PROBLEM =====
       {
-        title: 'The Problem: 50%+ of Buddhist Study Group Students Drop Out',
+        title: '50%+ of Buddhist Study Group Students Drop Out',
+        sectionLabel: 'The Problem',
         content: 'Master Jiqun\'s Buddhist courses are studied in community groups across China. But more than half of students leave within the first few sessions.\n\nI observed this firsthand in my own study community — out of 5 study groups, 4 had lost roughly half their members. Through conversations with students and group leaders, I identified three root causes:',
         cards: [
           { title: 'Content too academic', content: 'Original texts use classical Buddhist language with dense terminology. Even educated adults said "I need to read it 3 times to understand."' },
           { title: 'No clear takeaways', content: 'After reading a 3,000-word lesson, students couldn\'t articulate what they learned in one sentence.' },
           { title: 'No practice guidance', content: 'Buddhism emphasizes applying teachings to daily life, but courses only provided theory. Students read, nodded, and then... did nothing different.' }
-        ]
-      },
-      {
-        title: '',
-        content: 'This created a vicious cycle:',
+        ],
+        afterCards: 'This created a vicious cycle:',
         flow: ['Can\'t understand', 'Can\'t remember', 'Can\'t apply', 'No benefit', 'Quit'],
-        image: '/images/jingxin-courses-en.png'
+        dividerAfter: true
       },
+      // ===== RESEARCH & INSIGHTS =====
       {
-        title: 'My Approach: Research First, Then a Comprehensive PRD',
-        content: 'Before touching any tool, I spent time observing study groups and talking to students. I then wrote a 746-line Product Requirements Document — covering user personas, feature specs, a design system, and accessibility standards. Everything that followed was built on this foundation.\n\nI identified three distinct user personas:',
+        title: 'Understanding Who I\'m Designing For',
+        sectionLabel: 'Research & Insights',
+        content: 'Before touching any tool, I spent time observing study groups and talking to students and leaders. I then wrote a 746-line Product Requirements Document — covering user personas, feature specs, a design system, and accessibility standards. Everything that followed was built on this foundation.\n\nI identified three distinct user personas, each with fundamentally different needs:',
         cards: [
-          { title: 'New Student', content: 'Just joined out of curiosity. No Buddhist background. Overwhelmed by terminology. Needs simplified language and clear takeaways. Most likely to drop out in the first 2 weeks.' },
-          { title: 'Casual Learner', content: 'Been in a group for a few months. Attends sessions but rarely reviews between meetings. Wants quick recaps and practical exercises. Reads on mobile during commutes.' },
-          { title: 'Experienced Practitioner', content: 'Deeply committed, studied for 1+ years. Values accuracy and wants to cross-reference simplified content with originals. Mentors newer students.' }
-        ]
+          { title: 'New Student', content: 'Just joined out of curiosity. No Buddhist background. Overwhelmed by terminology. Needs simplified language and clear takeaways.\n\n→ Most likely to drop out in the first 2 weeks' },
+          { title: 'Casual Learner', content: 'Been in a group for a few months. Attends sessions but rarely reviews between meetings. Wants quick recaps and practical exercises.\n\n→ Reads on mobile during commutes' },
+          { title: 'Experienced Practitioner', content: 'Deeply committed, studied for 1+ years. Values accuracy and wants to cross-reference simplified content with originals.\n\n→ Mentors newer students' }
+        ],
+        afterCards: 'These three personas shaped every design decision that followed. Each feature had to answer: which persona does this serve, and how?',
+        dividerAfter: true
       },
+      // ===== KEY DESIGN DECISIONS =====
+      {
+        title: 'Turning Insights Into Solutions',
+        sectionLabel: 'Key Design Decisions',
+        content: ''
+      },
+      // Decision 1
       {
         title: 'Decision 1: Making Ancient Wisdom Accessible',
-        content: 'Challenge: Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.\n\nMy solution: A three-layer content architecture — each layer designed to serve a specific persona.',
+        isDecisionBlock: true,
+        challenge: 'Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.',
+        insight: 'My three personas have three distinct reading modes — quick scanning, deep learning, and accuracy verification. One content format can\'t serve all three.',
+        solution: 'A three-layer content architecture — each layer designed to serve a specific persona.',
+        content: '',
         cards: [
-          { title: 'Simplified Explanation', content: 'Plain language with life analogies (e.g., explaining "attachment" through phone addiction). → Serves the New Student who needs accessible entry points.' },
-          { title: 'Core Takeaways', content: 'Each lesson distilled into one memorable sentence + 3–5 key points. The core insight you should walk away with. → Serves the Casual Learner who wants quick recaps.' },
-          { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text, displayed in a resizable side panel. → Serves the Experienced Practitioner who verifies accuracy.' }
+          { title: 'Simplified Explanation', content: 'Plain language with life analogies (e.g., explaining "attachment" through phone addiction).\n\n→ Serves the New Student' },
+          { title: 'Core Takeaways', content: 'Each lesson distilled into one memorable sentence + 3–5 key points. The core insight you should walk away with.\n\n→ Serves the Casual Learner' },
+          { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text, displayed in a resizable side panel.\n\n→ Serves the Experienced Practitioner' }
         ],
-        afterCards: 'Three personas, three reading modes, one unified interface. Everyone is served without compromise.',
+        afterCards: 'Three personas, three reading modes, one unified interface.',
         image: '/images/jingxin-lesson-en.png'
       },
+      // Decision 2
       {
         title: 'Decision 2: From Reading to Doing',
-        content: 'Insight: Buddhist learning is not academic — the goal is to change how you live daily life. This matters most for the Casual Learner, who needs practical reasons to keep showing up.\n\nI designed a practice system where each lesson ends with concrete exercises tied to real life. For example, after a lesson on compassion: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
+        isDecisionBlock: true,
+        challenge: 'Students read lessons but couldn\'t apply teachings to daily life. Buddhism is about practice, not memorization.',
+        insight: 'The Casual Learner — who attends but rarely reviews — needs practical reasons to keep showing up. Abstract theory isn\'t enough.',
+        solution: 'A practice system where each lesson ends with concrete exercises tied to real life.',
+        content: 'For example, after a lesson on compassion: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
         image: '/images/jingxin-exercise-en.png',
         imageSize: 'medium' as const
       },
       {
         title: '',
-        content: 'Giving users exercises isn\'t enough — they need to understand why each practice matters. I added a "?" icon next to each exercise that reveals the reasoning behind it. This progressive disclosure keeps the interface action-focused while giving curious learners a path to deeper understanding.',
+        content: 'But giving users exercises isn\'t enough — they need to understand why each practice matters. I added a "?" icon next to each exercise that reveals the reasoning. This progressive disclosure keeps the interface action-focused while giving curious learners a path to deeper understanding.',
         image: '/images/jingxin-exercise-expanded-en.png',
         imageSize: 'medium' as const
       },
+      // Decision 3
       {
         title: 'Decision 3: Designing for Vulnerability',
-        content: 'Challenge: Students needed to reflect on personal spiritual growth, but were embarrassed to share publicly. Through observation, I noticed students avoided journaling when they knew others could see their reflections.\n\nI made two design choices that respect this cultural context:\n\n4-tier privacy controls for journaling (private / classmates / teacher / everyone). Defaulting to "private" with opt-in sharing removed the barrier and increased participation.\n\n"随喜赞叹" (Suixi Zantan) — replaced generic "likes" with a Buddhist concept of rejoicing in others\' good deeds. This culturally meaningful interaction created authentic engagement aligned with users\' values.',
+        isDecisionBlock: true,
+        challenge: 'Students needed to reflect on personal spiritual growth, but were embarrassed to share publicly.',
+        insight: 'Through observation, I noticed students avoided journaling when they knew others could see their reflections. Spiritual growth feels deeply personal.',
+        solution: 'Two design choices that respect cultural context.',
+        content: '4-tier privacy controls for journaling (private / classmates / teacher / everyone). Defaulting to "private" with opt-in sharing removed the barrier and increased participation.\n\n"随喜赞叹" (Suixi Zantan) — replaced generic "likes" with a Buddhist concept of rejoicing in others\' good deeds. This culturally meaningful interaction created authentic engagement aligned with users\' values.',
+        dividerAfter: true
       },
+      // ===== THE PRODUCT =====
       {
         title: 'Try the Live Product',
-        content: 'Unlike a Figma prototype, this is a real, shipped product — with user authentication, a database, and bilingual support. I used AI vibe coding with my detailed PRD as the blueprint: 70 commits over 4 days, each one a cycle of describe → review → refine. My role throughout was creative director, reviewing every output and giving feedback like a design review.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
+        sectionLabel: 'The Product',
+        content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a database, and bilingual support. I used AI vibe coding with my detailed PRD as the blueprint — 70 commits over 4 days, each one a cycle of describe → review → refine. My role throughout was creative director, reviewing every output and giving feedback like a design review.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
         embed: 'https://jingxin-xuetang.vercel.app'
       },
       {
@@ -127,7 +160,8 @@ export const projects: Project[] = [
       {
         title: '',
         content: '',
-        images: ['/images/jingxin-hero-en.png', '/images/jingxin-courses-en.png', '/images/jingxin-lesson-en.png', '/images/jingxin-practice-en.png']
+        images: ['/images/jingxin-hero-en.png', '/images/jingxin-courses-en.png', '/images/jingxin-lesson-en.png', '/images/jingxin-practice-en.png'],
+        dividerAfter: true
       }
     ],
     impact: [

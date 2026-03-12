@@ -34,6 +34,8 @@ const ProjectDetail = () => {
 
   // Check if project uses new sections structure
   const hasSections = project.sections && project.sections.length > 0;
+  // Check if project uses V2 structure (has sectionLabels)
+  const isV2 = hasSections && project.sections!.some(s => s.sectionLabel);
 
   return (
     <div className="min-h-screen bg-cream">
@@ -116,8 +118,8 @@ const ProjectDetail = () => {
       <section className="pb-20 px-6">
         <div className="max-w-5xl mx-auto space-y-16">
 
-          {/* Impact Section - shown first for recruiters */}
-          {project.impact && project.impact.length > 0 && (
+          {/* Impact Section - shown first for recruiters (non-V2 projects only) */}
+          {!isV2 && project.impact && project.impact.length > 0 && (
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
                 Impact
@@ -137,8 +139,8 @@ const ProjectDetail = () => {
             </div>
           )}
 
-          {/* Testimonial - right after impact */}
-          {project.testimonial && (
+          {/* Testimonial - right after impact (non-V2 projects only) */}
+          {!isV2 && project.testimonial && (
             <div className="bg-white p-10 rounded-2xl">
               <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
                 "{project.testimonial.quote}"
@@ -155,21 +157,55 @@ const ProjectDetail = () => {
           {/* New Sections Structure */}
           {hasSections && project.sections!.map((section, index) => {
             // Check if this is a "header only" section (empty content, just a title divider)
-            const isHeaderOnly = section.title && !section.content && !section.image && !section.images && !section.gif && !section.gifs;
+            const isHeaderOnly = section.title && !section.content && !section.image && !section.images && !section.gif && !section.gifs && !section.challenge && !section.cards;
             // Check if this section has no title (continuation of previous section)
             const hasNoTitle = !section.title;
 
-            return (
-              <div key={index} className={isHeaderOnly ? 'pt-8' : hasNoTitle ? 'space-y-4 -mt-12' : 'space-y-4'}>
+            const sectionContent = (
+              <div key={index} className={`${section.isDecisionBlock ? 'bg-white rounded-2xl p-8 md:p-10' : ''} ${isHeaderOnly && !section.sectionLabel ? 'pt-8' : hasNoTitle ? 'space-y-4 -mt-12' : 'space-y-4'}`}>
+                {/* Section Label - small teal uppercase marker */}
+                {section.sectionLabel && (
+                  <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
+                    {section.sectionLabel}
+                  </div>
+                )}
+
                 {/* Section Title - only show if title exists */}
                 {section.title && (
                   <h2 className={`font-bold text-gray-900 leading-tight ${
-                    isHeaderOnly
+                    isHeaderOnly && !section.sectionLabel
                       ? 'text-3xl md:text-4xl border-b-2 border-gray-200 pb-4'
-                      : 'text-2xl md:text-3xl'
+                      : section.sectionLabel
+                        ? 'text-3xl md:text-4xl'
+                        : section.isDecisionBlock
+                          ? 'text-xl md:text-2xl'
+                          : 'text-2xl md:text-3xl'
                   }`}>
                     {section.title}
                   </h2>
+                )}
+
+                {/* Challenge / Insight / Solution colored blocks */}
+                {section.challenge && (
+                  <div className="bg-red-50 border-l-[3px] border-red-500 rounded-r-lg px-5 py-4 mt-4">
+                    <p className="text-red-700 text-[0.95rem] leading-[1.7] m-0">
+                      <strong>Challenge:</strong> {section.challenge}
+                    </p>
+                  </div>
+                )}
+                {section.insight && (
+                  <div className="bg-blue-50 border-l-[3px] border-blue-500 rounded-r-lg px-5 py-4">
+                    <p className="text-blue-700 text-[0.95rem] leading-[1.7] m-0">
+                      <strong>Insight:</strong> {section.insight}
+                    </p>
+                  </div>
+                )}
+                {section.solution && (
+                  <div className="bg-green-50 border-l-[3px] border-green-500 rounded-r-lg px-5 py-4">
+                    <p className="text-green-700 text-[0.95rem] leading-[1.7] m-0">
+                      <strong>Solution:</strong> {section.solution}
+                    </p>
+                  </div>
                 )}
 
                 {/* Section Content */}
@@ -386,7 +422,81 @@ const ProjectDetail = () => {
                 )}
               </div>
             );
+
+            return (
+              <div key={index}>
+                {sectionContent}
+                {/* Divider after section */}
+                {section.dividerAfter && (
+                  <div className="mt-16">
+                    <hr className="border-t border-gray-200" />
+                  </div>
+                )}
+              </div>
+            );
           })}
+
+          {/* V2: Impact Section - after sections */}
+          {isV2 && project.impact && project.impact.length > 0 && (
+            <div>
+              <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
+                Impact
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
+                Results & Feedback
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {project.impact.map((item, index) => (
+                  <div key={index} className="bg-white p-6 rounded-xl text-center">
+                    <div className="text-2xl font-black text-accent-teal mb-2">
+                      {item.includes(':') ? item.split(':')[0] : `Impact ${index + 1}`}
+                    </div>
+                    <p className="text-sm text-gray-600 leading-[1.6]">
+                      {item.includes(':') ? item.split(':')[1].trim() : item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* V2: All testimonials grouped together */}
+          {isV2 && project.testimonial && (
+            <div className="bg-white p-10 rounded-2xl">
+              <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
+                "{project.testimonial.quote}"
+              </blockquote>
+              <div className="text-gray-600">
+                <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
+                {project.testimonial.role && (
+                  <span className="ml-2">({project.testimonial.role})</span>
+                )}
+              </div>
+            </div>
+          )}
+
+          {isV2 && project.stakeholderFeedback && project.stakeholderFeedback.length > 0 && (
+            <div className="space-y-6">
+              {project.stakeholderFeedback.map((feedback, index) => (
+                <div key={index} className="bg-white p-8 rounded-2xl">
+                  <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
+                    "{feedback.quote}"
+                  </blockquote>
+                  <div className="text-gray-600">
+                    <span className="font-bold text-gray-900">— {feedback.author}</span>
+                    {feedback.role && (
+                      <span className="ml-2">({feedback.role})</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* V2: Divider before What I Learned */}
+          {isV2 && project.takeaways && project.takeaways.length > 0 && (
+            <hr className="border-t border-gray-200" />
+          )}
 
           {/* Legacy Structure - Challenge */}
           {!hasSections && project.challenge && (
@@ -446,8 +556,8 @@ const ProjectDetail = () => {
 
           {/* User Feedback / Testimonial Section - moved up near impact */}
 
-          {/* Stakeholder Feedback Section */}
-          {project.stakeholderFeedback && project.stakeholderFeedback.length > 0 && (
+          {/* Stakeholder Feedback Section (non-V2 only) */}
+          {!isV2 && project.stakeholderFeedback && project.stakeholderFeedback.length > 0 && (
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
                 Stakeholder's Feedback
@@ -473,6 +583,11 @@ const ProjectDetail = () => {
           {/* Takeaways Section */}
           {project.takeaways && project.takeaways.length > 0 && (
             <div>
+              {isV2 && (
+                <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
+                  Reflection
+                </div>
+              )}
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
                 What I Learned
               </h2>
