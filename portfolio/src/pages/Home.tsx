@@ -73,6 +73,7 @@ const Home = () => {
 
               {/* Project Info */}
               <div className="w-full md:w-2/5">
+                <p className="text-sm text-gray-400 mb-2">{project.year}</p>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 leading-tight">
                   {project.title}
                 </h2>
