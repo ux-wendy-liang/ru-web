@@ -22,7 +22,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${showBackground ? 'animated-gradient' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-6 py-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
@@ -37,13 +37,13 @@ const Navigation = () => {
           <div className="flex items-center space-x-12">
             <Link
               to="/"
-              className="text-xl text-gray-900 hover:text-gray-600 transition-colors duration-200"
+              className="text-base text-gray-900 hover:text-gray-600 transition-colors duration-200"
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="text-xl text-gray-900 hover:text-gray-600 transition-colors duration-200"
+              className="text-base text-gray-900 hover:text-gray-600 transition-colors duration-200"
             >
               About
             </Link>

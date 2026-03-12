@@ -1,0 +1,67 @@
+<svg viewBox="0 0 760 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ========== LEFT: DATA CONSUMERS ========== -->
+  <rect x="20" y="12" width="340" height="236" rx="16" fill="#FAFAFA" stroke="#E5E7EB" stroke-width="1"/>
+  <!-- Header -->
+  <text x="190" y="44" font-family="Lato, sans-serif" font-size="11" font-weight="700" fill="#374151" text-anchor="middle" letter-spacing="2">DATA CONSUMERS</text>
+  <!-- Subtle divider -->
+  <line x1="56" y1="56" x2="324" y2="56" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Person 1: PM -->
+  <circle cx="108" cy="100" r="22" fill="#F3F4F6"/>
+  <circle cx="108" cy="92" r="9.5" fill="#9CA3AF"/>
+  <path d="M91,112 C91,106 99,102 108,102 C117,102 125,106 125,112" fill="#9CA3AF"/>
+  <text x="108" y="146" font-family="Lato, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">PM</text>
+
+  <!-- Person 2: PM Lead -->
+  <circle cx="190" cy="100" r="22" fill="#F3F4F6"/>
+  <circle cx="190" cy="92" r="9.5" fill="#9CA3AF"/>
+  <path d="M173,112 C173,106 181,102 190,102 C199,102 207,106 207,112" fill="#9CA3AF"/>
+  <text x="190" y="146" font-family="Lato, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">PM Lead</text>
+
+  <!-- Person 3: Director -->
+  <circle cx="272" cy="100" r="22" fill="#F3F4F6"/>
+  <circle cx="272" cy="92" r="9.5" fill="#9CA3AF"/>
+  <path d="M255,112 C255,106 263,102 272,102 C281,102 289,106 289,112" fill="#9CA3AF"/>
+  <text x="272" y="146" font-family="Lato, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">Director</text>
+
+  <!-- Divider -->
+  <line x1="56" y1="160" x2="324" y2="160" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Key pain -->
+  <text x="190" y="182" font-family="Lato, sans-serif" font-size="11" fill="#5B9B8E" text-anchor="middle" font-weight="700">Key pain:</text>
+  <text x="190" y="202" font-family="Lato, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle" font-style="italic">"Filters are too technical.</text>
+  <text x="190" y="220" font-family="Lato, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle" font-style="italic">I always have to ask a data scientist."</text>
+
+  <!-- ========== RIGHT: DATA CREATORS ========== -->
+  <rect x="400" y="12" width="340" height="236" rx="16" fill="#FAFAFA" stroke="#E5E7EB" stroke-width="1"/>
+  <!-- Header -->
+  <text x="570" y="44" font-family="Lato, sans-serif" font-size="11" font-weight="700" fill="#374151" text-anchor="middle" letter-spacing="2">DATA CREATORS</text>
+  <!-- Subtle divider -->
+  <line x1="436" y1="56" x2="704" y2="56" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Person 1 -->
+  <circle cx="488" cy="100" r="22" fill="#E8F4F1"/>
+  <circle cx="488" cy="92" r="9.5" fill="#5B9B8E"/>
+  <path d="M471,112 C471,106 479,102 488,102 C497,102 505,106 505,112" fill="#5B9B8E"/>
+  <text x="488" y="146" font-family="Lato, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">Data Sci</text>
+
+  <!-- Person 2 -->
+  <circle cx="570" cy="100" r="22" fill="#E8F4F1"/>
+  <circle cx="570" cy="92" r="9.5" fill="#5B9B8E"/>
+  <path d="M553,112 C553,106 561,102 570,102 C579,102 587,106 587,112" fill="#5B9B8E"/>
+  <text x="570" y="146" font-family="Lato, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">Data Sci</text>
+
+  <!-- Person 3 -->
+  <circle cx="652" cy="100" r="22" fill="#E8F4F1"/>
+  <circle cx="652" cy="92" r="9.5" fill="#5B9B8E"/>
+  <path d="M635,112 C635,106 643,102 652,102 C661,102 669,106 669,112" fill="#5B9B8E"/>
+  <text x="652" y="146" font-family="Lato, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">Data Sci</text>
+
+  <!-- Divider -->
+  <line x1="436" y1="160" x2="704" y2="160" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Key pain -->
+  <text x="570" y="182" font-family="Lato, sans-serif" font-size="11" fill="#5B9B8E" text-anchor="middle" font-weight="700">Key pain:</text>
+  <text x="570" y="202" font-family="Lato, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle" font-style="italic">"I spend hours answering PMs' questions.</text>
+  <text x="570" y="220" font-family="Lato, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle" font-style="italic">I've become a human filter."</text>
+</svg>

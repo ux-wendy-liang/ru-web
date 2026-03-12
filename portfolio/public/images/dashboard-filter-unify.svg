@@ -1,0 +1,38 @@
+<svg viewBox="0 0 680 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ========== Chart A ========== -->
+  <rect x="40" y="30" width="200" height="130" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="140" y="68" font-family="Lato, sans-serif" font-size="15" font-weight="700" fill="#1F2937" text-anchor="middle">Chart A</text>
+  <!-- filter tag -->
+  <rect x="60" y="86" width="160" height="36" rx="8" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="140" y="110" font-family="Lato, sans-serif" font-size="13" fill="#991B1B" text-anchor="middle">filter: "country_code"</text>
+
+  <!-- ========== Chart B ========== -->
+  <rect x="440" y="30" width="200" height="130" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1.5"/>
+  <text x="540" y="68" font-family="Lato, sans-serif" font-size="15" font-weight="700" fill="#1F2937" text-anchor="middle">Chart B</text>
+  <!-- filter tag -->
+  <rect x="460" y="86" width="160" height="36" rx="8" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="540" y="110" font-family="Lato, sans-serif" font-size="13" fill="#991B1B" text-anchor="middle">filter: "country_Code"</text>
+
+  <!-- ========== Middle label ========== -->
+  <text x="340" y="90" font-family="Lato, sans-serif" font-size="12" fill="#9CA3AF" text-anchor="middle">Same data,</text>
+  <text x="340" y="108" font-family="Lato, sans-serif" font-size="12" fill="#9CA3AF" text-anchor="middle">different names</text>
+
+  <!-- ========== Connector lines from charts down to unified ========== -->
+  <!-- Left connector -->
+  <path d="M140,160 L140,200 Q140,220 160,220 L280,220 Q300,220 300,240 L300,246" stroke="#5B9B8E" stroke-width="1.5" fill="none"/>
+  <!-- Right connector -->
+  <path d="M540,160 L540,200 Q540,220 520,220 L400,220 Q380,220 380,240 L380,246" stroke="#5B9B8E" stroke-width="1.5" fill="none"/>
+
+  <!-- ========== Unified filter badge ========== -->
+  <rect x="260" y="246" width="160" height="46" rx="23" fill="#E8F4F1" stroke="#5B9B8E" stroke-width="1.5"/>
+  <!-- Link icon -->
+  <g transform="translate(290, 261)">
+    <path d="M7,4 L5,6 C3.3,7.7 3.3,10.3 5,12 C6.7,13.7 9.3,13.7 11,12 L13,10" stroke="#5B9B8E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M13,12 L15,10 C16.7,8.3 16.7,5.7 15,4 C13.3,2.3 10.7,2.3 9,4 L7,6" stroke="#5B9B8E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="360" y="274" font-family="Lato, sans-serif" font-size="15" font-weight="700" fill="#1F2937" text-anchor="middle">"Country"</text>
+
+  <!-- ========== Bottom label ========== -->
+  <text x="340" y="322" font-family="Lato, sans-serif" font-size="13" fill="#5B9B8E" text-anchor="middle" font-weight="600">Unified! One filter controls both charts</text>
+</svg>

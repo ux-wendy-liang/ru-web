@@ -2,10 +2,13 @@ import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { projects } from '../data/projects';
 
-// Simple helper to render *italic* markdown in text
+// Simple helper to render **bold** and *italic* markdown in text
 const renderInlineMarkdown = (text: string) => {
-  const parts = text.split(/(\*[^*]+\*)/g);
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
   return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="text-gray-900">{part.slice(2, -2)}</strong>;
+    }
     if (part.startsWith('*') && part.endsWith('*')) {
       return <em key={i}>{part.slice(1, -1)}</em>;
     }
@@ -27,7 +30,7 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-cream pt-24 pb-20 px-6">
+      <div className="min-h-screen bg-white pt-24 pb-20 px-6 md:px-16 lg:px-24">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Project not found
@@ -49,9 +52,9 @@ const ProjectDetail = () => {
   const isV2 = hasSections && project.sections!.some(s => s.sectionLabel);
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-6">
+      <section className="pt-32 pb-12 px-6 md:px-16 lg:px-24">
         <div className="max-w-5xl mx-auto">
           {/* Back Button */}
           <Link
@@ -84,76 +87,75 @@ const ProjectDetail = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-12 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 leading-tight">
             {project.title}
           </h1>
 
-          {/* Project Overview & Meta Info */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-            {/* Left Column - Overview */}
-            <div className="md:col-span-2">
-              <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-4">
-                PROJECT OVERVIEW
-              </h2>
-              <p className="text-lg text-gray-700 leading-[1.8]">
-                {project.shortDescription}
-              </p>
-            </div>
+          {/* Project Overview */}
+          <div className="mb-8">
+            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">
+              PROJECT OVERVIEW
+            </h2>
+            <p className="text-lg text-gray-600 leading-[1.8] max-w-3xl">
+              {project.shortDescription}
+            </p>
+          </div>
 
-            {/* Right Column - Meta Info */}
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">
-                  ROLE
-                </h3>
-                <p className="text-gray-900 whitespace-pre-line">{project.role}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">
-                  TIMELINE
-                </h3>
-                <p className="text-gray-900">{project.duration}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">
-                  TEAM
-                </h3>
-                <p className="text-gray-900 whitespace-pre-line">{project.team}</p>
-              </div>
+          {/* Meta Info - horizontal layout below overview */}
+          <div className="grid grid-cols-3 gap-8 mb-16">
+            <div>
+              <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
+                ROLE
+              </h3>
+              <p className="text-gray-900 whitespace-pre-line">{project.role}</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
+                TIMELINE
+              </h3>
+              <p className="text-gray-900">{project.duration}</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
+                TEAM
+              </h3>
+              <p className="text-gray-900 whitespace-pre-line">{project.team}</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Content Sections */}
-      <section className="pb-20 px-6">
+      <section className="pb-20 px-6 md:px-16 lg:px-24">
         <div className="max-w-5xl mx-auto space-y-16">
 
           {/* Impact Section - shown first for recruiters (non-V2 projects only) */}
           {!isV2 && project.impact && project.impact.length > 0 && (
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                Impact
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {project.impact.map((item, index) => (
-                  <div key={index} className="bg-white p-8 rounded-xl">
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">
-                      {item.includes(':') ? item.split(':')[0] : `Impact ${index + 1}`}
-                    </h4>
-                    <p className="text-gray-700 leading-[1.7]">
-                      {item.includes(':') ? item.split(':')[1].trim() : item}
-                    </p>
-                  </div>
-                ))}
+            <div className="bg-[#F6FAF9] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
+              <div className="max-w-5xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
+                  Impact
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {project.impact.map((item, index) => (
+                    <div key={index} className="bg-white/70 p-8 rounded-xl">
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">
+                        {item.includes(':') ? item.split(':')[0] : `Impact ${index + 1}`}
+                      </h4>
+                      <p className="text-gray-600 leading-[1.7]">
+                        {item.includes(':') ? item.split(':')[1].trim() : item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
 
           {/* Testimonial - right after impact (non-V2 projects only) */}
           {!isV2 && project.testimonial && (
-            <div className="bg-white p-8 md:p-10 rounded-2xl">
-              <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
+            <div className="bg-[#FAF9F7] p-8 md:p-10 rounded-2xl">
+              <blockquote className="max-w-prose text-lg text-gray-900 italic leading-[1.8] mb-4">
                 "{project.testimonial.quote}"
               </blockquote>
               <div className="text-gray-600">
@@ -180,10 +182,10 @@ const ProjectDetail = () => {
             const hasDecisionContinuation = section.isDecisionBlock && section.title && nextSection && nextSection.isDecisionBlock && !nextSection.title;
 
             const sectionContent = (
-              <div key={index} className={`${section.isDecisionBlock && !isDecisionContinuation ? `bg-white p-8 md:p-10 ${hasDecisionContinuation ? 'rounded-t-2xl pb-2' : 'rounded-2xl'}` : ''} ${isDecisionContinuation ? 'bg-white rounded-b-2xl px-8 md:px-10 pb-8 md:pb-10 pt-2 -mt-16' : isHeaderOnly && !section.sectionLabel ? 'pt-8' : hasNoTitle && !isDecisionContinuation && !isStandaloneMedia ? 'space-y-4 -mt-12' : 'space-y-4'}`}>
+              <div key={index} className={`${section.isDecisionBlock && !isDecisionContinuation ? `bg-gray-50 p-8 md:p-10 ${hasDecisionContinuation ? 'rounded-t-2xl pb-2' : 'rounded-2xl'}` : ''} ${isDecisionContinuation ? 'bg-gray-50 rounded-b-2xl px-8 md:px-10 pb-8 md:pb-10 pt-2 -mt-16' : isHeaderOnly && !section.sectionLabel ? 'pt-8' : hasNoTitle && !isDecisionContinuation && !isStandaloneMedia ? 'space-y-4 -mt-12' : 'space-y-4'}`}>
                 {/* Section Label - small teal uppercase marker */}
                 {section.sectionLabel && (
-                  <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
+                  <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3 pt-8">
                     {section.sectionLabel}
                   </div>
                 )}
@@ -192,9 +194,9 @@ const ProjectDetail = () => {
                 {section.title && (
                   <h2 className={`font-bold text-gray-900 leading-tight ${
                     isHeaderOnly && !section.sectionLabel
-                      ? 'text-3xl md:text-4xl border-b-2 border-gray-200 pb-4'
+                      ? 'text-2xl md:text-3xl border-b-2 border-gray-200 pb-4'
                       : section.sectionLabel
-                        ? 'text-3xl md:text-4xl'
+                        ? 'text-2xl md:text-3xl'
                         : section.isDecisionBlock
                           ? 'text-xl md:text-2xl'
                           : 'text-2xl md:text-3xl'
@@ -204,68 +206,156 @@ const ProjectDetail = () => {
                 )}
 
                 {/* Challenge / Insight / Solution colored blocks */}
-                {section.challenge && (
-                  <div className="bg-red-50 border-l-[3px] border-red-500 rounded-r-lg px-5 py-4 mt-4">
-                    <p className="text-red-700 text-[0.95rem] leading-[1.7] m-0">
-                      <strong>Challenge:</strong> {section.challenge}
-                    </p>
-                  </div>
-                )}
-                {section.insight && (
-                  <div className="bg-blue-50 border-l-[3px] border-blue-500 rounded-r-lg px-5 py-4">
-                    <p className="text-blue-700 text-[0.95rem] leading-[1.7] m-0">
-                      <strong>Insight:</strong> {section.insight}
-                    </p>
-                  </div>
-                )}
-                {section.solution && (
-                  <div className="bg-green-50 border-l-[3px] border-green-500 rounded-r-lg px-5 py-4">
-                    <p className="text-green-700 text-[0.95rem] leading-[1.7] m-0">
-                      <strong>Solution:</strong> {section.solution}
-                    </p>
-                  </div>
-                )}
+                {section.challenge && (() => {
+                  const colonIdx = section.challenge.indexOf(':');
+                  const hasOwnLabel = colonIdx > 0 && colonIdx < 40;
+                  return (
+                    <div className="bg-[#FBF3F2] border-l-[3px] border-[#C2807A] rounded-r-lg px-5 py-4 mt-4">
+                      <p className="text-[#8B554E] text-[0.95rem] leading-[1.7] m-0">
+                        {hasOwnLabel ? (
+                          <><strong>{section.challenge.slice(0, colonIdx + 1)}</strong>{section.challenge.slice(colonIdx + 1)}</>
+                        ) : (
+                          <><strong>Challenge:</strong> {section.challenge}</>
+                        )}
+                      </p>
+                    </div>
+                  );
+                })()}
+                {section.insight && (() => {
+                  const colonIdx = section.insight.indexOf(':');
+                  const hasOwnLabel = colonIdx > 0 && colonIdx < 40;
+                  // Golden/amber style for quoted insights (starts with ")
+                  const isGoldenQuote = section.insight.trim().startsWith('"');
+
+                  if (isGoldenQuote) {
+                    // Split quote and attribution (look for " — " pattern)
+                    const dashIdx = section.insight.indexOf('— ');
+                    const quoteText = dashIdx > 0 ? section.insight.slice(0, dashIdx).trim() : section.insight;
+                    const attribution = dashIdx > 0 ? section.insight.slice(dashIdx) : '';
+                    // Remove surrounding quotes
+                    const cleanQuote = quoteText.replace(/^[""]|[""]$/g, '');
+
+                    return (
+                      <div className="bg-[#F7F5F2] border-l-[3px] border-[#B09A82] rounded-r-lg px-6 py-5">
+                        <div className="text-[#B09A82] text-3xl font-serif leading-none mb-2">"</div>
+                        <p className="text-[#6B5C48] text-lg italic leading-[1.7] m-0">
+                          {cleanQuote}
+                        </p>
+                        {attribution && (
+                          <p className="text-[#6B5C48] text-sm mt-3 m-0">{attribution}</p>
+                        )}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <div className="bg-[#F2F5F8] border-l-[3px] border-[#7E97AD] rounded-r-lg px-5 py-4">
+                      <p className="text-[#4E6577] text-[0.95rem] leading-[1.7] m-0">
+                        {hasOwnLabel ? (
+                          <><strong>{section.insight.slice(0, colonIdx + 1)}</strong>{section.insight.slice(colonIdx + 1)}</>
+                        ) : (
+                          <><strong>Insight:</strong> {section.insight}</>
+                        )}
+                      </p>
+                    </div>
+                  );
+                })()}
+                {section.solution && (() => {
+                  const colonIdx = section.solution.indexOf(':');
+                  const hasOwnLabel = colonIdx > 0 && colonIdx < 40;
+                  return (
+                    <div className="bg-[#F0F6F5] border-l-[3px] border-[#5B9B8E] rounded-r-lg px-5 py-4">
+                      <p className="text-[#3E6B61] text-[0.95rem] leading-[1.7] m-0">
+                        {hasOwnLabel ? (
+                          <><strong>{section.solution.slice(0, colonIdx + 1)}</strong>{section.solution.slice(colonIdx + 1)}</>
+                        ) : (
+                          <><strong>Solution:</strong> {section.solution}</>
+                        )}
+                      </p>
+                    </div>
+                  );
+                })()}
 
                 {/* Section Content */}
                 {section.content && (
-                  <div className="max-w-prose text-lg text-gray-700 leading-[1.8] whitespace-pre-line">
+                  <div className="max-w-prose text-lg text-gray-600 leading-[1.8] whitespace-pre-line">
                     {renderInlineMarkdown(section.content)}
                   </div>
                 )}
 
                 {/* Cards */}
-                {section.cards && section.cards.length > 0 && (
-                  <div className={`mt-4 grid gap-4 grid-cols-1 ${section.cards.length <= 3 ? `md:grid-cols-${section.cards.length}` : 'md:grid-cols-3'}`}>
-                    {section.cards.map((card, cardIndex) => (
-                      <div key={cardIndex} className="bg-white p-6 rounded-xl">
-                        <h4 className="text-base font-bold text-gray-900 mb-2">{card.title}</h4>
-                        <div className="text-[0.95rem] text-gray-600 leading-[1.6]">
-                          {card.content.split('\n\n').map((para, pIdx) => {
-                            // Check if this paragraph is a persona tag (starts with →)
-                            const isPersonaTag = para.trim().startsWith('→');
-                            return (
-                              <p key={pIdx} className={`${pIdx > 0 ? 'mt-2' : ''} ${isPersonaTag ? 'text-[0.8rem] text-accent-teal font-bold mt-2' : ''}`}>
-                                {para.split('\n').map((line, lIdx) => (
-                                  <span key={lIdx}>
-                                    {lIdx > 0 && <br />}
-                                    {line}
-                                  </span>
+                {section.cards && section.cards.length > 0 && (() => {
+                  // Detect if cards use "Consumers:" / "Creators:" prefix pattern for styled badges
+                  const hasUserTypeTags = section.cards.every(c =>
+                    c.title.startsWith('Consumers:') || c.title.startsWith('Creators:')
+                  );
+
+                  return (
+                    <div className={`mt-4 grid gap-4 grid-cols-1 ${
+                      hasUserTypeTags && section.cards.length === 4
+                        ? 'md:grid-cols-2'
+                        : section.cards.length <= 3
+                          ? `md:grid-cols-${section.cards.length}`
+                          : 'md:grid-cols-3'
+                    }`}>
+                      {section.cards.map((card, cardIndex) => {
+                        if (hasUserTypeTags) {
+                          const isConsumer = card.title.startsWith('Consumers:');
+                          const cleanTitle = card.title.replace(/^(Consumers|Creators):\s*/, '');
+                          const tagText = isConsumer ? 'DATA CONSUMER' : 'DATA CREATOR';
+                          const tagSubtext = isConsumer ? '(PM, LEADERSHIP)' : '(DATA SCIENTIST)';
+
+                          return (
+                            <div key={cardIndex} className="bg-white p-6 rounded-xl border border-gray-100">
+                              <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.7rem] font-bold tracking-wide mb-3 ${
+                                isConsumer
+                                  ? 'bg-[#F2F5F8] text-[#4E6577]'
+                                  : 'bg-[#F0F6F5] text-[#3E6B61]'
+                              }`}>
+                                {tagText} <span className="font-normal opacity-75">{tagSubtext}</span>
+                              </div>
+                              <h4 className="text-base font-bold text-gray-900 mb-2">{cleanTitle}</h4>
+                              <div className="text-[0.95rem] text-gray-600 leading-[1.6]">
+                                {card.content.split('\n\n').map((para, pIdx) => (
+                                  <p key={pIdx} className={pIdx > 0 ? 'mt-2' : ''}>
+                                    {para.split('\n').map((line, lIdx) => (
+                                      <span key={lIdx}>{lIdx > 0 && <br />}{line}</span>
+                                    ))}
+                                  </p>
                                 ))}
-                              </p>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        return (
+                          <div key={cardIndex} className="bg-white p-6 rounded-xl">
+                            <h4 className="text-base font-bold text-gray-900 mb-2">{card.title}</h4>
+                            <div className="text-[0.95rem] text-gray-600 leading-[1.6]">
+                              {card.content.split('\n\n').map((para, pIdx) => {
+                                const isPersonaTag = para.trim().startsWith('→');
+                                return (
+                                  <p key={pIdx} className={`${pIdx > 0 ? 'mt-2' : ''} ${isPersonaTag ? 'text-[0.8rem] text-accent-teal font-bold mt-2' : ''}`}>
+                                    {para.split('\n').map((line, lIdx) => (
+                                      <span key={lIdx}>{lIdx > 0 && <br />}{line}</span>
+                                    ))}
+                                  </p>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })()}
 
                 {/* After Cards Text (between cards and flow) */}
                 {section.afterCards && (
                   <div className={`mt-4 leading-[1.8] ${
                     section.isDecisionBlock
-                      ? 'text-center italic text-gray-500 text-base'
-                      : 'max-w-prose text-lg text-gray-700'
+                      ? 'text-center italic text-gray-400 text-base'
+                      : 'max-w-prose text-lg text-gray-600'
                   }`}>
                     {section.afterCards.split('\n\n').map((para, pIdx) => (
                       <p key={pIdx} className={pIdx > 0 ? 'mt-4' : ''}>{para}</p>
@@ -280,8 +370,8 @@ const ProjectDetail = () => {
                       <div key={stepIndex} className="flex items-center gap-2">
                         <span className={`px-5 py-2.5 rounded-lg text-[0.95rem] font-bold ${
                           stepIndex === section.flow!.length - 1
-                            ? 'bg-red-50 text-red-600'
-                            : 'bg-white text-gray-700'
+                            ? 'bg-[#FBF3F2] text-[#8B554E]'
+                            : 'bg-white text-gray-600'
                         }`}>
                           {step}
                         </span>
@@ -464,57 +554,68 @@ const ProjectDetail = () => {
 
           {/* V2: Impact Section - after sections */}
           {isV2 && project.impact && project.impact.length > 0 && (
-            <div>
-              <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
-                Impact
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                Results & Feedback
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {project.impact.map((item, index) => (
-                  <div key={index} className="bg-white p-6 rounded-xl text-center">
-                    <div className="text-2xl font-black text-accent-teal mb-2">
-                      {item.includes(':') ? item.split(':')[0] : `Impact ${index + 1}`}
+            <div className="bg-[#F6FAF9] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
+                  Impact
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
+                  Results & Feedback
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {project.impact.map((item, index) => (
+                    <div key={index} className="bg-white/70 p-6 rounded-xl text-center">
+                      <div className="text-2xl font-black text-accent-teal mb-2">
+                        {item.includes(':') ? item.split(':')[0] : `Impact ${index + 1}`}
+                      </div>
+                      <p className="text-sm text-gray-600 leading-[1.6]">
+                        {item.includes(':') ? item.split(':')[1].trim() : item}
+                      </p>
                     </div>
-                    <p className="text-sm text-gray-600 leading-[1.6]">
-                      {item.includes(':') ? item.split(':')[1].trim() : item}
-                    </p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
+            </div>
+          )}
+
+          {/* V2: Impact summary paragraph */}
+          {isV2 && project.impactSummary && (
+            <div className="max-w-prose text-lg text-gray-600 leading-[1.8]">
+              {project.impactSummary}
             </div>
           )}
 
           {/* V2: All quotes (testimonial + stakeholder feedback) grouped in one container */}
           {isV2 && (project.testimonial || (project.stakeholderFeedback && project.stakeholderFeedback.length > 0)) && (
-            <div className="space-y-6">
-              {project.testimonial && (
-                <div className="bg-white p-8 md:p-10 rounded-2xl">
-                  <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
-                    "{project.testimonial.quote}"
-                  </blockquote>
-                  <div className="text-gray-600">
-                    <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
-                    {project.testimonial.role && (
-                      <span className="ml-2">({project.testimonial.role})</span>
-                    )}
+            <div className="bg-[#FAF9F7] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
+              <div className="max-w-5xl mx-auto space-y-6">
+                {project.testimonial && (
+                  <div className="bg-white/70 p-8 md:p-10 rounded-2xl">
+                    <blockquote className="max-w-prose text-lg text-gray-900 italic leading-[1.8] mb-4">
+                      "{project.testimonial.quote}"
+                    </blockquote>
+                    <div className="text-gray-600">
+                      <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
+                      {project.testimonial.role && (
+                        <span className="ml-2">({project.testimonial.role})</span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              )}
-              {project.stakeholderFeedback && project.stakeholderFeedback.map((feedback, index) => (
-                <div key={index} className="bg-white p-8 md:p-10 rounded-2xl">
-                  <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
-                    "{feedback.quote}"
-                  </blockquote>
-                  <div className="text-gray-600">
-                    <span className="font-bold text-gray-900">— {feedback.author}</span>
-                    {feedback.role && (
-                      <span className="ml-2">({feedback.role})</span>
-                    )}
+                )}
+                {project.stakeholderFeedback && project.stakeholderFeedback.map((feedback, index) => (
+                  <div key={index} className="bg-white/70 p-8 md:p-10 rounded-2xl">
+                    <blockquote className="max-w-prose text-lg text-gray-900 italic leading-[1.8] mb-4">
+                      "{feedback.quote}"
+                    </blockquote>
+                    <div className="text-gray-600">
+                      <span className="font-bold text-gray-900">— {feedback.author}</span>
+                      {feedback.role && (
+                        <span className="ml-2">({feedback.role})</span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
 
@@ -526,10 +627,10 @@ const ProjectDetail = () => {
           {/* Legacy Structure - Challenge */}
           {!hasSections && project.challenge && (
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
                 The Challenge
               </h2>
-              <p className="max-w-prose text-lg text-gray-700 leading-[1.8]">
+              <p className="max-w-prose text-lg text-gray-600 leading-[1.8]">
                 {project.challenge}
               </p>
             </div>
@@ -538,10 +639,10 @@ const ProjectDetail = () => {
           {/* Legacy Structure - Solution */}
           {!hasSections && project.solution && (
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
                 The Solution
               </h2>
-              <p className="max-w-prose text-lg text-gray-700 leading-[1.8]">
+              <p className="max-w-prose text-lg text-gray-600 leading-[1.8]">
                 {project.solution}
               </p>
             </div>
@@ -584,13 +685,13 @@ const ProjectDetail = () => {
           {/* Stakeholder Feedback Section (non-V2 only) */}
           {!isV2 && project.stakeholderFeedback && project.stakeholderFeedback.length > 0 && (
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
                 Stakeholder's Feedback
               </h2>
               <div className="space-y-6">
                 {project.stakeholderFeedback.map((feedback, index) => (
-                  <div key={index} className="bg-white p-8 md:p-10 rounded-2xl">
-                    <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
+                  <div key={index} className="bg-[#FAF9F7] p-8 md:p-10 rounded-2xl">
+                    <blockquote className="max-w-prose text-lg text-gray-900 italic leading-[1.8] mb-4">
                       "{feedback.quote}"
                     </blockquote>
                     <div className="text-gray-600">
@@ -607,48 +708,50 @@ const ProjectDetail = () => {
 
           {/* Takeaways Section */}
           {project.takeaways && project.takeaways.length > 0 && (
-            <div>
-              {isV2 && (
-                <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
-                  Reflection
-                </div>
-              )}
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                What I Learned
-              </h2>
-              <div className="space-y-6">
-                {project.takeaways.map((takeaway, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-gray-900 font-black">{index + 1}</span>
-                    </div>
-                    <p className="text-[1.05rem] text-gray-600 leading-[1.7]">
-                      {(() => {
-                        // Bold the first sentence (up to first ": " or "." followed by space)
-                        const colonIdx = takeaway.indexOf(': ');
-                        if (colonIdx !== -1 && colonIdx < 80) {
-                          return (
-                            <>
-                              <span className="font-bold text-gray-900">{takeaway.slice(0, colonIdx + 1)}</span>
-                              {takeaway.slice(colonIdx + 1)}
-                            </>
-                          );
-                        }
-                        // Fallback: bold first sentence ending with period
-                        const dotIdx = takeaway.indexOf('. ');
-                        if (dotIdx !== -1 && dotIdx < 80) {
-                          return (
-                            <>
-                              <span className="font-bold text-gray-900">{takeaway.slice(0, dotIdx + 1)}</span>
-                              {takeaway.slice(dotIdx + 1)}
-                            </>
-                          );
-                        }
-                        return takeaway;
-                      })()}
-                    </p>
+            <div className="bg-[#FAF9F7] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
+              <div className="max-w-5xl mx-auto">
+                {isV2 && (
+                  <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
+                    Reflection
                   </div>
-                ))}
+                )}
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
+                  What I Learned
+                </h2>
+                <div className="space-y-6">
+                  {project.takeaways.map((takeaway, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-gray-900 font-black">{index + 1}</span>
+                      </div>
+                      <p className="text-[1.05rem] text-gray-600 leading-[1.7]">
+                        {(() => {
+                          // Bold the first sentence (up to first ": " or "." followed by space)
+                          const colonIdx = takeaway.indexOf(': ');
+                          if (colonIdx !== -1 && colonIdx < 80) {
+                            return (
+                              <>
+                                <span className="font-bold text-gray-900">{takeaway.slice(0, colonIdx + 1)}</span>
+                                {takeaway.slice(colonIdx + 1)}
+                              </>
+                            );
+                          }
+                          // Fallback: bold first sentence ending with period
+                          const dotIdx = takeaway.indexOf('. ');
+                          if (dotIdx !== -1 && dotIdx < 80) {
+                            return (
+                              <>
+                                <span className="font-bold text-gray-900">{takeaway.slice(0, dotIdx + 1)}</span>
+                                {takeaway.slice(dotIdx + 1)}
+                              </>
+                            );
+                          }
+                          return takeaway;
+                        })()}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
@@ -656,7 +759,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Bottom Navigation */}
-      <section className="pb-20 px-6">
+      <section className="pb-20 px-6 md:px-16 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <Link
             to="/"
