@@ -149,7 +149,7 @@ export const projects: Project[] = [
         embed: 'https://jingxin-xuetang.vercel.app'
       },
       {
-        title: '',
+        title: 'Mobile-First Design',
         content: 'Buddhist study often happens on phones — commuting, before bed. I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.',
         phoneBefore: ['/images/jingxin-mobile-lesson-en.png'],
         phoneAfter: [
