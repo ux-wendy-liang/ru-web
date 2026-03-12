@@ -623,7 +623,29 @@ const ProjectDetail = () => {
                       <span className="text-gray-900 font-black">{index + 1}</span>
                     </div>
                     <p className="text-[1.05rem] text-gray-600 leading-[1.7]">
-                      {takeaway}
+                      {(() => {
+                        // Bold the first sentence (up to first ": " or "." followed by space)
+                        const colonIdx = takeaway.indexOf(': ');
+                        if (colonIdx !== -1 && colonIdx < 80) {
+                          return (
+                            <>
+                              <span className="font-bold text-gray-900">{takeaway.slice(0, colonIdx + 1)}</span>
+                              {takeaway.slice(colonIdx + 1)}
+                            </>
+                          );
+                        }
+                        // Fallback: bold first sentence ending with period
+                        const dotIdx = takeaway.indexOf('. ');
+                        if (dotIdx !== -1 && dotIdx < 80) {
+                          return (
+                            <>
+                              <span className="font-bold text-gray-900">{takeaway.slice(0, dotIdx + 1)}</span>
+                              {takeaway.slice(dotIdx + 1)}
+                            </>
+                          );
+                        }
+                        return takeaway;
+                      })()}
                     </p>
                   </div>
                 ))}
