@@ -126,7 +126,8 @@ export const projects: Project[] = [
       },
       {
         title: '',
-        content: 'But giving users exercises isn\'t enough — they need to understand why each practice matters. I added a "?" icon next to each exercise that reveals the reasoning. This progressive disclosure keeps the interface action-focused while giving curious learners a path to deeper understanding.',
+        isDecisionBlock: true,
+        content: 'But giving users exercises isn\'t enough — they need to understand *why* each practice matters. I added a "?" icon next to each exercise that reveals the reasoning. This progressive disclosure keeps the interface action-focused while giving curious learners a path to deeper understanding.',
         image: '/images/jingxin-exercise-expanded-en.png',
         imageSize: 'medium' as const
       },

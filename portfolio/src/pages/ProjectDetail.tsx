@@ -2,6 +2,17 @@ import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { projects } from '../data/projects';
 
+// Simple helper to render *italic* markdown in text
+const renderInlineMarkdown = (text: string) => {
+  const parts = text.split(/(\*[^*]+\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('*') && part.endsWith('*')) {
+      return <em key={i}>{part.slice(1, -1)}</em>;
+    }
+    return part;
+  });
+};
+
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const project = projects.find((p) => p.id === id);
@@ -211,7 +222,7 @@ const ProjectDetail = () => {
                 {/* Section Content */}
                 {section.content && (
                   <div className="max-w-prose text-lg text-gray-700 leading-[1.8] whitespace-pre-line">
-                    {section.content}
+                    {renderInlineMarkdown(section.content)}
                   </div>
                 )}
 
