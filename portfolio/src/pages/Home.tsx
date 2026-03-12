@@ -21,8 +21,11 @@ const Home = () => {
             <br />
             Product Design in Bay Area
           </h1>
-          <p className="text-lg text-gray-700 mb-10 max-w-2xl leading-relaxed">
-            8+ years shaping Enterprise & Big Data SaaS at LinkedIn. These days, I don't stop at the mockup — I vibe code my designs into reality.
+          <p className="text-lg text-gray-700 mb-10 max-w-2xl leading-loose">
+            <span className="font-semibold text-gray-900">8+ years</span> turning <span className="font-semibold text-gray-900">complex products</span> into <span className="font-semibold text-gray-900">intuitive experiences</span> — specializing in <span className="font-semibold text-gray-900">enterprise ads & data tools</span> at <span className="font-semibold text-gray-900">LinkedIn</span>.
+          </p>
+          <p className="text-lg text-gray-700 mb-10 max-w-2xl leading-loose" style={{ marginTop: '-1.25rem' }}>
+            I dig deep into <span className="font-semibold text-gray-900">user needs</span>, collaborate across teams, and deliver designs that drive <span className="font-semibold text-gray-900">real business outcomes</span>.
           </p>
           <div className="flex flex-wrap gap-3 items-center">
             <div className="relative">
