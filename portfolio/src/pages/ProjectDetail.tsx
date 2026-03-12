@@ -485,25 +485,24 @@ const ProjectDetail = () => {
             </div>
           )}
 
-          {/* V2: All testimonials grouped together */}
-          {isV2 && project.testimonial && (
-            <div className="bg-white p-10 rounded-2xl">
-              <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
-                "{project.testimonial.quote}"
-              </blockquote>
-              <div className="text-gray-600">
-                <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
-                {project.testimonial.role && (
-                  <span className="ml-2">({project.testimonial.role})</span>
-                )}
-              </div>
-            </div>
-          )}
-
-          {isV2 && project.stakeholderFeedback && project.stakeholderFeedback.length > 0 && (
+          {/* V2: All quotes (testimonial + stakeholder feedback) grouped in one container */}
+          {isV2 && (project.testimonial || (project.stakeholderFeedback && project.stakeholderFeedback.length > 0)) && (
             <div className="space-y-6">
-              {project.stakeholderFeedback.map((feedback, index) => (
-                <div key={index} className="bg-white p-8 rounded-2xl">
+              {project.testimonial && (
+                <div className="bg-white p-8 md:p-10 rounded-2xl">
+                  <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
+                    "{project.testimonial.quote}"
+                  </blockquote>
+                  <div className="text-gray-600">
+                    <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
+                    {project.testimonial.role && (
+                      <span className="ml-2">({project.testimonial.role})</span>
+                    )}
+                  </div>
+                </div>
+              )}
+              {project.stakeholderFeedback && project.stakeholderFeedback.map((feedback, index) => (
+                <div key={index} className="bg-white p-8 md:p-10 rounded-2xl">
                   <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
                     "{feedback.quote}"
                   </blockquote>
