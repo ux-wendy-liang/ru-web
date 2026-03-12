@@ -16,12 +16,12 @@ const Home = () => {
       {/* Hero Section - starts from top to include nav area */}
       <section className="pb-20 px-8 md:px-16 lg:px-24 animated-gradient" style={{ paddingTop: '160px', marginTop: '-88px' }}>
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Hi, I'm Wendy
             <br />
             Product Design in Bay Area
           </h1>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl">
+          <p className="text-lg text-gray-700 mb-10 max-w-2xl leading-relaxed">
             8+ years shaping Enterprise & Big Data SaaS at LinkedIn. These days, I don't stop at the mockup — I vibe code my designs into reality.
           </p>
           <div className="flex flex-wrap gap-3 items-center">
