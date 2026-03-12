@@ -306,7 +306,7 @@ export const projects: Project[] = [
     title: 'Reimagining LinkedIn\'s Data Virtualization Tool Dashboard',
     year: 2022,
     cover: '/images/67ce84a463ba9f169c18cd3c_dashboard cover.png',
-    shortDescription: 'Redesigned LinkedIn\'s internal data tool so PMs and engineers could make decisions faster — without switching between dashboards.',
+    shortDescription: 'LinkedIn\'s data virtualization tool empowers internal users—product managers, engineers, and managers—to visualize data and make informed product decisions.',
     role: 'User researcher, UX, UI',
     duration: '8 Weeks',
     team: '1 Product Manager, 1 Designer, 7 Developers',
