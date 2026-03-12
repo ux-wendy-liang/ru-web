@@ -152,7 +152,7 @@ const ProjectDetail = () => {
 
           {/* Testimonial - right after impact (non-V2 projects only) */}
           {!isV2 && project.testimonial && (
-            <div className="bg-white p-10 rounded-2xl">
+            <div className="bg-white p-8 md:p-10 rounded-2xl">
               <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
                 "{project.testimonial.quote}"
               </blockquote>
@@ -470,7 +470,7 @@ const ProjectDetail = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
                 Results & Feedback
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {project.impact.map((item, index) => (
                   <div key={index} className="bg-white p-6 rounded-xl text-center">
                     <div className="text-2xl font-black text-accent-teal mb-2">
@@ -588,7 +588,7 @@ const ProjectDetail = () => {
               </h2>
               <div className="space-y-6">
                 {project.stakeholderFeedback.map((feedback, index) => (
-                  <div key={index} className="bg-white p-8 rounded-2xl">
+                  <div key={index} className="bg-white p-8 md:p-10 rounded-2xl">
                     <blockquote className="max-w-prose text-lg text-gray-800 italic leading-[1.8] mb-4">
                       "{feedback.quote}"
                     </blockquote>
