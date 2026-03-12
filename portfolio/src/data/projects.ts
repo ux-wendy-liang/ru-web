@@ -106,13 +106,13 @@ export const projects: Project[] = [
         imageSize: 'medium' as const
       },
       {
-        title: '',
-        content: 'The journaling system lets students write reflections on their practice. Key design decision: I added 4-tier privacy controls (private / classmates / teacher / everyone). Through observation, I noticed students were embarrassed to share personal spiritual reflections publicly. Defaulting to "private" with opt-in sharing removed the barrier and increased participation.\n\nI also replaced generic "likes" with "随喜赞叹" (Suixi Zantan) — a Buddhist concept of rejoicing in others\' good deeds. This culturally meaningful interaction created authentic engagement aligned with users\' values.',
+        title: 'Decision 3: Designing for Vulnerability',
+        content: 'Challenge: Students needed to reflect on personal spiritual growth, but were embarrassed to share publicly. Through observation, I noticed students avoided journaling when they knew others could see their reflections.\n\nI made two design choices that respect this cultural context:\n\n4-tier privacy controls for journaling (private / classmates / teacher / everyone). Defaulting to "private" with opt-in sharing removed the barrier and increased participation.\n\n"随喜赞叹" (Suixi Zantan) — replaced generic "likes" with a Buddhist concept of rejoicing in others\' good deeds. This culturally meaningful interaction created authentic engagement aligned with users\' values.',
       },
       {
-        title: 'From Design to Shipped Product in 4 Days',
-        content: 'With a detailed PRD as the blueprint, I used AI vibe coding to build the full platform. My role throughout was creative director: reviewing every output in the browser, giving feedback like a design review — "the spacing feels too tight," "this hierarchy isn\'t clear." 70 commits, each one a cycle of describe → review → refine.\n\nThe result: a full-stack platform with authentication, database, 38+ lessons, bilingual support, and responsive design across all devices.',
-        image: '/images/jingxin-hero-en.png'
+        title: 'Try the Live Product',
+        content: 'Unlike a Figma prototype, this is a real, shipped product — with user authentication, a database, and bilingual support. I used AI vibe coding with my detailed PRD as the blueprint: 70 commits over 4 days, each one a cycle of describe → review → refine. My role throughout was creative director, reviewing every output and giving feedback like a design review.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
+        embed: 'https://jingxin-xuetang.vercel.app'
       },
       {
         title: '',
@@ -123,11 +123,6 @@ export const projects: Project[] = [
           { image: '/images/mobile-list.png', caption: 'Replaced dense sidebar with card-based course list for faster scanning.' },
           { image: '/images/mobile-list-org.png', caption: 'Source overlay to verify content — trust without clutter.' }
         ]
-      },
-      {
-        title: 'Try the Live Product',
-        content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a database, and bilingual support. Real users are learning on this platform right now.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
-        embed: 'https://jingxin-xuetang.vercel.app'
       },
       {
         title: '',
