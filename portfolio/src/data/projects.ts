@@ -168,7 +168,7 @@ export const projects: Project[] = [
     impact: [
       'Identified root cause: User research revealed 50%+ dropout was driven by content comprehension, not motivation — reframing the entire solution direction',
       'Designed for real behavior: Privacy-first journaling and culturally meaningful interactions increased community participation',
-      'Shipped end-to-end: From user research to live product serving real users — designed, built, and launched in 4 days'
+      '4 Days: From user research to live product serving real users — designed, built, and launched end-to-end'
     ],
     testimonial: {
       quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community.',
