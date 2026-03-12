@@ -215,26 +215,6 @@ const ProjectDetail = () => {
                   </div>
                 )}
 
-                {/* Flow */}
-                {section.flow && section.flow.length > 0 && (
-                  <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-                    {section.flow.map((step, stepIndex) => (
-                      <div key={stepIndex} className="flex items-center gap-2">
-                        <span className={`px-5 py-2.5 rounded-lg text-[0.95rem] font-bold ${
-                          stepIndex === section.flow!.length - 1
-                            ? 'bg-red-50 text-red-600'
-                            : 'bg-white text-gray-700'
-                        }`}>
-                          {step}
-                        </span>
-                        {stepIndex < section.flow!.length - 1 && (
-                          <span className="text-gray-400 text-lg">→</span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
                 {/* Cards */}
                 {section.cards && section.cards.length > 0 && (
                   <div className={`mt-4 grid gap-4 grid-cols-1 ${section.cards.length <= 3 ? `md:grid-cols-${section.cards.length}` : 'md:grid-cols-3'}`}>
@@ -262,6 +242,39 @@ const ProjectDetail = () => {
                   </div>
                 )}
 
+                {/* After Cards Text (between cards and flow) */}
+                {section.afterCards && (
+                  <div className={`mt-4 leading-[1.8] ${
+                    section.isDecisionBlock
+                      ? 'text-center italic text-gray-500 text-base'
+                      : 'max-w-prose text-lg text-gray-700'
+                  }`}>
+                    {section.afterCards.split('\n\n').map((para, pIdx) => (
+                      <p key={pIdx} className={pIdx > 0 ? 'mt-4' : ''}>{para}</p>
+                    ))}
+                  </div>
+                )}
+
+                {/* Flow (after cards and afterCards) */}
+                {section.flow && section.flow.length > 0 && (
+                  <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+                    {section.flow.map((step, stepIndex) => (
+                      <div key={stepIndex} className="flex items-center gap-2">
+                        <span className={`px-5 py-2.5 rounded-lg text-[0.95rem] font-bold ${
+                          stepIndex === section.flow!.length - 1
+                            ? 'bg-red-50 text-red-600'
+                            : 'bg-white text-gray-700'
+                        }`}>
+                          {step}
+                        </span>
+                        {stepIndex < section.flow!.length - 1 && (
+                          <span className="text-gray-400 text-lg">→</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 {/* Single Image */}
                 {section.image && (
                   <div className={`rounded-xl overflow-hidden mt-8 flex justify-center bg-gray-50 ${
@@ -273,19 +286,6 @@ const ProjectDetail = () => {
                       alt={section.title}
                       className="w-full max-h-[600px] object-contain"
                     />
-                  </div>
-                )}
-
-                {/* After Cards Text */}
-                {section.afterCards && (
-                  <div className={`mt-4 leading-[1.8] ${
-                    section.isDecisionBlock
-                      ? 'text-center italic text-gray-500 text-base'
-                      : 'max-w-prose text-lg text-gray-700'
-                  }`}>
-                    {section.afterCards.split('\n\n').map((para, pIdx) => (
-                      <p key={pIdx} className={pIdx > 0 ? 'mt-4' : ''}>{para}</p>
-                    ))}
                   </div>
                 )}
 

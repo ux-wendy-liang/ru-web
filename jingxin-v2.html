@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jingxin Xuetang Case Study — V2 Draft</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Lato', sans-serif; background: #F5F3EE; color: #1a1a1a; line-height: 1.7; }
+
+  /* Hero */
+  .hero { max-width: 900px; margin: 0 auto; padding: 80px 24px 40px; }
+  .hero h1 { font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+  .hero .subtitle { font-size: 1.15rem; color: #555; line-height: 1.8; margin-bottom: 32px; }
+  .meta { display: flex; gap: 48px; color: #666; font-size: 0.95rem; margin-bottom: 48px; }
+  .meta dt { font-weight: 700; color: #333; margin-bottom: 4px; }
+  .meta dd { margin: 0; }
+
+  /* Section containers */
+  .section { max-width: 900px; margin: 0 auto; padding: 0 24px; margin-bottom: 64px; }
+  .section-divider { max-width: 900px; margin: 0 auto; padding: 0 24px; margin-bottom: 48px; }
+  .section-divider hr { border: none; border-top: 1px solid #ddd; }
+
+  /* Section label — small uppercase marker */
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #5B9B8E;
+    margin-bottom: 12px;
+  }
+
+  /* Headings */
+  h2 { font-size: 2rem; font-weight: 900; line-height: 1.25; margin-bottom: 20px; }
+  h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 12px; color: #222; }
+
+  /* Prose */
+  p { font-size: 1.05rem; color: #444; margin-bottom: 16px; }
+  .highlight { background: #F2FCE2; padding: 2px 6px; border-radius: 3px; font-weight: 700; color: #333; }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 24px 0; }
+  .card { background: white; border-radius: 12px; padding: 24px; }
+  .card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: #222; }
+  .card p { font-size: 0.95rem; color: #555; margin: 0; line-height: 1.6; }
+  .card .persona-tag { font-size: 0.8rem; color: #5B9B8E; font-weight: 700; margin-top: 8px; }
+
+  /* Flow diagram */
+  .flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 24px 0; justify-content: center; }
+  .flow-step { background: white; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; color: #333; }
+  .flow-arrow { color: #999; font-size: 1.2rem; }
+
+  /* Images */
+  .img-full { width: 100%; border-radius: 12px; margin: 24px 0; }
+  .img-medium { max-width: 600px; width: 100%; border-radius: 12px; margin: 24px auto; display: block; }
+
+  /* Decision blocks */
+  .decision-block {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 32px;
+  }
+  .decision-block .challenge {
+    background: #FFF5F5;
+    border-left: 3px solid #E53E3E;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+  }
+  .decision-block .challenge p { color: #C53030; margin: 0; font-size: 0.95rem; }
+  .decision-block .insight {
+    background: #EBF8FF;
+    border-left: 3px solid #3182CE;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+  }
+  .decision-block .insight p { color: #2B6CB0; margin: 0; font-size: 0.95rem; }
+  .decision-block .solution {
+    background: #F0FFF4;
+    border-left: 3px solid #38A169;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+  }
+  .decision-block .solution p { color: #276749; margin: 0; font-size: 0.95rem; }
+
+  /* Quote / Testimonial */
+  .testimonial {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 24px;
+  }
+  .testimonial blockquote {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .testimonial .author { font-weight: 700; color: #222; }
+  .testimonial .role { color: #888; }
+
+  /* Impact */
+  .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 24px 0; }
+  .impact-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+  .impact-card .number { font-size: 2rem; font-weight: 900; color: #5B9B8E; margin-bottom: 8px; }
+  .impact-card p { font-size: 0.9rem; color: #555; margin: 0; }
+
+  /* Learnings */
+  .learning-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; }
+  .learning-num {
+    width: 36px; height: 36px;
+    background: #F2FCE2;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; color: #333; flex-shrink: 0; margin-top: 2px;
+  }
+  .learning-item p { margin: 0; font-size: 1.05rem; color: #444; }
+
+  /* Phone mockups */
+  .phone-comparison { display: flex; align-items: flex-start; justify-content: center; gap: 0; margin: 32px 0; }
+  .phone-group { display: flex; flex-direction: column; align-items: center; padding: 0 24px; }
+  .phone-group-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 16px; }
+  .phone-row { display: flex; gap: 16px; }
+  .phone-item { display: flex; flex-direction: column; align-items: center; width: 200px; }
+  .phone-frame {
+    background: #111;
+    border-radius: 24px;
+    padding: 6px;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+  .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 16px; background: #111; border-radius: 0 0 10px 10px; z-index: 2; }
+  .phone-screen { border-radius: 18px; overflow: hidden; background: white; }
+  .phone-screen img { width: 100%; height: 400px; object-fit: cover; object-position: top; display: block; }
+  .phone-bar { position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); width: 72px; height: 4px; background: #444; border-radius: 2px; }
+  .phone-caption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 12px; line-height: 1.5; padding: 0 4px; }
+  .phone-divider { display: flex; flex-direction: column; align-items: center; padding: 32px 0; align-self: stretch; }
+  .phone-divider-line { width: 1px; background: #ddd; flex: 1; }
+
+  /* Embed */
+  .embed-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    margin: 24px 0;
+  }
+  .embed-wrapper iframe { width: 100%; height: 600px; border: 0; }
+
+  /* Image gallery */
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .gallery img { width: 100%; border-radius: 12px; }
+
+  /* V2 tag */
+  .v2-banner {
+    background: #5B9B8E;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 1.8rem; }
+    .meta { flex-direction: column; gap: 16px; }
+    .impact-grid { grid-template-columns: 1fr; }
+    .phone-comparison { flex-direction: column; align-items: center; }
+    .phone-divider { display: none; }
+    .gallery { grid-template-columns: 1fr; }
+    .decision-block { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="v2-banner">DRAFT V2 — Restructured Storytelling (for comparison only)</div>
+
+<!-- ========== HERO ========== -->
+<div class="hero">
+  <h1>From Designer to Builder: Shipping a Buddhist Learning Platform in 4 Days with AI</h1>
+  <p class="subtitle">I noticed 50%+ dropout in Buddhist study groups because materials were too academic. I researched the root causes, wrote a comprehensive PRD, then used AI vibe coding to design and ship a full-stack learning platform — now serving real users.</p>
+  <dl class="meta">
+    <div><dt>Role</dt><dd>Product Designer + Builder (Vibe Coding)</dd></div>
+    <div><dt>Duration</dt><dd>4 days</dd></div>
+    <div><dt>Team</dt><dd>Solo — built with Claude Code (AI)</dd></div>
+  </dl>
+</div>
+
+<!-- ========== 1. PROBLEM ========== -->
+<div class="section">
+  <div class="section-label">The Problem</div>
+  <h2>50%+ of Buddhist Study Group Students Drop Out</h2>
+  <p>Master Jiqun's Buddhist courses are studied in community groups across China. But more than half of students leave within the first few sessions.</p>
+  <p>I observed this firsthand in my own study community — out of 5 study groups, 4 had lost roughly half their members. Through conversations with students and group leaders, I identified three root causes:</p>
+
+  <div class="cards">
+    <div class="card">
+      <h4>Content too academic</h4>
+      <p>Original texts use classical Buddhist language with dense terminology. Even educated adults said "I need to read it 3 times to understand."</p>
+    </div>
+    <div class="card">
+      <h4>No clear takeaways</h4>
+      <p>After reading a 3,000-word lesson, students couldn't articulate what they learned in one sentence.</p>
+    </div>
+    <div class="card">
+      <h4>No practice guidance</h4>
+      <p>Buddhism emphasizes applying teachings to daily life, but courses only provided theory. Students read, nodded, and then... did nothing different.</p>
+    </div>
+  </div>
+
+  <p>This created a vicious cycle:</p>
+  <div class="flow">
+    <span class="flow-step">Can't understand</span><span class="flow-arrow">→</span>
+    <span class="flow-step">Can't remember</span><span class="flow-arrow">→</span>
+    <span class="flow-step">Can't apply</span><span class="flow-arrow">→</span>
+    <span class="flow-step">No benefit</span><span class="flow-arrow">→</span>
+    <span class="flow-step" style="background:#FFF5F5;color:#C53030;">Quit</span>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- ========== 2. RESEARCH & INSIGHTS ========== -->
+<div class="section">
+  <div class="section-label">Research &amp; Insights</div>
+  <h2>Understanding Who I'm Designing For</h2>
+  <p>Before touching any tool, I spent time observing study groups and talking to students and leaders. I then wrote a 746-line Product Requirements Document — covering user personas, feature specs, a design system, and accessibility standards. Everything that followed was built on this foundation.</p>
+  <p>I identified three distinct user personas, each with fundamentally different needs:</p>
+
+  <div class="cards">
+    <div class="card">
+      <h4>New Student</h4>
+      <p>Just joined out of curiosity. No Buddhist background. Overwhelmed by terminology. Needs simplified language and clear takeaways.</p>
+      <div class="persona-tag">Most likely to drop out in the first 2 weeks</div>
+    </div>
+    <div class="card">
+      <h4>Casual Learner</h4>
+      <p>Been in a group for a few months. Attends sessions but rarely reviews between meetings. Wants quick recaps and practical exercises.</p>
+      <div class="persona-tag">Reads on mobile during commutes</div>
+    </div>
+    <div class="card">
+      <h4>Experienced Practitioner</h4>
+      <p>Deeply committed, studied for 1+ years. Values accuracy and wants to cross-reference simplified content with originals.</p>
+      <div class="persona-tag">Mentors newer students</div>
+    </div>
+  </div>
+
+  <p>These three personas shaped every design decision that followed. Each feature had to answer: <strong>which persona does this serve, and how?</strong></p>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- ========== 3. KEY DESIGN DECISIONS ========== -->
+<div class="section">
+  <div class="section-label">Key Design Decisions</div>
+  <h2>Turning Insights Into Solutions</h2>
+
+  <!-- Decision 1 -->
+  <div class="decision-block">
+    <h3>Decision 1: Making Ancient Wisdom Accessible</h3>
+
+    <div class="challenge">
+      <p><strong>Challenge:</strong> Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can't learn.</p>
+    </div>
+
+    <div class="insight">
+      <p><strong>Insight:</strong> My three personas have three distinct reading modes — quick scanning, deep learning, and accuracy verification. One content format can't serve all three.</p>
+    </div>
+
+    <div class="solution">
+      <p><strong>Solution:</strong> A three-layer content architecture — each layer designed to serve a specific persona.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h4>Simplified Explanation</h4>
+        <p>Plain language with life analogies (e.g., explaining "attachment" through phone addiction).</p>
+        <div class="persona-tag">→ Serves the New Student</div>
+      </div>
+      <div class="card">
+        <h4>Core Takeaways</h4>
+        <p>Each lesson distilled into one memorable sentence + 3–5 key points. The core insight you should walk away with.</p>
+        <div class="persona-tag">→ Serves the Casual Learner</div>
+      </div>
+      <div class="card">
+        <h4>Source Text Tracing</h4>
+        <p>Click any simplified passage to see the original text, displayed in a resizable side panel.</p>
+        <div class="persona-tag">→ Serves the Experienced Practitioner</div>
+      </div>
+    </div>
+
+    <p style="text-align:center; color:#666; font-style:italic; margin-top:16px;">Three personas, three reading modes, one unified interface.</p>
+
+    <img src="portfolio/public/images/jingxin-lesson-en.png" alt="Three-layer content architecture" class="img-full">
+  </div>
+
+  <!-- Decision 2 -->
+  <div class="decision-block">
+    <h3>Decision 2: From Reading to Doing</h3>
+
+    <div class="challenge">
+      <p><strong>Challenge:</strong> Students read lessons but couldn't apply teachings to daily life. Buddhism is about practice, not memorization.</p>
+    </div>
+
+    <div class="insight">
+      <p><strong>Insight:</strong> The Casual Learner — who attends but rarely reviews — needs practical reasons to keep showing up. Abstract theory isn't enough.</p>
+    </div>
+
+    <div class="solution">
+      <p><strong>Solution:</strong> A practice system where each lesson ends with concrete exercises tied to real life.</p>
+    </div>
+
+    <p>For example, after a lesson on compassion: <em>"This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."</em></p>
+
+    <img src="portfolio/public/images/jingxin-exercise-en.png" alt="Practice exercises" class="img-medium">
+
+    <p>But giving users exercises isn't enough — they need to understand <em>why</em> each practice matters. I added a "?" icon next to each exercise that reveals the reasoning. This progressive disclosure keeps the interface action-focused while giving curious learners a path to deeper understanding.</p>
+
+    <img src="portfolio/public/images/jingxin-exercise-expanded-en.png" alt="Exercise with explanation expanded" class="img-medium">
+  </div>
+
+  <!-- Decision 3 -->
+  <div class="decision-block">
+    <h3>Decision 3: Designing for Vulnerability</h3>
+
+    <div class="challenge">
+      <p><strong>Challenge:</strong> Students needed to reflect on personal spiritual growth, but were embarrassed to share publicly.</p>
+    </div>
+
+    <div class="insight">
+      <p><strong>Insight:</strong> Through observation, I noticed students avoided journaling when they knew others could see their reflections. Spiritual growth feels deeply personal.</p>
+    </div>
+
+    <div class="solution">
+      <p><strong>Solution:</strong> Two design choices that respect cultural context.</p>
+    </div>
+
+    <p><strong>4-tier privacy controls</strong> for journaling (private / classmates / teacher / everyone). Defaulting to "private" with opt-in sharing removed the barrier and increased participation.</p>
+
+    <p><strong>"随喜赞叹" (Suixi Zantan)</strong> — replaced generic "likes" with a Buddhist concept of rejoicing in others' good deeds. This culturally meaningful interaction created authentic engagement aligned with users' values.</p>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- ========== 4. LIVE PRODUCT DEMO ========== -->
+<div class="section">
+  <div class="section-label">The Product</div>
+  <h2>Try the Live Product</h2>
+  <p>Unlike a Figma prototype, this is a real, shipped product with user authentication, a database, and bilingual support. I used AI vibe coding with my detailed PRD as the blueprint — 70 commits over 4 days, each one a cycle of describe → review → refine. My role throughout was creative director, reviewing every output and giving feedback like a design review.</p>
+
+  <p>Try it yourself below — browse courses, read simplified lessons, and explore the practice center.</p>
+
+  <div class="embed-wrapper">
+    <iframe src="https://jingxin-xuetang.vercel.app" title="Jingxin Xuetang" allow="fullscreen" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+  </div>
+
+  <h3 style="margin-top: 40px;">Mobile-First Design</h3>
+  <p>Buddhist study often happens on phones — commuting, before bed. I designed a mobile-first experience with bottom tab navigation and touch-optimized interactions.</p>
+
+  <div class="phone-comparison">
+    <!-- Before -->
+    <div class="phone-group">
+      <div class="phone-group-label">Before</div>
+      <div class="phone-row">
+        <div class="phone-item">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="portfolio/public/images/jingxin-mobile-lesson-en.png" alt="Before">
+            </div>
+            <div class="phone-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="phone-divider">
+      <div class="phone-divider-line"></div>
+    </div>
+
+    <!-- After -->
+    <div class="phone-group">
+      <div class="phone-group-label">After</div>
+      <div class="phone-row">
+        <div class="phone-item">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="portfolio/public/images/mobile-home.png" alt="After 1">
+            </div>
+            <div class="phone-bar"></div>
+          </div>
+          <div class="phone-caption">Bottom tabs for one-handed use.</div>
+        </div>
+        <div class="phone-item">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="portfolio/public/images/mobile-list.png" alt="After 2">
+            </div>
+            <div class="phone-bar"></div>
+          </div>
+          <div class="phone-caption">Replaced dense sidebar with card-based course list.</div>
+        </div>
+        <div class="phone-item">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="portfolio/public/images/mobile-list-org.png" alt="After 3">
+            </div>
+            <div class="phone-bar"></div>
+          </div>
+          <div class="phone-caption">Source overlay to verify content — trust without clutter.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <img src="portfolio/public/images/jingxin-hero-en.png" alt="Hero page">
+    <img src="portfolio/public/images/jingxin-courses-en.png" alt="Courses page">
+    <img src="portfolio/public/images/jingxin-lesson-en.png" alt="Lesson page">
+    <img src="portfolio/public/images/jingxin-practice-en.png" alt="Practice page">
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- ========== 5. IMPACT & FEEDBACK ========== -->
+<div class="section">
+  <div class="section-label">Impact</div>
+  <h2>Results &amp; Feedback</h2>
+
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="number">Root Cause</div>
+      <p>User research revealed 50%+ dropout was driven by content comprehension, not motivation — reframing the entire solution direction</p>
+    </div>
+    <div class="impact-card">
+      <div class="number">Real Behavior</div>
+      <p>Privacy-first journaling and culturally meaningful interactions increased community participation</p>
+    </div>
+    <div class="impact-card">
+      <div class="number">4 Days</div>
+      <p>From user research to live product serving real users — designed, built, and launched end-to-end</p>
+    </div>
+  </div>
+
+  <div class="testimonial">
+    <blockquote>"This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community."</blockquote>
+    <div><span class="author">— Yianguo</span> <span class="role">(Study Group Leader)</span></div>
+  </div>
+
+  <div class="testimonial">
+    <blockquote>"Yes! After the rewrite it's so much easier to understand. Appreciating your effort!"</blockquote>
+    <div><span class="author">— Zhaoming</span> <span class="role">(Study Group Member)</span></div>
+  </div>
+
+  <div class="testimonial">
+    <blockquote>"This is truly a great approach! I just opened it and it really is much more accessible and easy to understand. You put so much heart into this!"</blockquote>
+    <div><span class="author">— Lisa Zhong</span> <span class="role">(Study Group Member)</span></div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- ========== 6. WHAT I LEARNED ========== -->
+<div class="section" style="padding-bottom: 80px;">
+  <div class="section-label">Reflection</div>
+  <h2>What I Learned</h2>
+
+  <div class="learning-item">
+    <div class="learning-num">1</div>
+    <p><strong>End-to-end ownership changes how you design.</strong> Owning the full journey — from user research, to PRD, to design system, to shipped product — forced me to make tighter decisions. When you're accountable for the final experience, not just the mockup, every detail matters more.</p>
+  </div>
+  <div class="learning-item">
+    <div class="learning-num">2</div>
+    <p><strong>Start with the community, not the technology.</strong> I spent time observing study groups before writing a single requirement. The best features (like practice privacy controls) came from understanding social dynamics, not technical possibilities.</p>
+  </div>
+  <div class="learning-item">
+    <div class="learning-num">3</div>
+    <p><strong>Vibe coding is a design tool, not a replacement for designers.</strong> AI writes code, but it can't decide what to build or why one layout works better than another. A clear PRD and strong design instincts are what make vibe coding productive — without them, you just ship faster in the wrong direction.</p>
+  </div>
+  <div class="learning-item">
+    <div class="learning-num">4</div>
+    <p><strong>Ship early, learn from real users.</strong> A live product with 10 real users teaches more than a polished prototype with zero users. The practice sharing feature was redesigned based on early user behavior.</p>
+  </div>
+</div>
+
+</body>
+</html>
