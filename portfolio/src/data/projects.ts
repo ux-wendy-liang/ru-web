@@ -170,7 +170,7 @@ export const projects: Project[] = [
       'Shipped end-to-end: From user research to live product serving real users — designed, built, and launched in 4 days'
     ],
     testimonial: {
-      quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community. Not everyone has time to read those long texts carefully. With your approach, people can quickly grasp the key ideas and build confidence.',
+      quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community.',
       author: 'Yianguo',
       role: 'Study Group Leader'
     },

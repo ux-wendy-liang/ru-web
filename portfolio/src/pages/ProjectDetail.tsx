@@ -217,13 +217,13 @@ const ProjectDetail = () => {
 
                 {/* Flow */}
                 {section.flow && section.flow.length > 0 && (
-                  <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
                     {section.flow.map((step, stepIndex) => (
-                      <div key={stepIndex} className="flex items-center gap-3">
-                        <span className={`px-5 py-2.5 rounded-full text-sm font-medium ${
+                      <div key={stepIndex} className="flex items-center gap-2">
+                        <span className={`px-5 py-2.5 rounded-lg text-[0.95rem] font-bold ${
                           stepIndex === section.flow!.length - 1
-                            ? 'bg-gray-900 text-white'
-                            : 'bg-white text-gray-700 border border-gray-200'
+                            ? 'bg-red-50 text-red-600'
+                            : 'bg-white text-gray-700'
                         }`}>
                           {step}
                         </span>
@@ -237,21 +237,25 @@ const ProjectDetail = () => {
 
                 {/* Cards */}
                 {section.cards && section.cards.length > 0 && (
-                  <div className={`mt-4 grid gap-6 grid-cols-1 ${section.cards.length <= 3 ? `md:grid-cols-${section.cards.length}` : 'md:grid-cols-3'}`}>
+                  <div className={`mt-4 grid gap-4 grid-cols-1 ${section.cards.length <= 3 ? `md:grid-cols-${section.cards.length}` : 'md:grid-cols-3'}`}>
                     {section.cards.map((card, cardIndex) => (
                       <div key={cardIndex} className="bg-white p-6 rounded-xl">
-                        <h4 className="text-lg font-bold text-gray-900 mb-2">{card.title}</h4>
-                        <div className="text-gray-700 leading-[1.7]">
-                          {card.content.split('\n\n').map((para, pIdx) => (
-                            <p key={pIdx} className={pIdx > 0 ? 'mt-3' : ''}>
-                              {para.split('\n').map((line, lIdx) => (
-                                <span key={lIdx}>
-                                  {lIdx > 0 && <br />}
-                                  {line}
-                                </span>
-                              ))}
-                            </p>
-                          ))}
+                        <h4 className="text-base font-bold text-gray-900 mb-2">{card.title}</h4>
+                        <div className="text-[0.95rem] text-gray-600 leading-[1.6]">
+                          {card.content.split('\n\n').map((para, pIdx) => {
+                            // Check if this paragraph is a persona tag (starts with →)
+                            const isPersonaTag = para.trim().startsWith('→');
+                            return (
+                              <p key={pIdx} className={`${pIdx > 0 ? 'mt-2' : ''} ${isPersonaTag ? 'text-[0.8rem] text-accent-teal font-bold mt-2' : ''}`}>
+                                {para.split('\n').map((line, lIdx) => (
+                                  <span key={lIdx}>
+                                    {lIdx > 0 && <br />}
+                                    {line}
+                                  </span>
+                                ))}
+                              </p>
+                            );
+                          })}
                         </div>
                       </div>
                     ))}
@@ -274,7 +278,11 @@ const ProjectDetail = () => {
 
                 {/* After Cards Text */}
                 {section.afterCards && (
-                  <div className="mt-6 max-w-prose text-lg leading-[1.8] text-gray-800">
+                  <div className={`mt-4 leading-[1.8] ${
+                    section.isDecisionBlock
+                      ? 'text-center italic text-gray-500 text-base'
+                      : 'max-w-prose text-lg text-gray-700'
+                  }`}>
                     {section.afterCards.split('\n\n').map((para, pIdx) => (
                       <p key={pIdx} className={pIdx > 0 ? 'mt-4' : ''}>{para}</p>
                     ))}
@@ -428,7 +436,7 @@ const ProjectDetail = () => {
                 {sectionContent}
                 {/* Divider after section */}
                 {section.dividerAfter && (
-                  <div className="mt-16">
+                  <div className="mt-12">
                     <hr className="border-t border-gray-200" />
                   </div>
                 )}
@@ -594,10 +602,10 @@ const ProjectDetail = () => {
               <div className="space-y-6">
                 {project.takeaways.map((takeaway, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-gray-900 font-bold">{index + 1}</span>
+                    <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-gray-900 font-black">{index + 1}</span>
                     </div>
-                    <p className="text-xl text-gray-700 leading-relaxed">
+                    <p className="text-[1.05rem] text-gray-600 leading-[1.7]">
                       {takeaway}
                     </p>
                   </div>
