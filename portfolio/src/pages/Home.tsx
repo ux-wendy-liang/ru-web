@@ -76,8 +76,8 @@ const Home = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 leading-tight">
                   {project.title}
                 </h2>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  {project.shortDescription} -{project.year}
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  {project.shortDescription}
                 </p>
                 <Link
                   to={`/project/${project.id}`}
