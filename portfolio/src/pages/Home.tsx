@@ -61,7 +61,7 @@ const Home = () => {
               className="flex flex-col md:flex-row gap-12 items-center"
             >
               {/* Project Image */}
-              <div className="w-full md:w-1/2">
+              <div className="w-full md:w-3/5">
                 <div className="relative overflow-hidden rounded-2xl bg-white p-4">
                   <img
                     src={project.cover}
@@ -72,7 +72,7 @@ const Home = () => {
               </div>
 
               {/* Project Info */}
-              <div className="w-full md:w-1/2">
+              <div className="w-full md:w-2/5">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 leading-tight">
                   {project.title}
                 </h2>
