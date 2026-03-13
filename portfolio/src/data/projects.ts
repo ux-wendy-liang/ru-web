@@ -17,6 +17,7 @@ export interface ProjectSection {
   gif?: string;
   gifs?: string[];
   embed?: string; // URL for interactive prototype iframe
+  quotes?: { text: string; author: string; role: string }[];
   cards?: { title: string; content: string }[];
   afterCards?: string;
   flow?: string[];
@@ -42,6 +43,10 @@ export interface Project {
   gifs?: string[];
   // New fields
   takeaways?: string[];
+  reflection?: {
+    title: string;
+    items: string[];
+  };
   testimonial?: {
     quote: string;
     author: string;
@@ -412,7 +417,7 @@ export const projects: Project[] = [
     title: 'Reimagining LinkedIn\'s Data Dashboard: From Quick Fix to Root-Cause Redesign',
     year: 2022,
     cover: '/images/67ce84a463ba9f169c18cd3c_dashboard cover.png',
-    shortDescription: 'Engineering proposed a quick fix. I pushed for research, uncovered the real problem, and redesigned the dashboard into two distinct experiences — increasing filter engagement by 45% and self-serve rate to 71%.',
+    shortDescription: 'Challenged a quick-fix proposal with user research, uncovering root causes that led to a dual-experience dashboard redesign — boosting self-serve rate to 71%.',
     role: 'User Researcher, UX & UI Designer',
     duration: '8 Weeks',
     team: '1 Product Manager, 1 Designer, 7 Engineers',
@@ -421,14 +426,14 @@ export const projects: Project[] = [
       {
         title: 'A Dashboard Everyone Visits, But Nobody Can Explore',
         sectionLabel: 'The Context',
-        content: 'LinkedIn\'s internal data visualization tool (Retina) helps product managers, engineers, and leadership track product metrics. The dashboard was **one of the most visited pages** — hundreds of internal users relied on it daily to make product decisions.\n\nBut there was a problem hiding in plain sight: **users couldn\'t filter or explore data directly on the dashboard.** Every time a PM wanted to drill into the data, they had to click into individual charts, apply filters there, then mentally piece together the story across multiple views.\n\nThe result? PMs couldn\'t self-serve. They constantly asked data scientists to pull numbers for them — turning data creators into **"human filters."**',
+        content: 'LinkedIn\'s internal data visualization tool (Retina) helps product managers, engineers, and leadership track product metrics. The dashboard was **one of the most visited pages** — hundreds of internal users relied on it daily to make product decisions.\n\nBut there was a problem hiding in plain sight: **the dashboard\'s filtering experience was so unusable that users simply didn\'t filter at all.** PMs would visit the dashboard, glance at the default view, and leave — unable to drill into the data they actually needed.\n\nThe result? PMs couldn\'t self-serve. Instead of exploring data themselves, they went directly to data scientists to ask questions — turning data creators into **"human filters."**',
         dividerAfter: true
       },
       // ===== THE TURNING POINT =====
       {
         title: 'Engineering Had a Solution. I Thought We Were Solving the Wrong Problem.',
         sectionLabel: 'The Turning Point',
-        content: 'Some users had requested tab-level filters, and the engineering manager proposed building exactly that — a quick win to address the specific request.'
+        content: 'As the **sole designer on a team of 7 engineers**, I owned the full design process — from user research to final UI.\n\nAt this point, **nobody on the team fully understood why users weren\'t engaging with the dashboard.** We knew usage was low, but the root cause was unclear. Some users had requested tab-level filters, and the engineering manager proposed building exactly that — a quick win to address the specific request.'
       },
       {
         title: '',
@@ -437,23 +442,23 @@ export const projects: Project[] = [
       },
       {
         title: '',
-        content: 'On the surface, it made sense. But something didn\'t sit right with me.\n\nI had been observing how people **actually used** the dashboard — not just what they requested. Tab-level filters would solve one symptom, but I suspected **deeper usability issues** were driving the frustration. If we built the wrong solution, we\'d **waste 7 engineers\' time** and the problems would persist.'
+        content: 'On the surface, it made sense. But something didn\'t sit right with me. We were about to commit 7 engineers to build a solution, but no one could explain what we were actually solving.'
       },
       {
         title: '',
         content: '',
-        insight: 'My design judgment: Before building anything, we needed to understand WHY users were struggling — not just WHAT they asked for. User requests are symptoms; I wanted to find the root cause.'
+        insight: 'My design judgment: Before building anything, I needed to find the root cause. User requests are symptoms — and shipping a fix for the wrong symptom would waste the entire team\'s time.'
       },
       {
         title: 'Convincing Stakeholders to Invest in Research',
-        content: 'This wasn\'t an easy sell. Engineering wanted to ship fast. I made the case to both the PM and engineering manager: **"We have 8 engineers ready to build. Give me 2 weeks to make sure we build the right thing."**\n\nI framed it as **risk reduction** — the cost of 2 weeks of research was far lower than the cost of shipping a solution that didn\'t solve the real problem. They agreed.',
+        content: 'This wasn\'t an easy sell. Engineering wanted to ship fast. I made the case to both the PM and engineering manager: **"We have 7 engineers ready to build. Give me 2 weeks to make sure we build the right thing."**\n\nI framed it as **risk reduction** — the cost of 2 weeks of research was far lower than the cost of shipping a solution that didn\'t solve the real problem. They agreed.\n\n**How I structured the 8 weeks:** 2 weeks for research & synthesis → 2 weeks for design exploration & iteration → 2 weeks for detailed specs with engineering → 2 weeks for implementation support & QA.',
         dividerAfter: true
       },
       // ===== RESEARCH =====
       {
         title: 'Uncovering What Users Actually Needed',
         sectionLabel: 'Research',
-        content: 'I designed and led a research study with **two distinct user groups** — because I hypothesized that dashboard **creators** (data scientists) and dashboard **consumers** (PMs, leadership) had fundamentally different pain points.\n\nI recruited **6 current users** and conducted **1-on-1 interviews** to uncover their goals, current challenges, and ideal experiences.',
+        content: 'I designed and led a research study with **two distinct user groups** — because I hypothesized that dashboard **creators** (data scientists) and dashboard **consumers** (PMs, leadership) had fundamentally different pain points.\n\nI recruited **~5 participants per group** and conducted **1-on-1 interviews** to uncover their goals, current challenges, and ideal experiences. In qualitative research, **5 users per segment is the sweet spot** — studies show it uncovers ~85% of usability issues within a user group, while keeping the research fast enough to stay within my 2-week timeline.',
         image: '/images/dashboard-research-participants.svg'
       },
       {
@@ -476,19 +481,24 @@ export const projects: Project[] = [
       {
         title: 'One Insight That Changed the Project Direction',
         sectionLabel: 'From Insight to Strategy',
-        content: '',
+        content: 'Two quotes from the interviews hit me at the same time:',
+        quotes: [
+          { text: 'This tool isn\'t designed for people like me — it\'s too technical.', author: 'PM', role: 'Data Consumer' },
+          { text: 'Having a complex tool is fine for us — as long as consumers get something simple.', author: 'Data Scientist', role: 'Data Creator' }
+        ],
+        afterCards: 'That was the moment I realized this wasn\'t a filter problem — it was an **audience problem.** The tool treated everyone the same, but creators and consumers had fundamentally different needs. Instead of "add more filters," the real challenge was: **design two distinct experiences for two distinct users.**',
         image: '/images/dashboard-insight-to-strategy.svg'
       },
       {
-        title: 'How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?',
-        content: '',
+        title: 'This insight led me to reframe the design challenge:',
+        content: '**How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?**',
         dividerAfter: true
       },
       // ===== THE SOLUTION =====
       {
         title: 'Two Experiences, One Dashboard',
         sectionLabel: 'The Solution',
-        content: ''
+        content: 'Instead of one-size-fits-all filters, I designed two tailored experiences: a powerful setup mode for data creators, and a simplified, human-readable interface for consumers.'
       },
       {
         title: 'For Data Creators: Powerful Setup Tools',
@@ -501,46 +511,28 @@ export const projects: Project[] = [
         image: '/images/dashboard-consumer-before-after.svg'
       },
       {
-        title: '',
-        sectionLabel: 'User Story',
-        content: 'Data scientists like Danny need to build dashboards that tell clear data stories. The new creator experience lets them set up filters at multiple levels — chart, group, section, tab, and dashboard — giving creators precise control over how consumers experience the data.',
-        image: '/images/67d4fd2c045042941d70a271_dashboard-UX Persona.png'
+        title: 'From Concept to Ship: Defending the Design with Engineers',
+        content: 'I designed filters to work at **every level** — chart, group, tab, and dashboard — giving both creators and consumers precise control. But the engineering team pushed back: **"Chart-level filters aren\'t needed. Users can just click into the chart and filter there."**\n\nThis was exactly the workflow that caused the original problem. My research showed that forcing users to leave the dashboard to filter was why PMs couldn\'t self-serve. Removing chart-level filters would recreate the same broken experience.\n\nI walked the engineers through the user research findings and showed them the consumer journey: **if Alex can\'t filter at the chart level from the dashboard, she\'s back to clicking into individual charts — the exact pain point we set out to fix.** The team agreed, and we shipped filters at all levels.',
+        insight: 'This moment reinforced why research matters in cross-functional debates. Without user evidence, this would have been an opinion battle. With research, I had concrete user quotes and workflows that made the case undeniable.'
       },
+      // --- Creator Demo: focus on the breakthrough feature ---
       {
-        title: 'Step 1: Create Dashboard Structure',
-        content: 'Danny creates a dashboard and adds charts into groups — organizing data by theme so consumers see a coherent story.',
-        gifs: ['/images/67cfbc10e25b1be3c51e25ef_dashboard-create chart.gif']
-      },
-      {
-        title: 'Step 2: Unify Filters Across Datasets (Breakthrough Feature)',
-        content: 'This was the **breakthrough feature born directly from research.** Two charts might call the same data "country_code" and "country_Code." With the new tool, Danny can **link these dimensions together** and give them one clean name — "Country." Now **one filter controls both charts** consistently.',
+        title: 'Creator Experience: Unify Filters Across Datasets',
+        sectionLabel: 'Demo',
+        content: 'This was the **breakthrough feature born directly from research.** Danny, a data scientist, creates a dashboard and organizes charts into groups. The key moment: two charts call the same data "country_code" and "country_Code." With the new tool, Danny can **link these dimensions together** and give them one clean name — "Country." Now **one filter controls both charts** consistently.\n\nHe then pre-configures meaningful filters (date, device, country) and even pre-selects values so consumers see relevant data immediately.',
         gifs: ['/images/67cfbc7eda8ac5637ea98171_equal.gif']
       },
+      // --- Consumer Demo: before/after experience ---
       {
-        title: 'Step 3: Pre-configure Meaningful Filters',
-        content: 'Danny sets up filters that make sense for his consumers — date, device, domain, language, and country. He can even pre-select values (e.g., Canada and Mexico) to narrow the data scope. No technical knowledge needed from consumers.',
-        gifs: ['/images/67d4fe8aa0173122a967c81e_applyfilter.gif']
-      },
-      {
-        title: 'Meet Alex, a Product Manager who needs to access the dashboard created by Danny.',
-        content: 'Product managers like Alex no longer need to ask data scientists for help.',
-        image: '/images/67d4fd2cf6d060ea4a8ff4f6_dashboard-UX Persona2.png'
-      },
-      {
-        title: 'Clear, Scoped Filters at Every Level',
-        content: 'Alex sees filters clearly organized by level — no more guessing which charts are affected. Each filter\'s scope is visually obvious.',
-        gifs: ['/images/67cfbcb79c2e266ae34dff05_view1-v2.gif']
-      },
-      {
-        title: 'Simplified Language, Self-Serve Insights',
-        content: 'Technical dataset names are translated into **human-readable labels.** Alex filters by "Country" and "Date" — not "dataset_geo_dim." **Without leaving the dashboard**, she gains insights and identifies actionable opportunities.',
+        title: 'Consumer Experience: Self-Serve in Seconds',
+        content: 'Product managers like Alex no longer need to ask data scientists for help. Filters are clearly organized by scope — she always knows which charts are affected. Technical dataset names are translated into **human-readable labels**: "Country" and "Date" instead of "dataset_geo_dim." **Without leaving the dashboard**, Alex gains insights and identifies actionable opportunities.',
         gifs: ['/images/67cfbcb74cc2f2be89673d7c_view 2.gif']
       }
     ],
     impact: [
-      '+45% filter engagement: Because filters finally made sense to consumers, engagement with dashboard filters increased by 45%',
-      '71% self-serve rate: Consumers could now analyze data independently — freeing data scientists from "human filter" duty',
-      'Strategic direction: Separating creator and consumer experiences became the product\'s future roadmap'
+      '+45%: Filter engagement increased — because filters finally made sense to non-technical consumers',
+      '71%: Of consumers could now analyze data independently — freeing data scientists from "human filter" duty',
+      'New roadmap: Separating creator and consumer experiences became the product\'s future direction'
     ],
     impactSummary: 'The biggest impact wasn\'t the numbers — it was the direction. By investing in research upfront, we didn\'t just ship a feature. We reframed how the entire tool thinks about its two audiences, setting the foundation for the product\'s evolution.',
     stakeholderFeedback: [
@@ -554,7 +546,15 @@ export const projects: Project[] = [
       'Challenge the brief, not just execute it: The original ask was "add tab filters." By questioning whether that was the right solution, I uncovered a deeper structural problem that changed the project\'s scope and impact.',
       'Research is how you earn trust: I couldn\'t just say "I think the engineering solution is wrong." I needed evidence. The user interviews gave me concrete quotes and patterns that convinced stakeholders to change direction.',
       'Separate the users to serve them better: The key insight — that creators and consumers have fundamentally different needs — seems obvious in hindsight. But it took deliberate research to see it, because the existing tool treated everyone the same.'
-    ]
+    ],
+    reflection: {
+      title: 'What I Would Do Differently',
+      items: [
+        'Add usability testing before handoff: Given the 8-week timeline, I prioritized discovery research over usability testing — because the bigger risk was building the wrong thing, not building it imperfectly. That was the right call for the situation. But if I had more time, I would have added a round of usability testing before engineering handoff to validate interaction details and catch edge cases earlier.',
+        'Challenge the design system when it hurts users: I simplified the filter experience, but I was still constrained by the existing design system — which was built for technical users. Consistency across tools is valuable, but not when it comes at the cost of usability. If I could redo this, I would make a stronger case to the design team for breaking from the system: treat PMs as everyday consumers, reference consumer product patterns (like Spotify or Notion), and strip away every trace of technical complexity — even if it means creating new design patterns.',
+        'Build in post-launch measurement: After shipping, I was moved to another project and didn\'t get to track long-term adoption data. If I could redo this, I would set up a structured post-launch plan — tracking filter usage rates, drop-off points, and scheduling follow-up interviews at 30 and 90 days — so the team could continue iterating with data even after I moved on.'
+      ]
+    }
   },
   {
     id: 'knowledge-graph',

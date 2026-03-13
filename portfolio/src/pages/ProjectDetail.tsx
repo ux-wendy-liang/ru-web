@@ -283,6 +283,31 @@ const ProjectDetail = () => {
                   </div>
                 )}
 
+                {/* Quotes (speech bubbles) */}
+                {section.quotes && section.quotes.length > 0 && (
+                  <div className="flex flex-col md:flex-row gap-5 my-2">
+                    {section.quotes.map((quote, qIdx) => (
+                      <div key={qIdx} className="flex-1 relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                        <div className="text-accent-teal text-4xl font-serif leading-none mb-1">"</div>
+                        <p className="text-gray-900 text-lg font-medium leading-[1.6] mb-4">
+                          {quote.text}
+                        </p>
+                        <div className="flex items-center gap-2">
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ${
+                            qIdx === 0 ? 'bg-gray-400' : 'bg-accent-teal'
+                          }`}>
+                            {quote.author.charAt(0)}
+                          </div>
+                          <div>
+                            <div className="text-sm font-bold text-gray-900">{quote.author}</div>
+                            <div className="text-xs text-gray-400">{quote.role}</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 {/* Cards */}
                 {section.cards && section.cards.length > 0 && (() => {
                   // Detect if cards use "Consumers:" / "Creators:" prefix pattern for styled badges
@@ -358,7 +383,7 @@ const ProjectDetail = () => {
                       : 'max-w-prose text-lg text-gray-600'
                   }`}>
                     {section.afterCards.split('\n\n').map((para, pIdx) => (
-                      <p key={pIdx} className={pIdx > 0 ? 'mt-4' : ''}>{para}</p>
+                      <p key={pIdx} className={pIdx > 0 ? 'mt-4' : ''}>{renderInlineMarkdown(para)}</p>
                     ))}
                   </div>
                 )}
@@ -564,11 +589,11 @@ const ProjectDetail = () => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {project.impact.map((item, index) => (
-                    <div key={index} className="bg-white/70 p-6 rounded-xl text-center">
-                      <div className="text-2xl font-black text-accent-teal mb-2">
+                    <div key={index} className="bg-white/70 p-8 rounded-xl text-center">
+                      <div className="text-4xl md:text-5xl font-black text-accent-teal mb-3">
                         {item.includes(':') ? item.split(':')[0] : `Impact ${index + 1}`}
                       </div>
-                      <p className="text-sm text-gray-600 leading-[1.6]">
+                      <p className="text-base text-gray-600 leading-[1.6]">
                         {item.includes(':') ? item.split(':')[1].trim() : item}
                       </p>
                     </div>
@@ -747,6 +772,43 @@ const ProjectDetail = () => {
                             );
                           }
                           return takeaway;
+                        })()}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Reflection Section */}
+          {isV2 && project.reflection && (
+            <div className="bg-[#F8F9FA] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
+                  Reflection
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
+                  {project.reflection.title}
+                </h2>
+                <div className="space-y-6">
+                  {project.reflection.items.map((item, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
+                        <span className="text-gray-900 font-black">{index + 1}</span>
+                      </div>
+                      <p className="text-[1.05rem] text-gray-600 leading-[1.7]">
+                        {(() => {
+                          const colonIdx = item.indexOf(': ');
+                          if (colonIdx !== -1 && colonIdx < 80) {
+                            return (
+                              <>
+                                <span className="font-bold text-gray-900">{item.slice(0, colonIdx + 1)}</span>
+                                {item.slice(colonIdx + 1)}
+                              </>
+                            );
+                          }
+                          return item;
                         })()}
                       </p>
                     </div>
