@@ -88,13 +88,67 @@ portfolio/
 
 更新项目内容时，只需修改这个文件，页面会自动更新。
 
-### 设计系统
+### 设计系统 (Design Guideline)
 
-Tailwind 自定义配置 (`tailwind.config.js`)：
-- Primary: `#F2FCE2` (`bg-primary`, `text-primary`)
-- Cream: `#F5F3EE` (`bg-cream`)
-- Accent teal: `#5B9B8E` (`text-accent-teal`, `border-accent-teal`)
-- 字体: Lato
+#### 字体
+- **全站统一使用 Lato**（Google Fonts，字重 100/300/400/700/900）
+
+#### 字号层级（从大到小）
+
+| 层级 | Tailwind | 像素 | 用途 |
+|------|---------|------|------|
+| H1 | text-4xl md:text-5xl | 36→48px | 页面主标题（首页 hero、项目详情标题） |
+| H2 | text-2xl md:text-3xl | 24→30px | 区块标题（Experience、The Problem、Results 等） |
+| H3 | text-xl md:text-2xl | 20→24px | 子标题（公司名、Decision block 标题） |
+| H4 | text-base md:text-lg | 16→18px | 小标题（职位名、卡片标题） |
+| Body | text-lg | 18px | 正文 |
+| Small | text-sm | 14px | 辅助文字、按钮文字 |
+| Tiny | text-xs | 12px | 小标签（uppercase） |
+
+#### 颜色系统
+
+**文字颜色（4 级）：**
+- `text-gray-900` — 标题、加粗文字
+- `text-gray-600` — 正文、描述
+- `text-gray-400` — 年份、标签、辅助文字
+- `text-accent-teal` (#5B9B8E) — CTA 文字、品牌标签、数据亮点
+
+**背景颜色（按内容性质搭配）：**
+- `white` — 全站默认页面背景、图片多的区域
+- `#F6FAF9` (浅青) — 品牌/成果区域（Impact section）
+- `#F8F9FA` (浅灰) — 分析思考区（Design Decisions、Experience）
+- `#FAF9F7` (浅暖) — 人文温度区（Testimonial、What I Learned）
+- `animated-gradient` — 仅首页 hero 区域
+
+**按钮样式（2 种，统一 2px outline）：**
+- 主要 CTA：`border-2 border-accent-teal text-accent-teal hover:bg-accent-teal hover:text-white rounded-full`（VIEW MORE、SEE FULL CV、DOWNLOAD RESUME）
+- 次要：`border-2 border-gray-400 text-gray-600 hover:text-gray-900 hover:border-gray-900 rounded-full`（email、résumé）
+
+**Case Study 语义色块（以品牌青色为核心，统一柔和低饱和度）：**
+- Challenge: bg-[#FBF3F2] / border-[#C2807A] / text-[#8B554E] (柔珊瑚)
+- Insight: bg-[#F2F5F8] / border-[#7E97AD] / text-[#4E6577] (柔蓝灰)
+- Solution: bg-[#F0F6F5] / border-[#5B9B8E] / text-[#3E6B61] (品牌青)
+- Quote: bg-[#F7F5F2] / border-[#B09A82] / text-[#6B5C48] (暖沙色)
+
+**Case Study Section 背景规则：**
+- Hero / The Problem / Solution：白色（图片多，保持清晰）
+- Key Design Decisions：浅灰 #F8F9FA
+- Impact：浅青 #F6FAF9
+- Testimonial / What I Learned：浅暖 #FAF9F7
+
+**Tailwind 自定义颜色 (`tailwind.config.js`)：**
+- Primary: `#F2FCE2` (`bg-primary`) — 用于小元素如序号圆点
+- Accent teal: `#5B9B8E` (`text-accent-teal`, `border-accent-teal`) — 品牌强调色
+
+#### 间距规范
+
+**水平 padding（全站统一）：** `px-6 md:px-16 lg:px-24`（手机 24px → 平板 64px → 大屏 96px）
+
+**最大宽度（2 档）：**
+- `max-w-7xl` (1280px) — 宽布局（导航、项目列表、About 图文并排、Experience）
+- `max-w-5xl` (1024px) — 阅读型内容（首页 hero 文字、Case Study 详情）
+
+**垂直区块间距：** `py-20`（80px）用于大多数 section
 
 ### 图片处理
 

@@ -14,24 +14,24 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section - starts from top to include nav area */}
-      <section className="pb-20 px-8 md:px-16 lg:px-24 animated-gradient" style={{ paddingTop: '160px', marginTop: '-88px' }}>
+      <section className="pb-20 px-6 md:px-16 lg:px-24 animated-gradient" style={{ paddingTop: '160px', marginTop: '-88px' }}>
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Hi, I'm Wendy
             <br />
             Product Design in Bay Area
           </h1>
-          <p className="text-lg text-gray-700 mb-10 max-w-2xl leading-loose">
+          <p className="text-lg text-gray-600 mb-10 max-w-2xl leading-loose">
             <span className="font-semibold text-gray-900">8+ years</span> turning <span className="font-semibold text-gray-900">complex products</span> into <span className="font-semibold text-gray-900">intuitive experiences</span> — specializing in <span className="font-semibold text-gray-900">enterprise ads & data tools</span> at <span className="font-semibold text-gray-900">LinkedIn</span>.
           </p>
-          <p className="text-lg text-gray-700 mb-10 max-w-2xl leading-loose" style={{ marginTop: '-1.25rem' }}>
+          <p className="text-lg text-gray-600 mb-10 max-w-2xl leading-loose" style={{ marginTop: '-1.25rem' }}>
             I dig deep into <span className="font-semibold text-gray-900">user needs</span>, collaborate across teams, and deliver designs that drive <span className="font-semibold text-gray-900">real business outcomes</span>.
           </p>
           <div className="flex flex-wrap gap-3 items-center">
             <div className="relative">
               <button
                 onClick={handleCopyEmail}
-                className="inline-block px-6 py-2 border border-gray-600 rounded-full text-gray-600 text-sm cursor-pointer hover:text-gray-900 hover:border-gray-900 transition-colors duration-200"
+                className="inline-block px-6 py-2 border-2 border-gray-400 rounded-full text-gray-600 text-sm cursor-pointer hover:text-gray-900 hover:border-gray-900 transition-colors duration-200"
               >
                 <span className={copied ? 'bg-gray-900/10 rounded px-1 -mx-1' : ''}>
                   uiwendyliang@outlook.com
@@ -47,7 +47,7 @@ const Home = () => {
               href="https://docs.google.com/document/d/15staG_wP1O0-HSl8O4V44kzVNShqZBRnl9PKEHaAwcM/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-2 border border-gray-600 rounded-full text-gray-600 text-sm hover:text-gray-900 hover:border-gray-900 transition-colors duration-200"
+              className="inline-block px-6 py-2 border-2 border-gray-400 rounded-full text-gray-600 text-sm hover:text-gray-900 hover:border-gray-900 transition-colors duration-200"
             >
               Résumé
             </a>
@@ -56,7 +56,7 @@ const Home = () => {
       </section>
 
       {/* Projects Section - Alternating Layout */}
-      <section className="py-20 px-8 md:px-16 lg:px-24">
+      <section className="py-20 px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto space-y-32">
           {projects.map((project) => (
             <div
@@ -77,7 +77,7 @@ const Home = () => {
               {/* Project Info */}
               <div className="w-full md:w-2/5">
                 <p className="text-sm text-gray-400 mb-2">{project.year}</p>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
                   {project.title}
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -96,32 +96,32 @@ const Home = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 px-8 md:px-16 lg:px-24 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-6 md:px-16 lg:px-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <div className="w-20 h-1 bg-black mb-6"></div>
-            <h2 className="text-5xl font-bold text-gray-900">Experience</h2>
+            <div className="w-20 h-1 bg-accent-teal mb-6"></div>
+            <h2 className="text-3xl font-bold text-gray-900">Experience</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* LinkedIn */}
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">LinkedIn</h3>
-              <h4 className="text-xl font-bold text-gray-900 mb-3">Product Designer</h4>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">LinkedIn</h3>
+              <h4 className="text-base font-bold text-gray-900 mb-3">Product Designer</h4>
               <p className="text-gray-600">8 yr, May 2016–Nov 2024</p>
             </div>
 
             {/* Tencent */}
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Tencent</h3>
-              <h4 className="text-xl font-bold text-gray-900 mb-3">User Interface Designer</h4>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Tencent</h3>
+              <h4 className="text-base font-bold text-gray-900 mb-3">User Interface Designer</h4>
               <p className="text-gray-600">2 yr, Jun 2012–Apr 2014</p>
             </div>
 
             {/* Startup */}
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Startup company</h3>
-              <h4 className="text-xl font-bold text-gray-900 mb-3">First UI and UX Designer</h4>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Startup company</h3>
+              <h4 className="text-base font-bold text-gray-900 mb-3">First UI and UX Designer</h4>
               <p className="text-gray-600">1 yr, Aug 2010–May 2012</p>
             </div>
           </div>
@@ -132,7 +132,7 @@ const Home = () => {
               href="https://docs.google.com/document/d/15staG_wP1O0-HSl8O4V44kzVNShqZBRnl9PKEHaAwcM/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-12 py-4 bg-black hover:bg-gray-800 transition-colors duration-200 rounded-full text-white text-lg font-medium"
+              className="inline-block px-12 py-4 border-2 border-accent-teal text-accent-teal hover:bg-accent-teal hover:text-white transition-all duration-200 rounded-full text-lg font-medium"
             >
               SEE FULL CV →
             </a>

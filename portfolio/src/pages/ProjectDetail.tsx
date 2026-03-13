@@ -354,7 +354,12 @@ const ProjectDetail = () => {
                         }
 
                         return (
-                          <div key={cardIndex} className="bg-white p-6 rounded-xl">
+                          <div key={cardIndex} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                            {card.avatar && (
+                              <div className="w-16 h-16 mb-3">
+                                <img src={card.avatar} alt={card.title} className="w-full h-full rounded-full" />
+                              </div>
+                            )}
                             <h4 className="text-base font-bold text-gray-900 mb-2">{card.title}</h4>
                             <div className="text-[0.95rem] text-gray-600 leading-[1.6]">
                               {card.content.split('\n\n').map((para, pIdx) => {
@@ -410,7 +415,7 @@ const ProjectDetail = () => {
 
                 {/* Single Image */}
                 {section.image && (
-                  <div className={`rounded-xl overflow-hidden mt-8 flex justify-center bg-gray-50 ${
+                  <div className={`rounded-xl overflow-hidden mt-8 flex justify-center bg-gray-50 relative ${
                     section.imageSize === 'small' ? 'max-w-[400px]' :
                     section.imageSize === 'medium' ? 'max-w-[600px]' : ''
                   }`}>
@@ -419,6 +424,23 @@ const ProjectDetail = () => {
                       alt={section.title}
                       className="w-full max-h-[600px] object-contain"
                     />
+                    {section.imageHighlight && (
+                      <div
+                        className="absolute border-2 border-accent-teal rounded-lg pointer-events-none"
+                        style={{
+                          top: section.imageHighlight.top,
+                          left: section.imageHighlight.left,
+                          width: section.imageHighlight.width,
+                          height: section.imageHighlight.height,
+                        }}
+                      >
+                        {section.imageHighlight.label && (
+                          <span className="absolute -top-6 left-2 text-xs font-bold text-accent-teal bg-white px-2 py-0.5 rounded">
+                            {section.imageHighlight.label}
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -603,6 +625,45 @@ const ProjectDetail = () => {
             </div>
           )}
 
+          {/* V2: All quotes (testimonial + stakeholder feedback) - right after impact */}
+          {isV2 && (project.testimonial || (project.stakeholderFeedback && project.stakeholderFeedback.length > 0)) && (
+            <div className="bg-[#FAF9F7] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
+              <div className="max-w-5xl mx-auto space-y-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight">
+                  User Feedback
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {project.testimonial && (
+                    <div className="bg-white/70 p-6 md:p-8 rounded-2xl">
+                      <blockquote className="text-base text-gray-900 italic leading-[1.8] mb-4">
+                        "{project.testimonial.quote}"
+                      </blockquote>
+                      <div className="text-gray-600 text-sm">
+                        <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
+                        {project.testimonial.role && (
+                          <span className="ml-2">({project.testimonial.role})</span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  {project.stakeholderFeedback && project.stakeholderFeedback.map((feedback, index) => (
+                    <div key={index} className="bg-white/70 p-6 md:p-8 rounded-2xl">
+                      <blockquote className="text-base text-gray-900 italic leading-[1.8] mb-4">
+                        "{feedback.quote}"
+                      </blockquote>
+                      <div className="text-gray-600 text-sm">
+                        <span className="font-bold text-gray-900">— {feedback.author}</span>
+                        {feedback.role && (
+                          <span className="ml-2">({feedback.role})</span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* V2: Impact summary paragraph */}
           {isV2 && project.impactSummary && (
             <div className="max-w-prose text-lg text-gray-600 leading-[1.8]">
@@ -610,36 +671,42 @@ const ProjectDetail = () => {
             </div>
           )}
 
-          {/* V2: All quotes (testimonial + stakeholder feedback) grouped in one container */}
-          {isV2 && (project.testimonial || (project.stakeholderFeedback && project.stakeholderFeedback.length > 0)) && (
-            <div className="bg-[#FAF9F7] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
-              <div className="max-w-5xl mx-auto space-y-6">
-                {project.testimonial && (
-                  <div className="bg-white/70 p-8 md:p-10 rounded-2xl">
-                    <blockquote className="max-w-prose text-lg text-gray-900 italic leading-[1.8] mb-4">
-                      "{project.testimonial.quote}"
-                    </blockquote>
-                    <div className="text-gray-600">
-                      <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
-                      {project.testimonial.role && (
-                        <span className="ml-2">({project.testimonial.role})</span>
-                      )}
+          {/* V2: Next Steps */}
+          {isV2 && project.nextSteps && (
+            <div className="bg-[#F8F9FA] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-xs font-bold uppercase tracking-[0.15em] text-accent-teal mb-3">
+                  Product Vision
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  {project.nextSteps.title}
+                </h2>
+                <p className="max-w-prose text-lg text-gray-600 leading-[1.8] mb-8">
+                  {renderInlineMarkdown(project.nextSteps.content)}
+                </p>
+                <div className="space-y-4">
+                  {project.nextSteps.items.map((item, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
+                        <span className="text-accent-teal font-black text-sm">P{index}</span>
+                      </div>
+                      <p className="text-[1.05rem] text-gray-600 leading-[1.7]">
+                        {(() => {
+                          const colonIdx = item.indexOf(': ');
+                          if (colonIdx !== -1 && colonIdx < 80) {
+                            return (
+                              <>
+                                <span className="font-bold text-gray-900">{item.slice(0, colonIdx + 1)}</span>
+                                {item.slice(colonIdx + 1)}
+                              </>
+                            );
+                          }
+                          return item;
+                        })()}
+                      </p>
                     </div>
-                  </div>
-                )}
-                {project.stakeholderFeedback && project.stakeholderFeedback.map((feedback, index) => (
-                  <div key={index} className="bg-white/70 p-8 md:p-10 rounded-2xl">
-                    <blockquote className="max-w-prose text-lg text-gray-900 italic leading-[1.8] mb-4">
-                      "{feedback.quote}"
-                    </blockquote>
-                    <div className="text-gray-600">
-                      <span className="font-bold text-gray-900">— {feedback.author}</span>
-                      {feedback.role && (
-                        <span className="ml-2">({feedback.role})</span>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           )}
