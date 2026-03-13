@@ -11,6 +11,8 @@ export interface ProjectSection {
   imageSize?: 'small' | 'medium' | 'large'; // Controls max-width: small=400px, medium=600px, large=full
   imageHighlight?: { top: string; left: string; width: string; height: string; label?: string }; // Overlay highlight box on image
   images?: string[];
+  imageLabels?: string[]; // Labels for images (e.g., ['Before', 'After'])
+  imageHighlights?: (null | { top: string; left: string; width: string; height: string })[]; // Per-image highlight boxes
   imageStyle?: 'phone'; // Wrap images in phone frame mockup
   phoneBefore?: string[]; // Before phone screenshots
   phoneAfter?: { image: string; caption: string }[]; // After phone screenshots with captions
@@ -382,7 +384,9 @@ export const projects: Project[] = [
           { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text, displayed in a resizable side panel. This builds trust in the AI simplification — users can verify accuracy anytime without leaving the reading flow.\n\n→ For Everyone (especially experienced practitioners)' }
         ],
         afterCards: '**This wasn\'t the original design.** My first version had no source tracing. An early user\'s feedback was immediate: *"I want to see the original text to make sure the AI didn\'t misinterpret the teachings."* Trust was the missing piece — so I added click-to-trace: every simplified paragraph links back to its source text. This feature, born from real user feedback, became one of the most valued parts of the product.',
-        image: '/images/jingxin-lesson-en.png'
+        images: ['/images/jingxin-source-before.png', '/images/jingxin-source-after.png'],
+        imageLabels: ['Before: Simplified text only', 'After: Click to trace original source'],
+        imageHighlights: [null, { top: '8%', left: '54%', width: '44%', height: '90%' }]
       },
       // Decision 2
       {
@@ -410,8 +414,18 @@ export const projects: Project[] = [
         challenge: 'Students needed to reflect on personal spiritual growth, but were embarrassed to share publicly.',
         insight: 'Through observation, I noticed students avoided journaling when they knew others could see their reflections. Spiritual growth feels deeply personal. But people\'s comfort with sharing varies widely — some want total privacy, some trust their teacher or close friends, some are happy to share with classmates, and a few don\'t mind sharing publicly.',
         solution: 'Two design choices that respect this spectrum of vulnerability.',
-        content: '**4-tier privacy controls** for journaling: private (default) → teacher only → classmates → everyone. Defaulting to "private" removed the barrier to writing — students could reflect honestly knowing they controlled who sees it.\n\n**"随喜赞叹" (Suixi Zantan)** — replaced generic "likes" with a Buddhist concept of rejoicing in others\' good deeds, creating culturally meaningful engagement.',
-        image: '/images/jingxin-privacy-controls.svg',
+        content: '**4-tier privacy controls** for journaling: private (default) → teacher only → classmates → everyone. Defaulting to "private" removed the barrier to writing — students could reflect honestly knowing they controlled who sees it.',
+        image: '/images/jingxin-privacy-controls-real.png',
+        imageSize: 'medium' as const,
+        imageHighlight: { top: '38%', left: '68%', width: '30%', height: '38%' }
+      },
+      {
+        title: '',
+        isDecisionBlock: true,
+        content: '**"随喜赞叹" (Suixi Zantan)** — replaced generic "likes" with a Buddhist concept of rejoicing in others\' good deeds, creating culturally meaningful engagement.',
+        image: '/images/jingxin-rejoice.png',
+        imageSize: 'medium' as const,
+        imageHighlight: { top: '72%', left: '2%', width: '30%', height: '22%' },
         dividerAfter: true
       },
       // ===== SHIPPING: MVP & CHALLENGES =====
@@ -448,7 +462,6 @@ export const projects: Project[] = [
       {
         title: '',
         content: '',
-        images: ['/images/jingxin-hero-en.png', '/images/jingxin-courses-en.png', '/images/jingxin-lesson-en.png', '/images/jingxin-practice-en.png'],
         dividerAfter: true
       }
     ],

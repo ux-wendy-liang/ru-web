@@ -502,12 +502,28 @@ const ProjectDetail = () => {
                 {section.images && section.images.length > 0 && (
                   <div className={`mt-8 grid gap-6 ${section.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-2'}`}>
                     {section.images.map((image, imgIndex) => (
-                      <div key={imgIndex} className="rounded-xl overflow-hidden flex justify-center bg-gray-50">
-                        <img
-                          src={image}
-                          alt={`${section.title} ${imgIndex + 1}`}
-                          className="w-full max-h-[500px] object-contain"
-                        />
+                      <div key={imgIndex} className="space-y-2">
+                        {section.imageLabels && section.imageLabels[imgIndex] && (
+                          <span className="text-xs font-bold uppercase tracking-wider text-accent-teal">{section.imageLabels[imgIndex]}</span>
+                        )}
+                        <div className="rounded-xl overflow-hidden flex justify-center bg-gray-100 relative shadow-md">
+                          <img
+                            src={image}
+                            alt={`${section.title} ${imgIndex + 1}`}
+                            className="w-full max-h-[500px] object-contain"
+                          />
+                          {section.imageHighlights && section.imageHighlights[imgIndex] && (
+                            <div
+                              className="absolute border-2 border-accent-teal rounded-lg pointer-events-none"
+                              style={{
+                                top: section.imageHighlights[imgIndex]!.top,
+                                left: section.imageHighlights[imgIndex]!.left,
+                                width: section.imageHighlights[imgIndex]!.width,
+                                height: section.imageHighlights[imgIndex]!.height,
+                              }}
+                            />
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
