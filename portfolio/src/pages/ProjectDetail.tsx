@@ -210,7 +210,7 @@ const ProjectDetail = () => {
                   const colonIdx = section.challenge.indexOf(':');
                   const hasOwnLabel = colonIdx > 0 && colonIdx < 40;
                   return (
-                    <div className="bg-[#FBF3F2] border-l-[3px] border-[#C2807A] rounded-r-lg px-5 py-4 mt-4">
+                    <div className="bg-[#FBF3F2] border-l-[3px] border-[#C2807A] rounded-r-lg px-5 py-4 mt-4 max-w-3xl">
                       <p className="text-[#8B554E] text-[0.95rem] leading-[1.7] m-0">
                         {hasOwnLabel ? (
                           <><strong>{section.challenge.slice(0, colonIdx + 1)}</strong>{section.challenge.slice(colonIdx + 1)}</>
@@ -236,7 +236,7 @@ const ProjectDetail = () => {
                     const cleanQuote = quoteText.replace(/^[""]|[""]$/g, '');
 
                     return (
-                      <div className="bg-[#F7F5F2] border-l-[3px] border-[#B09A82] rounded-r-lg px-6 py-5">
+                      <div className="bg-[#F7F5F2] border-l-[3px] border-[#B09A82] rounded-r-lg px-6 py-5 max-w-3xl">
                         <div className="text-[#B09A82] text-3xl font-serif leading-none mb-2">"</div>
                         <p className="text-[#6B5C48] text-lg italic leading-[1.7] m-0">
                           {cleanQuote}
@@ -249,7 +249,7 @@ const ProjectDetail = () => {
                   }
 
                   return (
-                    <div className="bg-[#F2F5F8] border-l-[3px] border-[#7E97AD] rounded-r-lg px-5 py-4">
+                    <div className="bg-[#F2F5F8] border-l-[3px] border-[#7E97AD] rounded-r-lg px-5 py-4 max-w-3xl">
                       <p className="text-[#4E6577] text-[0.95rem] leading-[1.7] m-0">
                         {hasOwnLabel ? (
                           <><strong>{section.insight.slice(0, colonIdx + 1)}</strong>{section.insight.slice(colonIdx + 1)}</>
@@ -264,7 +264,7 @@ const ProjectDetail = () => {
                   const colonIdx = section.solution.indexOf(':');
                   const hasOwnLabel = colonIdx > 0 && colonIdx < 40;
                   return (
-                    <div className="bg-[#F0F6F5] border-l-[3px] border-[#5B9B8E] rounded-r-lg px-5 py-4">
+                    <div className="bg-[#F0F6F5] border-l-[3px] border-[#5B9B8E] rounded-r-lg px-5 py-4 max-w-3xl">
                       <p className="text-[#3E6B61] text-[0.95rem] leading-[1.7] m-0">
                         {hasOwnLabel ? (
                           <><strong>{section.solution.slice(0, colonIdx + 1)}</strong>{section.solution.slice(colonIdx + 1)}</>
@@ -630,9 +630,9 @@ const ProjectDetail = () => {
             <div className="bg-[#FAF9F7] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
               <div className="max-w-5xl mx-auto space-y-6">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                  User Feedback
+                  Stakeholder Feedback
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className={`grid grid-cols-1 ${((project.testimonial ? 1 : 0) + (project.stakeholderFeedback?.length || 0)) > 1 ? 'md:grid-cols-2' : ''} gap-6`}>
                   {project.testimonial && (
                     <div className="bg-white/70 p-6 md:p-8 rounded-2xl">
                       <blockquote className="text-base text-gray-900 italic leading-[1.8] mb-4">

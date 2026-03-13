@@ -29,7 +29,7 @@ const Navigation = () => {
             <img
               src="/images/logo.svg"
               alt="Wendy Liang"
-              className="w-10 h-10"
+              className="w-10 h-10 rounded-full"
             />
           </Link>
 

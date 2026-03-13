@@ -67,171 +67,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'jingxin-xuetang',
-    title: 'From Designer to Builder: Shipping a Buddhist Learning Platform in 4 Days with AI',
-    year: 2026,
-    cover: '/images/jingxin-hero-en.png',
-    shortDescription: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live and serving real users.',
-    role: 'Product Designer\n+ Builder (Vibe Coding)',
-    duration: '1 year observing + 4 days building',
-    team: 'Solo — built with Claude Code (AI)',
-    sections: [
-      // ===== THE PROBLEM =====
-      {
-        title: '50%+ of Buddhist Study Group Students Drop Out',
-        sectionLabel: 'The Problem',
-        content: 'Master Jiqun\'s Buddhist courses are studied in community groups across the U.S. and hundreds of cities in China — each city has multiple study groups, and each group has around 10–15 members. But more than half of students leave within the first few sessions.\n\nI observed this firsthand in my own study community in San Francisco — out of 5 study groups, 4 had lost roughly half their members. This isn\'t an isolated case; it\'s a systemic problem happening everywhere. Through conversations with students and group leaders, I identified three root causes:',
-        cards: [
-          { title: 'Content too academic', content: 'Original texts use classical Buddhist language with dense terminology. Even educated adults said "I need to read it 3 times to understand."' },
-          { title: 'No clear takeaways', content: 'After reading a 3,000-word lesson, students couldn\'t articulate what they learned in one sentence.' },
-          { title: 'No practice guidance', content: 'Buddhism emphasizes applying teachings to daily life, but courses only provided theory. Students read, nodded, and then... did nothing different.' }
-        ],
-        afterCards: 'This created a vicious cycle:',
-        flow: ['Can\'t understand', 'Can\'t remember', 'Can\'t apply', 'No benefit', 'Quit'],
-        dividerAfter: true
-      },
-      // ===== RESEARCH & INSIGHTS =====
-      {
-        title: 'Understanding Who I\'m Designing For',
-        sectionLabel: 'Research & Insights',
-        content: 'As a student in this community, I experienced the problem firsthand. Each week\'s lesson is 20–30 pages of dense Buddhist text, read three times. I started **downloading the PDF and asking AI for a plain-language version** — it worked, but most students who hit the same wall just gave up.\n\nThe problem went deeper than comprehension. One student told me **studying Buddhism actually increased their anxiety** — she understood the teachings intellectually but couldn\'t put them into practice. Instead of finding peace, she felt more pressure. This was a striking insight: **the gap between "understanding" and "doing" actively harms the learning experience.** It became the emotional core of why I built practice exercises into the product.\n\nOver the past year, I attended weekly sessions, talked with fellow students, and discussed pain points with our group leader. A year of lived experience gave me deep empathy — and when I decided to build, I already understood the users intimately. I identified two distinct personas:',
-        cards: [
-          { title: 'Beginner', content: 'New to Buddhism or joined recently. 20–30 pages of classical language per lesson, unfamiliar terminology everywhere.\n\nPain point: "I read it 3 times and still don\'t understand." Most drop out within the first few months.\n\n→ Needs simplified, plain-language content to even get started', avatar: '/images/persona-new-student.svg' },
-          { title: 'Experienced Practitioner', content: 'Deeply committed, studied for 1+ years. Can understand the teachings intellectually, but struggles to retain and apply them in daily life. Often mentors newer students.\n\nPain point: "I understood it during the session, but a week later I forgot everything — and I still can\'t put it into practice."\n\n→ Their core need is retention and real-world application', avatar: '/images/persona-experienced.svg' }
-        ],
-        dividerAfter: true
-      },
-      // ===== KEY DESIGN DECISIONS =====
-      {
-        title: 'Turning Insights Into Solutions',
-        sectionLabel: 'Key Design Decisions',
-        content: ''
-      },
-      // Decision 1
-      {
-        title: 'Decision 1: Making Ancient Wisdom Accessible',
-        isDecisionBlock: true,
-        challenge: 'Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.',
-        insight: 'In my own study group, I observed two distinct behaviors: beginners couldn\'t finish the 30-page text at all — they\'d use AI summaries just to understand the gist before group discussion. Experienced students could read the original but struggled to retain it or apply it to daily life. One content format can\'t serve both.',
-        solution: 'A three-layer content architecture — simplified explanation for beginners, core takeaways for retention, and source text tracing for accuracy.',
-        content: '',
-        cards: [
-          { title: 'Simplified Explanation', content: 'Plain language with life analogies (e.g., explaining "attachment" through phone addiction). Beginners need everyday language to build initial understanding before they can engage with the original texts.\n\n→ For Beginners' },
-          { title: 'Core Takeaways', content: 'Each lesson distilled into one memorable sentence + 3–5 key points. A quick recap helps everyone retain the lesson without re-reading 30 pages — whether on a commute or before a group session.\n\n→ For Everyone' },
-          { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text, displayed in a resizable side panel. This builds trust in the AI simplification — users can verify accuracy anytime without leaving the reading flow.\n\n→ For Everyone (especially experienced practitioners)' }
-        ],
-        afterCards: '**This wasn\'t the original design.** My first version had no source tracing. An early user\'s feedback was immediate: *"I want to see the original text to make sure the AI didn\'t misinterpret the teachings."* Trust was the missing piece — so I added click-to-trace: every simplified paragraph links back to its source text. This feature, born from real user feedback, became one of the most valued parts of the product.',
-        image: '/images/jingxin-lesson-en.png'
-      },
-      // Decision 2
-      {
-        title: 'Decision 2: From Reading to Doing',
-        isDecisionBlock: true,
-        challenge: 'Students read lessons but couldn\'t apply teachings to daily life. Buddhism is about practice, not memorization.',
-        insight: 'Every student — beginner or experienced — needs practical reasons to keep showing up. Abstract theory isn\'t enough. Remember the user who said studying Buddhism increased their anxiety? That gap between "understanding" and "doing" was the root cause. Our study groups meet weekly, covering one lesson per session. That natural rhythm became my design constraint.',
-        solution: 'One practice exercise per lesson — aligned with the weekly study rhythm, so each week students have exactly one thing to apply to their daily life.',
-        content: 'For example, after a lesson on compassion: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
-        image: '/images/jingxin-exercise-en.png',
-        imageSize: 'medium' as const
-      },
-      {
-        title: '',
-        isDecisionBlock: true,
-        content: 'But giving users exercises isn\'t enough — they need to understand *why* each practice matters. I added a "?" icon next to each exercise that reveals the reasoning. This progressive disclosure keeps the interface action-focused while giving curious learners a path to deeper understanding.',
-        image: '/images/jingxin-exercise-expanded-en.png',
-        imageSize: 'medium' as const,
-        imageHighlight: { top: '34%', left: '2%', width: '96%', height: '26%' }
-      },
-      // Decision 3
-      {
-        title: 'Decision 3: Designing for Vulnerability',
-        isDecisionBlock: true,
-        challenge: 'Students needed to reflect on personal spiritual growth, but were embarrassed to share publicly.',
-        insight: 'Through observation, I noticed students avoided journaling when they knew others could see their reflections. Spiritual growth feels deeply personal. But people\'s comfort with sharing varies widely — some want total privacy, some trust their teacher or close friends, some are happy to share with classmates, and a few don\'t mind sharing publicly.',
-        solution: 'Two design choices that respect this spectrum of vulnerability.',
-        content: '**4-tier privacy controls** for journaling: private (default) → teacher only → classmates → everyone. Defaulting to "private" removed the barrier to writing — students could reflect honestly knowing they controlled who sees it.\n\n**"随喜赞叹" (Suixi Zantan)** — replaced generic "likes" with a Buddhist concept of rejoicing in others\' good deeds, creating culturally meaningful engagement.',
-        dividerAfter: true
-      },
-      // ===== SHIPPING: MVP & CHALLENGES =====
-      {
-        title: 'Shipping Smart: What I Built and What I Cut',
-        sectionLabel: 'From Design to Launch',
-        content: 'My PRD had many more features planned. But I made a deliberate decision to **ship only the core experience first**: simplified lessons, source tracing, practice exercises, and privacy-controlled journaling.',
-        insight: 'My reasoning: more features = more bugs = delayed launch. Every additional feature would multiply testing time and push back the moment real users could start benefiting. I wanted to get the core right, ship it, and iterate — not build a perfect product nobody has used yet.'
-      },
-      {
-        title: 'The Hardest Part: Building with AI',
-        content: 'The first AI-generated build worked functionally, but the design was a mess — inconsistent padding, mismatched fonts, varying button styles. I spent hours fixing issues one by one, only for new ones to appear elsewhere.\n\nThen I realized: **I was solving symptoms, not the root cause.** I stepped back and created a design system — typography scales, spacing rules, button styles, layout standards. Once applied globally, every subsequent change became predictable. The designer in me solved what the builder in me couldn\'t.',
-        dividerAfter: true
-      },
-      // ===== THE PRODUCT =====
-      {
-        title: 'Try the Live Product',
-        sectionLabel: 'The Product',
-        content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a database, and bilingual support. I used AI vibe coding with my detailed PRD as the blueprint — 70 commits over 4 days, each one a cycle of describe → review → refine. My role throughout was creative director, reviewing every output and giving feedback like a design review.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
-        embed: 'https://jingxin-xuetang.vercel.app'
-      },
-      {
-        title: 'Fixing the Mobile Experience',
-        content: 'I designed for desktop first. But when I tested the responsive layout on mobile, the experience broke down: **navigation buttons were overloaded, fonts felt cramped, and the sidebar course list became painful to use on a small screen.** Users had to click to expand, then scroll, then click again.\n\nSo I redesigned the mobile experience specifically:',
-        phoneBefore: ['/images/jingxin-mobile-lesson-en.png'],
-        phoneAfter: [
-          { image: '/images/mobile-home.png', caption: 'Bottom tabs for one-handed use.' },
-          { image: '/images/mobile-list.png', caption: 'Replaced dense sidebar with card-based course list for faster scanning.' },
-          { image: '/images/mobile-list-org.png', caption: 'Source overlay to verify content — trust without clutter.' }
-        ]
-      },
-      {
-        title: '',
-        content: '',
-        images: ['/images/jingxin-hero-en.png', '/images/jingxin-courses-en.png', '/images/jingxin-lesson-en.png', '/images/jingxin-practice-en.png'],
-        dividerAfter: true
-      }
-    ],
-    impact: [
-      'Behavior change: A student said the practice exercises directly triggered real-world action — "I finally did something I\'d been putting off." This is the exact understanding → doing loop the product was designed to create.',
-      'Deep engagement: 17 visitors generated 285 page views in the first week — averaging ~17 pages per user with a 24% bounce rate, confirming users explored deeply, not just clicked and left.',
-      'Trust earned: Users positioned the site as a "learning assistant" — a low-barrier entry point into the original texts, not a replacement. The source tracing feature directly addressed their top concern about AI accuracy.'
-    ],
-    testimonial: {
-      quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community.',
-      author: 'Yianguo',
-      role: 'Study Group Leader'
-    },
-    takeaways: [
-      'End-to-end ownership changes how you design: Owning the full journey — from user research, to PRD, to design system, to shipped product — forced me to make tighter decisions. When you\'re accountable for the final experience, not just the mockup, every detail matters more.',
-      'Start with the community, not the technology: I spent time observing study groups before writing a single requirement. The best features (like practice privacy controls) came from understanding social dynamics, not technical possibilities.',
-      'Vibe coding is a design tool, not a replacement for designers: AI writes code, but it can\'t decide what to build or why one layout works better than another. A clear PRD and strong design instincts are what make vibe coding productive — without them, you just ship faster in the wrong direction.',
-      'Ship early, learn from real users: A live product with 17 real users teaches more than a polished prototype with zero. The source tracing feature — now one of the most valued parts of the product — only exists because I shipped early enough to get feedback before over-building.'
-    ],
-    nextSteps: {
-      title: 'What\'s Next',
-      content: 'This product is live but still evolving. My PRD defines a clear 3-phase roadmap based on user growth milestones — not arbitrary timelines:',
-      items: [
-        'Now (P1 — 17 active users): Collecting qualitative feedback through 1-on-1 conversations and group study sessions. At this scale, a 15-minute conversation reveals more than any analytics dashboard.',
-        'At 30-50 users (P2): Add Google Analytics to track course completion rates, practice participation, and drop-off points.',
-        'Future (P3): An AI conversation feature where users can ask questions about Buddhist teachings and get deeper, personalized explanations — turning passive reading into active understanding.'
-      ]
-    },
-    stakeholderFeedback: [
-      {
-        quote: 'I used it to preview the lesson before our session — it helped me build a mental framework quickly and connect all the scattered notes I had from before. The practice exercise at the bottom directly triggered me to take action that day.',
-        author: 'Zhaoming',
-        role: 'Study Group Member'
-      },
-      {
-        quote: 'This is truly a great approach! I just opened it and it really is much more accessible and easy to understand. You put so much heart into this!',
-        author: 'Lisa Zhong',
-        role: 'Study Group Member'
-      },
-      {
-        quote: 'Wendy, you should have shared this website earlier! Every lesson has corresponding content — it\'s incredibly detailed and practical.',
-        author: 'Linmeng',
-        role: 'Study Group Member'
-      }
-    ]
-  },
-  {
     id: 'publisher',
     title: 'Building the LinkedIn Publisher Portal from 0-1',
     year: 2024,
@@ -339,111 +174,6 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 'dashboard',
-    title: 'Reimagining LinkedIn\'s Data Virtualization Tool Dashboard',
-    year: 2022,
-    cover: '/images/67ce84a463ba9f169c18cd3c_dashboard cover.png',
-    shortDescription: 'LinkedIn\'s data virtualization tool empowers internal users—product managers, engineers, and managers—to visualize data and make informed product decisions.',
-    role: 'User researcher, UX, UI',
-    duration: '8 Weeks',
-    team: '1 Product Manager, 1 Designer, 7 Developers',
-    sections: [
-      {
-        title: 'Problem: Dashboard lacks direct filtering, limiting decisions.',
-        content: 'The dashboard is one of the most visited pages in the tool. It includes various contextual charts designed to tell data stories. However, users frequently click into individual charts to apply filters and manipulate data because filters cannot be applied directly from the dashboard. This workflow limits the dashboard\'s potential as a decision-making tool.'
-      },
-      {
-        title: 'Business Goal',
-        content: 'This project aimed to address these usability challenges and enable decision-makers to stay on the dashboard for a cohesive understanding of their data.'
-      },
-      {
-        title: 'Initial Engineering Solution: Add tab-level filters to dashboards.',
-        content: 'The dashboard contains multiple tabs. Some users expressed the need for tab-level filters to refine data within a specific tab. Engineering managers suggested to build tab-level filters to address those specific user requests. While this solution could satisfy immediate needs, it risked only addressing surface-level issues rather than tackling the broader usability challenges of the dashboard.'
-      },
-      {
-        title: 'Propose to research',
-        content: 'I recognized that the proposed engineering solution might not fully resolve the dashboard\'s usability issues. I engaged product managers and convinced engineering managers to support conducting user research to understand the true needs and pain points of both data creators and consumers to uncover the root causes. To achieve this, I:\n\nRecruited: Recruited six current users, including both data creators (data scientists) and data consumers (product managers and leaderships).\n\n1-1 research: Conducted interviews to uncover their goals, current challenges, and ideal experiences\n\nAnalyzed: Analyzed findings to identify gaps in the dashboard\'s usability.'
-      },
-      {
-        title: 'Key Findings: User Pain points',
-        content: 'Data consumers (e.g., product managers, leadership):',
-        image: '/images/67cfb9efbc291cfeca61ecb1_problem1.1.jpg'
-      },
-      {
-        title: '',
-        content: '1. Filters were too technical, requiring users to select datasets before applying filters.',
-        image: '/images/67cfb9ef26fc2a0ae9f50b1e_problem2.2.jpg'
-      },
-      {
-        title: '',
-        content: '2. Filters applied inconsistently, often impacting only one or a few charts without clarity on their scope.\n\n3. Consumers often relied on data creators to answer questions, as the tool was not intuitive enough for self-service.\n\nData creators (e.g., data scientists):\n\n1. Creating dashboards was complex due to inconsistent filters across charts.\n\n2. There was no way to unify filters with similar dimensions, leading to confusion and inefficiencies.\n\n3. Creators often acted as "human filters" because consumers could not self-serve effectively.'
-      },
-      {
-        title: 'How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?',
-        content: ''
-      },
-      {
-        title: 'The Solution',
-        content: 'Right now there is no difference between the consumer with the creator view. To address these challenges, I proposed a solution that distinctly separates the experiences for data creators and consumers.'
-      },
-      {
-        title: 'For Data Creators:',
-        content: ''
-      },
-      {
-        title: 'Meet Danny, a data Scientist need to create a dashboard for his team to track product metrics.',
-        content: '',
-        image: '/images/67d4fd2c045042941d70a271_dashboard-UX Persona.png'
-      },
-      {
-        title: '',
-        content: 'With the new launched tool, Danny can setup filters at various levels (chart, group, section, tab, and dashboard).\n\nStep1: Danny created a dashboard.\n\nStep2: Danny created a group section, then he added the first and second chart into the group.',
-        gifs: ['/images/67cfbc10e25b1be3c51e25ef_dashboard-create chart.gif']
-      },
-      {
-        title: 'Unify filters',
-        content: 'With the new tool, it allow creators to identify and unify filters with similar dimensions, even when named differently. The system recognizes common filters across these two charts. Danny want to add more filters, he saw there is a button to associate dimensions. so\n\nStep3: He clicked the button to select dimension under two different datasets. Danny linked these two dimensions to be the same and give a name country.',
-        gifs: ['/images/67cfbc7eda8ac5637ea98171_equal.gif']
-      },
-      {
-        title: '',
-        content: 'The new tool ensure filters are intuitive and relevant for consumers.\n\nStep4: Danny sets up useful filters to this group, including date, device, domain, member_language and country.\n\nStep5: Danny selected country equal to Canada and Mexico to narrow down the data for consumers to view.\n\nThen Danny finished dashboard creation flow.',
-        gifs: ['/images/67d4fe8aa0173122a967c81e_applyfilter.gif']
-      },
-      {
-        title: 'For Data Consumers:',
-        content: ''
-      },
-      {
-        title: 'Meet Alex, a product Manager',
-        content: '',
-        image: '/images/67d4fd2cf6d060ea4a8ff4f6_dashboard-UX Persona2.png'
-      },
-      {
-        title: '',
-        content: 'Alex, accesses the dashboard created by Danny. She sees clear filters at different levels (e.g., Chat, group, tab levels).',
-        gifs: ['/images/67cfbcb79c2e266ae34dff05_view1-v2.gif']
-      },
-      {
-        title: '',
-        content: 'The updated tool can simplify technical terms to make filters intuitive for non-technical users. Alex apply intuitive filters to narrow down data results. Without leaving the dashboard. Alex gains insights into product performance and identifies actionable opportunities.',
-        gifs: ['/images/67cfbcb74cc2f2be89673d7c_view 2.gif']
-      }
-    ],
-    impact: [
-      'Engagement increased by 45%: Engagement with dashboard filters increased by 45%, leading to more efficient decision-making.',
-      'Self-serve rate increased: 71% of consumers reporting they could now analyze data independently.',
-      'Shape direction: Separating creator and consumer experiences shaped the future direction of the product.'
-    ],
-    stakeholderFeedback: [
-      {
-        quote: 'Wendy always strives to understand the real reasons behind user requests. By conducting thorough research, she ensured the solution delivered an exceptional user experience, not just a quick fix to the immediate problem.',
-        author: 'Sophie',
-        role: 'Engineering Manager'
-      }
-    ]
-  },
-  {
     id: 'dashboard-v2',
     title: 'Reimagining LinkedIn\'s Data Dashboard: From Quick Fix to Root-Cause Redesign',
     year: 2022,
@@ -482,7 +212,8 @@ export const projects: Project[] = [
       },
       {
         title: 'Convincing Stakeholders to Invest in Research',
-        content: 'This wasn\'t an easy sell. Engineering wanted to ship fast. I made the case to both the PM and engineering manager: **"We have 7 engineers ready to build. Give me 2 weeks to make sure we build the right thing."**\n\nI framed it as **risk reduction** — the cost of 2 weeks of research was far lower than the cost of shipping a solution that didn\'t solve the real problem. They agreed.\n\n**How I structured the 8 weeks:** 2 weeks for research & synthesis → 2 weeks for design exploration & iteration → 2 weeks for detailed specs with engineering → 2 weeks for implementation support & QA.',
+        content: 'This wasn\'t an easy sell. Engineering wanted to ship fast. I made the case to both the PM and engineering manager: **"We have 7 engineers ready to build. Give me 2 weeks to make sure we build the right thing."**\n\nI framed it as **risk reduction** — the cost of 2 weeks of research was far lower than the cost of shipping a solution that didn\'t solve the real problem. They agreed.',
+        image: '/images/dashboard-8week-timeline.svg',
         dividerAfter: true
       },
       // ===== RESEARCH =====
@@ -495,7 +226,11 @@ export const projects: Project[] = [
       {
         title: 'What I Found: Two Sides of the Same Problem',
         content: 'After conducting all interviews, I synthesized the findings into an affinity map — grouping observations by theme to identify patterns across both user groups.',
-        image: '/images/dashboard-research.png',
+        image: '/images/dashboard-research.png'
+      },
+      {
+        title: '',
+        content: '',
         cards: [
           { title: 'Consumers: Filters are too technical', content: 'Users had to select a "dataset" before applying filters — a concept they didn\'t understand. One IPM said: "I\'ve only selected this tab already — why does the filter have so many options?" She was confusing dataset names with tab names.' },
           { title: 'Consumers: Filters behave unpredictably', content: 'A filter might affect one chart but not others. Users had no way to know the scope of their filters. As one user put it: "Retina filters are very clicky — very back and forth to get where you want. Feels very counterintuitive."' },
@@ -504,46 +239,28 @@ export const projects: Project[] = [
         ]
       },
       {
-        title: 'The Golden Insight',
-        content: 'This single quote from our research **reframed the entire project.** The problem wasn\'t missing tab filters — **the tool was designed for data scientists, not for the PMs and leaders who needed it most.**',
-        insight: '"The tool is too technical for consumer self-discovery, which often leads to the producer being a human filter." — From user research interviews'
-      },
-      {
         title: 'A Clue from Competitive Analysis',
-        content: 'During the research, one participant pointed to a key Tableau feature: **a single filter that works across multiple data sources** — as long as you create associations between datasets. This became a direct design inspiration.\n\nBut I didn\'t want to simply copy Tableau. In Tableau, producers and consumers share the same complex interface. My approach was different: **give producers the power to link dimensions behind the scenes, so consumers only see one clean, human-readable filter** — no technical knowledge needed.',
+        content: 'One participant pointed to a key Tableau feature: **a single filter that works across multiple data sources** — as long as you create associations between datasets. This became a direct design inspiration.\n\nBut I didn\'t want to simply copy Tableau. In Tableau, producers and consumers share the same complex interface. My approach was different: **give producers the power to link dimensions behind the scenes, so consumers only see one clean, human-readable filter** — no technical knowledge needed.',
         dividerAfter: true
       },
       // ===== FROM INSIGHT TO STRATEGY =====
       {
-        title: 'One Insight That Changed the Project Direction',
+        title: 'The Insight That Changed Everything',
         sectionLabel: 'From Insight to Strategy',
-        content: 'Two quotes from the interviews hit me at the same time:',
+        content: 'Two quotes from the interviews hit me at the same time — and reframed the entire project:',
         quotes: [
           { text: 'This tool isn\'t designed for people like me — it\'s too technical.', author: 'PM', role: 'Data Consumer' },
           { text: 'Having a complex tool is fine for us — as long as consumers get something simple.', author: 'Data Scientist', role: 'Data Creator' }
         ],
-        afterCards: 'That was the moment I realized this wasn\'t a filter problem — it was an **audience problem.** The tool treated everyone the same, but creators and consumers had fundamentally different needs. Instead of "add more filters," the real challenge was: **design two distinct experiences for two distinct users.**',
-        image: '/images/dashboard-insight-to-strategy.svg'
-      },
-      {
-        title: 'This insight led me to reframe the design challenge:',
-        content: '**How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?**',
+        afterCards: 'This wasn\'t a filter problem — it was an **audience problem.** The tool treated everyone the same, but creators and consumers had fundamentally different needs. The real challenge: **design two distinct experiences for two distinct users.**',
+        image: '/images/dashboard-insight-to-strategy.svg',
         dividerAfter: true
       },
       // ===== THE SOLUTION =====
       {
-        title: 'Two Experiences, One Dashboard',
+        title: 'How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?',
         sectionLabel: 'The Solution',
         content: 'Instead of one-size-fits-all filters, I designed two tailored experiences: a powerful setup mode for data creators, and a simplified, human-readable interface for consumers.'
-      },
-      {
-        title: 'Validating the Design Direction with Users',
-        content: 'Before finalizing the design, I brought prototypes back to users for usability testing. I asked producers to open their own dashboards and walk me through: **"If you could add filters at any level, where would you add them — and why?"**\n\nThe testing validated some assumptions and **overturned others:**',
-        cards: [
-          { title: 'Validated: Linking dimensions across datasets', content: 'Producers confirmed this was the most needed capability — exactly what our competitive analysis of Tableau had inspired.' },
-          { title: 'Surprise: Group-level filters > tab-level filters', content: 'Users wanted to control a cluster of related charts, not an entire tab. The original user request for "tab-level filters" wasn\'t quite right — they needed a more granular scope.' },
-          { title: 'Deprioritized: Dashboard-level filters', content: 'Users said different tabs rarely share the same filters — so dashboard-wide filters weren\'t essential for MVP.' }
-        ]
       },
       {
         title: 'For Data Creators: Powerful Setup Tools',
@@ -552,26 +269,36 @@ export const projects: Project[] = [
       },
       {
         title: 'For Data Consumers: Intuitive Self-Service',
-        content: 'Before, consumers had to first select a technical "dataset," then choose from cryptic filter names like "country_code." Most PMs didn\'t even know what a dataset was.\n\nNow, they simply pick **"Country"** from a clean list of human-readable filters — no technical knowledge needed.',
+        content: 'Before, consumers chose from cryptic names like "country_code." Now, they simply pick **"Country"** from a clean, human-readable list — no technical knowledge needed.',
         image: '/images/dashboard-consumer-before-after.svg'
       },
       {
         title: 'From Concept to Ship: Defending the Design with Engineers',
-        content: 'I designed filters to work at **every level** — chart, group, tab, and dashboard — giving both creators and consumers precise control. But the engineering team pushed back: **"Chart-level filters aren\'t needed. Users can just click into the chart and filter there."**\n\nThis was exactly the workflow that caused the original problem. My research showed that forcing users to leave the dashboard to filter was why PMs couldn\'t self-serve. Removing chart-level filters would recreate the same broken experience.\n\nI walked the engineers through the user research findings and showed them the consumer journey: **if Alex can\'t filter at the chart level from the dashboard, she\'s back to clicking into individual charts — the exact pain point we set out to fix.** The team agreed, and we shipped filters at all levels.',
-        insight: 'This moment reinforced why research matters in cross-functional debates. Without user evidence, this would have been an opinion battle. With research, I had concrete user quotes and workflows that made the case undeniable.'
+        content: 'I designed filters to work at **every level** — chart, group, tab, and dashboard. But the engineering team pushed back: **"Chart-level filters aren\'t needed. Users can just click into the chart and filter there."**\n\nThis was exactly the workflow that caused the original problem — forcing users to leave the dashboard to filter was why PMs couldn\'t self-serve. I walked engineers through the research findings and the consumer journey. The team agreed, and we shipped filters at all levels.',
+        image: '/images/dashboard-filter-hierarchy.svg',
+        insight: 'Without user evidence, this would have been an opinion battle. With research, I had concrete user quotes that made the case undeniable.'
       },
       // --- Creator Demo: focus on the breakthrough feature ---
       {
         title: 'Creator Experience: Unify Filters Across Datasets',
         sectionLabel: 'Demo',
-        content: 'This was the **breakthrough feature born directly from research.** Danny, a data scientist, creates a dashboard and organizes charts into groups. The key moment: two charts call the same data "country_code" and "country_Code." With the new tool, Danny can **link these dimensions together** and give them one clean name — "Country." Now **one filter controls both charts** consistently.\n\nHe then pre-configures meaningful filters (date, device, country) and even pre-selects values so consumers see relevant data immediately.',
+        content: 'The **breakthrough feature born from research.** Two charts name the same data differently — "country_code" vs "country_Code." Danny can now **link these dimensions** and give them one clean name: "Country." One filter controls both charts.',
         gifs: ['/images/67cfbc7eda8ac5637ea98171_equal.gif']
       },
       // --- Consumer Demo: before/after experience ---
       {
         title: 'Consumer Experience: Self-Serve in Seconds',
-        content: 'Product managers like Alex no longer need to ask data scientists for help. Filters are clearly organized by scope — she always knows which charts are affected. Technical dataset names are translated into **human-readable labels**: "Country" and "Date" instead of "dataset_geo_dim." **Without leaving the dashboard**, Alex gains insights and identifies actionable opportunities.',
+        content: 'Alex no longer asks data scientists for help. Filters show **human-readable labels** — "Country" instead of "dataset_geo_dim" — and she always knows which charts are affected. **Self-serve, without leaving the dashboard.**',
         gifs: ['/images/67cfbcb74cc2f2be89673d7c_view 2.gif']
+      },
+      {
+        title: 'Validating the Design Direction with Users',
+        content: 'Before finalizing, I brought prototypes back to users for usability testing. The testing validated some assumptions and **overturned others:**',
+        cards: [
+          { title: 'Validated: Linking dimensions across datasets', content: 'Producers confirmed this was the most needed capability — exactly what our competitive analysis of Tableau had inspired.' },
+          { title: 'Surprise: Group-level filters > tab-level filters', content: 'Users wanted to control a cluster of related charts, not an entire tab. The original user request for "tab-level filters" wasn\'t quite right — they needed a more granular scope.' },
+          { title: 'Deprioritized: Dashboard-level filters', content: 'Users said different tabs rarely share the same filters — so dashboard-wide filters weren\'t essential for MVP.' }
+        ]
       }
     ],
     impact: [
@@ -595,11 +322,178 @@ export const projects: Project[] = [
     reflection: {
       title: 'What I Would Do Differently',
       items: [
-        'Expand usability testing to consumers: I conducted usability testing with producers to validate the filter hierarchy and design direction — which caught key issues like deprioritizing dashboard-level filters. But if I had more time, I would have also tested with consumers — the group that stood to benefit most from the redesign — to validate that the simplified experience truly felt intuitive before engineering handoff.',
         'Challenge the design system when it hurts users: I simplified the filter experience, but I was still constrained by the existing design system — which was built for technical users. Consistency across tools is valuable, but not when it comes at the cost of usability. If I could redo this, I would make a stronger case to the design team for breaking from the system: treat PMs as everyday consumers, reference consumer product patterns (like Spotify or Notion), and strip away every trace of technical complexity — even if it means creating new design patterns.',
         'Build in post-launch measurement: After shipping, I was moved to another project and didn\'t get to track long-term adoption data. If I could redo this, I would set up a structured post-launch plan — tracking filter usage rates, drop-off points, and scheduling follow-up interviews at 30 and 90 days — so the team could continue iterating with data even after I moved on.'
       ]
     }
+  },
+  {
+    id: 'jingxin-xuetang',
+    title: 'From Designer to Builder: Shipping a Buddhist Learning Platform in 4 Days with AI',
+    year: 2026,
+    cover: '/images/jingxin-hero-en.png',
+    shortDescription: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live and serving real users.',
+    role: 'Product Designer\n+ Builder (Vibe Coding)',
+    duration: '1 year observing + 4 days building',
+    team: 'Solo — built with Claude Code (AI)',
+    sections: [
+      // ===== THE PROBLEM =====
+      {
+        title: '50%+ of Buddhist Study Group Students Drop Out',
+        sectionLabel: 'The Problem',
+        content: 'Master Jiqun\'s Buddhist courses are studied in community groups across the U.S. and hundreds of cities in China — each city has multiple study groups, and each group has around 10–15 members. But more than half of students leave within the first few sessions.\n\nI observed this firsthand in my own study community in San Francisco — out of 5 study groups, 4 had lost roughly half their members. This isn\'t an isolated case; it\'s a systemic problem happening everywhere. Through conversations with students and group leaders, I identified three root causes:',
+        cards: [
+          { title: 'Content too academic', content: 'Original texts use classical Buddhist language with dense terminology. Even educated adults said "I need to read it 3 times to understand."' },
+          { title: 'No clear takeaways', content: 'After reading a 3,000-word lesson, students couldn\'t articulate what they learned in one sentence.' },
+          { title: 'No practice guidance', content: 'Buddhism emphasizes applying teachings to daily life, but courses only provided theory. Students read, nodded, and then... did nothing different.' }
+        ],
+        afterCards: 'This created a vicious cycle:',
+        flow: ['Can\'t understand', 'Can\'t remember', 'Can\'t apply', 'No benefit', 'Quit'],
+        dividerAfter: true
+      },
+      // ===== RESEARCH & INSIGHTS =====
+      {
+        title: 'Understanding Who I\'m Designing For',
+        sectionLabel: 'Research & Insights',
+        content: 'As a student in this community, I experienced the problem firsthand. Each week\'s lesson is 20–30 pages of dense Buddhist text, read three times. I started **downloading the PDF and asking AI for a plain-language version** — it worked, but most students who hit the same wall just gave up.\n\nThe problem went deeper than comprehension. One student told me **studying Buddhism actually increased their anxiety** — she understood the teachings intellectually but couldn\'t put them into practice. Instead of finding peace, she felt more pressure. This was a striking insight: **the gap between "understanding" and "doing" actively harms the learning experience.** It became the emotional core of why I built practice exercises into the product.\n\nOver the past year, I attended weekly sessions, talked with fellow students, and discussed pain points with our group leader. A year of lived experience gave me deep empathy — and when I decided to build, I already understood the users intimately. I identified two distinct personas:',
+        cards: [
+          { title: 'Beginner', content: 'New to Buddhism or joined recently. 20–30 pages of classical language per lesson, unfamiliar terminology everywhere.\n\nPain point: "I read it 3 times and still don\'t understand." Most drop out within the first few months.\n\n→ Needs simplified, plain-language content to even get started', avatar: '/images/persona-new-student.svg' },
+          { title: 'Experienced Practitioner', content: 'Deeply committed, studied for 1+ years. Can understand the teachings intellectually, but struggles to retain and apply them in daily life. Often mentors newer students.\n\nPain point: "I understood it during the session, but a week later I forgot everything — and I still can\'t put it into practice."\n\n→ Their core need is retention and real-world application', avatar: '/images/persona-experienced.svg' }
+        ],
+        dividerAfter: true
+      },
+      // ===== KEY DESIGN DECISIONS =====
+      {
+        title: 'Turning Insights Into Solutions',
+        sectionLabel: 'Key Design Decisions',
+        content: ''
+      },
+      // Decision 1
+      {
+        title: 'Decision 1: Making Ancient Wisdom Accessible',
+        isDecisionBlock: true,
+        challenge: 'Buddhist texts use precise classical language developed over 2,500 years. Oversimplifying risks distorting the teaching. But keeping it academic means students can\'t learn.',
+        insight: 'In my own study group, I observed two distinct behaviors: beginners couldn\'t finish the 30-page text at all — they\'d use AI summaries just to understand the gist before group discussion. Experienced students could read the original but struggled to retain it or apply it to daily life. One content format can\'t serve both.',
+        solution: 'A three-layer content architecture — simplified explanation for beginners, core takeaways for retention, and source text tracing for accuracy.',
+        content: '',
+        cards: [
+          { title: 'Simplified Explanation', content: 'Plain language with life analogies (e.g., explaining "attachment" through phone addiction). Beginners need everyday language to build initial understanding before they can engage with the original texts.\n\n→ For Beginners' },
+          { title: 'Core Takeaways', content: 'Each lesson distilled into one memorable sentence + 3–5 key points. A quick recap helps everyone retain the lesson without re-reading 30 pages — whether on a commute or before a group session.\n\n→ For Everyone' },
+          { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text, displayed in a resizable side panel. This builds trust in the AI simplification — users can verify accuracy anytime without leaving the reading flow.\n\n→ For Everyone (especially experienced practitioners)' }
+        ],
+        afterCards: '**This wasn\'t the original design.** My first version had no source tracing. An early user\'s feedback was immediate: *"I want to see the original text to make sure the AI didn\'t misinterpret the teachings."* Trust was the missing piece — so I added click-to-trace: every simplified paragraph links back to its source text. This feature, born from real user feedback, became one of the most valued parts of the product.',
+        image: '/images/jingxin-lesson-en.png'
+      },
+      // Decision 2
+      {
+        title: 'Decision 2: From Reading to Doing',
+        isDecisionBlock: true,
+        challenge: 'Students read lessons but couldn\'t apply teachings to daily life. Buddhism is about practice, not memorization.',
+        insight: 'Every student — beginner or experienced — needs practical reasons to keep showing up. Abstract theory isn\'t enough. Remember the user who said studying Buddhism increased their anxiety? That gap between "understanding" and "doing" was the root cause. Our study groups meet weekly, covering one lesson per session. That natural rhythm became my design constraint.',
+        solution: 'One practice exercise per lesson — aligned with the weekly study rhythm, so each week students have exactly one thing to apply to their daily life.',
+        content: 'For example, after a lesson on compassion: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
+        image: '/images/jingxin-exercise-en.png',
+        imageSize: 'medium' as const
+      },
+      {
+        title: '',
+        isDecisionBlock: true,
+        content: 'But giving users exercises isn\'t enough — they need to understand *why* each practice matters. I added a "?" icon next to each exercise that reveals the reasoning. This progressive disclosure keeps the interface action-focused while giving curious learners a path to deeper understanding.',
+        image: '/images/jingxin-exercise-expanded-en.png',
+        imageSize: 'medium' as const,
+        imageHighlight: { top: '34%', left: '2%', width: '96%', height: '26%' }
+      },
+      // Decision 3
+      {
+        title: 'Decision 3: Designing for Vulnerability',
+        isDecisionBlock: true,
+        challenge: 'Students needed to reflect on personal spiritual growth, but were embarrassed to share publicly.',
+        insight: 'Through observation, I noticed students avoided journaling when they knew others could see their reflections. Spiritual growth feels deeply personal. But people\'s comfort with sharing varies widely — some want total privacy, some trust their teacher or close friends, some are happy to share with classmates, and a few don\'t mind sharing publicly.',
+        solution: 'Two design choices that respect this spectrum of vulnerability.',
+        content: '**4-tier privacy controls** for journaling: private (default) → teacher only → classmates → everyone. Defaulting to "private" removed the barrier to writing — students could reflect honestly knowing they controlled who sees it.\n\n**"随喜赞叹" (Suixi Zantan)** — replaced generic "likes" with a Buddhist concept of rejoicing in others\' good deeds, creating culturally meaningful engagement.',
+        image: '/images/jingxin-privacy-controls.svg',
+        dividerAfter: true
+      },
+      // ===== SHIPPING: MVP & CHALLENGES =====
+      {
+        title: 'Shipping Smart: What I Built and What I Cut',
+        sectionLabel: 'From Design to Launch',
+        content: 'My PRD had many more features planned. But I made a deliberate decision to **ship only the core experience first**: simplified lessons, source tracing, practice exercises, and privacy-controlled journaling.',
+        insight: 'My reasoning: more features = more bugs = delayed launch. Every additional feature would multiply testing time and push back the moment real users could start benefiting. I wanted to get the core right, ship it, and iterate — not build a perfect product nobody has used yet.',
+        image: '/images/jingxin-mvp-scope.svg'
+      },
+      {
+        title: 'The Hardest Part: Building with AI',
+        content: 'The first AI-generated build worked functionally, but the design was a mess — inconsistent padding, mismatched fonts, varying button styles. I spent hours fixing issues one by one, only for new ones to appear elsewhere.\n\nThen I realized: **I was solving symptoms, not the root cause.** I stepped back and created a design system — typography scales, spacing rules, button styles, layout standards. Once applied globally, every subsequent change became predictable. The designer in me solved what the builder in me couldn\'t.',
+        image: '/images/jingxin-design-consistency.svg',
+        dividerAfter: true
+      },
+      // ===== THE PRODUCT =====
+      {
+        title: 'Try the Live Product',
+        sectionLabel: 'The Product',
+        content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a database, and bilingual support. I used AI vibe coding with my detailed PRD as the blueprint — 70 commits over 4 days, each one a cycle of describe → review → refine. My role throughout was creative director, reviewing every output and giving feedback like a design review.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
+        embed: 'https://jingxin-xuetang.vercel.app'
+      },
+      {
+        title: 'Fixing the Mobile Experience',
+        content: 'I designed for desktop first. But when I tested the responsive layout on mobile, the experience broke down: **navigation buttons were overloaded, fonts felt cramped, and the sidebar course list became painful to use on a small screen.** Users had to click to expand, then scroll, then click again.\n\nSo I redesigned the mobile experience specifically:',
+        phoneBefore: ['/images/jingxin-mobile-lesson-en.png'],
+        phoneAfter: [
+          { image: '/images/mobile-home.png', caption: 'Bottom tabs for one-handed use.' },
+          { image: '/images/mobile-list.png', caption: 'Replaced dense sidebar with card-based course list for faster scanning.' },
+          { image: '/images/mobile-list-org.png', caption: 'Source overlay to verify content — trust without clutter.' }
+        ]
+      },
+      {
+        title: '',
+        content: '',
+        images: ['/images/jingxin-hero-en.png', '/images/jingxin-courses-en.png', '/images/jingxin-lesson-en.png', '/images/jingxin-practice-en.png'],
+        dividerAfter: true
+      }
+    ],
+    impact: [
+      'Behavior change: A student said the practice exercises directly triggered real-world action — "I finally did something I\'d been putting off." This is the exact understanding → doing loop the product was designed to create.',
+      'Deep engagement: 17 visitors generated 285 page views in the first week — averaging ~17 pages per user with a 24% bounce rate, confirming users explored deeply, not just clicked and left.',
+      'Trust earned: Users positioned the site as a "learning assistant" — a low-barrier entry point into the original texts, not a replacement. The source tracing feature directly addressed their top concern about AI accuracy.'
+    ],
+    testimonial: {
+      quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community.',
+      author: 'Yianguo',
+      role: 'Study Group Leader'
+    },
+    takeaways: [
+      'End-to-end ownership changes how you design: Owning the full journey — from user research, to PRD, to design system, to shipped product — forced me to make tighter decisions. When you\'re accountable for the final experience, not just the mockup, every detail matters more.',
+      'Start with the community, not the technology: I spent time observing study groups before writing a single requirement. The best features (like practice privacy controls) came from understanding social dynamics, not technical possibilities.',
+      'Vibe coding is a design tool, not a replacement for designers: AI writes code, but it can\'t decide what to build or why one layout works better than another. A clear PRD and strong design instincts are what make vibe coding productive — without them, you just ship faster in the wrong direction.',
+      'Ship early, learn from real users: A live product with 17 real users teaches more than a polished prototype with zero. The source tracing feature — now one of the most valued parts of the product — only exists because I shipped early enough to get feedback before over-building.'
+    ],
+    nextSteps: {
+      title: 'What\'s Next',
+      content: 'This product is live but still evolving. My PRD defines a clear 3-phase roadmap based on user growth milestones — not arbitrary timelines:',
+      items: [
+        'Now (P1 — 17 active users): Collecting qualitative feedback through 1-on-1 conversations and group study sessions. At this scale, a 15-minute conversation reveals more than any analytics dashboard.',
+        'At 30-50 users (P2): Add Google Analytics to track course completion rates, practice participation, and drop-off points.',
+        'Future (P3): An AI conversation feature where users can ask questions about Buddhist teachings and get deeper, personalized explanations — turning passive reading into active understanding.'
+      ]
+    },
+    stakeholderFeedback: [
+      {
+        quote: 'I used it to preview the lesson before our session — it helped me build a mental framework quickly and connect all the scattered notes I had from before. The practice exercise at the bottom directly triggered me to take action that day.',
+        author: 'Zhaoming',
+        role: 'Study Group Member'
+      },
+      {
+        quote: 'This is truly a great approach! I just opened it and it really is much more accessible and easy to understand. You put so much heart into this!',
+        author: 'Lisa Zhong',
+        role: 'Study Group Member'
+      },
+      {
+        quote: 'Wendy, you should have shared this website earlier! Every lesson has corresponding content — it\'s incredibly detailed and practical.',
+        author: 'Linmeng',
+        role: 'Study Group Member'
+      }
+    ]
   },
   {
     id: 'knowledge-graph',

@@ -1,7 +1,7 @@
 <svg width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- WL Circle Badge - dark background, white letters -->
-  <circle cx="40" cy="40" r="38" fill="#1a1a1a"/>
-  <path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#ffffff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M50,24 L50,56 L66,56" stroke="#ffffff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="66" cy="24" r="3.5" fill="#5B9B8E"/>
+  <circle cx="40" cy="40" r="40" fill="#1a1a1a"/>
+  <path d="M16,26 L22,54 L30,36 L38,54 L44,26" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50,26 L50,54 L64,54" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="64" cy="26" r="3.5" fill="#5B9B8E"/>
 </svg>
