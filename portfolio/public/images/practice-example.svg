@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280" fill="none">
+  <!-- Card background -->
+  <rect width="520" height="280" rx="16" fill="#F9FAFB"/>
+  <rect width="520" height="280" rx="16" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Top label -->
+  <rect x="24" y="20" width="140" height="28" rx="14" fill="#F0F6F5"/>
+  <text x="50" y="39" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#5B9B8E" letter-spacing="0.5">WEEKLY PRACTICE</text>
+  <!-- Lotus icon -->
+  <text x="30" y="40" font-size="14">🪷</text>
+
+  <!-- Lesson context -->
+  <text x="24" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#9CA3AF">Lesson 12 — On Compassion</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="84" x2="496" y2="84" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Practice content -->
+  <text x="24" y="116" font-family="Georgia, serif" font-size="18" fill="#1F2937" font-style="italic">
+    <tspan x="24" dy="0">This week, think of someone you find</tspan>
+    <tspan x="24" dy="28">difficult. Silently wish them well for</tspan>
+    <tspan x="24" dy="28">3 minutes before bed.</tspan>
+  </text>
+
+  <text x="24" y="200" font-family="Georgia, serif" font-size="18" fill="#1F2937" font-style="italic">
+    <tspan x="24" dy="0">Write down how it felt.</tspan>
+  </text>
+
+  <!-- Bottom info row -->
+  <rect x="24" y="236" width="472" height="32" rx="8" fill="#F0F6F5" opacity="0.6"/>
+  <text x="40" y="257" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5B9B8E">
+    <tspan font-weight="700">Why this practice?</tspan>
+    <tspan fill="#6B7280" font-weight="400">  Tap ? to see the reasoning behind each exercise</tspan>
+  </text>
+</svg>

@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <!-- Background -->
+  <rect width="960" height="600" rx="16" fill="#FAFAF8"/>
+  <rect width="960" height="600" rx="16" stroke="#EDE8E1" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="40" y="44" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#9A7D54" letter-spacing="1.5">DESIGN GUIDELINE</text>
+  <text x="40" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="600" fill="#2D2A26">Typography + Spacing + Colors + Buttons</text>
+  <line x1="40" y1="88" x2="920" y2="88" stroke="#EDE8E1" stroke-width="1"/>
+
+  <!-- LEFT COLUMN: Typography -->
+  <text x="40" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9A7D54" letter-spacing="1">TYPOGRAPHY (7 LEVELS)</text>
+
+  <text x="40" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="600" fill="#2D2A26">Display 32px</text>
+  <text x="260" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Landing hero</text>
+
+  <text x="40" y="178" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="600" fill="#2D2A26">H1 24px</text>
+  <text x="260" y="178" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Page titles</text>
+
+  <text x="40" y="204" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#2D2A26">H2 20px</text>
+  <text x="260" y="204" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Section titles</text>
+
+  <text x="40" y="228" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#2D2A26">H3 16px</text>
+  <text x="260" y="228" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Subtitles</text>
+
+  <text x="40" y="252" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="400" fill="#5B4A3F">Body 16px</text>
+  <text x="260" y="252" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Content, line-height 1.8</text>
+
+  <text x="40" y="272" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#7A6344">Caption 13px</text>
+  <text x="260" y="272" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Labels, dates</text>
+
+  <text x="40" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="400" fill="#8C7E70">Tiny 11px</text>
+  <text x="260" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Auto-save hints</text>
+
+  <!-- Font weights -->
+  <text x="40" y="324" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9A7D54" letter-spacing="1">FONT WEIGHT (3 ONLY)</text>
+  <text x="40" y="348" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400" fill="#5B4A3F">Regular 400</text>
+  <text x="160" y="348" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#5B4A3F">Medium 500</text>
+  <text x="280" y="348" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#5B4A3F">Bold 600</text>
+
+  <!-- MIDDLE COLUMN: Spacing -->
+  <line x1="380" y1="100" x2="380" y2="580" stroke="#EDE8E1" stroke-width="1"/>
+
+  <text x="410" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9A7D54" letter-spacing="1">SPACING (8PX GRID)</text>
+
+  <!-- Spacing blocks -->
+  <rect x="410" y="134" width="4" height="16" rx="2" fill="#5B4A3F" opacity="0.3"/>
+  <text x="422" y="147" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5B4A3F">xs 4px</text>
+  <text x="500" y="147" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Icon gaps</text>
+
+  <rect x="410" y="158" width="8" height="16" rx="2" fill="#5B4A3F" opacity="0.35"/>
+  <text x="426" y="171" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5B4A3F">sm 8px</text>
+  <text x="500" y="171" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Inner spacing</text>
+
+  <rect x="410" y="182" width="16" height="16" rx="2" fill="#5B4A3F" opacity="0.4"/>
+  <text x="434" y="195" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5B4A3F">md 16px</text>
+  <text x="500" y="195" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Paragraphs, cards</text>
+
+  <rect x="410" y="206" width="24" height="16" rx="2" fill="#5B4A3F" opacity="0.45"/>
+  <text x="442" y="219" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5B4A3F">lg 24px</text>
+  <text x="500" y="219" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Card padding</text>
+
+  <rect x="410" y="230" width="32" height="16" rx="2" fill="#5B4A3F" opacity="0.5"/>
+  <text x="450" y="243" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5B4A3F">xl 32px</text>
+  <text x="500" y="243" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Between sections</text>
+
+  <rect x="410" y="254" width="48" height="16" rx="2" fill="#5B4A3F" opacity="0.55"/>
+  <text x="466" y="267" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5B4A3F">2xl 48px</text>
+  <text x="530" y="267" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Major sections</text>
+
+  <rect x="410" y="278" width="64" height="16" rx="2" fill="#5B4A3F" opacity="0.6"/>
+  <text x="482" y="291" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5B4A3F">3xl 64px</text>
+  <text x="530" y="291" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C7E70">Page sections</text>
+
+  <!-- Border radius -->
+  <text x="410" y="324" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9A7D54" letter-spacing="1">BORDER RADIUS (4 ONLY)</text>
+  <rect x="410" y="336" width="40" height="28" rx="8" fill="none" stroke="#5B4A3F" stroke-width="1"/>
+  <text x="418" y="355" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#5B4A3F">8px</text>
+  <rect x="462" y="336" width="40" height="28" rx="12" fill="none" stroke="#5B4A3F" stroke-width="1"/>
+  <text x="468" y="355" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#5B4A3F">12px</text>
+  <rect x="514" y="336" width="40" height="28" rx="16" fill="none" stroke="#5B4A3F" stroke-width="1"/>
+  <text x="520" y="355" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#5B4A3F">16px</text>
+  <rect x="566" y="336" width="52" height="28" rx="14" fill="none" stroke="#5B4A3F" stroke-width="1"/>
+  <text x="578" y="355" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#5B4A3F">full</text>
+
+  <!-- RIGHT COLUMN: Colors -->
+  <line x1="660" y1="100" x2="660" y2="580" stroke="#EDE8E1" stroke-width="1"/>
+
+  <text x="690" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9A7D54" letter-spacing="1">TEXT COLORS (WCAG AA)</text>
+
+  <!-- Color swatches -->
+  <circle cx="705" cy="142" r="10" fill="#2D2A26"/>
+  <text x="722" y="140" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#2D2A26">Primary #2D2A26</text>
+  <text x="722" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8C7E70">14.2:1 - Headings</text>
+
+  <circle cx="705" cy="178" r="10" fill="#5B4A3F"/>
+  <text x="722" y="176" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#5B4A3F">Body #5B4A3F</text>
+  <text x="722" y="191" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8C7E70">6.8:1 - Content</text>
+
+  <circle cx="705" cy="214" r="10" fill="#7A6344"/>
+  <text x="722" y="212" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#7A6344">Secondary #7A6344</text>
+  <text x="722" y="227" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8C7E70">5.5:1 - Descriptions</text>
+
+  <circle cx="705" cy="250" r="10" fill="#8C7E70"/>
+  <text x="722" y="248" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#8C7E70">Muted #8C7E70</text>
+  <text x="722" y="263" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8C7E70">4.6:1 - Dates, meta</text>
+
+  <circle cx="705" cy="286" r="10" fill="#9A7D54"/>
+  <text x="722" y="284" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#9A7D54">Accent #9A7D54</text>
+  <text x="722" y="299" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8C7E70">4.8:1 - Labels, links</text>
+
+  <!-- Background colors -->
+  <text x="690" y="332" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9A7D54" letter-spacing="1">BACKGROUNDS</text>
+  <rect x="690" y="342" width="60" height="24" rx="4" fill="#FFFFFF" stroke="#EDE8E1" stroke-width="1"/>
+  <text x="695" y="358" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#5B4A3F">White</text>
+  <rect x="758" y="342" width="60" height="24" rx="4" fill="#FAFAF8" stroke="#EDE8E1" stroke-width="1"/>
+  <text x="763" y="358" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#5B4A3F">Page</text>
+  <rect x="826" y="342" width="60" height="24" rx="4" fill="#FAF7F2" stroke="#EDE8E1" stroke-width="1"/>
+  <text x="831" y="358" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#5B4A3F">Warm</text>
+
+  <!-- BOTTOM: Buttons -->
+  <line x1="40" y1="385" x2="920" y2="385" stroke="#EDE8E1" stroke-width="1"/>
+  <text x="40" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9A7D54" letter-spacing="1">BUTTONS (4 TYPES)</text>
+
+  <!-- Primary button -->
+  <rect x="40" y="424" width="140" height="40" rx="12" fill="#5B4A3F"/>
+  <text x="70" y="449" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#F5F0EB">Primary</text>
+
+  <!-- Secondary button -->
+  <rect x="200" y="424" width="140" height="40" rx="12" fill="none" stroke="#EDE8E1" stroke-width="1"/>
+  <text x="225" y="449" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400" fill="#7A6344">Secondary</text>
+
+  <!-- Pill active -->
+  <rect x="360" y="430" width="100" height="30" rx="15" fill="#5B4A3F"/>
+  <text x="382" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#F5F0EB">Pill Active</text>
+
+  <!-- Pill default -->
+  <rect x="470" y="430" width="110" height="30" rx="15" fill="#F5F0EB"/>
+  <text x="488" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#7A6344">Pill Default</text>
+
+  <!-- Text button -->
+  <rect x="596" y="430" width="120" height="30" rx="8" fill="#FFFFFF" stroke="#EDE8E1" stroke-width="1"/>
+  <text x="617" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#7A6344">Text / Ghost</text>
+
+  <!-- BOTTOM: Before/After summary -->
+  <line x1="40" y1="484" x2="920" y2="484" stroke="#EDE8E1" stroke-width="1"/>
+  <text x="40" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9A7D54" letter-spacing="1">BEFORE vs AFTER</text>
+
+  <!-- Before -->
+  <rect x="40" y="524" width="420" height="60" rx="8" fill="#FBF3F2"/>
+  <text x="56" y="542" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#8B554E">BEFORE</text>
+  <text x="56" y="566" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#5B4A3F">15 font sizes   |   random spacing   |   7+ colors   |   3 fail WCAG</text>
+
+  <!-- After -->
+  <rect x="490" y="524" width="430" height="60" rx="8" fill="#F0F6F5"/>
+  <text x="506" y="542" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#3E6B61">AFTER</text>
+  <text x="506" y="566" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#5B4A3F">7 font sizes   |   8px grid (7 levels)   |   6 colors   |   All AA pass</text>
+</svg>

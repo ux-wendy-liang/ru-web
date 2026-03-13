@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="60" fill="#F2F5F8"/>
+  <!-- Hair -->
+  <path d="M34 55c0-18 12-32 26-32s26 14 26 32v2H34v-2z" fill="#1A1A2E"/>
+  <!-- Face -->
+  <ellipse cx="60" cy="63" rx="21" ry="22" fill="#F5D5A8"/>
+  <!-- Hair front - messy/casual -->
+  <path d="M37 50c3-15 12-25 23-25s20 10 23 25c0 1 0 2-2 1-4-4-9-6-15-6h-4c-7 0-13 3-17 7-2 1-4 0-4-2h-4z" fill="#1A1A2E"/>
+  <!-- Side hair strands -->
+  <path d="M36 58c-1 4-2 10 0 16" stroke="#1A1A2E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M84 58c1 4 2 10 0 16" stroke="#1A1A2E" stroke-width="3" stroke-linecap="round"/>
+  <!-- Eyes - relaxed, slightly half-closed -->
+  <path d="M48 60c1-2 3-3 5-3s4 1 5 3" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M62 60c1-2 3-3 5-3s4 1 5 3" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Eyebrows -->
+  <path d="M47 55h10" stroke="#1A1A2E" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M63 55h10" stroke="#1A1A2E" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Mouth - easy smile -->
+  <path d="M53 72c3 4 11 4 14 0" stroke="#1A1A2E" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <!-- Blush -->
+  <ellipse cx="44" cy="67" rx="4" ry="2.5" fill="#F0C4A8" opacity="0.4"/>
+  <ellipse cx="76" cy="67" rx="4" ry="2.5" fill="#F0C4A8" opacity="0.4"/>
+  <!-- Phone in hand -->
+  <rect x="78" y="88" width="14" height="24" rx="3" fill="#4A5568" stroke="#2D3748" stroke-width="1"/>
+  <rect x="80" y="91" width="10" height="17" rx="1" fill="#A0E8D8"/>
+  <!-- Earbuds -->
+  <circle cx="34" cy="63" r="3" fill="white" stroke="#CBD5E0" stroke-width="1"/>
+  <path d="M37 63c3 0 4-3 4-6" stroke="#CBD5E0" stroke-width="1" fill="none"/>
+  <!-- Shoulders/body - casual hoodie -->
+  <path d="M28 105c0-14 14-21 32-21s32 7 32 21v15H28v-15z" fill="#7E97AD"/>
+  <!-- Hoodie string -->
+  <line x1="55" y1="88" x2="53" y2="98" stroke="white" stroke-width="1"/>
+  <line x1="65" y1="88" x2="67" y2="98" stroke="white" stroke-width="1"/>
+</svg>
