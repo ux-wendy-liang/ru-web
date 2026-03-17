@@ -503,10 +503,10 @@ export const projects: Project[] = [
   },
   {
     id: 'buddha-story',
-    title: 'Redesigning Buddhist Education: How a 50/50 Learning Model Reduced Student Dropout',
+    title: 'From Designer to Builder: Shipping a Buddhist Learning Platform in 4 Days with AI',
     subtitle: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live and serving real users.',
     year: 2026,
-    cover: '/images/buddha-story-cover.png',
+    cover: '/images/jingxin-hero-en.png',
     hideCoverOnDetail: true,
     hideOverview: true,
     shortDescription: 'Half of Buddhist study group students were dropping out. I identified the root cause — too much theory, zero practice — and built a learning platform that flipped the model. 54 users and 554 page views in the first week.',
@@ -927,6 +927,7 @@ export const projects: Project[] = [
   },
   {
     id: 'ai-coach-mentor',
+    hidden: true,
     title: 'AI Coach Mentor: Building a Platform for the $7.3B Coaching Industry',
     year: 2026,
     cover: '/images/ai-coach-landing-new.png',
