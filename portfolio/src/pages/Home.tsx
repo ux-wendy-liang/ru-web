@@ -58,7 +58,7 @@ const Home = () => {
       {/* Projects Section - Alternating Layout */}
       <section className="py-20 px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto space-y-32">
-          {projects.map((project) => (
+          {projects.filter(p => !p.hidden).map((project) => (
             <div
               key={project.id}
               className="flex flex-col md:flex-row gap-12 items-center"
