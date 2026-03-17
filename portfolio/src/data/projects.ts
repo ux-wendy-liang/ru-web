@@ -329,7 +329,7 @@ export const projects: Project[] = [
     year: 2026,
     cover: '/images/jingxin-hero-en.png',
     liveUrl: 'https://jingxin-xuetang.vercel.app',
-    shortDescription: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live and serving real users.',
+    shortDescription: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live with 54 users and 554 page views.',
     role: 'Product Designer\n+ Builder (Vibe Coding)',
     duration: '1 year observing + 4 days building',
     team: 'Solo — built with Claude Code (AI)',
@@ -462,7 +462,7 @@ export const projects: Project[] = [
     ],
     impact: [
       'Behavior change: A student said the practice exercises directly triggered real-world action — "I finally did something I\'d been putting off." This is the exact understanding → doing loop the product was designed to create.',
-      'Deep engagement: 17 visitors generated 285 page views in the first week — averaging ~17 pages per user with a 24% bounce rate, confirming users explored deeply, not just clicked and left.'
+      'Deep engagement: 54 visitors generated 554 page views — averaging ~10 pages per user with a 20% bounce rate, confirming users explored deeply, not just clicked and left.'
     ],
     testimonial: {
       quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community.',

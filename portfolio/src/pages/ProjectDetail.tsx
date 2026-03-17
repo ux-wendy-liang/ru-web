@@ -664,7 +664,7 @@ const ProjectDetail = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
                   Results & Feedback
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className={`grid grid-cols-1 gap-6 ${project.impact.length === 2 ? 'md:grid-cols-2 max-w-2xl' : 'md:grid-cols-3'}`}>
                   {project.impact.map((item, index) => (
                     <div key={index} className="bg-white/70 p-8 rounded-xl text-center">
                       <div className="text-4xl md:text-5xl font-black text-accent-teal mb-3">
