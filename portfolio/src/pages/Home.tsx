@@ -81,7 +81,7 @@ const Home = () => {
                   {project.title}
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  {project.shortDescription}
+                  {(project as any).subtitle || project.shortDescription}
                 </p>
                 <Link
                   to={`/project/${project.id}`}
