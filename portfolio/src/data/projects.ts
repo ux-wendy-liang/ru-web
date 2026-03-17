@@ -69,6 +69,7 @@ export interface Project {
   subtitle?: string;
   hideOverview?: boolean;
   hidden?: boolean;
+  liveUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -327,6 +328,7 @@ export const projects: Project[] = [
     title: 'From Designer to Builder: Shipping a Buddhist Learning Platform in 4 Days with AI',
     year: 2026,
     cover: '/images/jingxin-hero-en.png',
+    liveUrl: 'https://jingxin-xuetang.vercel.app',
     shortDescription: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live and serving real users.',
     role: 'Product Designer\n+ Builder (Vibe Coding)',
     duration: '1 year observing + 4 days building',
