@@ -102,29 +102,13 @@ const ProjectDetail = () => {
           </Link>
 
           {/* Cover Image */}
-          {(!project.hideCoverOnDetail || project.liveUrl) && (
-            <div className="mb-12 rounded-2xl overflow-hidden bg-white p-4 relative group">
+          {!project.hideCoverOnDetail && (
+            <div className="mb-12 rounded-2xl overflow-hidden bg-white p-4">
               <img
                 src={project.cover}
                 alt={project.title}
                 className="w-full h-auto rounded-lg"
               />
-              {project.liveUrl && (
-                <div className="absolute inset-4 rounded-lg flex items-end justify-end p-4 bg-gradient-to-t from-black/40 to-transparent">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-5 py-2.5 bg-white text-gray-900 rounded-full text-sm font-medium shadow-lg hover:bg-gray-50 transition-colors"
-                    onClick={e => e.stopPropagation()}
-                  >
-                    Try Live Product
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </div>
-              )}
             </div>
           )}
 
