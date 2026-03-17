@@ -23,6 +23,14 @@ const timelineEvents = [
     accent: false,
     subPoints: null,
   },
+  {
+    year: '2024 – Now',
+    tag: 'A different kind of growth',
+    title: 'Giving back — and going deeper.',
+    body: 'After LinkedIn, I took time to invest in what matters beyond a job title — coaching job seekers on ADPList (top 100 UX mentors globally, 50+ sessions), and giving back to communities I care about.',
+    accent: true,
+    subPoints: null,
+  },
 ];
 
 const AboutV2 = () => {
@@ -113,6 +121,24 @@ const AboutV2 = () => {
         </div>
       </section>
 
+      {/* ── WHAT I'M LOOKING FOR ─────────────────────────────── */}
+      <section className="py-24 px-6 md:px-16 lg:px-24 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-accent-teal mb-4">
+            What I'm Looking For
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            Still here for the hard problems.
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+            I want to be back in tech — working on products that reach real people at scale.
+            Not just making interfaces cleaner, but finding the actual problem underneath the
+            surface request and designing something that genuinely changes how people experience
+            the world. That's what I've always been drawn to, and that's what I'm looking for next.
+          </p>
+        </div>
+      </section>
+
       {/* ── BEYOND WORK ──────────────────────────────────────── */}
       <section className="py-24 px-6 md:px-16 lg:px-24" style={{ backgroundColor: '#FAF9F7' }}>
         <div className="max-w-5xl mx-auto">
@@ -120,7 +146,7 @@ const AboutV2 = () => {
             Beyond Work
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-16">
-            Outside of design, I'm someone who never stops growing —<br />
+            I'm someone who never stops growing —<br />
             and loves helping others do the same.
           </h2>
 
@@ -189,18 +215,14 @@ const AboutV2 = () => {
                   Personal growth — and helping others grow
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  In recent years I've become deeply interested in my own inner growth — and how
-                  that ripples outward. I joined a Buddhist learning community where I study and
-                  practice every week. I also volunteer to organize and lead group sessions,
-                  bringing people together to learn.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed mt-4">
-                  I even built a website to help members study more effectively — you can read about it in my{' '}
+                  I'm part of a Buddhist learning community — studying, practicing, and organizing
+                  sessions for members every week. I care so much about this community that I
+                  eventually{' '}
                   <a
                     href="/project/buddha-story"
                     className="text-accent-teal hover:underline font-medium"
                   >
-                    Buddhist Learning App case study
+                    built an app to help members study more effectively
                   </a>
                   .
                 </p>
@@ -220,11 +242,11 @@ const AboutV2 = () => {
               </div>
               {/* Right: text */}
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Volunteering with kids</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Kids teach, teaching kids.</h3>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  I volunteer with children — reading to them, drawing with them, and helping them
-                  feel more confident and open. It reminds me why human connection matters more
-                  than anything else.
+                  I volunteer reading and drawing with children — encouraging them to speak up and
+                  find words for what they feel. Their openness reminds me what genuine curiosity
+                  looks like. I hope to leave them with at least one moment of feeling truly seen.
                 </p>
               </div>
             </div>
@@ -266,6 +288,7 @@ const AboutV2 = () => {
           </div>
         </div>
       </section>
+
 
     </div>
   );
