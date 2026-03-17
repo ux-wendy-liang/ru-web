@@ -121,9 +121,8 @@ export const projects: Project[] = [
       {
         title: '',
         content: 'Once we aligned on the vision, I proposed the MVP version of the Publisher Portal, focusing on the onboarding SDK integration process:',
-        images: [
-          '/images/67cb85009b1310686606903c_user flow.png'
-        ]
+        image: '/images/67cb85009b1310686606903c_user flow.png',
+        imageSize: 'large'
       },
       {
         title: '',
@@ -148,16 +147,6 @@ export const projects: Project[] = [
         title: '',
         content: 'Step1: He set up account by creating app.\n\nStep2: Then he has to wait for approve from LinkedIn side.\n\nAfter three days, David saw his account is been approved.\n\nStep3: He copied and pasted the client ID and passcode to their NewYork times website code area. With that he can see the relevant linkedin provided ads.',
         gifs: ['/images/67cb85220fc914afc69622b0_waiting for approve.gif']
-      },
-      {
-        title: '',
-        content: 'After finishing setup the integration. David can do manage SDK settings.\n\nExample 1, Adding team members.',
-        gifs: ['/images/67cb852f9b1310686606bad8_add member.gif']
-      },
-      {
-        title: '',
-        content: 'Example 2, He can updating the passcode for security reason.',
-        gifs: ['/images/67cb853e8054bc90c6ad0f78_change key.gif']
       },
       {
         title: '',
@@ -507,6 +496,170 @@ export const projects: Project[] = [
         role: 'Study Group Member'
       }
     ]
+  },
+  {
+    id: 'buddha-learning',
+    title: 'Redesigning Buddhist Education: How a 50/50 Learning Model Reduced Student Dropout',
+    year: 2026,
+    cover: '/images/buddha-v2-hero.svg',
+    shortDescription: 'Half of Buddhist study group students were dropping out. I identified the root cause — too much theory, zero practice — and built a learning platform that flipped the model. 54 users and 554 page views in the first week.',
+    role: 'Product Designer\n+ Builder',
+    duration: '1 year observing + 4 days building',
+    team: 'Solo project',
+    sections: [
+      // ===== INTRO / HOOK =====
+      {
+        title: 'I Built a Website for Buddhist Students. Let Me Show You Why.',
+        sectionLabel: 'The Story',
+        content: 'This is a personal project — born from a real problem I experienced as a student myself.\n\nI\'ve been studying Buddhist philosophy in a community group in San Francisco for over a year and a half. Across North America — in SF, LA, New York — and across hundreds of cities in China, people gather in small groups to study ancient wisdom together. The curriculum is deep, the community is committed, and the teachings are profound.\n\nBut something was broken. And I couldn\'t stop thinking about it.',
+        dividerAfter: true
+      },
+      // ===== THE PROBLEM =====
+      {
+        title: 'Half the Students Were Leaving',
+        sectionLabel: 'The Problem',
+        content: 'Our SF community has 60+ students across multiple study groups. After observing for a year, I noticed a painful pattern: **roughly half of all students drop out** within months of joining.\n\nThe existing learning website only offered articles — long, dense, academic texts. Each lesson was 20+ pages of classical Buddhist language that students were asked to read three times. No exercises. No way to apply the teachings to daily life.',
+        images: ['/images/buddha-v2-problem-1.png', '/images/buddha-v2-problem-2.png'],
+        imageLabels: ['The existing website: walls of dense text', 'Students struggled with 20+ page lessons']
+      },
+      {
+        title: '',
+        content: 'The result was predictable:',
+        cards: [
+          { title: 'Content too dense', content: 'Each lesson was 20+ pages of classical Buddhist language, deliberately academic and difficult to parse. Students were asked to read it three times.' },
+          { title: 'No practical application', content: 'The website was 95% reading, with zero structured exercises. Students learned theory but had no guidance on how to apply wisdom to their daily lives.' },
+          { title: 'No sense of progress', content: 'After months of studying, many students still couldn\'t feel any real benefit. Without tangible results, motivation disappeared.' }
+        ],
+        afterCards: 'This created a vicious cycle — students invested significant time reading dense material, couldn\'t apply it, felt no benefit, and eventually quit.',
+        flow: ['Read dense text', 'Can\'t understand', 'Can\'t apply', 'No benefit', 'Drop out'],
+        dividerAfter: true
+      },
+      // ===== MY INSIGHT & SOLUTION =====
+      {
+        title: 'The Core Insight: 50% Theory, 50% Practice',
+        sectionLabel: 'My Solution',
+        content: 'From my own experience, I had a strong hypothesis: **the current model was 95% reading and almost 0% practice — but it should be 50/50.**\n\nI had personally experimented with combining psychological exercises with Buddhist teachings for just 2 weeks — and already felt tangible benefits. The teachings didn\'t need to be longer; they needed to be **actionable**. Even remembering just one core insight from a lesson and applying it to daily life could create real change.',
+        image: '/images/buddha-v2-before-after.svg'
+      },
+      {
+        title: 'The New Model',
+        content: '',
+        cards: [
+          { title: 'Before: 95% Reading', content: 'Dense 20+ page articles, read three times. No exercises, no supervision, no guidance on practice. Students who couldn\'t keep up simply left.' },
+          { title: 'After: 50% Reading + 50% Practice', content: 'Simplified, accessible lessons paired with structured exercises. Learn the right insight, practice it in daily life, experience the benefit, then continue to the next lesson — a positive feedback loop.' }
+        ],
+        image: '/images/buddha-v2-virtuous-cycle.svg',
+        dividerAfter: true
+      },
+      // ===== VALIDATION =====
+      {
+        title: 'Validating with the Teacher and Students',
+        sectionLabel: 'Validation',
+        content: 'I didn\'t just build on assumptions — I validated my hypothesis with both the authority figure and the end users.\n\n**With the teacher:** I presented my 50/50 model to the head teacher. His initial reaction was skeptical — the tradition heavily emphasizes reading and study. But after I explained my reasoning and personal experience in detail, he came around. He agreed that practice was indeed crucial and **gave me permission to execute this approach across North America.**\n\n**With fellow students:** I asked classmates directly — did they find the articles hard to understand? Every single one said yes. Through a year of observation, I also knew that very few students were actually applying teachings to their lives. Most were on the verge of dropping out.',
+        image: '/images/buddha-v2-validation.svg',
+        dividerAfter: true
+      },
+      // ===== KEY DESIGN DECISIONS =====
+      {
+        title: 'Turning Insights Into a Product',
+        sectionLabel: 'Key Design Decisions',
+        content: ''
+      },
+      // Decision 1: Simplified Content
+      {
+        title: 'Decision 1: Making Ancient Wisdom Accessible',
+        isDecisionBlock: true,
+        challenge: 'The original lesson texts were 20+ pages of classical Buddhist language — deliberately dense and academic. Students were asked to read them three times, but most couldn\'t even finish once.',
+        insight: 'You don\'t need to read the entire 20-page text to benefit. If you can remember just one core insight and apply it to your life, that alone creates real change.',
+        solution: 'AI-powered plain-language summaries with a one-sentence takeaway for every lesson. Even if a student has no time to read the full text, they can remember and apply that one sentence.',
+        content: '',
+        image: '/images/buddha-v2-simplified.png'
+      },
+      // Decision 2: Practice Exercises
+      {
+        title: 'Decision 2: From Reading to Doing',
+        isDecisionBlock: true,
+        challenge: 'Students read lessons but had zero guidance on how to apply Buddhist teachings to daily life. The gap between understanding and doing was causing dropout.',
+        insight: 'Buddhism is fundamentally about practice, not memorization. But the current system treated it as an academic exercise. I had personally seen results from just 2 weeks of combining practice with study.',
+        solution: 'Every lesson now ends with a structured practice exercise — extracted from the original teachings and designed to be applied in daily life. Commit to 1-2 weeks and you\'ll feel the difference.',
+        content: '',
+        image: '/images/buddha-v2-exercises.png'
+      },
+      // Decision 3: Two core features
+      {
+        title: 'The Two Core Features',
+        isDecisionBlock: true,
+        content: 'The platform was designed around two complementary pillars that work together to create a virtuous learning cycle:',
+        cards: [
+          { title: 'Accessible Wisdom', content: 'AI-simplified lessons that make ancient Buddhist teachings easy to understand, with one-sentence takeaways that anyone can remember and apply.' },
+          { title: 'Structured Practice', content: 'Practice exercises tied to each lesson, helping students bridge the gap from "I understand this" to "I\'m living this" — creating real, felt benefits.' }
+        ],
+        afterCards: 'Together, these two features create the positive feedback loop: **learn an accessible insight → practice it in daily life → experience the benefit → feel motivated to learn more.**',
+        dividerAfter: true
+      },
+      // ===== THE PRODUCT =====
+      {
+        title: 'Try the Live Product',
+        sectionLabel: 'The Product',
+        content: 'This isn\'t a Figma prototype — it\'s a real, shipped product that\'s actively being used. I designed and built it myself using AI-assisted development, going from idea to live product in just 4 days.\n\nExplore the platform below:',
+        embed: 'https://jingxin-xuetang.vercel.app'
+      },
+      {
+        title: '',
+        content: '',
+        dividerAfter: true
+      },
+      // ===== RESULTS =====
+      {
+        title: 'The Reception Exceeded Expectations',
+        sectionLabel: 'Results',
+        content: 'I initially shared the website with just 10+ people internally. Within 7 days, word had spread organically:',
+        image: '/images/buddha-v2-results.svg'
+      },
+      {
+        title: '',
+        content: 'The feedback was overwhelmingly positive — almost universally so.',
+        image: '/images/buddha-v2-feedback.png'
+      },
+      {
+        title: 'Real Behavior Change',
+        content: 'The most meaningful validation came from seeing actual behavior change: **our study group leader used the practice exercises while studying the current lesson and reported that they directly triggered real action in her life.** She was genuinely excited — this was exactly the "understanding → doing" loop the platform was designed to create.',
+        dividerAfter: true
+      },
+      // ===== EMOTIONAL IMPACT =====
+      {
+        title: 'A Moment That Made It All Worth It',
+        content: 'When the North America program director saw the website, **she was moved to tears.** Not because of the design or the technology — but because she recognized what it represented: someone had voluntarily invested their time and effort to build something that genuinely helps the community learn and grow.\n\nShe immediately saw the potential to expand it to all North American study groups, and even suggested new features — like incorporating practice exercises from the annual compassion retreat.',
+        dividerAfter: true
+      }
+    ],
+    impact: [
+      '54 active users within 7 days — from sharing with just 10+ people initially, the platform spread through word of mouth alone.',
+      '554 page views in the first week, demonstrating deep engagement — users weren\'t just clicking once, they were exploring multiple lessons.',
+      'Nearly 100% positive feedback from all users who tried the platform.',
+      'Real behavior change observed: a study group leader reported that practice exercises directly triggered real-world action in her daily life.'
+    ],
+    testimonial: {
+      quote: 'When she saw the website, the North America program director was moved to tears — not because of the design, but because someone had voluntarily built something to help the entire community grow.',
+      author: 'Program Director',
+      role: 'North America Buddhist Study Program'
+    },
+    takeaways: [
+      'The best products come from lived experience: I spent a full year as a student in this community before building anything. That deep, firsthand understanding of the pain points — not user interviews or surveys — is what made the solution resonate instantly.',
+      'Validate with stakeholders before building: Getting the teacher\'s buy-in on the 50/50 model before writing a single line of code ensured the product had institutional support. Without that conversation, even the best product would face adoption resistance.',
+      'Ship fast, learn from real users: Going from idea to live product in 4 days meant I could get real feedback immediately. The organic growth from 10 to 54 users in a week confirmed the need was real.',
+      'Having an idea and being able to ship it myself is incredibly empowering: As a designer who can also build, I don\'t have to wait for engineering resources or convince a PM to prioritize my idea. I see a problem, I design the solution, I ship it — and I get to watch real people benefit from it.'
+    ],
+    nextSteps: {
+      title: 'What\'s Next',
+      content: 'The platform is live and growing. Here\'s my plan for the next phase:',
+      items: [
+        'Build a tracking system with Google Analytics to understand which features users engage with most — lesson reading vs. practice exercises, completion rates, return visits.',
+        'Use quantitative data to identify patterns, then conduct targeted user interviews to understand the "why" behind the numbers.',
+        'Incorporate feedback from the program director: add practice exercises from the annual compassion retreat (慈心营) to expand the platform\'s content.',
+        'Long-term goal: create a platform that the majority of students find genuinely useful — one that helps people not just understand Buddhist teachings, but actually improve their lives through practice.'
+      ]
+    }
   },
   {
     id: 'knowledge-graph',
