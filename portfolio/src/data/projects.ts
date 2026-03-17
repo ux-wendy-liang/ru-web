@@ -352,7 +352,7 @@ export const projects: Project[] = [
       {
         title: 'Understanding Who I\'m Designing For',
         sectionLabel: 'Research & Insights',
-        content: 'As a student in this community, I experienced the problem firsthand. Each week\'s lesson is 20–30 pages of dense Buddhist text, read three times. I started **downloading the PDF and asking AI for a plain-language version** — it worked, but most students who hit the same wall just gave up.\n\nThe problem went deeper than comprehension. One student told me **studying Buddhism actually increased their anxiety** — she understood the teachings intellectually but couldn\'t put them into practice. Instead of finding peace, she felt more pressure. This was a striking insight: **the gap between "understanding" and "doing" actively harms the learning experience.** It became the emotional core of why I built practice exercises into the product.\n\nOver the past year, I attended weekly sessions, talked with fellow students, and discussed pain points with our group leader. A year of lived experience gave me deep empathy — and when I decided to build, I already understood the users intimately. I identified two distinct personas:',
+        content: 'I\'ve been a student in this community for over a year — attending weekly sessions, talking with fellow students, discussing pain points with our group leader. That lived experience gave me a different kind of insight than surveys could.\n\nOne moment stayed with me: a student told me studying Buddhism **increased her anxiety**. She understood the teachings intellectually but couldn\'t apply them to her life. Instead of finding peace, she felt more pressure. That gap — **between understanding and doing** — became the emotional core of this project.\n\nFrom a year of observation, I identified two distinct personas:',
         cards: [
           { title: 'Beginner', content: 'New to Buddhism or joined recently. 20–30 pages of classical language per lesson, unfamiliar terminology everywhere.\n\nPain point: "I read it 3 times and still don\'t understand." Most drop out within the first few months.\n\n→ Needs simplified, plain-language content to even get started', avatar: '/images/persona-new-student.svg' },
           { title: 'Experienced Practitioner', content: 'Deeply committed, studied for 1+ years. Can understand the teachings intellectually, but struggles to retain and apply them in daily life. Often mentors newer students.\n\nPain point: "I understood it during the session, but a week later I forgot everything — and I still can\'t put it into practice."\n\n→ Their core need is retention and real-world application', avatar: '/images/persona-experienced.svg' }
@@ -388,7 +388,7 @@ export const projects: Project[] = [
         title: 'Decision 2: From Reading to Doing',
         isDecisionBlock: true,
         challenge: 'Students read lessons but couldn\'t apply teachings to daily life. Buddhism is about practice, not memorization.',
-        insight: 'Every student — beginner or experienced — needs practical reasons to keep showing up. Abstract theory isn\'t enough. Remember the user who said studying Buddhism increased their anxiety? That gap between "understanding" and "doing" was the root cause. Our study groups meet weekly, covering one lesson per session. That natural rhythm became my design constraint.',
+        insight: 'Students need a reason to come back each week — abstract theory alone isn\'t enough. Our study groups already meet weekly, one lesson per session. That natural rhythm became my design constraint: one exercise per lesson, one week to try it.',
         solution: 'One practice exercise per lesson — aligned with the weekly study rhythm, so each week students have exactly one thing to apply to their daily life.',
         content: 'For example, after a lesson on compassion: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
         image: '/images/jingxin-exercise-en.png',
@@ -441,7 +441,7 @@ export const projects: Project[] = [
       {
         title: 'Try the Live Product',
         sectionLabel: 'The Product',
-        content: 'Unlike a Figma prototype, this is a real, shipped product with user authentication, a database, and bilingual support. I used AI vibe coding with my detailed PRD as the blueprint — 70 commits over 4 days, each one a cycle of describe → review → refine. My role throughout was creative director, reviewing every output and giving feedback like a design review.\n\nTry it yourself below — browse courses, read simplified lessons, and explore the practice center.',
+        content: 'This is a real, shipped product — not a Figma prototype. Browse courses, read simplified lessons, and try the practice exercises yourself.',
         embed: 'https://jingxin-xuetang.vercel.app'
       },
       {
@@ -471,10 +471,10 @@ export const projects: Project[] = [
       role: 'Study Group Leader'
     },
     takeaways: [
-      'End-to-end ownership changes how you design: Owning the full journey — from user research, to PRD, to design system, to shipped product — forced me to make tighter decisions. When you\'re accountable for the final experience, not just the mockup, every detail matters more.',
-      'Start with the community, not the technology: I spent time observing study groups before writing a single requirement. The best features (like practice privacy controls) came from understanding social dynamics, not technical possibilities.',
-      'Vibe coding is a design tool, not a replacement for designers: AI writes code, but it can\'t decide what to build or why one layout works better than another. A clear PRD and strong design instincts are what make vibe coding productive — without them, you just ship faster in the wrong direction.',
-      'Ship early, learn from real users: A live product with 17 real users teaches more than a polished prototype with zero. The source tracing feature — now one of the most valued parts of the product — only exists because I shipped early enough to get feedback before over-building.'
+      'End-to-end ownership changes how you design: When you\'re accountable for the final experience — not just the mockup — every decision gets tighter. There\'s no one else to fix it later.',
+      'Start with the community, not the technology: The best features (like privacy controls for journaling) came from understanding social dynamics, not technical possibilities. Observation before requirements.',
+      'Vibe coding amplifies design — it doesn\'t replace it: AI writes code, but it can\'t decide what to build or why one layout works better than another. Without a clear PRD and design instincts, you just ship faster in the wrong direction.',
+      'Ship early, learn from real users: The source tracing feature — now one of the most valued parts of the product — only exists because I shipped early enough to get real feedback before over-building.'
     ],
     nextSteps: {
       title: 'What\'s Next',
