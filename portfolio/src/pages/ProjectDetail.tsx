@@ -102,50 +102,63 @@ const ProjectDetail = () => {
           </Link>
 
           {/* Cover Image */}
-          <div className="mb-12 rounded-2xl overflow-hidden bg-white p-4">
-            <img
-              src={project.cover}
-              alt={project.title}
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
+          {!project.hideCoverOnDetail && (
+            <div className="mb-12 rounded-2xl overflow-hidden bg-white p-4">
+              <img
+                src={project.cover}
+                alt={project.title}
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+          )}
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 leading-tight">
-            {project.title}
-          </h1>
+          <div className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+              {project.title}
+            </h1>
+            {project.subtitle && (
+              <p className="text-lg md:text-xl text-gray-500 leading-relaxed max-w-3xl">
+                {project.subtitle}
+              </p>
+            )}
+          </div>
 
           {/* Project Overview */}
-          <div className="mb-8">
-            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">
-              PROJECT OVERVIEW
-            </h2>
-            <p className="text-lg text-gray-600 leading-[1.8] max-w-3xl">
-              {project.shortDescription}
-            </p>
-          </div>
+          {!project.hideOverview && (
+            <>
+              <div className="mb-8">
+                <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">
+                  PROJECT OVERVIEW
+                </h2>
+                <p className="text-lg text-gray-600 leading-[1.8] max-w-3xl">
+                  {project.shortDescription}
+                </p>
+              </div>
 
-          {/* Meta Info - horizontal layout below overview */}
-          <div className="grid grid-cols-3 gap-8 mb-16">
-            <div>
-              <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
-                ROLE
-              </h3>
-              <p className="text-gray-900 whitespace-pre-line">{project.role}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
-                TIMELINE
-              </h3>
-              <p className="text-gray-900">{project.duration}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
-                TEAM
-              </h3>
-              <p className="text-gray-900 whitespace-pre-line">{project.team}</p>
-            </div>
-          </div>
+              {/* Meta Info - horizontal layout below overview */}
+              <div className="grid grid-cols-3 gap-8 mb-16">
+                <div>
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
+                    ROLE
+                  </h3>
+                  <p className="text-gray-900 whitespace-pre-line">{project.role}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
+                    TIMELINE
+                  </h3>
+                  <p className="text-gray-900">{project.duration}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">
+                    TEAM
+                  </h3>
+                  <p className="text-gray-900 whitespace-pre-line">{project.team}</p>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </section>
 

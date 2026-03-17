@@ -47,6 +47,12 @@ const Navigation = () => {
             >
               About
             </Link>
+            <Link
+              to="/about-v2"
+              className="text-base text-gray-900 hover:text-gray-600 transition-colors duration-200"
+            >
+              About Two
+            </Link>
           </div>
         </div>
       </div>
