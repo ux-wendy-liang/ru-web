@@ -21,6 +21,10 @@ const ProjectDetail = () => {
   const project = projects.find((p) => p.id === id);
 
   const [enTooltipDismissed, setEnTooltipDismissed] = useState(false);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+
+  const openLightbox = (src: string) => setLightboxSrc(src);
+  const closeLightbox = () => setLightboxSrc(null);
 
   // Scroll to top when page loads or project changes
   useEffect(() => {
@@ -53,6 +57,26 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Lightbox Modal */}
+      {lightboxSrc && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-zoom-out"
+          onClick={closeLightbox}
+        >
+          <button
+            className="absolute top-4 right-4 text-white bg-black/50 rounded-full w-10 h-10 flex items-center justify-center text-xl hover:bg-black/80 transition-colors"
+            onClick={closeLightbox}
+          >
+            ✕
+          </button>
+          <img
+            src={lightboxSrc}
+            alt="Full size"
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            onClick={e => e.stopPropagation()}
+          />
+        </div>
+      )}
       {/* Hero Section */}
       <section className="pt-32 pb-12 px-6 md:px-16 lg:px-24">
         <div className="max-w-5xl mx-auto">
@@ -422,7 +446,8 @@ const ProjectDetail = () => {
                     <img
                       src={section.image}
                       alt={section.title}
-                      className="w-full max-h-[600px] object-contain"
+                      className="w-full max-h-[600px] object-contain cursor-zoom-in"
+                      onClick={() => openLightbox(section.image!)}
                     />
                     {section.imageHighlight && (
                       <div
@@ -510,7 +535,8 @@ const ProjectDetail = () => {
                           <img
                             src={image}
                             alt={`${section.title} ${imgIndex + 1}`}
-                            className="w-full max-h-[500px] object-contain"
+                            className="w-full max-h-[500px] object-contain cursor-zoom-in"
+                            onClick={() => openLightbox(image)}
                           />
                           {section.imageHighlights && section.imageHighlights[imgIndex] && (
                             <div
