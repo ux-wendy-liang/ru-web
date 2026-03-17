@@ -598,24 +598,6 @@ const ProjectDetail = () => {
                 {/* Interactive Prototype Embed */}
                 {section.embed && (
                   <div className="mt-8 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 relative">
-                    {/* EN tooltip for Jingxin project */}
-                    {section.embed.includes('jingxin') && !enTooltipDismissed && (
-                      <div className="hidden md:block absolute top-[68px] right-[160px] z-10 animate-tooltip-bounce">
-                        <div className="relative bg-gray-900 text-white text-sm px-4 py-2.5 rounded-lg shadow-lg whitespace-nowrap flex items-center gap-2">
-                          <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                          Click "EN" to view English version
-                          <button
-                            onClick={() => setEnTooltipDismissed(true)}
-                            className="ml-1 text-gray-400 hover:text-white transition-colors"
-                            aria-label="Dismiss tooltip"
-                          >
-                            ✕
-                          </button>
-                          {/* Arrow pointing up toward EN button */}
-                          <div className="absolute -top-[6px] right-14 w-3 h-3 bg-gray-900 rotate-45" />
-                        </div>
-                      </div>
-                    )}
                     <iframe
                       src={section.embed}
                       title={section.title || 'Interactive Prototype'}
