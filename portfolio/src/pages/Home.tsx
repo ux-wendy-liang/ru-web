@@ -95,48 +95,25 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section className="py-20 px-6 md:px-16 lg:px-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <div className="w-20 h-1 bg-accent-teal mb-6"></div>
-            <h2 className="text-3xl font-bold text-gray-900">Experience</h2>
+      {/* Resume Strip */}
+      <section className="py-12 px-6 md:px-16 lg:px-24 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+            <span className="text-gray-400 uppercase tracking-widest text-xs font-medium">Previously at</span>
+            <span className="font-semibold text-gray-700">LinkedIn</span>
+            <span className="text-gray-300">·</span>
+            <span className="font-semibold text-gray-700">Tencent</span>
+            <span className="text-gray-300">·</span>
+            <span className="font-semibold text-gray-700">Startup</span>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* LinkedIn */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">LinkedIn</h3>
-              <h4 className="text-base font-bold text-gray-900 mb-3">Product Designer</h4>
-              <p className="text-gray-600">8 yr, May 2016–Nov 2024</p>
-            </div>
-
-            {/* Tencent */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Tencent</h3>
-              <h4 className="text-base font-bold text-gray-900 mb-3">User Interface Designer</h4>
-              <p className="text-gray-600">2 yr, Jun 2012–Apr 2014</p>
-            </div>
-
-            {/* Startup */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Startup company</h3>
-              <h4 className="text-base font-bold text-gray-900 mb-3">First UI and UX Designer</h4>
-              <p className="text-gray-600">1 yr, Aug 2010–May 2012</p>
-            </div>
-          </div>
-
-          {/* CV Button */}
-          <div className="mt-16 flex justify-center md:justify-end">
-            <a
-              href="https://docs.google.com/document/d/15staG_wP1O0-HSl8O4V44kzVNShqZBRnl9PKEHaAwcM/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-12 py-4 border-2 border-accent-teal text-accent-teal hover:bg-accent-teal hover:text-white transition-all duration-200 rounded-full text-lg font-medium"
-            >
-              SEE FULL CV →
-            </a>
-          </div>
+          <a
+            href="https://docs.google.com/document/d/15staG_wP1O0-HSl8O4V44kzVNShqZBRnl9PKEHaAwcM/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 border-2 border-accent-teal text-accent-teal hover:bg-accent-teal hover:text-white transition-all duration-200 rounded-full text-sm font-medium"
+          >
+            DOWNLOAD RÉSUMÉ →
+          </a>
         </div>
       </section>
     </div>
