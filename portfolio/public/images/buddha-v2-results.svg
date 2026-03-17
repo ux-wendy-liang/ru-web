@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="350" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="400" y="35" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#333333" text-anchor="middle">Results & Impact</text>
+
+  <!-- Card 1: 54 Users -->
+  <g id="card1">
+    <!-- Card background -->
+    <rect x="50" y="70" width="220" height="240" fill="#F6FAF9" stroke="#5B9B8E" stroke-width="2" rx="8"/>
+
+    <!-- Icon circle -->
+    <circle cx="160" cy="120" r="30" fill="#F0F6F5" stroke="#5B9B8E" stroke-width="2"/>
+    <!-- Users icon -->
+    <circle cx="150" cy="110" r="8" fill="#5B9B8E"/>
+    <path d="M 140 128 Q 140 135 150 135 Q 160 135 160 128" fill="#5B9B8E"/>
+    <circle cx="170" cy="110" r="8" fill="#5B9B8E"/>
+    <path d="M 160 128 Q 160 135 170 135 Q 180 135 180 128" fill="#5B9B8E"/>
+
+    <!-- Number -->
+    <text x="160" y="190" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="bold" fill="#5B9B8E" text-anchor="middle">54</text>
+
+    <!-- Label -->
+    <text x="160" y="235" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#333333" text-anchor="middle">Active Users</text>
+
+    <!-- Timeframe -->
+    <text x="160" y="260" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#666666" text-anchor="middle">in 7 days</text>
+  </g>
+
+  <!-- Card 2: 554 Page Views -->
+  <g id="card2">
+    <!-- Card background -->
+    <rect x="290" y="70" width="220" height="240" fill="#F6FAF9" stroke="#5B9B8E" stroke-width="2" rx="8"/>
+
+    <!-- Icon circle -->
+    <circle cx="400" cy="120" r="30" fill="#F0F6F5" stroke="#5B9B8E" stroke-width="2"/>
+    <!-- Page views icon (eye) -->
+    <ellipse cx="400" cy="115" rx="12" ry="8" fill="none" stroke="#5B9B8E" stroke-width="2"/>
+    <circle cx="400" cy="115" r="4" fill="#5B9B8E"/>
+
+    <!-- Number -->
+    <text x="400" y="190" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="bold" fill="#5B9B8E" text-anchor="middle">554</text>
+
+    <!-- Label -->
+    <text x="400" y="235" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#333333" text-anchor="middle">Page Views</text>
+
+    <!-- Timeframe -->
+    <text x="400" y="260" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#666666" text-anchor="middle">in 7 days</text>
+  </g>
+
+  <!-- Card 3: Positive Feedback -->
+  <g id="card3">
+    <!-- Card background -->
+    <rect x="530" y="70" width="220" height="240" fill="#F6FAF9" stroke="#5B9B8E" stroke-width="2" rx="8"/>
+
+    <!-- Icon circle -->
+    <circle cx="640" cy="120" r="30" fill="#F0F6F5" stroke="#5B9B8E" stroke-width="2"/>
+    <!-- Star/heart icon -->
+    <path d="M 640 105 L 645 120 L 660 125 L 645 130 L 640 145 L 635 130 L 620 125 L 635 120 Z" fill="#5B9B8E"/>
+
+    <!-- Percentage text -->
+    <text x="640" y="195" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="bold" fill="#5B9B8E" text-anchor="middle">~100%</text>
+
+    <!-- Label -->
+    <text x="640" y="235" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#333333" text-anchor="middle">Positive</text>
+    <text x="640" y="255" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#333333" text-anchor="middle">Feedback</text>
+  </g>
+
+  <!-- Bottom insight -->
+  <text x="400" y="330" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#666666" text-anchor="middle">Strong early adoption and user satisfaction</text>
+</svg>

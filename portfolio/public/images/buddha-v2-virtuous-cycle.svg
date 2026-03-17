@@ -1,0 +1,50 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="700" height="400" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#333333" text-anchor="middle">The Virtuous Cycle</text>
+
+  <!-- Central circle for node positioning (350, 200) -->
+  <g id="cycle">
+    <!-- Circle guide (invisible, for reference) -->
+    <!-- Top node: Learn Key Insight -->
+    <circle cx="350" cy="80" r="50" fill="#F0F6F5" stroke="#5B9B8E" stroke-width="2"/>
+    <text x="350" y="195" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle">Learn Key</text>
+    <text x="350" y="212" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle">Insight</text>
+
+    <!-- Right node: Practice in Daily Life -->
+    <circle cx="570" cy="200" r="50" fill="#F0F6F5" stroke="#5B9B8E" stroke-width="2"/>
+    <text x="570" y="190" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle">Practice in</text>
+    <text x="570" y="207" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle">Daily Life</text>
+
+    <!-- Bottom node: Experience Benefit -->
+    <circle cx="350" cy="320" r="50" fill="#F0F6F5" stroke="#5B9B8E" stroke-width="2"/>
+    <text x="350" y="310" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle">Experience</text>
+    <text x="350" y="327" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle">Benefit</text>
+
+    <!-- Left node: Motivated to Continue -->
+    <circle cx="130" cy="200" r="50" fill="#F0F6F5" stroke="#5B9B8E" stroke-width="2"/>
+    <text x="130" y="195" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle">Motivated</text>
+    <text x="130" y="212" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle">to Continue</text>
+  </g>
+
+  <!-- Arrows connecting the nodes -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#5B9B8E"/>
+    </marker>
+  </defs>
+
+  <!-- Top to Right arrow -->
+  <path d="M 390 115 Q 470 140 530 165" fill="none" stroke="#5B9B8E" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Right to Bottom arrow -->
+  <path d="M 540 245 Q 480 280 390 305" fill="none" stroke="#5B9B8E" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Bottom to Left arrow -->
+  <path d="M 310 325 Q 210 310 170 245" fill="none" stroke="#5B9B8E" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Left to Top arrow -->
+  <path d="M 160 160 Q 220 120 310 95" fill="none" stroke="#5B9B8E" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

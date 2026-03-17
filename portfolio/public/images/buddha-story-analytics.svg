@@ -1,0 +1,142 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <clipPath id="chartClip">
+      <rect x="60" y="130" width="820" height="300"/>
+    </clipPath>
+    <linearGradient id="chartFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Page background -->
+  <rect width="900" height="520" fill="#ffffff" rx="12" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Top bar -->
+  <rect width="900" height="52" fill="#ffffff" rx="12"/>
+  <rect y="52" width="900" height="1" fill="#F3F4F6"/>
+
+  <!-- Vercel logo (triangle) -->
+  <polygon points="22,36 34,14 46,36" fill="#000000"/>
+  <!-- App name -->
+  <text x="56" y="32" font-size="14" font-weight="600" fill="#111827">jingxin-xuetang</text>
+  <text x="170" y="32" font-size="18" fill="#D1D5DB">⌃</text>
+
+  <!-- Analytics title center -->
+  <text x="450" y="32" font-size="14" font-weight="600" fill="#111827" text-anchor="middle">Analytics</text>
+
+  <!-- Three dots -->
+  <circle cx="858" cy="26" r="2.5" fill="#6B7280"/>
+  <circle cx="868" cy="26" r="2.5" fill="#6B7280"/>
+  <circle cx="878" cy="26" r="2.5" fill="#6B7280"/>
+
+  <!-- Second bar: URL + filters -->
+  <rect y="53" width="900" height="48" fill="#ffffff"/>
+  <rect y="101" width="900" height="1" fill="#F3F4F6"/>
+
+  <!-- Globe icon + URL -->
+  <circle cx="30" cy="77" r="9" fill="none" stroke="#9CA3AF" stroke-width="1.5"/>
+  <line x1="30" y1="68" x2="30" y2="86" stroke="#9CA3AF" stroke-width="1"/>
+  <ellipse cx="30" cy="77" rx="5" ry="9" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+  <text x="45" y="81" font-size="13" fill="#374151">jingxin-xuetang.vercel.app</text>
+  <text x="258" y="81" font-size="11" fill="#6B7280">↗</text>
+
+  <!-- Online indicator -->
+  <circle cx="290" cy="77" r="4" fill="#10B981"/>
+  <text x="300" y="81" font-size="12" fill="#374151">1 online</text>
+
+  <!-- Production dropdown -->
+  <rect x="600" y="62" width="120" height="30" fill="#ffffff" stroke="#E5E7EB" stroke-width="1" rx="6"/>
+  <text x="650" y="81" font-size="12" fill="#374151" text-anchor="middle">Production  ∨</text>
+
+  <!-- Last 7 Days dropdown -->
+  <rect x="735" y="62" width="140" height="30" fill="#ffffff" stroke="#E5E7EB" stroke-width="1" rx="6"/>
+  <text x="784" y="81" font-size="12" fill="#374151">📅  Last 7 Days  ∨</text>
+
+  <!-- Stats cards row -->
+  <!-- Card 1: Visitors (selected - has bottom border highlight) -->
+  <rect x="0" y="102" width="225" height="88" fill="#ffffff"/>
+  <rect x="0" y="188" width="225" height="2" fill="#111827"/>
+  <text x="22" y="130" font-size="13" fill="#6B7280">Visitors</text>
+  <text x="22" y="175" font-size="38" font-weight="700" fill="#111827">54</text>
+
+  <!-- Card 2: Page Views -->
+  <rect x="225" y="102" width="1" height="88" fill="#F3F4F6"/>
+  <rect x="226" y="102" width="225" height="88" fill="#ffffff"/>
+  <text x="248" y="130" font-size="13" fill="#6B7280">Page Views</text>
+  <text x="248" y="175" font-size="38" font-weight="700" fill="#111827">554</text>
+
+  <!-- Card 3: Bounce Rate -->
+  <rect x="451" y="102" width="1" height="88" fill="#F3F4F6"/>
+  <rect x="452" y="102" width="225" height="88" fill="#ffffff"/>
+  <text x="474" y="130" font-size="13" fill="#6B7280">Bounce Rate</text>
+  <text x="474" y="175" font-size="38" font-weight="700" fill="#111827">20%</text>
+  <!-- +20% badge -->
+  <rect x="546" y="155" width="54" height="22" fill="#FEE2E2" rx="4"/>
+  <text x="573" y="170" font-size="11" font-weight="600" fill="#EF4444" text-anchor="middle">+20%</text>
+
+  <!-- Divider -->
+  <rect x="0" y="190" width="900" height="1" fill="#F3F4F6"/>
+
+  <!-- Chart area -->
+  <!-- Y-axis labels -->
+  <text x="42" y="230" font-size="11" fill="#9CA3AF" text-anchor="end">15</text>
+  <line x1="55" y1="226" x2="880" y2="226" stroke="#F3F4F6" stroke-width="1"/>
+  <text x="42" y="310" font-size="11" fill="#9CA3AF" text-anchor="end">10</text>
+  <line x1="55" y1="306" x2="880" y2="306" stroke="#F3F4F6" stroke-width="1"/>
+  <text x="42" y="390" font-size="11" fill="#9CA3AF" text-anchor="end">5</text>
+  <line x1="55" y1="386" x2="880" y2="386" stroke="#F3F4F6" stroke-width="1"/>
+
+  <!-- X axis -->
+  <line x1="55" y1="450" x2="880" y2="450" stroke="#F3F4F6" stroke-width="1"/>
+
+  <!-- Chart line and fill - based on the spike around Mar 10 -->
+  <!-- Data points (normalized to fit chart): Mar 9~16 days, peak around Mar 10 -->
+  <!-- Y range: 0 at y=450, 15 at y=226 → scale: (450-226)/15 = 14.93 per unit -->
+  <!-- Points: Mar 9=3, Mar 10=13, Mar 11=8, Mar 12=7, Mar 13=6, Mar 14=5, Mar 15=5, Mar 16=5 -->
+  <polyline points="
+    100,405
+    205,256
+    310,350
+    415,365
+    520,376
+    625,390
+    730,390
+    835,390
+  " fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" clip-path="url(#chartClip)"/>
+
+  <!-- Chart fill -->
+  <polygon points="
+    100,450
+    100,405
+    205,256
+    310,350
+    415,365
+    520,376
+    625,390
+    730,390
+    835,390
+    835,450
+  " fill="url(#chartFill)" clip-path="url(#chartClip)"/>
+
+  <!-- Vertical line at Mar 10 (tooltip indicator) -->
+  <line x1="205" y1="200" x2="205" y2="450" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Dot on line -->
+  <circle cx="205" cy="256" r="5" fill="#3B82F6" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Tooltip -->
+  <rect x="100" y="210" width="140" height="55" fill="#ffffff" stroke="#E5E7EB" stroke-width="1" rx="6"/>
+  <circle cx="118" cy="228" r="5" fill="#3B82F6"/>
+  <text x="130" y="232" font-size="12" font-weight="600" fill="#111827">Visitors  3</text>
+  <text x="118" y="252" font-size="11" fill="#6B7280">Mar 10</text>
+
+  <!-- X axis date labels -->
+  <text x="100" y="468" font-size="10" fill="#9CA3AF" text-anchor="middle">Mar 9</text>
+  <text x="205" y="468" font-size="10" fill="#9CA3AF" text-anchor="middle">Mar 10</text>
+  <text x="310" y="468" font-size="10" fill="#9CA3AF" text-anchor="middle">Mar 11</text>
+  <text x="415" y="468" font-size="10" fill="#9CA3AF" text-anchor="middle">Mar 12</text>
+  <text x="520" y="468" font-size="10" fill="#9CA3AF" text-anchor="middle">Mar 13</text>
+  <text x="625" y="468" font-size="10" fill="#9CA3AF" text-anchor="middle">Mar 14</text>
+  <text x="730" y="468" font-size="10" fill="#9CA3AF" text-anchor="middle">Mar 15</text>
+  <text x="835" y="468" font-size="10" fill="#9CA3AF" text-anchor="middle">Mar 16</text>
+</svg>
