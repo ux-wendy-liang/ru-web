@@ -462,8 +462,7 @@ export const projects: Project[] = [
     ],
     impact: [
       'Behavior change: A student said the practice exercises directly triggered real-world action — "I finally did something I\'d been putting off." This is the exact understanding → doing loop the product was designed to create.',
-      'Deep engagement: 17 visitors generated 285 page views in the first week — averaging ~17 pages per user with a 24% bounce rate, confirming users explored deeply, not just clicked and left.',
-      'Trust earned: Users positioned the site as a "learning assistant" — a low-barrier entry point into the original texts, not a replacement. The source tracing feature directly addressed their top concern about AI accuracy.'
+      'Deep engagement: 17 visitors generated 285 page views in the first week — averaging ~17 pages per user with a 24% bounce rate, confirming users explored deeply, not just clicked and left.'
     ],
     testimonial: {
       quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community.',
