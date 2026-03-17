@@ -22,6 +22,7 @@ const ProjectDetail = () => {
 
   const [enTooltipDismissed, setEnTooltipDismissed] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [quotePageIndex, setQuotePageIndex] = useState(0);
 
   const openLightbox = (src: string) => setLightboxSrc(src);
   const closeLightbox = () => setLightboxSrc(null);
@@ -664,7 +665,7 @@ const ProjectDetail = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
                   Results & Feedback
                 </h2>
-                <div className={`grid grid-cols-1 gap-6 ${project.impact.length === 2 ? 'md:grid-cols-2 max-w-2xl' : 'md:grid-cols-3'}`}>
+                <div className={`grid grid-cols-1 gap-6 ${project.impact.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
                   {project.impact.map((item, index) => (
                     <div key={index} className="bg-white/70 p-8 rounded-xl text-center">
                       <div className="text-4xl md:text-5xl font-black text-accent-teal mb-3">
@@ -680,44 +681,58 @@ const ProjectDetail = () => {
             </div>
           )}
 
-          {/* V2: All quotes (testimonial + stakeholder feedback) - right after impact */}
-          {isV2 && (project.testimonial || (project.stakeholderFeedback && project.stakeholderFeedback.length > 0)) && (
-            <div className="bg-[#FAF9F7] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
-              <div className="max-w-5xl mx-auto space-y-6">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                  Stakeholder Feedback
-                </h2>
-                <div className={`grid grid-cols-1 ${((project.testimonial ? 1 : 0) + (project.stakeholderFeedback?.length || 0)) > 1 ? 'md:grid-cols-2' : ''} gap-6`}>
-                  {project.testimonial && (
-                    <div className="bg-white/70 p-6 md:p-8 rounded-2xl">
-                      <blockquote className="text-base text-gray-900 italic leading-[1.8] mb-4">
-                        "{project.testimonial.quote}"
-                      </blockquote>
-                      <div className="text-gray-600 text-sm">
-                        <span className="font-bold text-gray-900">— {project.testimonial.author}</span>
-                        {project.testimonial.role && (
-                          <span className="ml-2">({project.testimonial.role})</span>
-                        )}
+          {/* V2: All quotes (testimonial + stakeholder feedback) - carousel */}
+          {isV2 && (project.testimonial || (project.stakeholderFeedback && project.stakeholderFeedback.length > 0)) && (() => {
+            const allQuotes = [
+              ...(project.testimonial ? [{ quote: project.testimonial.quote, author: project.testimonial.author, role: project.testimonial.role }] : []),
+              ...(project.stakeholderFeedback || [])
+            ];
+            const totalPages = Math.ceil(allQuotes.length / 2);
+            const visibleQuotes = allQuotes.slice(quotePageIndex * 2, quotePageIndex * 2 + 2);
+            return (
+              <div className="bg-[#FAF9F7] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
+                <div className="max-w-5xl mx-auto">
+                  <div className="flex items-center justify-between mb-8">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                      Stakeholder Feedback
+                    </h2>
+                    {totalPages > 1 && (
+                      <div className="flex items-center gap-3">
+                        <button
+                          onClick={() => setQuotePageIndex(i => Math.max(0, i - 1))}
+                          disabled={quotePageIndex === 0}
+                          className="w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-gray-900 hover:text-gray-900 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <span className="text-sm text-gray-400">{quotePageIndex + 1} / {totalPages}</span>
+                        <button
+                          onClick={() => setQuotePageIndex(i => Math.min(totalPages - 1, i + 1))}
+                          disabled={quotePageIndex === totalPages - 1}
+                          className="w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-gray-900 hover:text-gray-900 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                        </button>
                       </div>
-                    </div>
-                  )}
-                  {project.stakeholderFeedback && project.stakeholderFeedback.map((feedback, index) => (
-                    <div key={index} className="bg-white/70 p-6 md:p-8 rounded-2xl">
-                      <blockquote className="text-base text-gray-900 italic leading-[1.8] mb-4">
-                        "{feedback.quote}"
-                      </blockquote>
-                      <div className="text-gray-600 text-sm">
-                        <span className="font-bold text-gray-900">— {feedback.author}</span>
-                        {feedback.role && (
-                          <span className="ml-2">({feedback.role})</span>
-                        )}
+                    )}
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {visibleQuotes.map((q, i) => (
+                      <div key={quotePageIndex * 2 + i} className="bg-white/70 p-6 md:p-8 rounded-2xl">
+                        <blockquote className="text-base text-gray-900 italic leading-[1.8] mb-4">
+                          "{q.quote}"
+                        </blockquote>
+                        <div className="text-gray-600 text-sm">
+                          <span className="font-bold text-gray-900">— {q.author}</span>
+                          {q.role && <span className="ml-2">({q.role})</span>}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
 
           {/* V2: Impact summary paragraph */}
           {isV2 && project.impactSummary && (
