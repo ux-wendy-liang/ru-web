@@ -487,6 +487,7 @@ export const projects: Project[] = [
   },
   {
     id: 'buddha-story',
+    hidden: true,
     title: 'From Designer to Builder: Shipping a Buddhist Learning Platform in 4 Days with AI',
     subtitle: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live and serving real users.',
     year: 2026,
