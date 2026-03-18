@@ -20,7 +20,7 @@ const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const project = projects.find((p) => p.id === id);
 
-  const [enTooltipDismissed, setEnTooltipDismissed] = useState(false);
+  const [, setEnTooltipDismissed] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [quotePageIndex, setQuotePageIndex] = useState(0);
 
