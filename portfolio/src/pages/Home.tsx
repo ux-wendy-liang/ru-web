@@ -112,7 +112,7 @@ const Home = () => {
             rel="noopener noreferrer"
             className="inline-block px-8 py-3 border-2 border-accent-teal text-accent-teal hover:bg-accent-teal hover:text-white transition-all duration-200 rounded-full text-sm font-medium"
           >
-            DOWNLOAD RÉSUMÉ →
+            VIEW RÉSUMÉ →
           </a>
         </div>
       </section>
