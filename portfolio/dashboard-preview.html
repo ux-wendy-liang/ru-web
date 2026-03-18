@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Case Study — Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; color: #1a1a1a; background: #F5F3EE; line-height: 1.7; }
+
+    /* Header */
+    .header {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 24px 40px;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .meta {
+      display: flex;
+      gap: 40px;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .meta strong { color: #1a1a1a; }
+
+    /* Sections */
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #5B9B8E;
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: 1.75rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .section h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      margin-top: 32px;
+    }
+    .section p {
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    /* Highlight quote */
+    .golden-insight {
+      background: #FFF8E1;
+      border-left: 4px solid #F59E0B;
+      padding: 24px 28px;
+      margin: 28px 0;
+      border-radius: 0 12px 12px 0;
+    }
+    .golden-insight .quote-mark {
+      font-size: 2rem;
+      color: #F59E0B;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .golden-insight p {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #92400E;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    .golden-insight .source {
+      font-size: 0.85rem;
+      color: #B45309;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* Challenge block */
+    .challenge-block {
+      background: #FEF2F2;
+      border-left: 4px solid #EF4444;
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 12px 12px 0;
+    }
+    .challenge-block p { color: #991B1B; margin-bottom: 0; }
+    .challenge-block strong { color: #7F1D1D; }
+
+    /* My judgment block */
+    .judgment-block {
+      background: #EFF6FF;
+      border-left: 4px solid #3B82F6;
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 12px 12px 0;
+    }
+    .judgment-block p { color: #1E3A5F; margin-bottom: 0; }
+
+    /* Solution block */
+    .solution-block {
+      background: #F0FDF4;
+      border-left: 4px solid #22C55E;
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 12px 12px 0;
+    }
+    .solution-block p { color: #14532D; margin-bottom: 0; }
+
+    /* Research visual */
+    .research-visual {
+      display: flex;
+      gap: 20px;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+    .research-card {
+      flex: 1;
+      min-width: 200px;
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .research-card .number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #5B9B8E;
+    }
+    .research-card .label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* Pain point cards */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .pain-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .pain-card .persona-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .pain-card .persona-tag.consumer {
+      background: #DBEAFE;
+      color: #1E40AF;
+    }
+    .pain-card .persona-tag.creator {
+      background: #FCE7F3;
+      color: #9D174D;
+    }
+    .pain-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .pain-card p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    /* Divider */
+    .divider {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .divider hr {
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+
+    /* HMW */
+    .hmw {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .hmw h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5B9B8E;
+      font-style: italic;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Image placeholder */
+    .img-placeholder {
+      background: #E5E7EB;
+      border-radius: 16px;
+      padding: 60px 24px;
+      text-align: center;
+      color: #9CA3AF;
+      margin: 24px 0;
+      font-size: 0.9rem;
+      border: 2px dashed #D1D5DB;
+    }
+
+    /* Impact */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .impact-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .impact-card .number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #5B9B8E;
+    }
+    .impact-card .label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      margin: 32px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .testimonial .quote {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #333;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .testimonial .author {
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .testimonial .role {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Flow arrow */
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+    .flow-step {
+      background: white;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .flow-step.problem { background: #FEF2F2; color: #991B1B; }
+    .flow-step.action { background: #EFF6FF; color: #1E3A5F; }
+    .flow-step.result { background: #F0FDF4; color: #14532D; }
+    .arrow { color: #999; font-size: 1.2rem; }
+
+    /* Note banner */
+    .preview-banner {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.85rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .preview-banner span { color: #F59E0B; font-weight: 700; }
+
+    @media (max-width: 640px) {
+      .pain-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: 1fr; }
+      .meta { flex-direction: column; gap: 8px; }
+      .header h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-banner">
+  <span>PREVIEW</span> — Dashboard Case Study 改进版（仅供预览，确认后再更新到网站）
+</div>
+
+<!-- Header -->
+<div class="header">
+  <div class="section-label">LinkedIn · Internal Tool</div>
+  <h1>Reimagining LinkedIn's Data Dashboard: From Quick Fix to Root-Cause Redesign</h1>
+  <div class="meta">
+    <div><strong>Role</strong> User Researcher, UX & UI Designer</div>
+    <div><strong>Duration</strong> 8 Weeks</div>
+    <div><strong>Team</strong> 1 PM, 1 Designer, 7 Engineers</div>
+  </div>
+</div>
+
+<!-- ===== THE CONTEXT ===== -->
+<div class="section">
+  <div class="section-label">The Context</div>
+  <h2>A Dashboard Everyone Visits, But Nobody Can Use Deeply</h2>
+  <p>
+    LinkedIn's internal data visualization tool (Retina) helps product managers, engineers, and leadership track product metrics. The dashboard was one of the most visited pages — hundreds of internal users relied on it daily to make product decisions.
+  </p>
+  <p>
+    But there was a problem hiding in plain sight: <strong>users couldn't filter or explore data directly on the dashboard.</strong> Every time a PM wanted to drill into the data, they had to click into individual charts, apply filters there, then mentally piece together the story across multiple views.
+  </p>
+  <div class="img-placeholder">
+    [旧 Dashboard 截图 + 标注问题区域]<br>
+    <small>建议：放一张旧 dashboard 的截图，用红色标注"没有 filter"、"要点进去才能看数据" 等问题</small>
+  </div>
+  <p>
+    The result? PMs couldn't self-serve. They constantly asked data scientists to pull numbers for them — turning data creators into "human filters."
+  </p>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ===== THE TURNING POINT ===== -->
+<div class="section">
+  <div class="section-label">The Turning Point</div>
+  <h2>Engineering Had a Solution. I Thought We Were Solving the Wrong Problem.</h2>
+  <p>
+    Some users had requested tab-level filters, and the engineering manager proposed building exactly that — a quick win to address the specific request.
+  </p>
+
+  <div class="challenge-block">
+    <p><strong>The proposed fix:</strong> Add tab-level filters to let users refine data within each tab.</p>
+  </div>
+
+  <p>
+    On the surface, it made sense. But something didn't sit right with me.
+  </p>
+  <p>
+    I had been observing how people actually used the dashboard — not just what they requested. Tab-level filters would solve one symptom, but I suspected deeper usability issues were driving the frustration. <strong>If we built the wrong solution, we'd waste 7 engineers' time and the problems would persist.</strong>
+  </p>
+
+  <div class="judgment-block">
+    <p><strong>My design judgment:</strong> Before building anything, we needed to understand <em>why</em> users were struggling — not just <em>what</em> they asked for. User requests are symptoms; I wanted to find the root cause.</p>
+  </div>
+
+  <h3>Convincing Stakeholders to Invest in Research</h3>
+  <p>
+    This wasn't an easy sell. Engineering wanted to ship fast. I made the case to both the PM and engineering manager: <strong>"We have 8 engineers ready to build. Let me take 2 weeks to make sure we're building the right thing."</strong>
+  </p>
+  <p>
+    I framed it as risk reduction — the cost of 2 weeks of research was far lower than the cost of shipping a solution that didn't solve the real problem. They agreed.
+  </p>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ===== RESEARCH ===== -->
+<div class="section">
+  <div class="section-label">Research</div>
+  <h2>Uncovering What Users Actually Needed</h2>
+  <p>
+    I designed and led a research study with two distinct user groups — because I hypothesized that dashboard <em>creators</em> (data scientists) and dashboard <em>consumers</em> (PMs, leadership) had fundamentally different pain points.
+  </p>
+
+  <div class="research-visual">
+    <div class="research-card">
+      <div class="number">6</div>
+      <div class="label">Users interviewed<br>(1-on-1 sessions)</div>
+    </div>
+    <div class="research-card">
+      <div class="number">2</div>
+      <div class="label">User groups<br>Creators vs. Consumers</div>
+    </div>
+    <div class="research-card">
+      <div class="number">3</div>
+      <div class="label">Core pain points<br>uncovered</div>
+    </div>
+  </div>
+
+  <h3>What I Found: Two Sides of the Same Problem</h3>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="persona-tag consumer">Data Consumer (PM, Leadership)</div>
+      <h4>Filters are too technical</h4>
+      <p>Users had to select a "dataset" before applying filters — a concept they didn't understand. They just wanted to filter by "country" or "date."</p>
+    </div>
+    <div class="pain-card">
+      <div class="persona-tag consumer">Data Consumer (PM, Leadership)</div>
+      <h4>Filters behave unpredictably</h4>
+      <p>A filter might affect one chart but not others. Users had no way to know the scope of their filters, leading to confusion and mistrust in the data.</p>
+    </div>
+    <div class="pain-card">
+      <div class="persona-tag creator">Data Creator (Data Scientist)</div>
+      <h4>Can't unify similar filters</h4>
+      <p>Two charts might both have a "country" filter, but named differently in their datasets. No way to link them — creating inconsistent behavior.</p>
+    </div>
+    <div class="pain-card">
+      <div class="persona-tag creator">Data Creator (Data Scientist)</div>
+      <h4>Became "human filters"</h4>
+      <p>Because consumers couldn't self-serve, data scientists spent hours answering ad-hoc questions instead of doing analysis work.</p>
+    </div>
+  </div>
+
+  <h3>The Golden Insight</h3>
+  <div class="golden-insight">
+    <div class="quote-mark">"</div>
+    <p>Retina is too technical for consumer self-discovery, which often leads to the producer being a human filter.</p>
+    <div class="source">— From user research interviews</div>
+  </div>
+
+  <p>
+    This single quote reframed the entire project. The problem wasn't missing tab filters — <strong>the problem was that the tool was designed for data scientists, not for the PMs and leaders who needed it most.</strong> We needed to create two distinct experiences: one for creators to build intuitive dashboards, and one for consumers to explore data without technical knowledge.
+  </p>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ===== FROM INSIGHT TO STRATEGY ===== -->
+<div class="section">
+  <div class="section-label">From Insight to Strategy</div>
+  <h2>How Research Changed the Project Direction</h2>
+
+  <p>Here's how my research shifted the project from a quick fix to a strategic redesign:</p>
+
+  <div class="flow-arrow">
+    <div class="flow-step problem">Eng proposes<br>tab-level filters</div>
+    <div class="arrow">→</div>
+    <div class="flow-step action">I push for<br>user research</div>
+    <div class="arrow">→</div>
+    <div class="flow-step action">Discover root cause:<br>creator ≠ consumer</div>
+    <div class="arrow">→</div>
+    <div class="flow-step result">Redesign: separate<br>two experiences</div>
+  </div>
+
+  <div class="hmw">
+    <h2>"How might we enable creators to build intuitive dashboards while empowering consumers to self-serve and understand cohesive data stories?"</h2>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ===== THE SOLUTION ===== -->
+<div class="section">
+  <div class="section-label">The Solution</div>
+  <h2>Two Experiences, One Dashboard</h2>
+  <p>
+    Based on my research, I proposed separating the dashboard into two distinct modes — a fundamental shift from the original "one-size-fits-all" approach. I presented this direction to the PM and engineering team with my research findings as evidence, and gained alignment.
+  </p>
+
+  <h3>For Data Creators: Powerful Setup Tools</h3>
+  <p>
+    Data scientists like Danny need to build dashboards that tell clear data stories. The new creator experience gives them tools to:
+  </p>
+  <p>
+    <strong>1. Set up filters at multiple levels</strong> — chart, group, section, tab, and dashboard — giving creators precise control over how consumers experience the data.
+  </p>
+  <div class="img-placeholder">
+    [GIF: Danny creates a dashboard, adds charts to a group]<br>
+    <small>现有 GIF: dashboard-create chart.gif</small>
+  </div>
+
+  <p>
+    <strong>2. Unify filters across different datasets</strong> — This was the breakthrough feature born from research. Two charts might call the same data "country_code" and "region" — creators can now link them so consumers see one clean "Country" filter.
+  </p>
+  <div class="img-placeholder">
+    [GIF: Danny links two dimensions and names them "Country"]<br>
+    <small>现有 GIF: equal.gif</small>
+  </div>
+
+  <p>
+    <strong>3. Pre-configure meaningful filters</strong> — Creators set up filters that make sense for their consumers, removing the need for technical knowledge.
+  </p>
+  <div class="img-placeholder">
+    [GIF: Danny sets up filters and narrows to specific countries]<br>
+    <small>现有 GIF: applyfilter.gif</small>
+  </div>
+
+  <h3>For Data Consumers: Intuitive Self-Service</h3>
+  <p>
+    Product managers like Alex no longer need to ask data scientists for help. The consumer experience features:
+  </p>
+  <p>
+    <strong>Clear, labeled filters at every level</strong> — No more guessing which charts are affected. Filters are organized and scoped visually.
+  </p>
+  <div class="img-placeholder">
+    [GIF: Alex sees filters clearly organized by level]<br>
+    <small>现有 GIF: view1-v2.gif</small>
+  </div>
+
+  <p>
+    <strong>Simplified language</strong> — Technical dataset names are translated into human-readable labels. Alex filters by "Country" and "Date" — not "dataset_geo_dim."
+  </p>
+  <div class="img-placeholder">
+    [GIF: Alex applies filters and gets insights without leaving dashboard]<br>
+    <small>现有 GIF: view 2.gif</small>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ===== IMPACT ===== -->
+<div class="section">
+  <div class="section-label">Impact</div>
+  <h2>From Research to Real Results</h2>
+
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="number">+45%</div>
+      <div class="label">Dashboard filter engagement — because filters finally made sense to consumers</div>
+    </div>
+    <div class="impact-card">
+      <div class="number">71%</div>
+      <div class="label">Of consumers could now self-serve — freeing data scientists from "human filter" duty</div>
+    </div>
+    <div class="impact-card">
+      <div class="number">Strategic</div>
+      <div class="label" style="font-size: 0.85rem;">Creator/consumer separation became the product's future direction</div>
+    </div>
+  </div>
+
+  <p style="margin-top: 32px;">
+    The biggest impact wasn't the numbers — it was the direction. By investing in research upfront, we didn't just ship a feature. We reframed how the entire tool thinks about its two audiences, setting the foundation for the product's evolution.
+  </p>
+
+  <div class="testimonial">
+    <div class="quote">"Wendy always strives to understand the real reasons behind user requests. By conducting thorough research, she ensured the solution delivered an exceptional user experience, not just a quick fix to the immediate problem."</div>
+    <div class="author">Sophie</div>
+    <div class="role">Engineering Manager</div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ===== REFLECTION ===== -->
+<div class="section" style="padding-bottom: 100px;">
+  <div class="section-label">Reflection</div>
+  <h2>What I Learned</h2>
+  <p>
+    <strong>Challenge the brief, not just execute it.</strong> The original ask was "add tab filters." By questioning whether that was the right solution, I uncovered a deeper structural problem that changed the project's scope and impact.
+  </p>
+  <p>
+    <strong>Research is how you earn trust.</strong> I couldn't just say "I think the engineering solution is wrong." I needed evidence. The user interviews gave me concrete quotes and patterns that convinced stakeholders to change direction.
+  </p>
+  <p>
+    <strong>Separate the users to serve them better.</strong> The key insight — that creators and consumers have fundamentally different needs — seems obvious in hindsight. But it took deliberate research to see it, because the existing tool treated everyone the same.
+  </p>
+</div>
+
+</body>
+</html>

@@ -123,6 +123,16 @@ const ProjectDetail = () => {
                 {project.subtitle}
               </p>
             )}
+            {(project as any).liveUrl && (
+              <a
+                href={(project as any).liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-5 px-5 py-2 border-2 border-accent-teal text-accent-teal hover:bg-accent-teal hover:text-white transition-all duration-200 rounded-full text-sm font-medium"
+              >
+                Try it live →
+              </a>
+            )}
           </div>
 
           {/* Project Overview */}
@@ -439,7 +449,7 @@ const ProjectDetail = () => {
                         <span className={`px-5 py-2.5 rounded-lg text-[0.95rem] font-bold ${
                           stepIndex === section.flow!.length - 1
                             ? 'bg-[#FBF3F2] text-[#8B554E]'
-                            : 'bg-white text-gray-600'
+                            : 'bg-gray-100 text-gray-600'
                         }`}>
                           {step}
                         </span>
@@ -663,6 +673,13 @@ const ProjectDetail = () => {
             </div>
           )}
 
+          {/* V2: Impact summary paragraph - between impact cards and stakeholder feedback */}
+          {isV2 && project.impactSummary && (
+            <div className="max-w-prose text-lg text-gray-600 leading-[1.8] -mt-8">
+              {renderInlineMarkdown(project.impactSummary)}
+            </div>
+          )}
+
           {/* V2: All quotes (testimonial + stakeholder feedback) - carousel */}
           {isV2 && (project.testimonial || (project.stakeholderFeedback && project.stakeholderFeedback.length > 0)) && (() => {
             const allQuotes = [
@@ -676,7 +693,7 @@ const ProjectDetail = () => {
                 <div className="max-w-5xl mx-auto">
                   <div className="flex items-center justify-between mb-8">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
-                      Stakeholder Feedback
+                      Key User Feedback
                     </h2>
                     {totalPages > 1 && (
                       <div className="flex items-center gap-3">
@@ -716,13 +733,6 @@ const ProjectDetail = () => {
             );
           })()}
 
-          {/* V2: Impact summary paragraph */}
-          {isV2 && project.impactSummary && (
-            <div className="max-w-prose text-lg text-gray-600 leading-[1.8]">
-              {project.impactSummary}
-            </div>
-          )}
-
           {/* V2: Next Steps */}
           {isV2 && project.nextSteps && (
             <div className="bg-[#F8F9FA] -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 py-16">
@@ -733,9 +743,11 @@ const ProjectDetail = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
                   {project.nextSteps.title}
                 </h2>
-                <p className="max-w-prose text-lg text-gray-600 leading-[1.8] mb-8">
-                  {renderInlineMarkdown(project.nextSteps.content)}
-                </p>
+                <div className="max-w-prose text-lg text-gray-600 leading-[1.8] mb-8 space-y-4">
+                  {project.nextSteps.content.split('\n\n').map((para, i) => (
+                    <p key={i}>{renderInlineMarkdown(para)}</p>
+                  ))}
+                </div>
                 <div className="space-y-4">
                   {project.nextSteps.items.map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
@@ -865,9 +877,11 @@ const ProjectDetail = () => {
                 <div className="space-y-6">
                   {project.takeaways.map((takeaway, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-gray-900 font-black">{index + 1}</span>
-                      </div>
+                      {project.takeaways!.length > 1 && (
+                        <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-gray-900 font-black">{index + 1}</span>
+                        </div>
+                      )}
                       <p className="text-[1.05rem] text-gray-600 leading-[1.7]">
                         {(() => {
                           // Bold the first sentence (up to first ": " or "." followed by space)

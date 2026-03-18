@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WL Logo Options — Round 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Lato', sans-serif; background: #f0f0f0; padding: 48px 20px; }
+  h1 { text-align: center; font-size: 28px; color: #1a1a1a; margin-bottom: 6px; font-weight: 300; }
+  .subtitle { text-align: center; color: #999; font-size: 14px; margin-bottom: 48px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
+  .card {
+    background: white; border-radius: 16px; padding: 36px 28px; text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.2s;
+  }
+  .card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .option-num { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #5B9B8E; margin-bottom: 20px; font-weight: 700; }
+  .logo-area { display: flex; justify-content: center; align-items: center; height: 120px; margin-bottom: 20px; }
+  .logo-area svg { width: 88px; height: 88px; }
+  .style-name { font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+  .style-desc { font-size: 13px; color: #999; line-height: 1.5; }
+  .nav-preview { margin-top: 20px; background: #fafafa; border-radius: 8px; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-preview svg { width: 32px; height: 32px; }
+  .nav-links { display: flex; gap: 20px; font-size: 13px; color: #888; }
+</style>
+</head>
+<body>
+
+<h1>WL Logo — Round 2</h1>
+<p class="subtitle">10 options with more design personality</p>
+
+<div class="grid">
+
+  <!-- 1: Negative Space -->
+  <div class="card">
+    <div class="option-num">Option 1</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Black rounded square with white WL cut out -->
+        <rect x="2" y="2" width="76" height="76" rx="16" fill="#1a1a1a"/>
+        <path d="M16,22 L22,58 L30,36 L38,58 L44,22" stroke="#ffffff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M52,22 L52,58 L66,58" stroke="#ffffff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="66" cy="22" r="3" fill="#5B9B8E"/>
+      </svg>
+    </div>
+    <div class="style-name">Rounded Square</div>
+    <div class="style-desc">Softer than circle, more modern. App-icon feel — like a designer's tool.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="2" y="2" width="76" height="76" rx="16" fill="#1a1a1a"/><path d="M16,22 L22,58 L30,36 L38,58 L44,22" stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M52,22 L52,58 L66,58" stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="66" cy="22" r="3" fill="#5B9B8E"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 2: Split Circle -->
+  <div class="card">
+    <div class="option-num">Option 2</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left half black, right half teal -->
+        <clipPath id="left2"><rect x="0" y="0" width="40" height="80"/></clipPath>
+        <clipPath id="right2"><rect x="40" y="0" width="40" height="80"/></clipPath>
+        <circle cx="40" cy="40" r="38" fill="#1a1a1a" clip-path="url(#left2)"/>
+        <circle cx="40" cy="40" r="38" fill="#5B9B8E" clip-path="url(#right2)"/>
+        <path d="M16,24 L22,56 L30,36 L38,56 L44,24" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M50,24 L50,56 L64,56" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="style-name">Split Duo</div>
+    <div class="style-desc">Two-tone split — W on black, L on teal. Color-blocked and eye-catching.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><clipPath id="l2s"><rect x="0" y="0" width="40" height="80"/></clipPath><clipPath id="r2s"><rect x="40" y="0" width="40" height="80"/></clipPath><circle cx="40" cy="40" r="38" fill="#1a1a1a" clip-path="url(#l2s)"/><circle cx="40" cy="40" r="38" fill="#5B9B8E" clip-path="url(#r2s)"/><path d="M16,24 L22,56 L30,36 L38,56 L44,24" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M50,24 L50,56 L64,56" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 3: Overlapping Letters -->
+  <div class="card">
+    <div class="option-num">Option 3</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- W in black, L in teal, overlapping -->
+        <path d="M2,18 L12,64 L24,34 L36,64 L46,18" stroke="#1a1a1a" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M42,18 L42,64 L72,64" stroke="#5B9B8E" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="style-name">Color Overlap</div>
+    <div class="style-desc">Black W meets teal L — they overlap in the middle. Two colors, one mark.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><path d="M2,18 L12,64 L24,34 L36,64 L46,18" stroke="#1a1a1a" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M42,18 L42,64 L72,64" stroke="#5B9B8E" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 4: Stacked Vertical -->
+  <div class="card">
+    <div class="option-num">Option 4</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- W on top, L on bottom, stacked in black circle -->
+        <circle cx="40" cy="40" r="38" fill="#1a1a1a"/>
+        <!-- Small W on top -->
+        <path d="M20,18 L25,38 L30,26 L35,38 L40,18" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Large L on bottom -->
+        <path d="M30,44 L30,66 L58,66" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="58" cy="44" r="3" fill="#5B9B8E"/>
+      </svg>
+    </div>
+    <div class="style-name">Stacked Hierarchy</div>
+    <div class="style-desc">Small W above, large L below — creates visual hierarchy. L is the anchor.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" fill="#1a1a1a"/><path d="M20,18 L25,38 L30,26 L35,38 L40,18" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M30,44 L30,66 L58,66" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="58" cy="44" r="3" fill="#5B9B8E"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 5: Geometric / Angular -->
+  <div class="card">
+    <div class="option-num">Option 5</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Diamond shape container -->
+        <rect x="40" y="4" width="50" height="50" rx="4" transform="rotate(45 40 40)" fill="#1a1a1a"/>
+        <path d="M18,28 L24,54 L30,38 L36,54 L42,28" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M48,28 L48,54 L62,54" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="62" cy="28" r="2.5" fill="#5B9B8E"/>
+      </svg>
+    </div>
+    <div class="style-name">Diamond Frame</div>
+    <div class="style-desc">Rotated square creates a diamond — unexpected, geometric, stands out.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="40" y="4" width="50" height="50" rx="4" transform="rotate(45 40 40)" fill="#1a1a1a"/><path d="M18,28 L24,54 L30,38 L36,54 L42,28" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,28 L48,54 L62,54" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="62" cy="28" r="2.5" fill="#5B9B8E"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 6: Minimal with dot separator -->
+  <div class="card">
+    <div class="option-num">Option 6</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Clean W · L with dot separator, no container -->
+        <path d="M0,20 L10,62 L22,34 L34,62 L44,20" stroke="#1a1a1a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="50" cy="58" r="3.5" fill="#5B9B8E"/>
+        <path d="M58,20 L58,62 L78,62" stroke="#1a1a1a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="style-name">Dot Separator</div>
+    <div class="style-desc">W and L separated by a teal dot. Clean, minimal, typographic. No container needed.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><path d="M0,20 L10,62 L22,34 L34,62 L44,20" stroke="#1a1a1a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="58" r="3.5" fill="#5B9B8E"/><path d="M58,20 L58,62 L78,62" stroke="#1a1a1a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 7: Half-filled circle -->
+  <div class="card">
+    <div class="option-num">Option 7</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Circle outline on top, filled on bottom -->
+        <defs>
+          <clipPath id="bottom7"><rect x="0" y="40" width="80" height="40"/></clipPath>
+          <clipPath id="top7"><rect x="0" y="0" width="80" height="40"/></clipPath>
+        </defs>
+        <circle cx="40" cy="40" r="37" stroke="#1a1a1a" stroke-width="3" clip-path="url(#top7)"/>
+        <circle cx="40" cy="40" r="38.5" fill="#1a1a1a" clip-path="url(#bottom7)"/>
+        <!-- W spans the boundary -->
+        <path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#top7)"/>
+        <path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#bottom7)"/>
+        <!-- L spans the boundary -->
+        <path d="M50,24 L50,56 L66,56" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#top7)"/>
+        <path d="M50,24 L50,56 L66,56" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#bottom7)"/>
+        <circle cx="66" cy="24" r="3" fill="#5B9B8E"/>
+      </svg>
+    </div>
+    <div class="style-name">Half & Half</div>
+    <div class="style-desc">Top half open, bottom half filled — letters change color at the equator. Artful contrast.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><defs><clipPath id="b7s"><rect x="0" y="40" width="80" height="40"/></clipPath><clipPath id="t7s"><rect x="0" y="0" width="80" height="40"/></clipPath></defs><circle cx="40" cy="40" r="37" stroke="#1a1a1a" stroke-width="3" clip-path="url(#t7s)"/><circle cx="40" cy="40" r="38.5" fill="#1a1a1a" clip-path="url(#b7s)"/><path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#t7s)"/><path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#b7s)"/><path d="M50,24 L50,56 L66,56" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#t7s)"/><path d="M50,24 L50,56 L66,56" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#b7s)"/><circle cx="66" cy="24" r="3" fill="#5B9B8E"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 8: Offset / Broken Circle -->
+  <div class="card">
+    <div class="option-num">Option 8</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Broken circle - gap at top right -->
+        <path d="M65,12 A36,36 0 1,0 72,28" stroke="#1a1a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Teal arc fills the gap -->
+        <path d="M65,12 A36,36 0 0,1 72,28" stroke="#5B9B8E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M50,24 L50,56 L66,56" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="style-name">Broken Ring</div>
+    <div class="style-desc">Circle with a gap filled by teal — implies openness and creativity. Subtle but memorable.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><path d="M65,12 A36,36 0 1,0 72,28" stroke="#1a1a1a" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M65,12 A36,36 0 0,1 72,28" stroke="#5B9B8E" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M50,24 L50,56 L66,56" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 9: Teal circle, black letters -->
+  <div class="card">
+    <div class="option-num">Option 9</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Teal filled circle -->
+        <circle cx="40" cy="40" r="38" fill="#5B9B8E"/>
+        <path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#ffffff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M50,24 L50,56 L66,56" stroke="#ffffff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="style-name">Teal Badge</div>
+    <div class="style-desc">Your brand color takes center stage. Warm, approachable, and instantly recognizable.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" fill="#5B9B8E"/><path d="M14,24 L20,56 L28,36 L36,56 L42,24" stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M50,24 L50,56 L66,56" stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+  <!-- 10: Boxed with line through -->
+  <div class="card">
+    <div class="option-num">Option 10</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Square frame -->
+        <rect x="4" y="4" width="72" height="72" stroke="#1a1a1a" stroke-width="3" rx="2"/>
+        <!-- Horizontal divider line -->
+        <line x1="4" y1="40" x2="76" y2="40" stroke="#5B9B8E" stroke-width="2"/>
+        <!-- W above the line -->
+        <path d="M14,14 L20,36 L28,22 L36,36 L42,14" stroke="#1a1a1a" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- L below the line -->
+        <path d="M28,46 L28,68 L58,68" stroke="#1a1a1a" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="style-name">Grid Frame</div>
+    <div class="style-desc">Square frame with teal divider — W on top, L below. Structured, architectural feel.</div>
+    <div class="nav-preview">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="4" y="4" width="72" height="72" stroke="#1a1a1a" stroke-width="3" rx="2"/><line x1="4" y1="40" x2="76" y2="40" stroke="#5B9B8E" stroke-width="2"/><path d="M14,14 L20,36 L28,22 L36,36 L42,14" stroke="#1a1a1a" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M28,46 L28,68 L58,68" stroke="#1a1a1a" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="nav-links"><span>Home</span><span>About</span></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

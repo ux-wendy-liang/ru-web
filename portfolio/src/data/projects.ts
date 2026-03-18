@@ -329,7 +329,7 @@ export const projects: Project[] = [
     year: 2026,
     cover: '/images/jingxin-hero-en.png',
     liveUrl: 'https://jingxin-xuetang.vercel.app',
-    shortDescription: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live with 54 users and 554 page views.',
+    shortDescription: '50%+ dropout in Buddhist study groups — caused by overly academic materials. I wrote the PRD and vibe-coded a full-stack learning platform in 4 days. Now live with 58 users and 615 page views.',
     role: 'Product Designer\n+ Builder (Vibe Coding)',
     duration: '1 year observing + 4 days building',
     team: 'Solo — built with Claude Code (AI)',
@@ -338,7 +338,7 @@ export const projects: Project[] = [
       {
         title: '50%+ of Buddhist Study Group Students Drop Out',
         sectionLabel: 'The Problem',
-        content: 'Master Jiqun\'s Buddhist courses are studied in community groups across the U.S. and hundreds of cities in China — each city has multiple study groups, and each group has around 10–15 members. But more than half of students leave within the first few sessions.\n\nI observed this firsthand in my own study community in San Francisco — out of 5 study groups, 4 had lost roughly half their members. This isn\'t an isolated case; it\'s a systemic problem happening everywhere. Through conversations with students and group leaders, I identified three root causes:',
+        content: 'I watched 4 out of 5 study groups in my San Francisco community lose half their members. Same story everywhere. Three root causes:',
         cards: [
           { title: 'Content too academic', content: 'Original texts use classical Buddhist language with dense terminology. Even educated adults said "I need to read it 3 times to understand."' },
           { title: 'No clear takeaways', content: 'After reading a 3,000-word lesson, students couldn\'t articulate what they learned in one sentence.' },
@@ -354,17 +354,12 @@ export const projects: Project[] = [
         sectionLabel: 'Research & Insights',
         content: 'I\'ve been a student in this community for over a year — attending weekly sessions, talking with fellow students, discussing pain points with our group leader. That lived experience gave me a different kind of insight than surveys could.\n\nOne moment stayed with me: a student told me studying Buddhism **increased her anxiety**. She understood the teachings intellectually but couldn\'t apply them to her life. Instead of finding peace, she felt more pressure. That gap — **between understanding and doing** — became the emotional core of this project.\n\nFrom a year of observation, I identified two distinct personas:',
         cards: [
-          { title: 'Beginner', content: 'New to Buddhism or joined recently. 20–30 pages of classical language per lesson, unfamiliar terminology everywhere.\n\nPain point: "I read it 3 times and still don\'t understand." Most drop out within the first few months.\n\n→ Needs simplified, plain-language content to even get started', avatar: '/images/persona-new-student.svg' },
-          { title: 'Experienced Practitioner', content: 'Deeply committed, studied for 1+ years. Can understand the teachings intellectually, but struggles to retain and apply them in daily life. Often mentors newer students.\n\nPain point: "I understood it during the session, but a week later I forgot everything — and I still can\'t put it into practice."\n\n→ Their core need is retention and real-world application', avatar: '/images/persona-experienced.svg' }
+          { title: 'Beginner', content: '"I read it 3 times and still can\'t follow." Drops out in the first few months.\n\n→ Needs plain language to even get started', avatar: '/images/persona-new-student.svg' },
+          { title: 'Experienced Practitioner', content: '"I understood it during the session. A week later I forgot everything — and still can\'t apply it."\n\n→ Understands but can\'t retain or practice', avatar: '/images/persona-experienced.svg' }
         ],
         dividerAfter: true
       },
       // ===== KEY DESIGN DECISIONS =====
-      {
-        title: 'Turning Insights Into Solutions',
-        sectionLabel: 'Key Design Decisions',
-        content: ''
-      },
       // Decision 1
       {
         title: 'Decision 1: Making Ancient Wisdom Accessible',
@@ -374,9 +369,9 @@ export const projects: Project[] = [
         solution: 'A three-layer content architecture — simplified explanation for beginners, core takeaways for retention, and source text tracing for accuracy.',
         content: '',
         cards: [
-          { title: 'Simplified Explanation', content: 'Plain language with life analogies (e.g., explaining "attachment" through phone addiction). Beginners need everyday language to build initial understanding before they can engage with the original texts.\n\n→ For Beginners' },
-          { title: 'Core Takeaways', content: 'Each lesson distilled into one memorable sentence + 3–5 key points. A quick recap helps everyone retain the lesson without re-reading 30 pages — whether on a commute or before a group session.\n\n→ For Everyone' },
-          { title: 'Source Text Tracing', content: 'Click any simplified passage to see the original text, displayed in a resizable side panel. This builds trust in the AI simplification — users can verify accuracy anytime without leaving the reading flow.\n\n→ For Everyone (especially experienced practitioners)' }
+          { title: 'Simplified Explanation', content: 'Plain language with everyday analogies — explaining "attachment" through phone addiction, for example.\n\n→ For Beginners' },
+          { title: 'Core Takeaways', content: 'One memorable sentence + 3–5 key points per lesson. Easy to revisit on a commute or right before the weekly session.\n\n→ For Everyone' },
+          { title: 'Source Text Tracing', content: 'Click any passage to see the original text side by side. Builds trust — users can verify the AI didn\'t distort the teaching.\n\n→ For Everyone (especially experienced practitioners)' }
         ],
         afterCards: '**This wasn\'t the original design.** My first version had no source tracing. An early user\'s feedback was immediate: *"I want to see the original text to make sure the AI didn\'t misinterpret the teachings."* Trust was the missing piece — so I added click-to-trace: every simplified paragraph links back to its source text. This feature, born from real user feedback, became one of the most valued parts of the product.',
         images: ['/images/jingxin-source-before.png', '/images/jingxin-source-after.png'],
@@ -388,7 +383,7 @@ export const projects: Project[] = [
         title: 'Decision 2: From Reading to Doing',
         isDecisionBlock: true,
         challenge: 'Students read lessons but couldn\'t apply teachings to daily life. Buddhism is about practice, not memorization.',
-        insight: 'Students need a reason to come back each week — abstract theory alone isn\'t enough. Our study groups already meet weekly, one lesson per session. That natural rhythm became my design constraint: one exercise per lesson, one week to try it.',
+        insight: 'I realized I didn\'t need to build a new habit. The weekly study group was already the habit. I just needed to give each lesson one thing worth trying before Thursday.',
         solution: 'One practice exercise per lesson — aligned with the weekly study rhythm, so each week students have exactly one thing to apply to their daily life.',
         content: 'For example, after a lesson on compassion: "This week, think of someone you find difficult. Silently wish them well for 3 minutes before bed. Write down how it felt."',
         image: '/images/jingxin-exercise-en.png',
@@ -407,7 +402,7 @@ export const projects: Project[] = [
         title: 'Decision 3: Designing for Vulnerability',
         isDecisionBlock: true,
         challenge: 'Students needed to reflect on personal spiritual growth, but were embarrassed to share publicly.',
-        insight: 'Through observation, I noticed students avoided journaling when they knew others could see their reflections. Spiritual growth feels deeply personal. But people\'s comfort with sharing varies widely — some want total privacy, some trust their teacher or close friends, some are happy to share with classmates, and a few don\'t mind sharing publicly.',
+        insight: 'I felt this myself when I tried the early version — I hesitated to write anything because I didn\'t know who\'d read it. If I felt that way, everyone did. But comfort with sharing varies: some want total privacy, some trust their teacher, some are happy to share with classmates.',
         solution: 'Two design choices that respect this spectrum of vulnerability.',
         content: '**4-tier privacy controls** for journaling: private (default) → teacher only → classmates → everyone. Defaulting to "private" removed the barrier to writing — students could reflect honestly knowing they controlled who sees it.',
         image: '/images/jingxin-privacy-controls-real.png',
@@ -417,20 +412,13 @@ export const projects: Project[] = [
       {
         title: '',
         isDecisionBlock: true,
-        content: '**"随喜赞叹" (Suixi Zantan)** — replaced generic "likes" with a Buddhist concept of rejoicing in others\' good deeds, creating culturally meaningful engagement.',
+        content: '**"随喜赞叹" (Suixi Zantan)** — Generic "likes" felt wrong here from the start. Giving a thumbs-up to someone\'s spiritual reflection felt shallow. Buddhism has a concept for this exact moment: rejoicing in others\' good deeds. It fit so naturally I almost felt like I discovered it rather than designed it.',
         image: '/images/jingxin-rejoice.png',
         imageSize: 'medium' as const,
         imageHighlight: { top: '72%', left: '2%', width: '30%', height: '22%' },
         dividerAfter: true
       },
       // ===== SHIPPING: MVP & CHALLENGES =====
-      {
-        title: 'Shipping Smart: What I Built and What I Cut',
-        sectionLabel: 'From Design to Launch',
-        content: 'My PRD had many more features planned. But I made a deliberate decision to **ship only the core experience first**: simplified lessons, source tracing, practice exercises, and privacy-controlled journaling.',
-        insight: 'My reasoning: more features = more bugs = delayed launch. Every additional feature would multiply testing time and push back the moment real users could start benefiting. I wanted to get the core right, ship it, and iterate — not build a perfect product nobody has used yet.',
-        image: '/images/jingxin-mvp-scope.svg'
-      },
       {
         title: 'The Hardest Part: Building with AI',
         content: 'The first AI-generated build worked functionally, but the design was a mess — inconsistent padding, mismatched fonts, varying button styles. I spent hours fixing issues one by one, only for new ones to appear elsewhere.\n\nThen I realized: **I was solving symptoms, not the root cause.** I stepped back and created a design system — typography scales, spacing rules, button styles, layout standards. Once applied globally, every subsequent change became predictable. The designer in me solved what the builder in me couldn\'t.',
@@ -462,7 +450,8 @@ export const projects: Project[] = [
     ],
     impact: [
       'Behavior change: A student said the practice exercises directly triggered real-world action — "I finally did something I\'d been putting off." This is the exact understanding → doing loop the product was designed to create.',
-      'Deep engagement: 54 visitors generated 554 page views — averaging ~10 pages per user with a 20% bounce rate, confirming users explored deeply, not just clicked and left.'
+      '615 page views: From 58 visitors in the first week after launch — people weren\'t just clicking once, they were exploring.',
+      '~10 pages / user: With a 21% bounce rate in week one. Most products see 50–70% bounce rates at launch. This means users stayed, scrolled, and came back.'
     ],
     testimonial: {
       quote: 'This is SO cool — clean, clear, and feels immediately usable. The website design is beautiful, it really captures the Zen spirit. The one-sentence summaries and practice exercises are brilliant. I think this could become a real learning tool for our community.',
@@ -470,20 +459,14 @@ export const projects: Project[] = [
       role: 'Study Group Leader'
     },
     takeaways: [
-      'End-to-end ownership changes how you design: When you\'re accountable for the final experience — not just the mockup — every decision gets tighter. There\'s no one else to fix it later.',
-      'Start with the community, not the technology: The best features (like privacy controls for journaling) came from understanding social dynamics, not technical possibilities. Observation before requirements.',
-      'Vibe coding amplifies design — it doesn\'t replace it: AI writes code, but it can\'t decide what to build or why one layout works better than another. Without a clear PRD and design instincts, you just ship faster in the wrong direction.',
-      'Ship early, learn from real users: The source tracing feature — now one of the most valued parts of the product — only exists because I shipped early enough to get real feedback before over-building.'
+      'I shipped fast and stayed open to feedback: Source tracing wasn\'t in my original design — an early user said "I need to see the original text to trust this." I listened, built it in a day, and it became the most praised part of the product.'
     ],
     nextSteps: {
-      title: 'What\'s Next',
-      content: 'This product is live but still evolving. My PRD defines a clear 3-phase roadmap based on user growth milestones — not arbitrary timelines:',
-      items: [
-        'Now (P1 — 17 active users): Collecting qualitative feedback through 1-on-1 conversations and group study sessions. At this scale, a 15-minute conversation reveals more than any analytics dashboard.',
-        'At 30-50 users (P2): Add Google Analytics to track course completion rates, practice participation, and drop-off points.',
-        'Future (P3): An AI conversation feature where users can ask questions about Buddhist teachings and get deeper, personalized explanations — turning passive reading into active understanding.'
-      ]
+      title: 'Next: Use Data to Know What\'s Actually Working',
+      content: 'Next: add analytics to see what people actually use, then interview the outliers. The goal isn\'t a bigger product — it\'s one that people genuinely come back to.',
+      items: []
     },
+    impactSummary: 'When the North America program director saw the platform for the first time, **she was moved to tears** — not because of the design or the technology, but because someone had voluntarily put in the time and effort to build something that genuinely helps the whole community learn and grow. She immediately came back with new ideas for the next phase.',
     stakeholderFeedback: [
       {
         quote: 'I used it to preview the lesson before our session — it helped me build a mental framework quickly and connect all the scattered notes I had from before. The practice exercise at the bottom directly triggered me to take action that day.',

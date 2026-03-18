@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color System Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; background: #fff; color: #111827; padding: 48px 60px; max-width: 960px; margin: 0 auto; }
+
+    h1 { font-size: 36px; font-weight: 700; margin-bottom: 40px; color: #111827; }
+    h2 { font-size: 24px; font-weight: 700; color: #111827; margin: 48px 0 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 12px; }
+    h3 { font-size: 18px; font-weight: 700; color: #111827; margin: 32px 0 12px; }
+
+    .brand-color {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 16px 24px; border-radius: 12px;
+      background: #5B9B8E; color: white; font-size: 20px; font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .brand-sub { color: #9CA3AF; font-size: 14px; margin-bottom: 32px; }
+
+    /* Color swatches */
+    .swatch-row { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+    .swatch {
+      width: 120px; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb;
+    }
+    .swatch-color { height: 64px; }
+    .swatch-info { padding: 8px 10px; font-size: 12px; }
+    .swatch-info .name { font-weight: 700; color: #111827; }
+    .swatch-info .hex { color: #9CA3AF; }
+
+    /* Semantic blocks */
+    .block-row { display: flex; flex-direction: column; gap: 16px; margin: 16px 0; }
+    .semantic-block {
+      border-left: 3px solid;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .semantic-block strong { display: block; margin-bottom: 4px; }
+
+    /* Challenge - muted coral (warm complement of teal) */
+    .block-challenge {
+      background: #FBF3F2;
+      border-color: #C2807A;
+      color: #8B554E;
+    }
+    /* Insight - muted slate blue (cool neighbor) */
+    .block-insight {
+      background: #F2F5F8;
+      border-color: #7E97AD;
+      color: #4E6577;
+    }
+    /* Solution - teal itself (brand color) */
+    .block-solution {
+      background: #F0F6F5;
+      border-color: #5B9B8E;
+      color: #3E6B61;
+    }
+    /* Quote - warm sand (neutral warm) */
+    .block-quote {
+      background: #F7F5F2;
+      border-color: #B09A82;
+      color: #6B5C48;
+      font-style: italic;
+    }
+
+    /* Buttons */
+    .btn-row { display: flex; gap: 16px; margin: 16px 0; align-items: center; }
+    .btn {
+      display: inline-block; padding: 10px 28px;
+      border-radius: 999px; font-size: 16px; font-weight: 500;
+      text-decoration: none; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-primary {
+      border: 2px solid #5B9B8E; color: #5B9B8E; background: transparent;
+    }
+    .btn-primary:hover { background: #5B9B8E; color: white; }
+    .btn-secondary {
+      border: 2px solid #9CA3AF; color: #6B7280; background: transparent;
+    }
+    .btn-secondary:hover { border-color: #111827; color: #111827; }
+
+    /* Text colors */
+    .text-demo { margin: 8px 0; }
+    .text-demo span { margin-right: 24px; }
+
+    /* Section bg demo */
+    .section-demo {
+      border-radius: 12px; padding: 24px 28px; margin: 12px 0;
+    }
+
+    /* Card demo */
+    .card-row { display: flex; gap: 16px; margin: 16px 0; }
+    .card {
+      flex: 1; padding: 20px; border-radius: 12px;
+    }
+    .card h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .card p { font-size: 14px; line-height: 1.6; }
+
+    .divider { border: none; border-top: 1px solid #e5e7eb; margin: 40px 0; }
+
+    /* Full page demo */
+    .page-demo {
+      border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; margin: 24px 0;
+    }
+    .page-section {
+      padding: 32px 40px;
+    }
+    .page-section h4 {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.15em; color: #5B9B8E; margin-bottom: 8px;
+    }
+    .page-section h3 {
+      font-size: 24px; margin: 0 0 12px; color: #111827;
+    }
+    .page-section p {
+      font-size: 16px; line-height: 1.8; color: #4B5563; max-width: 560px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Color System — 以 Teal 为核心</h1>
+
+  <div class="brand-color">#5B9B8E — 品牌青色</div>
+  <p class="brand-sub">所有颜色都从这个青色出发，保持统一的柔和、高级感</p>
+
+  <!-- ============ TEXT COLORS ============ -->
+  <h2>文字颜色（4 级）</h2>
+  <div class="text-demo">
+    <p style="font-size: 30px; font-weight: 700; color: #111827; margin-bottom: 8px;">标题文字 — #111827 (gray-900)</p>
+    <p style="font-size: 18px; color: #4B5563; margin-bottom: 8px;">正文描述 — #4B5563 (gray-600)</p>
+    <p style="font-size: 14px; color: #9CA3AF; margin-bottom: 8px;">辅助标签 — #9CA3AF (gray-400)</p>
+    <p style="font-size: 14px; color: #5B9B8E; font-weight: 700;">品牌强调 — #5B9B8E (accent-teal)</p>
+  </div>
+
+  <!-- ============ BACKGROUNDS ============ -->
+  <h2>背景颜色</h2>
+
+  <div class="section-demo" style="background: #FFFFFF; border: 1px solid #e5e7eb;">
+    <strong style="color: #111827;">白色 — #FFFFFF</strong>
+    <p style="color: #9CA3AF; font-size: 13px;">全站默认页面背景</p>
+  </div>
+  <div class="section-demo" style="background: #F6FAF9;">
+    <strong style="color: #111827;">浅青 — #F6FAF9</strong>
+    <p style="color: #9CA3AF; font-size: 13px;">品牌相关区域（Impact 成果、Solution）——带一点青色调，呼应品牌色</p>
+  </div>
+  <div class="section-demo" style="background: #F8F9FA;">
+    <strong style="color: #111827;">浅灰 — #F8F9FA</strong>
+    <p style="color: #9CA3AF; font-size: 13px;">中性区域（Experience、Design Decisions）——干净、不抢注意力</p>
+  </div>
+  <div class="section-demo" style="background: #FAF9F7;">
+    <strong style="color: #111827;">浅暖色 — #FAF9F7</strong>
+    <p style="color: #9CA3AF; font-size: 13px;">人文区域（Testimonial、Quote、What I Learned）——温暖亲切的感觉</p>
+  </div>
+
+  <!-- ============ SEMANTIC BLOCKS ============ -->
+  <h2>Case Study 语义色块</h2>
+  <p style="color: #9CA3AF; font-size: 14px; margin-bottom: 16px;">所有颜色的饱和度和明度都统一，跟青色品牌色协调</p>
+
+  <div class="block-row">
+    <div class="semantic-block block-challenge">
+      <strong>Challenge: 柔珊瑚（青色的暖色互补）</strong>
+      Before building anything, we needed to understand WHY users were asking for this, not just WHAT they asked for. User requests are symptoms; I wanted to find the root cause.
+    </div>
+    <div class="semantic-block block-insight">
+      <strong>Insight: 柔蓝灰（青色的冷色邻近）</strong>
+      My design judgment: Before building anything, we needed to understand WHY users were asking for this, not just WHAT they asked for.
+    </div>
+    <div class="semantic-block block-solution">
+      <strong>Solution: 青色本身（品牌色）</strong>
+      I proposed a unified dashboard that consolidates all data views into a single, customizable interface with role-based defaults.
+    </div>
+    <div class="semantic-block block-quote">
+      <strong style="font-style: normal;">Quote: 暖沙色（中性暖调）</strong>
+      "Wendy's design thinking transformed how our team approaches complex data problems. She doesn't just design interfaces — she designs systems."
+    </div>
+  </div>
+
+  <h3>色值对照表</h3>
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0;">
+    <tr style="border-bottom: 1px solid #e5e7eb;">
+      <th style="text-align: left; padding: 8px 0; color: #9CA3AF;">类型</th>
+      <th style="text-align: left; padding: 8px 0; color: #9CA3AF;">背景</th>
+      <th style="text-align: left; padding: 8px 0; color: #9CA3AF;">左边线</th>
+      <th style="text-align: left; padding: 8px 0; color: #9CA3AF;">文字</th>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 8px 0; font-weight: 700;">Challenge</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#FBF3F2;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>#FBF3F2</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#C2807A;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#C2807A</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#8B554E;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#8B554E</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 8px 0; font-weight: 700;">Insight</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#F2F5F8;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>#F2F5F8</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#7E97AD;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#7E97AD</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#4E6577;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#4E6577</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 8px 0; font-weight: 700;">Solution</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#F0F6F5;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>#F0F6F5</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#5B9B8E;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#5B9B8E</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#3E6B61;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#3E6B61</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 0; font-weight: 700;">Quote</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#F7F5F2;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>#F7F5F2</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#B09A82;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#B09A82</td>
+      <td style="padding: 8px 0;"><span style="display:inline-block;width:14px;height:14px;background:#6B5C48;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#6B5C48</td>
+    </tr>
+  </table>
+
+  <!-- ============ SECTION BACKGROUNDS ============ -->
+  <h2>Case Study Section 背景规则</h2>
+  <p style="color: #9CA3AF; font-size: 14px; margin-bottom: 20px;">哪些 section 加浅灰背景，哪些保持白色——交替使用，让页面有节奏感</p>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0;">
+    <tr style="border-bottom: 2px solid #e5e7eb;">
+      <th style="text-align: left; padding: 10px 0; color: #9CA3AF;">Section</th>
+      <th style="text-align: left; padding: 10px 0; color: #9CA3AF;">背景</th>
+      <th style="text-align: left; padding: 10px 0; color: #9CA3AF;">原因</th>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 10px 0; font-weight: 700;">Hero（标题、封面、项目信息）</td>
+      <td style="padding: 10px 0;"><span style="display:inline-block;width:14px;height:14px;background:#FFFFFF;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>白色</td>
+      <td style="padding: 10px 0; color: #6B7280;">干净开场，让封面图做视觉主角</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 10px 0; font-weight: 700;">The Problem</td>
+      <td style="padding: 10px 0;"><span style="display:inline-block;width:14px;height:14px;background:#FFFFFF;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>白色</td>
+      <td style="padding: 10px 0; color: #6B7280;">正文阅读区，保持简洁</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 10px 0; font-weight: 700;">Key Design Decisions</td>
+      <td style="padding: 10px 0;"><span style="display:inline-block;width:14px;height:14px;background:#F8F9FA;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>浅灰 #F8F9FA</td>
+      <td style="padding: 10px 0; color: #6B7280;">分析思考区域，中性灰让内容说话</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 10px 0; font-weight: 700;">Solution / Design</td>
+      <td style="padding: 10px 0;"><span style="display:inline-block;width:14px;height:14px;background:#FFFFFF;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>白色</td>
+      <td style="padding: 10px 0; color: #6B7280;">图片多的区域，白色让截图更清晰</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 10px 0; font-weight: 700;">Impact（数据卡片）</td>
+      <td style="padding: 10px 0;"><span style="display:inline-block;width:14px;height:14px;background:#F6FAF9;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>浅青 #F6FAF9</td>
+      <td style="padding: 10px 0; color: #6B7280;">成果展示——青色呼应品牌，暗示「成功、增长」</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 10px 0; font-weight: 700;">Testimonial / Quote</td>
+      <td style="padding: 10px 0;"><span style="display:inline-block;width:14px;height:14px;background:#FAF9F7;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>浅暖 #FAF9F7</td>
+      <td style="padding: 10px 0; color: #6B7280;">人的声音用暖色——温暖、真实、可信</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px 0; font-weight: 700;">What I Learned</td>
+      <td style="padding: 10px 0;"><span style="display:inline-block;width:14px;height:14px;background:#FAF9F7;border-radius:3px;vertical-align:middle;border:1px solid #e5e7eb;margin-right:6px;"></span>浅暖 #FAF9F7</td>
+      <td style="padding: 10px 0; color: #6B7280;">个人反思，暖色调传递成长和温度</td>
+    </tr>
+  </table>
+
+  <p style="color: #6B7280; font-size: 14px; margin-top: 12px; line-height: 1.7;">
+    <strong>规则总结：</strong>三种背景色按内容性质搭配使用——<br>
+    🤍 <strong>白色</strong>：默认背景、图片多的区域<br>
+    🩵 <strong>浅青 #F6FAF9</strong>：品牌/成果相关（Impact）<br>
+    🩶 <strong>浅灰 #F8F9FA</strong>：分析思考区（Design Decisions）<br>
+    🤎 <strong>浅暖 #FAF9F7</strong>：人文温度区（Quote、Reflection）
+  </p>
+
+  <!-- ============ BUTTONS ============ -->
+  <h2>按钮（统一 2px outline）</h2>
+  <div class="btn-row">
+    <button class="btn btn-primary">VIEW MORE</button>
+    <button class="btn btn-primary">SEE FULL CV →</button>
+    <button class="btn btn-secondary">uiwendyliang@outlook.com</button>
+    <button class="btn btn-secondary">Résumé</button>
+  </div>
+
+  <!-- ============ CARDS ============ -->
+  <h2>Impact 卡片</h2>
+  <div class="card-row">
+    <div class="card" style="background: #F0F6F5;">
+      <h4 style="color: #5B9B8E; font-size: 24px; font-weight: 900;">40%</h4>
+      <p style="color: #4B5563;">Reduction in time-to-insight for data consumers</p>
+    </div>
+    <div class="card" style="background: #F0F6F5;">
+      <h4 style="color: #5B9B8E; font-size: 24px; font-weight: 900;">3→1</h4>
+      <p style="color: #4B5563;">Consolidated three separate tools into one unified dashboard</p>
+    </div>
+    <div class="card" style="background: #F0F6F5;">
+      <h4 style="color: #5B9B8E; font-size: 24px; font-weight: 900;">92%</h4>
+      <p style="color: #4B5563;">User satisfaction score in post-launch survey</p>
+    </div>
+  </div>
+
+  <!-- ============ FULL PAGE DEMO ============ -->
+  <h2>完整页面效果预览</h2>
+  <div class="page-demo">
+    <!-- White section -->
+    <div class="page-section" style="background: #FFFFFF;">
+      <h4>The Problem</h4>
+      <h3>Why the Old Dashboard Didn't Work</h3>
+      <p>LinkedIn's internal data teams relied on three separate tools to visualize and analyze data, leading to fragmented workflows and duplicated effort.</p>
+
+      <div style="margin-top: 20px;">
+        <div class="semantic-block block-challenge" style="max-width: 560px;">
+          <strong>Challenge:</strong> Users spent 40% of their time switching between tools just to get a complete picture of their data.
+        </div>
+      </div>
+    </div>
+
+    <!-- Light gray section — Design Decisions -->
+    <div class="page-section" style="background: #F8F9FA;">
+      <h4>Key Decisions</h4>
+      <h3>Research-Driven Design Choices</h3>
+      <p>Through user interviews and data analysis, I identified three core principles that would guide the redesign.</p>
+
+      <div style="margin-top: 20px;">
+        <div class="semantic-block block-insight" style="max-width: 560px;">
+          <strong>Insight:</strong> Power users and casual users had fundamentally different mental models for data exploration.
+        </div>
+      </div>
+      <div style="margin-top: 12px;">
+        <div class="semantic-block block-solution" style="max-width: 560px;">
+          <strong>Solution:</strong> Role-based default views that adapt to each user type while remaining fully customizable.
+        </div>
+      </div>
+    </div>
+
+    <!-- Light teal section — Impact -->
+    <div class="page-section" style="background: #F6FAF9;">
+      <h4>Impact</h4>
+      <h3>Results & Feedback</h3>
+
+      <div class="card-row" style="margin-top: 16px;">
+        <div class="card" style="background: rgba(91,155,142,0.08); text-align: center;">
+          <h4 style="color: #5B9B8E; font-size: 20px; font-weight: 900;">40%</h4>
+          <p style="color: #4B5563; font-size: 13px;">Faster time-to-insight</p>
+        </div>
+        <div class="card" style="background: rgba(91,155,142,0.08); text-align: center;">
+          <h4 style="color: #5B9B8E; font-size: 20px; font-weight: 900;">3→1</h4>
+          <p style="color: #4B5563; font-size: 13px;">Tools consolidated</p>
+        </div>
+        <div class="card" style="background: rgba(91,155,142,0.08); text-align: center;">
+          <h4 style="color: #5B9B8E; font-size: 20px; font-weight: 900;">92%</h4>
+          <p style="color: #4B5563; font-size: 13px;">User satisfaction</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light warm section — Testimonial -->
+    <div class="page-section" style="background: #FAF9F7;">
+      <h4>Testimonial</h4>
+      <h3>What People Say</h3>
+
+      <div style="margin-top: 20px;">
+        <div class="semantic-block block-quote" style="max-width: 560px;">
+          "Wendy's design thinking transformed how our team approaches complex data problems. She doesn't just design interfaces — she designs systems." <span style="display: block; font-style: normal; margin-top: 8px; font-size: 13px;">— Sarah Chen, Engineering Manager</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <p style="color: #9CA3AF; font-size: 13px; text-align: center;">设计原则：所有颜色的饱和度保持一致，都是柔和、低饱和的色调，跟品牌青色 (#5B9B8E) 形成协调的整体感。</p>
+
+</body>
+</html>

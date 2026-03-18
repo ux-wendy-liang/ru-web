@@ -1,0 +1,108 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAF9F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F6F5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leftCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3F4F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E5E7EB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rightCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0F6F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E2F0EE;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#00000015"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Decorative top accent -->
+  <rect x="0" y="0" width="1200" height="3" fill="#5B9B8E"/>
+
+  <!-- ===== LEFT SIDE: TEXT CONTENT ===== -->
+
+  <!-- Tag -->
+  <rect x="80" y="70" width="140" height="26" fill="#5B9B8E" rx="13"/>
+  <text x="150" y="88" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">PERSONAL PROJECT</text>
+
+  <!-- Main title -->
+  <text x="80" y="145" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="bold" fill="#111827">I Built This as a Student.</text>
+  <text x="80" y="190" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="bold" fill="#111827">Here's the Story.</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="240" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#6B7280">After 1.5 years as a Buddhist study student in SF,</text>
+  <text x="80" y="262" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#6B7280">I saw half our class quit. Then I built the solution in 4 days.</text>
+
+  <!-- Divider line -->
+  <rect x="80" y="296" width="60" height="2" fill="#5B9B8E"/>
+
+  <!-- Stats row -->
+  <text x="80" y="338" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#111827">54</text>
+  <text x="80" y="358" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6B7280">users in 7 days</text>
+
+  <text x="200" y="338" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#111827">554</text>
+  <text x="200" y="358" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6B7280">page views</text>
+
+  <text x="330" y="338" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#5B9B8E">~100%</text>
+  <text x="330" y="358" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6B7280">positive feedback</text>
+
+  <!-- Role tag -->
+  <text x="80" y="420" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#9CA3AF">Product Designer  ·  Solo Builder  ·  2026</text>
+
+  <!-- ===== RIGHT SIDE: BEFORE / AFTER VISUAL ===== -->
+
+  <!-- Before card -->
+  <rect x="620" y="60" width="240" height="280" fill="url(#leftCard)" rx="14" filter="url(#shadow)"/>
+  <text x="740" y="100" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#9CA3AF" text-anchor="middle" letter-spacing="1">BEFORE</text>
+
+  <!-- Book icon (dense text representation) -->
+  <rect x="680" y="115" width="120" height="90" fill="none" stroke="#D1D5DB" stroke-width="2" rx="4"/>
+  <line x1="695" y1="135" x2="785" y2="135" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="695" y1="150" x2="785" y2="150" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="695" y1="165" x2="785" y2="165" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="695" y1="180" x2="785" y2="180" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="695" y1="195" x2="785" y2="195" stroke="#D1D5DB" stroke-width="1.5"/>
+
+  <!-- 95% label -->
+  <text x="740" y="240" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#9CA3AF" text-anchor="middle">95%</text>
+  <text x="740" y="260" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#9CA3AF" text-anchor="middle">reading only</text>
+
+  <!-- Arrow down = dropout -->
+  <line x1="740" y1="285" x2="740" y2="315" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,3"/>
+  <polygon points="740,320 734,310 746,310" fill="#EF4444"/>
+  <text x="740" y="336" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#EF4444" text-anchor="middle">50% dropout</text>
+
+  <!-- After card -->
+  <rect x="900" y="60" width="240" height="280" fill="url(#rightCard)" rx="14" filter="url(#shadow)"/>
+  <text x="1020" y="100" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#5B9B8E" text-anchor="middle" letter-spacing="1">AFTER</text>
+
+  <!-- Split circle: 50/50 -->
+  <circle cx="1020" cy="175" r="55" fill="none" stroke="#5B9B8E" stroke-width="2"/>
+  <!-- Left half: reading -->
+  <path d="M 1020 120 A 55 55 0 0 0 1020 230 Z" fill="#5B9B8E" opacity="0.3"/>
+  <!-- Right half: practice -->
+  <path d="M 1020 120 A 55 55 0 0 1 1020 230 Z" fill="#5B9B8E" opacity="0.7"/>
+  <!-- Labels inside -->
+  <text x="1000" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#3E6B61" text-anchor="middle">Read</text>
+  <text x="1040" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Do</text>
+
+  <!-- 50/50 label -->
+  <text x="1020" y="258" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#3E6B61" text-anchor="middle">50/50</text>
+  <text x="1020" y="278" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5B9B8E" text-anchor="middle">read + practice</text>
+
+  <!-- Arrow up = positive loop -->
+  <line x1="1020" y1="315" x2="1020" y2="285" stroke="#5B9B8E" stroke-width="2"/>
+  <polygon points="1020,280 1014,290 1026,290" fill="#5B9B8E"/>
+  <text x="1020" y="336" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5B9B8E" text-anchor="middle">positive cycle</text>
+
+  <!-- Arrow connecting before to after -->
+  <line x1="870" y1="200" x2="895" y2="200" stroke="#374151" stroke-width="1.5"/>
+  <polygon points="895,200 887,195 887,205" fill="#374151"/>
+
+  <!-- Bottom caption -->
+  <text x="600" y="520" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#9CA3AF" text-anchor="middle">Redesigning Buddhist Education — 50% Theory + 50% Practice</text>
+</svg>
