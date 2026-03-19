@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 const timelineEvents = [
   {
     year: '2012 – 2014',
@@ -6,6 +8,13 @@ const timelineEvents = [
     body: 'Worked on the QQ redesign — one of China\'s most-used apps. But I kept noticing where users struggled. Visual design alone wasn\'t enough.',
     accent: false,
     subPoints: null,
+    images: [
+      { src: '/images/dribbble-iphone-app-chat.jpg', alt: 'iPhone App Chat UI' },
+      { src: '/images/dribbble-chat-new.jpg', alt: 'Chat New UI' },
+      { src: '/images/dribbble-win8.png', alt: 'Win8 Style UI' },
+      { src: '/images/dribbble-profile.png', alt: 'Profile UI' },
+      { src: '/images/dribbble-profile-shopping.png', alt: 'Profile Shopping UI' },
+    ],
   },
   {
     year: '2014 – 2015',
@@ -14,6 +23,7 @@ const timelineEvents = [
     body: 'I wanted to design interactions, not just visuals. So I left — learned English, came to the US for a Master\'s in design.',
     accent: true,
     subPoints: null,
+    images: null,
   },
   {
     year: '2015 – 2024',
@@ -22,6 +32,7 @@ const timelineEvents = [
     body: 'Landed an internship while still in school — and never really left. Over 8.5 years, I became known for finding the real problem beneath the surface request, and designing solutions that addressed people\'s actual pain points.',
     accent: false,
     subPoints: null,
+    images: null,
   },
   {
     year: '2024 – Now',
@@ -30,12 +41,52 @@ const timelineEvents = [
     body: 'After LinkedIn, I took time to invest in what matters beyond a job title — coaching job seekers on ADPList (top 100 UX mentors globally, 50+ sessions), and giving back to communities I care about.',
     accent: true,
     subPoints: null,
+    images: null,
   },
 ];
 
 const AboutV2 = () => {
+  const [lightboxImg, setLightboxImg] = useState<{ src: string; alt: string } | null>(null);
+
+  // Close lightbox on Escape key
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxImg(null);
+    };
+    if (lightboxImg) {
+      document.addEventListener('keydown', handleKey);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [lightboxImg]);
+
   return (
     <div className="min-h-screen bg-white">
+
+      {/* Lightbox Modal */}
+      {lightboxImg && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-zoom-out"
+          onClick={() => setLightboxImg(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white/70 hover:text-white text-4xl font-light leading-none transition-colors"
+            onClick={() => setLightboxImg(null)}
+            aria-label="Close"
+          >
+            &times;
+          </button>
+          <img
+            src={lightboxImg.src}
+            alt={lightboxImg.alt}
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="pt-32 pb-20 px-6 md:px-16 lg:px-24 bg-white">
@@ -113,6 +164,26 @@ const AboutV2 = () => {
                     <p className="text-lg text-gray-600 leading-relaxed">
                       {event.body}
                     </p>
+
+                    {/* Image gallery */}
+                    {event.images && event.images.length > 0 && (
+                      <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                        {event.images.map((img, j) => (
+                          <div
+                            key={j}
+                            className="rounded-xl overflow-hidden bg-gray-50 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-zoom-in"
+                            onClick={() => setLightboxImg(img)}
+                          >
+                            <img
+                              src={img.src}
+                              alt={img.alt}
+                              className="w-full h-full object-cover"
+                              style={{ aspectRatio: '1/1' }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
