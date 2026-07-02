@@ -30,18 +30,18 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section - starts from top to include nav area */}
-      <section className="pb-20 px-6 md:px-16 lg:px-24 animated-gradient" style={{ paddingTop: '160px', marginTop: '-88px' }}>
+      <section className="pb-10 px-6 md:px-16 lg:px-24 animated-gradient" style={{ paddingTop: '180px', marginTop: '-88px' }}>
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Hi, I'm Wendy
+            Hi, I'm Wendy —
             <br />
-            Product Design in Bay Area
+            a product designer who doesn't stop at mockups.
           </h1>
           <p className="text-lg text-gray-600 mb-10 max-w-2xl leading-loose">
-            <span className="font-semibold text-gray-900">8+ years</span> turning <span className="font-semibold text-gray-900">complex products</span> into <span className="font-semibold text-gray-900">intuitive experiences</span> — specializing in <span className="font-semibold text-gray-900">enterprise ads & data tools</span> at <span className="font-semibold text-gray-900">LinkedIn</span>.
+            <span className="font-semibold text-gray-900">8 years</span> designing enterprise & data products at <span className="font-semibold text-gray-900">LinkedIn</span> — with a <span className="font-semibold text-gray-900">visual designer's craft</span> and a <span className="font-semibold text-gray-900">strategist's product sense</span>.
           </p>
           <p className="text-lg text-gray-600 mb-10 max-w-2xl leading-loose" style={{ marginTop: '-1.25rem' }}>
-            I dig deep into <span className="font-semibold text-gray-900">user needs</span>, collaborate across teams, and deliver designs that drive <span className="font-semibold text-gray-900">real business outcomes</span>.
+            Lately I've gone further: using <span className="font-semibold text-gray-900">AI</span>, I build and ship <span className="font-semibold text-gray-900">my own products</span> — from <span className="font-semibold text-gray-900">idea to live</span>, end to end.
           </p>
           <div className="flex flex-wrap gap-3 items-center">
             <div className="relative">
@@ -72,8 +72,8 @@ const Home = () => {
       </section>
 
       {/* Projects Section - Alternating Layout */}
-      <section className="py-20 px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto space-y-32">
+      <section className="pt-10 pb-20 px-6 md:px-16 lg:px-24">
+        <div className="max-w-7xl mx-auto space-y-24">
           {projects.filter(p => !p.hidden).map((project) => (
             <div
               key={project.id}
@@ -93,14 +93,14 @@ const Home = () => {
               {/* Project Info */}
               <div className="w-full md:w-2/5">
                 <p className="text-sm text-gray-400 mb-2">{project.year}</p>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 leading-tight">
                   {project.title}
                 </h2>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                <p className="text-lg text-gray-600 mb-4 leading-relaxed">
                   {(project as any).subtitle || project.shortDescription}
                 </p>
                 {project.tags && project.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}

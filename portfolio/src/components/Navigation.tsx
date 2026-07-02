@@ -27,9 +27,9 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src="/images/logo.svg"
+              src="/images/67db64064910ec4a3a3e2904_logo-256-new.png"
               alt="Wendy Liang"
-              className="w-10 h-10 rounded-full"
+              className="w-8 h-8"
             />
           </Link>
 
