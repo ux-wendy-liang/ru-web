@@ -176,7 +176,7 @@ const Home = () => {
             <div className="w-full md:w-3/5">
               <div className="relative overflow-hidden rounded-2xl bg-white p-4">
                 <img
-                  src="/images/vcamera/vcamera-01.png"
+                  src="/images/vcamera/vcamera-cover.png"
                   alt="V Camera: Bringing Fun Back to Qzone"
                   className="w-full h-auto rounded-lg"
                 />
