@@ -1075,22 +1075,50 @@ export const projects: Project[] = [
     title: 'V Camera: Bringing Fun Back to Qzone',
     year: 2014,
     cover: '/images/vcamera/vcamera-01.png',
-    shortDescription: 'A Tencent team project — a camera tool that lets users edit photos and share them instantly to their social network (Qzone). My role covered visual design and interaction flow.',
-    role: 'Visual Design\n+ Interaction Flow',
-    duration: 'Jan 2014',
-    team: 'Tencent — Team Project',
-    images: [
-      '/images/vcamera/vcamera-02.png',
-      '/images/vcamera/vcamera-03.png',
-      '/images/vcamera/vcamera-04.png',
-      '/images/vcamera/vcamera-05.png',
-      '/images/vcamera/vcamera-06.png',
-      '/images/vcamera/vcamera-07.png',
-      '/images/vcamera/vcamera-08.png',
-      '/images/vcamera/vcamera-09.png',
-      '/images/vcamera/vcamera-10.png',
-      '/images/vcamera/vcamera-11.png',
-      '/images/vcamera/vcamera-12.png'
+    shortDescription: 'In 2014, Qzone\'s engagement was declining as WeChat took over. During a Tencent hackathon, my team built V Camera — a playful photo plugin with creative effects and stickers that gave people a reason to share again. It won Tencent\'s Creative Award.',
+    role: 'User Research\n+ UX\n+ UI',
+    duration: '2 Weeks (Hackathon)',
+    team: '3 Designers · Tencent',
+    sections: [
+      // ===== THE CHALLENGE =====
+      {
+        title: 'How do we make sharing on Qzone fun again?',
+        sectionLabel: 'The Challenge',
+        content: 'Back in 2014, Qzone had over **648 million monthly active users** — one of the biggest social platforms in China, often compared to Facebook. But as WeChat rapidly took over, fewer people were using Qzone to share their lives. The platform felt stagnant, and engagement was dropping.\n\nAs a designer at Tencent, I wanted to tackle one question: how could we make sharing on Qzone fun again?',
+        dividerAfter: true
+      },
+      // ===== THE IDEA =====
+      {
+        title: 'The Idea: A Camera App',
+        sectionLabel: 'The Idea',
+        content: 'During a Tencent hackathon, I teamed up with two other designers to brainstorm ways to bring life back to Qzone. We noticed that people were still taking photos — they just weren\'t sharing them on Qzone anymore. What if we gave them a reason to?\n\nThat\'s how **V Camera** was born: a fun, interactive photo plugin that let users add creative effects, filters, and stickers before sharing. The goal was simple:\n\n• Make taking and sharing photos fun again\n• Give users a reason to post more frequently\n• Differentiate Qzone from WeChat and other competitors',
+        dividerAfter: true
+      },
+      // ===== THE PROCESS (deck images) =====
+      {
+        title: 'From research to a shipped concept',
+        sectionLabel: 'The Process',
+        content: 'I ran the project end to end over two weeks — competitive research, a user persona, ideation, interaction flows, visual design, and the key features that made sharing playful.'
+      },
+      { title: '', content: '', image: '/images/vcamera/vcamera-02.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-03.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-04.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-05.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-06.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-07.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-08.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-09.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-10.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-11.png' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-12.png', dividerAfter: true }
+    ],
+    impact: [
+      'Engagement increased: Users started sharing more photos, and Qzone felt lively again.',
+      'Creative Award: The project won the Creative Award at Tencent, validating our approach.',
+      'The power of design: It reinforced how thoughtful design can drive engagement, making Qzone a more interactive space.'
+    ],
+    takeaways: [
+      'Creative design can drive engagement: Instead of forcing people to engage, we gave them a fun tool that naturally encouraged it. V Camera was a small addition, but it had a big impact on engagement and retention — a reminder that sometimes a little creativity can go a long way.'
     ]
   },
 ];
