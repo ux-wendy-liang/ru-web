@@ -1100,17 +1100,17 @@ export const projects: Project[] = [
         sectionLabel: 'The Process',
         content: 'I ran the project end to end over two weeks — competitive research, a user persona, ideation, interaction flows, visual design, and the key features that made sharing playful.'
       },
-      { title: '', content: '', image: '/images/vcamera/vcamera-02.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-03.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-04.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-05.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-06.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-07.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-08.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-09.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-10.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-11.png' },
-      { title: '', content: '', image: '/images/vcamera/vcamera-12.png', dividerAfter: true }
+      { title: '', content: '', image: '/images/vcamera/vcamera-02.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-03.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-04.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-05.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-06.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-07.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-08.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-09.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-10.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-11.png', imageSize: 'large' },
+      { title: '', content: '', image: '/images/vcamera/vcamera-12.png', imageSize: 'large', dividerAfter: true }
     ],
     impact: [
       'Engagement increased: Users started sharing more photos, and Qzone felt lively again.',

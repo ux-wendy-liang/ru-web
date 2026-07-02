@@ -470,7 +470,7 @@ const ProjectDetail = () => {
                     <img
                       src={section.image}
                       alt={section.title}
-                      className="w-full max-h-[600px] object-contain cursor-zoom-in"
+                      className={`w-full object-contain cursor-zoom-in ${section.imageSize === 'large' ? '' : 'max-h-[600px]'}`}
                       onClick={() => openLightbox(section.image!)}
                     />
                     {section.imageHighlight && (
