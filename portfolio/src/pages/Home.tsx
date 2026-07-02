@@ -32,15 +32,15 @@ const Home = () => {
       {/* Hero Section - starts from top to include nav area */}
       <section className="pb-10 px-6 md:px-16 lg:px-24 animated-gradient" style={{ paddingTop: '180px', marginTop: '-88px' }}>
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
             Hi, I'm Wendy —
             <br />
             a product designer who doesn't stop at mockups.
           </h1>
-          <p className="text-lg text-gray-600 mb-10 max-w-2xl leading-loose">
+          <p className="text-lg text-gray-600 mb-6 max-w-2xl leading-loose">
             <span className="font-semibold text-gray-900">8 years</span> designing enterprise & data products at <span className="font-semibold text-gray-900">LinkedIn</span> — with a <span className="font-semibold text-gray-900">visual designer's craft</span> and a <span className="font-semibold text-gray-900">strategist's product sense</span>.
           </p>
-          <p className="text-lg text-gray-600 mb-10 max-w-2xl leading-loose" style={{ marginTop: '-1.25rem' }}>
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl leading-loose">
             Lately I've gone further: using <span className="font-semibold text-gray-900">AI</span>, I build and ship <span className="font-semibold text-gray-900">my own products</span> — from <span className="font-semibold text-gray-900">idea to live</span>, end to end.
           </p>
           <div className="flex flex-wrap gap-3 items-center">
