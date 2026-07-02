@@ -23,3 +23,6 @@ logs/
 .cache/
 .vercel
 .env*.local
+
+# Playwright MCP test screenshots
+.playwright-mcp/

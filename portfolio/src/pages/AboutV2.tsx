@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react';
 
-const timelineEvents = [
+type TimelineEvent = {
+  year: string;
+  tag: string;
+  title: string;
+  body: string;
+  accent: boolean;
+  subPoints: string[] | null;
+  images: { src: string; alt: string }[] | null;
+};
+
+const timelineEvents: TimelineEvent[] = [
   {
     year: '2012 – 2014',
     tag: 'Tencent · Shenzhen',
@@ -8,13 +18,7 @@ const timelineEvents = [
     body: 'Worked on the QQ redesign — one of China\'s most-used apps. But I kept noticing where users struggled. Visual design alone wasn\'t enough.',
     accent: false,
     subPoints: null,
-    images: [
-      { src: '/images/dribbble-iphone-app-chat.jpg', alt: 'iPhone App Chat UI' },
-      { src: '/images/dribbble-chat-new.jpg', alt: 'Chat New UI' },
-      { src: '/images/dribbble-win8.png', alt: 'Win8 Style UI' },
-      { src: '/images/dribbble-profile.png', alt: 'Profile UI' },
-      { src: '/images/dribbble-profile-shopping.png', alt: 'Profile Shopping UI' },
-    ],
+    images: null,
   },
   {
     year: '2014 – 2015',
@@ -223,6 +227,40 @@ const AboutV2 = () => {
 
           <div className="space-y-16">
 
+            {/* Coaching */}
+            <div className="flex flex-col md:flex-row gap-10 items-start">
+              {/* Left: certificates */}
+              <div className="flex gap-3 flex-shrink-0">
+                <div className="flex-shrink-0" style={{ width: '216px', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+                  <img src="/images/top-100-mentor.png" alt="Top 100 UX Design Mentor" className="w-full h-auto block" />
+                </div>
+                <div className="flex-shrink-0" style={{ width: '216px', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+                  <img src="/images/complete-50-sessions.png" alt="Complete 50 sessions" className="w-full h-auto block" />
+                </div>
+              </div>
+              {/* Right: text */}
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Career coaching on{' '}
+                  <a
+                    href="https://adplist.org/mentors/wendy-liang"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent-teal hover:underline"
+                  >
+                    ADPList
+                  </a>
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  I coach job seekers through the stress and uncertainty of the job search —
+                  helping them find clarity, confidence, and their next step.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="border-t border-gray-200" />
+
             {/* Painting */}
             <div className="flex flex-col md:flex-row gap-10 items-start">
               {/* Left: images */}
@@ -318,40 +356,6 @@ const AboutV2 = () => {
                   I volunteer reading and drawing with children — encouraging them to speak up and
                   find words for what they feel. Their openness reminds me what genuine curiosity
                   looks like. I hope to leave them with at least one moment of feeling truly seen.
-                </p>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="border-t border-gray-200" />
-
-            {/* Coaching */}
-            <div className="flex flex-col md:flex-row gap-10 items-start">
-              {/* Left: certificates */}
-              <div className="flex gap-3 flex-shrink-0">
-                <div className="flex-shrink-0" style={{ width: '216px', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
-                  <img src="/images/top-100-mentor.png" alt="Top 100 UX Design Mentor" className="w-full h-auto block" />
-                </div>
-                <div className="flex-shrink-0" style={{ width: '216px', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
-                  <img src="/images/complete-50-sessions.png" alt="Complete 50 sessions" className="w-full h-auto block" />
-                </div>
-              </div>
-              {/* Right: text */}
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Career coaching on{' '}
-                  <a
-                    href="https://adplist.org/mentors/wendy-liang"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent-teal hover:underline"
-                  >
-                    ADPList
-                  </a>
-                </h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  I coach job seekers through the stress and uncertainty of the job search —
-                  helping them find clarity, confidence, and their next step.
                 </p>
               </div>
             </div>
